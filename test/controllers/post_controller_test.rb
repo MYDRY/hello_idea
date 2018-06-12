@@ -5,5 +5,4 @@ class PostControllerTest < ActionDispatch::IntegrationTest
     get post_index_url
     assert_response :success
   end
-
 end
