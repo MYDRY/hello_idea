@@ -4,4 +4,11 @@ class PostController < ApplicationController
 
   def ideal
   end
+
+  def trouble
+  end
+  
+  def other
+  end
+  
 end
