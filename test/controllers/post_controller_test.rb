@@ -15,4 +15,9 @@ class PostControllerTest < ActionDispatch::IntegrationTest
     get post_trouble_url
     assert_response :success
   end
+
+  test "should get other page" do
+    get post_other_url
+    assert_response :success
+  end
 end
