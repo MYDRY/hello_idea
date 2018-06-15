@@ -31,8 +31,3 @@
 
 # Ignore vendor directory
 vendor/*
-
-# Ignore backup or swap files from editor
-*#*
-*~
-*.swp
