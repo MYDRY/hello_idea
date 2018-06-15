@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  id: 1
+  name: ideal
 
 two:
-  name: MyString
+  id: 2
+  name: trouble
+
+three:
+  id: 3
+  name: other
