@@ -1,6 +1,19 @@
 <h1>Post#index</h1>
 <p>Find me in app/views/post/index.html.erb</p>
-
+<p>
+  <% @posts.each do |post| %>
+    <%= post.id %><br>
+    <%= post.name %><br>
+  <% end %>
+</p>
+<p>
+  <% @ideas.each do |idea| %>
+    <%= idea.id %><br>
+    <%= idea.title %><br>
+    <%= idea.body %><br>
+    <%= idea.genre_id %><br>
+  <% end %>  
+</p>
 <%= link_to '理想', post_ideal_path %>
 <%= link_to '問題解決', post_trouble_path %>
 <%= link_to 'その他', post_other_path %>
