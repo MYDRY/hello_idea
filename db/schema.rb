@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 2018_06_18_015840) do
   create_table "ideas", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "genre_id"
+    t.integer "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["genre_id"], name: "index_ideas_on_genre_id"
+    t.index ["topic_id"], name: "index_ideas_on_topic_id"
   end
 
   create_table "topics", force: :cascade do |t|
