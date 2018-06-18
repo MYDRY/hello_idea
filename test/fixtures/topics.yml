@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  body: MyText
-
-two:
-  title: MyString
-  body: MyText
+<% Genre.all.each_with_index do |genre_obj, index| %>
+<% 10.times do |n| %>
+topic<%= n + index * 10 %>:
+  id: <%= n + index * 10 %>
+  title: topic_<%= genre_obj.name %><%= n %>
+  body: text
+  genre_id: <%= index + 1 %>
+<% end %>
+<% end %>
