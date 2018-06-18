@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+ideal:
   id: 1
   name: ideal
 
-two:
+trouble:
   id: 2
   name: trouble
 
-three:
+other:
   id: 3
   name: other

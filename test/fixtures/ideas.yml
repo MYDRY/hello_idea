@@ -1,10 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id: 1
-  title: 'idea about ideal'
+<% 100.times do |n| %>
+idea<%= n%>:
+  title: 'ideal'
   body: 'ideal'
-  genre_id: 1
+  genre_id: 'ideal'
+<% end %>
 
 two:
   id: 2
