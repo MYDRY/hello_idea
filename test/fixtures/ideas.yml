@@ -1,19 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id: 1
-  title: 'idea about ideal'
-  body: 'ideal'
-  genre_id: 1
-
-two:
-  id: 2
-  title: 'idea about trouble'
-  body: 'trouble'
-  genre_id: 2
-
-three:
-  id: 3
-  title: 'idea about other'
-  body: 'other'
-  genre_id: 3
+<% Topic.all.each_with_index do |topic_obj, index| %>
+<% 20.times do |n| %>
+idea<%= n + index * 20 %>:
+  id: <%= n + index * 20 %>
+  title: idea_in_<%= topic_obj.title %><%= n %>
+  body: idea_about_<%= topic_obj.genre.name %>
+  topic_id: <%= index %>
+<% end %>
+<% end %>
