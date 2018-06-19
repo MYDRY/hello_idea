@@ -7,11 +7,11 @@
   <% end %>
 </p>
 <p>
-  <% @topics.each do |topic| %>
-    <%= topic.id %><br>
-    <%= topic.title %><br>
-    <%= topic.body %><br>
-    <%= topic.genre_id %><br>
+  <% @ideas.each do |idea| %>
+    <%= idea.id %><br>
+    <%= idea.title %><br>
+    <%= idea.body %><br>
+    <%= idea.genre_id %><br>
   <% end %>  
 </p>
 <%= link_to '理想', post_ideal_path %>
