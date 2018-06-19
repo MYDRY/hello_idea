@@ -3,7 +3,7 @@ class CreateIdeas < ActiveRecord::Migration[5.2]
     create_table :ideas do |t|
       t.string :title
       t.text :body
-      t.references :topic, foreign_key: true
+      t.references :genre, foreign_key: true
       
       t.timestamps
     end
