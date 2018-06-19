@@ -11,12 +11,12 @@ class PostController < ApplicationController
 
   def trouble
     current_genre = Genre.find_by(name: params[:action])
-	@topics = current_genre.ideas
+	@topics = current_genre.topics
   end
   
   def other
     current_genre = Genre.find_by(name: params[:action])
-	@topics = current_genre.ideas
+	@topics = current_genre.topics
   end
 
   def show
