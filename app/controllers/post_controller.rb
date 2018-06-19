@@ -18,4 +18,8 @@ class PostController < ApplicationController
     current_genre = Genre.find_by(name: params[:action])
 	@topics = current_genre.topics
   end
+
+  def show
+    @topic = Topic.find(params[:id])
+  end
 end
