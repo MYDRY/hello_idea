@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'post/ideal'
   get 'post/trouble'
   get 'post/other'
+  get 'post/:id' => 'post#show'
 end
