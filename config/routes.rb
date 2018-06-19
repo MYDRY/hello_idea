@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'post/index'
+  get 'home/top'
+  root 'home#top'
+  get 'post/ideal'
+  get 'post/trouble'
+  get 'post/other'
+  get 'post/:id' => 'post#show'
 end
