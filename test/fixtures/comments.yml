@@ -1,11 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+<% Idea.all.each_with_index do |idea_obj, index| %>
+<% 5.times do |n| %>
+comment_to_idea<%= n + index * 5 %>:
+    id: <%= n + index * 5 %>
+    body: comment_to_<%= idea_obj.title %>%<%= n %>
+    commentable_type: Idea
+    commentable_id: <%= index %>
+<% end %>
+<% end %>
+
+<% 1500.times do |n| %>
+comment_to_comment<%= n %>:
+  body: reply_to_comment<%= n %>
+  commentable_type: Comment
+  commentable_id: <%= n %>
+<% end %>
