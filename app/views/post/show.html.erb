@@ -5,3 +5,11 @@
   <%= @topic.body %><br>
   <%= @topic.genre_id %><br>
 </p>
+<p>
+  <% @topic.ideas.each do |idea| %>
+    <%= idea.id %>
+    <%= idea.title %>
+    <%= idea.body %>
+    <%= idea.topic_id %>
+    <% end %>
+</p>
