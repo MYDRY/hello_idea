@@ -1,6 +1,6 @@
-class PostController < ApplicationController
+class TopicsController < ApplicationController
   def index
-    @posts = Genre.all
+    @genres = Genre.all
     @topics = Topic.all
   end
 
