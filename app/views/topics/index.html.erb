@@ -12,8 +12,9 @@
     <%= topic.title %><br>
     <%= topic.body %><br>
     <%= topic.genre_id %><br>
-  <% end %>  
+  <% end %>
 </p>
 <%= link_to '理想', topics_ideal_path %>
 <%= link_to '問題解決', topics_trouble_path %>
 <%= link_to 'その他', topics_other_path %>
+<%= link_to '新規投稿', new_topic_path %>
