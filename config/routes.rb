@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'ideas/show'
   get 'topics/index'
   get 'home/top'
   root 'home#top'
