@@ -6,5 +6,5 @@
   <%= @topic.genre_id %><br>
 </p>
 <% @topic.ideas.each do |idea| %>
-  <%= link_to idea.title, ideas_show_path, id: "#{idea.id}" %>
+  <%= link_to idea.title, topic_idea_path(idea) %>
 <% end %>
