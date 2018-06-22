@@ -1,0 +1,19 @@
+<h1>Topics#index</h1>
+<p>Find me in app/views/topics/index.html.erb</p>
+<p>
+  <% @genres.each do |genre| %>
+    <%= genre.id %><br>
+    <%= genre.name %><br>
+  <% end %>
+</p>
+<p>
+  <% @topics.each do |topic| %>
+    <%= topic.id %><br>
+    <%= topic.title %><br>
+    <%= topic.body %><br>
+    <%= topic.genre_id %><br>
+  <% end %>  
+</p>
+<%= link_to '理想', topics_ideal_path %>
+<%= link_to '問題解決', topics_trouble_path %>
+<%= link_to 'その他', topics_other_path %>

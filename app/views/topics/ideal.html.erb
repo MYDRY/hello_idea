@@ -1,0 +1,4 @@
+<h1>Topics#ideal</h1>
+<% @topics.each do |topic| %>
+	<%= link_to topic.title, topic_path(topic) %>
+<% end %>
