@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
     current_genre = Genre.find_by(name: params[:action])
 	@topics = current_genre.topics
   end
-  
+
   def other
     current_genre = Genre.find_by(name: params[:action])
 	@topics = current_genre.topics
@@ -21,5 +21,9 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+  end
+
+  def new
+    @topic = Topic.new
   end
 end
