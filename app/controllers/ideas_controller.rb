@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
   end
 
-def new
+  def new
     @idea = Idea.new
   end
 
@@ -12,7 +12,6 @@ def new
     @idea.save
     redirect_to topic_path
   end
-
 
   private
   def idea_params
