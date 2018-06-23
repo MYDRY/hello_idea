@@ -1,7 +1,7 @@
 <h1>Ideas#new</h1>
 
 <p>
-<%= form_for(topic_ideas_path) do |f| %>
+<%= form_for(@idea, url: url_for(controller: 'ideas', action: 'create')) do |f| %>
   <div class="field">
     <%= f.label :topic_id %><br />
     <%= f.label :title %><br />
@@ -10,4 +10,5 @@
     <%= f.text_area :body %><br />
     <%= f.submit %>
 <% end %>
+  </div>
 </p>
