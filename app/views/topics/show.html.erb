@@ -7,5 +7,5 @@
 </p>
 <%= link_to "アイデア新規投稿", controller: 'ideas', action: 'new',topic_id: "#{@topic.id}" %>
 <% @topic.ideas.each do |idea| %>
-  <%= link_to idea.title, topic_idea_path(idea) %>
+  <%= link_to idea.title, "#{@topic.id}/ideas/#{idea.id}" %>
 <% end %>
