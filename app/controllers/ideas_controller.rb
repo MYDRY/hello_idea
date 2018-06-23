@@ -3,16 +3,16 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
   end
 
-def new
+  def new
     @idea = Idea.new
   end
 
   def create
-    @idea = Idea.new(topic_id: params[:id])
+    topic = Topic.find(params[:topic_id])
+    @idea = topic.ideas.build(idea_params)
     @idea.save
-    redirect_to topic_path
+    redirect_to topic_path(topic)
   end
-
 
   private
   def idea_params
