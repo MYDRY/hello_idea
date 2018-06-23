@@ -5,6 +5,7 @@
   <%= @topic.body %><br>
   <%= @topic.genre_id %><br>
 </p>
+<%= link_to "アイデア新規投稿", new_topic_idea_path(@topic) %>
 <% @topic.ideas.each do |idea| %>
   <%= link_to idea.title, topic_idea_path(idea) %>
 <% end %>
