@@ -5,13 +5,13 @@ class TopicsController < ApplicationController
   end
 
   def ideal
-	  current_genre = Genre.find_by(name: params[:action])
-	  @topics = current_genre.topics
+	current_genre = Genre.find_by(name: params[:action])
+	@topics = current_genre.topics
   end
 
   def trouble
     current_genre = Genre.find_by(name: params[:action])
-	  @topics = current_genre.topics
+	@topics = current_genre.topics
   end
 
   def other
@@ -30,10 +30,8 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.save
-#    redirect_to topic_path(@topic)
     redirect_to @topic
   end
-
 
   private
   def topic_params
