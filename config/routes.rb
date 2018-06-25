@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'topics/ideal'
   get 'topics/trouble'
   get 'topics/other'
+  post 'topics/classfy_topic'
   resources :topics do
     resources :ideas
   end
