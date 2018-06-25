@@ -1,6 +1,6 @@
-class PostController < ApplicationController
+class TopicsController < ApplicationController
   def index
-    @posts = Genre.all
+    @genres = Genre.all
     @topics = Topic.all
   end
 
@@ -13,7 +13,7 @@ class PostController < ApplicationController
     current_genre = Genre.find_by(name: params[:action])
 	@topics = current_genre.topics
   end
-  
+
   def other
     current_genre = Genre.find_by(name: params[:action])
 	@topics = current_genre.topics
@@ -21,5 +21,20 @@ class PostController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+  end
+
+  def new
+    @topic = Topic.new
+  end
+
+  def create
+    @topic = Topic.new(topic_params)
+    @topic.save
+    redirect_to @topic
+  end
+
+  private
+  def topic_params
+    params.require(:topic).permit(:title, :body, :genre_id)
   end
 end

@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  get 'post/index'
-  get 'home/top'
   root 'home#top'
-  get 'post/ideal'
-  get 'post/trouble'
-  get 'post/other'
-  get 'post/:id' => 'post#show'
+  # get 'ideas/show'
+  # get 'topics/index'
+  # get 'topics/ideal'
+  # get 'topics/trouble'
+  # get 'topics/other'
+  # get 'topics/:id' => 'topics#show'
+  get 'topics/ideal'
+  get 'topics/trouble'
+  get 'topics/other'
+  resources :topics do
+    resources :ideas
+  end
 end
