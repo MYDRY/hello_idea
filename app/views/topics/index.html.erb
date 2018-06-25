@@ -7,9 +7,9 @@
   <% end %>
 </p>
 <p>
-  <%= button_to 'Ideal', action: 'classfy_topic', genre_id: 1 %>
-  <%= button_to 'Trouble', action: 'classfy_topic', genre_id: 2 %>
-  <%= button_to 'Other', action: 'classfy_topic', genre_id: 3 %>
+  <%= eval(topic_tag_toggle('ideal')) %>
+  <%= eval(topic_tag_toggle('trouble')) %>
+  <%= eval(topic_tag_toggle('other')) %>
   <% @topics.each do |topic| %>
     <%= topic.id %><br>
     <%= topic.title %><br>
