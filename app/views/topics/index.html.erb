@@ -7,6 +7,9 @@
   <% end %>
 </p>
 <p>
+  <%= eval(topic_tag_toggle('ideal')) %>
+  <%= eval(topic_tag_toggle('trouble')) %>
+  <%= eval(topic_tag_toggle('other')) %>
   <% @topics.each do |topic| %>
     <%= topic.id %><br>
     <%= topic.title %><br>
