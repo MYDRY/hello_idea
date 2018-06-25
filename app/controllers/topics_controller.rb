@@ -33,6 +33,11 @@ class TopicsController < ApplicationController
     redirect_to @topic
   end
 
+  def classfy_topic
+    @genres = Genre.all
+    @topics = Topic.where(genre_id: params[:genre_id])
+    render 'index'
+  end
   private
   def topic_params
     params.require(:topic).permit(:title, :body, :genre_id)
