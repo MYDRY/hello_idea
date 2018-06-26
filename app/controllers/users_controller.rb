@@ -18,6 +18,18 @@ class UsersController < ApplicationController
   end
 
   def login
+    @user = User.new
+  end
+
+  def check_user
+    @user = User.find_by(name: params[:user][:name])
+    if @user
+      flash[:notice] = "SUCCESS"
+      redirect_to @user
+    else
+      flash[:notice] = "ERROR"
+      redirect_to root_url
+    end
   end
   
   private
