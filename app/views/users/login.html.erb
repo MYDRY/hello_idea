@@ -1,9 +1,11 @@
 <h1>Login</h1>
 
 <p>
-  <%= form_for(check_user_path) do |f| %>
+  <%= form_for(@user, url: login_path) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+
+    <%= f.submit %>
   <% end %>
 </p>
 
