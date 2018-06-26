@@ -1,22 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @genres = Genre.all
     @topics = Topic.all
-  end
-
-  def ideal
-	current_genre = Genre.find_by(name: params[:action])
-	@topics = current_genre.topics
-  end
-
-  def trouble
-    current_genre = Genre.find_by(name: params[:action])
-	@topics = current_genre.topics
-  end
-
-  def other
-    current_genre = Genre.find_by(name: params[:action])
-	@topics = current_genre.topics
   end
 
   def show
@@ -33,6 +17,10 @@ class TopicsController < ApplicationController
     redirect_to @topic
   end
 
+  def classfy_topic
+    @topics = Topic.where(genre_id: params[:genre_id])
+    render 'index'
+  end
   private
   def topic_params
     params.require(:topic).permit(:title, :body, :genre_id)
