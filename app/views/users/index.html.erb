@@ -1,7 +1,7 @@
 <p>
-  <% @users.each do |u| %>
-	<%= u.name %>
-	<%= u.email %><br>
+  <% @users.each do |user| %>
+	<%= link_to user.name, user_path(id: user) %>
+	<%= user.email %><br>
   <% end %>
 </p>
 
