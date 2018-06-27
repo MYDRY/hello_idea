@@ -1,6 +1,9 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all
+    @ideal_topics = Genre.find_by(name: 'ideal').topics
+    @trouble_topics = Genre.find_by(name: 'trouble').topics
+    @other_topics = Genre.find_by(name: 'other').topics
   end
 
   def show

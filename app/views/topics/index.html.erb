@@ -1,14 +1,42 @@
 <h1>Topics#index</h1>
 <p>Find me in app/views/topics/index.html.erb</p>
-<p>
-  <%= link_to '新規投稿', new_topic_path %>
-  <%= eval(topic_tag_toggle('ideal')) %>
-  <%= eval(topic_tag_toggle('trouble')) %>
-  <%= eval(topic_tag_toggle('other')) %>
-  <% @topics.each do |topic| %>
-    <%= topic.id %>
-    <%= link_to topic.title, topic_path(id: topic.id) %>
-    <%= topic.body %>
-    <%= topic.genre_id %><br>
-  <% end %>
-</p>
+<p><%= link_to '新規投稿', new_topic_path %></p>
+
+<div class="p-3">
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">All</a></li>
+    <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">理想</a></li>
+    <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">問題</a></li>
+    <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">その他</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <p>
+        <% @topics.each do |topic| %>
+          <%= link_to topic.title, topic_path(topic) %><br />
+        <% end %>
+      </p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>
+        <% @ideal_topics.each do |topic| %>
+          <%= link_to topic.title, topic_path(topic) %><br />
+        <% end %>
+      </p>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <p>
+        <% @trouble_topics.each do |topic| %> 
+          <%= link_to topic.title, topic_path(topic) %><br />
+        <% end %>                 
+      </p>
+    </div>
+    <div class="tab-pane" id="tab4">
+      <p>
+        <% @other_topics.each do |topic| %> 
+          <%= link_to topic.title, topic_path(topic) %><br />
+        <% end %>                 
+      </p>
+    </div>
+  </div>
+</div>
