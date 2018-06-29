@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: 'example', email: 'example@com')
+    @user = users(:user0)
     @user.save
   end
 
@@ -17,12 +17,14 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should be unique" do
-    @user1 = User.new(name: 'example2', email: 'example@com')
+    @user1 = users(:user1)
+    @user1.email = @user.email
     assert_not @user1.valid?
   end
 
   test "name should be unique" do
-    @user1 = User.new(name: 'example', email: 'example2@com')
+    @user1 = users(:user1)
+    @user1.name = @user.name
     assert_not @user1.valid?
   end
 end
