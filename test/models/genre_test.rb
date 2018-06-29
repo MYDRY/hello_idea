@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class GenreTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "genre data should exist" do
+    assert_not_empty Genre.all
+  end
 end
