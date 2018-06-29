@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TopicTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @topic = topics(:topic0)
+  end
 end
