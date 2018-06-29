@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class IdeaTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @idea = ideas(:idea0)
+  end
 end
