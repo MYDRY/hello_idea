@@ -1,8 +1,11 @@
 require 'test_helper'
 
-class UsersControllerTest < ActionDispatch::IntegrationTest 
-  test "users show page should exist" do
+class UsersControllerTest < ActionDispatch::IntegrationTest
+  def setup
     @user = users(:user0)
+  end
+  
+  test "users show page should exist" do
     get user_path(@user)
     assert_response :success
   end
@@ -16,7 +19,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "login page should work" do
-    @user = users(:user0)    
     post login_path(user: { name: @user.name, email: @user.email })
     assert_response :redirect
   end
