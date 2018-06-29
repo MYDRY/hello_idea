@@ -9,4 +9,10 @@ class IdeasControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     assert_redirected_to topic_path(@topic)
   end
+
+  test "ideas show page should exist" do
+    @idea = ideas(:idea0)
+    get topic_idea_path(@idea.topic, @idea)
+    assert_response :success
+  end
 end
