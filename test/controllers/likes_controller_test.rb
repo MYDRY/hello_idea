@@ -1,14 +1,24 @@
 require 'test_helper'
 
 class LikesControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:user0)
+    @idea = ideas(:idea0)
+    log_in @user
+  end
+
+  def teardown
+    log_out
+  end
+
   test "should get create" do
-    get likes_create_url
-    assert_response :success
+    post idea_likes_path(idea_id: @idea.id)
+    assert_response :redirect
   end
 
   test "should get destroy" do
-    get likes_destroy_url
-    assert_response :success
+    delete like_path(id: @idea)
+    assert_response :redirect
   end
 
 end
