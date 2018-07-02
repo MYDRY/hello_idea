@@ -4,10 +4,12 @@
   <%= @topic.title %>
   <%= @topic.body %>
   <%= @topic.genre_id %>
+  created by: 
+  <%= link_to @topic.user.name, user_path(id: @topic.user) %>
 </p>
 <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
 <p>
 <% @topic.ideas.each do |idea| %>
-  <%= link_to "#{idea.title}", topic_idea_path(@topic, idea) %><br>
+  <%= link_to "#{idea.title}", idea_path(idea) %><br>
 <% end %>
 </p>
