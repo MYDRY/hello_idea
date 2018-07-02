@@ -32,13 +32,13 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:notice] = "ERROR"
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 
   def logout
     log_out
-    redirect_to root_url
+    redirect_to root_path
   end
   
   private
