@@ -6,6 +6,7 @@
   <%= @topic.genre_id %>
   created by: 
   <%= link_to @topic.user.name, user_path(id: @topic.user) %>
+  <%= link_to "edit", edit_topic_path(id: @topic.id) %>
 </p>
 <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
 <p>

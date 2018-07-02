@@ -23,6 +23,19 @@ class TopicsController < ApplicationController
     redirect_to @topic
   end
 
+  def edit
+    @topic = Topic.find(params[:id])
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    if @topic.update(topic_params)
+      redirect_to @topic
+    else
+      render edit_topic_path
+    end
+  end
+
   def classfy_topic
     @topics = Topic.where(genre_id: params[:genre_id])
     render 'index'
