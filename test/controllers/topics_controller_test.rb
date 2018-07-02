@@ -1,6 +1,15 @@
 require 'test_helper'
 
 class PostControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:user0)
+    log_in @user
+  end
+
+  def teardown
+    log_out
+  end
+
   test "topics index page should exist" do
     get topics_path
     assert_response :success
