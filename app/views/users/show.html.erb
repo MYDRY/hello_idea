@@ -15,6 +15,6 @@
 <p>
   Your Ideas<br>
   <% @user.ideas.each do |idea| %>
-    <%= link_to idea.title, topic_idea_path(topic_id: idea.topic, id: idea) %><br>
+    <%= link_to idea.title, idea_path(id: idea) %><br>
   <% end %>
 </p>
