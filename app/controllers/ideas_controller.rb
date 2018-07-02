@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-
+  include LikesHelper
   before_action :authorize, only: [:new, :create]
   
   def show

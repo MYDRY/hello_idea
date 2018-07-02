@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :topics, shallow: true do
     resources :ideas do
-      resources :like, only: [:create, :destroy]
+      resources :likes, only: [:create, :destroy]
     end
   end
 end
