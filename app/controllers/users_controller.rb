@@ -45,10 +45,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
-
-  def authorize
-    if !logged_in?
-      redirect_to login_path
-    end
-  end
 end
