@@ -12,3 +12,9 @@
     <%= link_to topic.title, topic_path(id: topic) %><br>
   <% end %>
 </p>
+<p>
+  Your Ideas<br>
+  <% @user.ideas.each do |idea| %>
+    <%= link_to idea.title, topic_idea_path(topic_id: idea.topic, id: idea) %><br>
+  <% end %>
+</p>
