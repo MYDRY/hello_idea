@@ -15,6 +15,7 @@
     <%= link_to 'ユーザ一覧', users_path %>
     <% if logged_in? %>
       <%= link_to current_user.name, user_path(id: current_user) %> 
+      <%= link_to 'ログアウト', logout_path %>
     <% else %>
       <%= link_to 'ログイン', login_path %>
     <% end %>
