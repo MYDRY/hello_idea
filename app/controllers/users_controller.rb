@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :authorize, only: [:index, :show]
+
   def index
   	@users=User.all
   end
@@ -41,5 +44,11 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def authorize
+    if !logged_in?
+      redirect_to login_path
+    end
   end
 end
