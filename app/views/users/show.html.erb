@@ -18,3 +18,9 @@
     <%= link_to idea.title, idea_path(id: idea) %><br>
   <% end %>
 </p>
+<p>
+  <h3>Liked Ideas</h3>
+  <% @user.likes.each do |like| %>
+    <%= link_to like.idea.title, idea_path(id: like.idea) %><br>
+  <% end %>
+</p>
