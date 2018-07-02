@@ -13,7 +13,11 @@
     <%= link_to 'トップ', root_path %>
     <%= link_to 'ジャンル一覧', topics_path %>
     <%= link_to 'ユーザ一覧', users_path %>
-    <%= link_to 'ログイン', login_path %>
+    <% if logged_in? %>
+      <%= link_to current_user.name, user_path(id: current_user) %> 
+    <% else %>
+      <%= link_to 'ログイン', login_path %>
+    <% end %>
     <% if flash[:notice] %>
       <%= flash[:notice] if flash[:notice] %>
     <% end %>
