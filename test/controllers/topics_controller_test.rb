@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostControllerTest < ActionDispatch::IntegrationTest
   test "topics index page should exist" do
-    get topics_url
+    get topics_path
     assert_response :success
   end
 
