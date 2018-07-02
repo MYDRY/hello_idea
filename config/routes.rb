@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/login' => 'users#check_user'
   get '/logout' => 'users#logout'
   resources :users
-  resources :topics do
+  resources :topics, shallow: true do
     resources :ideas
   end
 end
