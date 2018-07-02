@@ -32,6 +32,11 @@ class UsersController < ApplicationController
       redirect_to root_url
     end
   end
+
+  def logout
+    log_out
+    redirect_to root_url
+  end
   
   private
   def user_params
