@@ -2,6 +2,8 @@ class TopicsController < ApplicationController
 
   before_action :authorize, only: [:new, :create]
   
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+
   def index
     @topics = Topic.all
     @ideal_topics = Genre.find_by(name: 'ideal').topics
@@ -50,4 +52,14 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title, :body, :genre_id)
   end
+
+   def ensure_correct_user
+    @topic = Topic.find(params[:id])
+    if @topic.user_id != current_user.id
+      redirect_to topics_path
+    end
+  end
+
+
+
 end

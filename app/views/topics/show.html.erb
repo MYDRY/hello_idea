@@ -6,8 +6,10 @@
   <%= @topic.genre_id %>
   created by: 
   <%= link_to @topic.user.name, user_path(id: @topic.user) %>
-  <%= link_to "edit", edit_topic_path(id: @topic.id) %>
-  <%= link_to "destroy", topic_path(id: @topic.id), method: :delete %>
+  <% if @topic.user_id == current_user.id %>
+    <%= link_to "edit", edit_topic_path(id: @topic.id) %>
+    <%= link_to "destroy", topic_path(id: @topic.id), method: :delete %>
+  <% end %>
 </p>
 <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
 <p>
