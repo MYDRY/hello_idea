@@ -10,8 +10,11 @@
   <% else %>
     <%= button_to 'Like!', idea_likes_path(idea_id: @idea), class: 'btn btn-default' %>
   <% end %>
-  <%= link_to "edit", edit_idea_path(id: @idea.id) %>
-  <%= link_to "destroy", idea_path(id: @idea.id), method: :delete %>
+
+  <% if @idea.user_id == current_user.id %>
+    <%= link_to "edit", edit_idea_path(id: @idea.id) %>
+    <%= link_to "destroy", idea_path(id: @idea.id), method: :delete %>
+  <% end %>
 
 </p>
 <p>
