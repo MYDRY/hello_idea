@@ -36,6 +36,12 @@ class TopicsController < ApplicationController
     end
   end
 
+  def destroy
+    @topic = Topic.find(params[:id])
+    @topic.destroy
+    redirect_to topics_path
+  end
+
   def classfy_topic
     @topics = Topic.where(genre_id: params[:genre_id])
     render 'index'
