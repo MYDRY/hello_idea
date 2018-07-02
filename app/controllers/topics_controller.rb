@@ -1,4 +1,7 @@
 class TopicsController < ApplicationController
+
+  before_action :authorize, only: [:new, :create]
+  
   def index
     @topics = Topic.all
     @ideal_topics = Genre.find_by(name: 'ideal').topics
