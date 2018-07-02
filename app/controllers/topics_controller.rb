@@ -32,7 +32,7 @@ class TopicsController < ApplicationController
     if @topic.update(topic_params)
       redirect_to @topic
     else
-      render edit_topic_path
+      render :edit
     end
   end
 
