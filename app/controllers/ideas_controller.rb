@@ -1,4 +1,7 @@
 class IdeasController < ApplicationController
+
+  before_action :authorize, only: [:new, :create]
+  
   def show
     @idea = Idea.find(params[:id])
   end
