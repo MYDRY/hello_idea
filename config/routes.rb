@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post 'topics/classfy_topic'
   get '/login' => 'users#login'
   post '/login' => 'users#check_user'
+  get '/logout' => 'users#logout'
   resources :users
   resources :topics do
     resources :ideas do
