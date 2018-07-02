@@ -3,6 +3,11 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:user0)
+    log_in @user
+  end
+
+  def teardown
+    log_out
   end
   
   test "users show page should exist" do
