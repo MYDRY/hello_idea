@@ -1,0 +1,20 @@
+<p>
+  <strong>名前:</strong>
+  <%= @user.name  %>
+
+  <strong>e-mail:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  Your Topics<br>
+  <% @user.topics.each do |topic| %>
+    <%= link_to topic.title, topic_path(id: topic) %><br>
+  <% end %>
+</p>
+<p>
+  Your Ideas<br>
+  <% @user.ideas.each do |idea| %>
+    <%= link_to idea.title, idea_path(id: idea) %><br>
+  <% end %>
+</p>

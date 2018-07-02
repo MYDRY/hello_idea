@@ -1,0 +1,6 @@
+<% 10.times do |n| %>
+user<%= n %>:
+  id:    <%= n %>
+  name:  user<%= n %>
+  email: example<%= n %>@mail.com
+<% end %>

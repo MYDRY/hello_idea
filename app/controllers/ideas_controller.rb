@@ -1,4 +1,7 @@
 class IdeasController < ApplicationController
+
+  before_action :authorize, only: [:new, :create]
+  
   def show
     @idea = Idea.find(params[:id])
   end
@@ -10,6 +13,7 @@ class IdeasController < ApplicationController
   def create
     topic = Topic.find(params[:topic_id])
     @idea = topic.ideas.build(idea_params)
+    @idea.user_id = current_user.id
     @idea.save
     redirect_to topic_path(topic)
   end
