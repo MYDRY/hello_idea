@@ -6,7 +6,7 @@
   created by:
   <%= link_to @idea.user.name, user_path(id: @idea.user)%>
   <% if already_liked? @idea %>
-    <%= button_to 'Cancel', like_path(idea_id: @idea), method: :delete, class: 'btn btn-default' %>
+    <%= button_to 'Cancel', like_path(id: @idea), method: :delete, class: 'btn btn-default' %>
   <% else %>
     <%= button_to 'Like!', idea_likes_path(idea_id: @idea), class: 'btn btn-default' %>
   <% end %>
