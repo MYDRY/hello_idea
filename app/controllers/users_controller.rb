@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-	@users=User.all
+  	@users=User.all
   end
   
   def show
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   def check_user
     @user = User.find_by(name: params[:user][:name])
     if @user
+      log_in @user
       flash[:notice] = "SUCCESS"
       redirect_to @user
     else
