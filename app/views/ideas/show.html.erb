@@ -11,4 +11,10 @@
     <%= button_to 'Like!', idea_likes_path(idea_id: @idea), class: 'btn btn-default' %>
   <% end %>
 </p>
+<p>
+  <h3>Liked Users</h3>
+  <% @idea.likes.each do |like| %>
+    <%= link_to like.user.name, user_path(id: like.user) %><br>
+  <% end %>
+</p>
 <%= link_to 'Back', topic_path(id: @idea.topic) %>
