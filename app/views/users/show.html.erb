@@ -4,7 +4,11 @@
 
   <strong>e-mail:</strong>
   <%= @user.email %>
- 
 </p>
 
-
+<p>
+  Your Topics<br>
+  <% @user.topics.each do |topic| %>
+    <%= link_to topic.title, topic_path(id: topic) %><br>
+  <% end %>
+</p>
