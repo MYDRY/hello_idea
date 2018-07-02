@@ -13,12 +13,12 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get create" do
     post idea_likes_path(idea_id: @idea.id)
-    assert_response :redirect
+    assert_response :success
   end
 
   test "should get destroy" do
     delete like_path(id: @idea)
-    assert_response :redirect
+    assert_response :success
   end
 
 end
