@@ -1,10 +1,12 @@
 <h1>Ideas#show</h1>
 <p>Find me in app/views/ideas/show.html.erb</p>
 <p>
-<%= @idea.title %><br>
-<%= @idea.body %>
-created by:
+  <%= @idea.title %><br>
+  <%= @idea.body %>
+  created by:
   <%= link_to @idea.user.name, user_path(id: @idea.user)%>
-  <%= button_to 'Like!', idea_likes_path(idea_id: @idea) %>
+  <% unless already_liked? @idea %>
+    <%= button_to 'Like!', idea_likes_path(idea_id: @idea) %>
+  <% end %>
 </p>
 <%= link_to 'Back', topic_path(id: @idea.topic) %>
