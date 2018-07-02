@@ -1,9 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  idea: one
-
-two:
-  user: two
-  idea: two
+like0:
+  user_id: 0
+  idea_id: 0
