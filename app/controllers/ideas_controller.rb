@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
   include LikesHelper
   before_action :authorize, only: [:new, :create]
-  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
  
   def show
     @idea = Idea.find(params[:id])
@@ -26,7 +26,7 @@ class IdeasController < ApplicationController
   def update
     @idea = Idea.find(params[:id])
     if @idea.update(idea_params)
-      redirect_to topics_path
+      redirect_to idea_path(id: @idea)
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class IdeasController < ApplicationController
   def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy
-    redirect_to topics_path
+    redirect_to topic_path(id: @idea.topic)
   end
 
 
@@ -45,10 +45,12 @@ class IdeasController < ApplicationController
   end
 
    def ensure_correct_user
-    @idea = Idea.find(params[:id])
-    if @idea.user_id != current_user.id
-      redirect_to topics_path
-    end
+#    @idea = Idea.find(params[:id])
+#   if @idea.user_id != current_user.id
+#      redirect_to topics_path
+#   end
+    @idea = current_user.ideas.find_by(id: params[:id])
+    redirect_to topics_path if @idea.nil?
   end
 
 
