@@ -2,7 +2,7 @@ class IdeasController < ApplicationController
   include LikesHelper
   before_action :authorize, only: [:new, :create]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
- 
+
   def show
     @idea = Idea.find(params[:id])
   end
@@ -44,11 +44,7 @@ class IdeasController < ApplicationController
     params.require(:idea).permit(:title, :body, :topic_id)
   end
 
-   def ensure_correct_user
-#    @idea = Idea.find(params[:id])
-#   if @idea.user_id != current_user.id
-#      redirect_to topics_path
-#   end
+  def ensure_correct_user
     @idea = current_user.ideas.find_by(id: params[:id])
     redirect_to topics_path if @idea.nil?
   end
