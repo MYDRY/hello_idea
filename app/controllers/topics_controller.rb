@@ -1,7 +1,5 @@
 class TopicsController < ApplicationController
-
   before_action :authorize, only: [:new, :create]
-  
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
