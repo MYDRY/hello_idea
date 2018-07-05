@@ -1,19 +1,19 @@
 <h1>Topics#edit</h1>
 
 <p>
-<%= form_for(@topic) do |f| %>
-  <% @topic.errors.full_messages.each do |message| %>
-    <div class="form-error">
-      <%= message %>
-    </div>
+  <%= form_for(@topic) do |f| %>
+    <% @topic.errors.full_messages.each do |message| %>
+      <div class="form-error">
+        <%= message %>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :genre_id %><br />
+      <%= f.select :genre_id,[["理想",1], ["問題",2],["その他",3]] %><br />
+      <%= f.label :title %><br />
+      <%= f.text_field :title, value: @topic.title %><br />
+      <%= f.label :body %><br />
+      <%= f.text_area :body, value: @topic.body %><br />
+      <%= f.submit %>
   <% end %>
-  <div class="field">
-    <%= f.label :genre_id %><br />
-    <%= f.select :genre_id,[["理想",1], ["問題",2],["その他",3]] %><br />
-    <%= f.label :title %><br />
-    <%= f.text_field :title, value: @topic.title %><br />
-    <%= f.label :body %><br />
-    <%= f.text_area :body, value: @topic.body %><br />
-    <%= f.submit %>
-<% end %>
 </p>

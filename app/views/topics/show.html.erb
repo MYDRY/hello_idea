@@ -13,7 +13,7 @@
 </p>
 <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
 <p>
-<% @topic.ideas.each do |idea| %>
-  <%= link_to "#{idea.title}", idea_path(idea) %><br>
-<% end %>
+  <% @topic.ideas.each do |idea| %>
+    <%= link_to "#{idea.title}", idea_path(idea) %><br>
+  <% end %>
 </p>
