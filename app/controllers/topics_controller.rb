@@ -46,18 +46,16 @@ class TopicsController < ApplicationController
     @topics = Topic.where(genre_id: params[:genre_id])
     render 'index'
   end
+
   private
   def topic_params
     params.require(:topic).permit(:title, :body, :genre_id)
   end
 
-   def ensure_correct_user
+  def ensure_correct_user
     @topic = Topic.find(params[:id])
     if @topic.user_id != current_user.id
       redirect_to topics_path
     end
   end
-
-
-
 end
