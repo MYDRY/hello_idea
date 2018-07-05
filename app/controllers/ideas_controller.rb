@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
   include LikesHelper
+
   before_action :authorize, only: [:new, :create]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
@@ -38,7 +39,6 @@ class IdeasController < ApplicationController
     redirect_to topic_path(id: @idea.topic)
   end
 
-
   private
   def idea_params
     params.require(:idea).permit(:title, :body, :topic_id)
@@ -48,6 +48,4 @@ class IdeasController < ApplicationController
     @idea = current_user.ideas.find_by(id: params[:id])
     redirect_to topics_path if @idea.nil?
   end
-
-
 end
