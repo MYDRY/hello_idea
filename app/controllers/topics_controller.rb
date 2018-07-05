@@ -1,9 +1,12 @@
 class TopicsController < ApplicationController
-
   before_action :authorize, only: [:new, :create]
-  
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+
   def index
     @topics = Topic.all
+    @ideal_topics = Genre.find_by(name: 'ideal').topics
+    @trouble_topics = Genre.find_by(name: 'trouble').topics
+    @other_topics = Genre.find_by(name: 'other').topics
   end
 
   def show
@@ -20,6 +23,25 @@ class TopicsController < ApplicationController
     redirect_to @topic
   end
 
+  def edit
+    @topic = Topic.find(params[:id])
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    if @topic.update(topic_params)
+      redirect_to @topic
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @topic = Topic.find(params[:id])
+    @topic.destroy
+    redirect_to topics_path
+  end
+
   def classfy_topic
     @topics = Topic.where(genre_id: params[:genre_id])
     render 'index'
@@ -28,4 +50,14 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title, :body, :genre_id)
   end
+
+   def ensure_correct_user
+    @topic = Topic.find(params[:id])
+    if @topic.user_id != current_user.id
+      redirect_to topics_path
+    end
+  end
+
+
+
 end

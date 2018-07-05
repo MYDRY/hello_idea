@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/logout' => 'users#logout'
   resources :users
   resources :topics, shallow: true do
-    resources :ideas
+    resources :ideas do
+      resources :likes, only: [:create, :destroy]
+    end
   end
 end
