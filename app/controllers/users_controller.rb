@@ -45,6 +45,16 @@ class UsersController < ApplicationController
   end
 
   def update
+    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    p file = params[:user][:image]
+    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    if !file.nil?
+      file_name = file.original_filename
+      File.open("public/user_images/#{file_name}", 'wb') do |f|
+        f.write(file.read)
+      end
+      @user.image = file_name
+    end
     if @user.update(user_params)
       redirect_to @user
     else
