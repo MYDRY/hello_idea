@@ -1,11 +1,10 @@
 <h1>Topic#show</h1>
 <p>
-  <%= @topic.id %>
-  <%= @topic.title %>
-  <%= @topic.body %>
-  <%= @topic.genre_id %>
-  created by: 
-  <%= link_to @topic.user.name, user_path(id: @topic.user) %>
+  <%= render partial: 'topics/topic', locals: { topic: @topic}, layout: 'topics/frame' %>
+  <div align="right">
+    created by: 
+    <%= link_to @topic.user.name, user_path(id: @topic.user) %>
+  </div>
   <% if @topic.user_id == current_user.id %>
     <%= link_to "edit", edit_topic_path(id: @topic.id) %>
     <%= link_to "destroy", topic_path(id: @topic.id), method: :delete %>
@@ -13,7 +12,5 @@
 </p>
 <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
 <p>
-  <% @topic.ideas.each do |idea| %>
-    <%= link_to "#{idea.title}", idea_path(idea) %><br>
-  <% end %>
+  <%= render partial: 'ideas/idea', collection: @topic.ideas, layout: 'ideas/frame' %>
 </p>
