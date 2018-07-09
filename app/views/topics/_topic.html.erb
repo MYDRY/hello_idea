@@ -1,7 +1,10 @@
 <p>
   <div class="topics-show-item">
-    <div class="topic-user-name">Title: <%= link_to topic.title, topic_path(id: topic) %></div>
+    <div class="topic-user-name">Title: <%= link_to_unless_current topic.title, topic_path(id: topic) %></div>
     Body:  <%= topic.body %><br>
     <div class="topic-time"><%= format_datetime(topic.created_at) %></div>
+    <% if local_assigns[:show_create_user] %>
+      created by:<%= link_to topic.user.name, user_path(id: topic.user) %><br>
+    <% end %>
   </div>
 </p>

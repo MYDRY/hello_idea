@@ -1,7 +1,10 @@
 <p>
   <div class="ideas-show-item">
-    <div class="idea-user-name">Title: <%= link_to idea.title, idea_path(id: idea) %></div>
+    <div class="idea-user-name">Title: <%= link_to_unless_current idea.title, idea_path(id: idea) %></div>
     Body:  <%= idea.body %><br>
     <div class="idea-time"><%= format_datetime(idea.created_at) %></div>
+    <% if local_assigns[:show_create_user] %>
+      created by:<%= link_to idea.user.name, user_path(id: idea.user) %><br>
+    <% end %>
   </div>
 </p>
