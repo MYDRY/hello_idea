@@ -1,4 +1,7 @@
 <p>
-  Title: <%= topic.title %><br>
-  Body:  <%= topic.body %><br>
+  <div class="posts-show-item">
+    <div class="post-user-name">Title: <%= topic.title %></div>
+    Body:  <%= topic.body %><br>
+    <div class="post-time"><%= topic.created_at %></div>
+  </div>
 </p>
