@@ -8,19 +8,15 @@
 
 <p>
   Your Topics<br>
-  <% @user.topics.each do |topic| %>
-    <%= link_to topic.title, topic_path(id: topic) %><br>
-  <% end %>
+  <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/frame' %>
 </p>
 <p>
   Your Ideas<br>
-  <% @user.ideas.each do |idea| %>
-    <%= link_to idea.title, idea_path(id: idea) %><br>
-  <% end %>
+  <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/frame' %>
 </p>
 <p>
   <h3>Liked Ideas</h3>
   <% @user.likes.each do |like| %>
-    <%= link_to like.idea.title, idea_path(id: like.idea) %><br>
+    <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/frame' %>
   <% end %>
 </p>
