@@ -11,16 +11,16 @@
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
-      <%= render partial: 'topics/topic', collection: @topics, locals: { show_create_user: false }, layout: 'topics/frame' %>
+      <%= render partial: 'topics/topic', collection: @topics, layout: 'topics/frame' %>
     </div>
     <div class="tab-pane" id="tab2">
-      <%= render partial: 'topics/topic', collection: @ideal_topics, locals: { show_create_user: false }, layout: 'topics/frame' %>
+      <%= render partial: 'topics/topic', collection: @ideal_topics, layout: 'topics/frame' %>
     </div>
     <div class="tab-pane" id="tab3">
-      <%= render partial: 'topics/topic', collection: @trouble_topics, locals: { show_create_user: false }, layout: 'topics/frame' %>
+      <%= render partial: 'topics/topic', collection: @trouble_topics, layout: 'topics/frame' %>
     </div>
     <div class="tab-pane" id="tab4">
-      <%= render partial: 'topics/topic', collection: @other_topics, locals: { show_create_user: false }, layout: 'topics/frame' %>
+      <%= render partial: 'topics/topic', collection: @other_topics, layout: 'topics/frame' %>
     </div>
   </div>
 </div>
