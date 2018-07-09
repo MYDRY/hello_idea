@@ -1,6 +1,6 @@
 <p>
   <div class="users-show-item">
-    <% profile_image = user.image ? "/user_image/#{user.image}" : 'default_profile_image.png' %>
+    <% profile_image = user.image.file ? user.image_url : 'default_profile_image.png' %>
     <% image_size = 100 unless local_assigns[:image_size] %>
     <%= image_tag profile_image, size: "#{image_size}" %>      
     <div class="user-user-name">Name: <%= link_to_unless_current user.name, user_path(id: user) %></div>
