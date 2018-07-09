@@ -5,5 +5,6 @@
     <%= image_tag profile_image, size: "#{image_size}" %>      
     <div class="user-user-name">Name: <%= link_to_unless_current user.name, user_path(id: user) %></div>
     E-mail:  <%= user.email %><br>
+    <%= link_to_if user == current_user, 'Edit', edit_user_path(id: user)%>
   </div>
 </p>
