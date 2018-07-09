@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6, p {
 body {
   color: black;
   background-color: skyblue;
-  margin: 0;
+  padding: 30px;
   min-height: 1vh;
 }
 
@@ -87,7 +87,6 @@ header {
 .top-main {
   padding: 200px 0 100px;
   text-align: center;
-  position: absolute;
   width: 100%;
   height: auto;
   min-height: 100%;
