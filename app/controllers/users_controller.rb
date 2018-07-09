@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def check_user
     @user = User.find_by(email: params[:user][:email])
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:user][:password])
       log_in @user
       flash[:notice] = "SUCCESS"
       redirect_to @user
