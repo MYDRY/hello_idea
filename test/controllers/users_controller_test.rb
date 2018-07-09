@@ -33,4 +33,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_template 'users/edit'
   end
+
+  test "users update action should modify users profile" do
+    patch user_path(id: @user, user: { name: @user.name })
+    assert_response :redirect
+  end
 end
