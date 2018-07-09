@@ -1,0 +1,16 @@
+<header>
+  <div class="header-logo">
+    <%= link_to 'Hello Idea', root_path %>
+  </div>
+  <ul class="header-menus">
+    <% if logged_in? %>
+      <li><%= link_to current_user.name, user_path(id: current_user) %></li> 
+      <li><%= link_to 'ジャンル一覧', topics_path %></li>
+      <li><%= link_to 'ユーザ一覧', users_path %></li>
+      <li><%= link_to 'ログアウト', logout_path %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', login_path %></li>
+      <li><%= link_to '新規登録', new_user_path %></li>
+    <% end %>
+  </ul>
+</header>
