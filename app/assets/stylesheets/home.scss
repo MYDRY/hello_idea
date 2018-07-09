@@ -1,30 +1,70 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+ul,li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+body {
+  color: black;
+  background-color: skyblue;
+  margin: 0;
+  min-height: 1vh;
+}
+
+.main {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background-color: azure;
+}
+
+.container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+
 header {
   height: 100px;
   position: absolute;
   z-index: 1;
   width: 100%;
 }
+
 .header-logo {
   float: left;
   padding-left: 20px;
-  color: black;
   line-height: 100px;
 }
+
 .header-logo a{
   font-size: 64px;
 }
-ul,li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
+
 .header-menus {
  float: right;
  padding-right: 20px;
@@ -45,23 +85,27 @@ a {
   color: blue;
 }
 
-.main {
+.top-main {
+  padding: 200px 0 100px;
+  text-align: center;
   position: absolute;
-  top: 100px;
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: azure;
-}
-
-.container {
-  max-width: 800px;
-  margin: 60px auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  clear: both;
-}
-
-.form-error {
   color: red;
+}
+
+.top-message {
+  position: relative;
+}
+
+.top-main h1 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.top-main p {
+  font-size: 40px;
 }
