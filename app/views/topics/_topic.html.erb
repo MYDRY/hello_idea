@@ -1,7 +1,7 @@
 <p>
-  <div class="posts-show-item">
-    <div class="post-user-name">Title: <%= link_to topic.title, topic_path(id: topic) %></div>
+  <div class="topics-show-item">
+    <div class="topic-user-name">Title: <%= link_to topic.title, topic_path(id: topic) %></div>
     Body:  <%= topic.body %><br>
-    <div class="post-time"><%= topic.created_at %></div>
+    <div class="topic-time"><%= topic.created_at %></div>
   </div>
 </p>
