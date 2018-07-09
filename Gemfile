@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# For Image Upload
+gem 'carrierwave'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
