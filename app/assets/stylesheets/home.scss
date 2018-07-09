@@ -17,10 +17,15 @@ body {
 
 .header {
   background-color: skyblue;
+  min-width: 100%;
+  li {
+    display: inline;
+  }
 }
 
 .main {
   background-color: azure;
+  min-height: 500px;
 }
 
 .footer {
