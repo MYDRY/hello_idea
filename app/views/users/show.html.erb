@@ -1,26 +1,19 @@
+<h1>User#Show</h1>
 <p>
-  <strong>名前:</strong>
-  <%= @user.name  %>
-
-  <strong>e-mail:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  Your Topics<br>
-  <% @user.topics.each do |topic| %>
-    <%= link_to topic.title, topic_path(id: topic) %><br>
-  <% end %>
+  <h2>Profile</h2>
+  <%= render partial: 'users/user', locals: { user: @user}, layout: 'users/frame' %>
 </p>
 <p>
-  Your Ideas<br>
-  <% @user.ideas.each do |idea| %>
-    <%= link_to idea.title, idea_path(id: idea) %><br>
-  <% end %>
+  <h2>Topics</h2>
+  <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/frame' %>
 </p>
 <p>
-  <h3>Liked Ideas</h3>
+  <h2>Your Ideas</h2>
+  <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/frame' %>
+</p>
+<p>
+  <h2>Liked Ideas</h2>
   <% @user.likes.each do |like| %>
-    <%= link_to like.idea.title, idea_path(id: like.idea) %><br>
+    <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/frame' %>
   <% end %>
 </p>
