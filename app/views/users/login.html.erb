@@ -1,12 +1,15 @@
-<h1>Login</h1>
+<div class="main">
+  <div class="container">
+    <h1>Login</h1>
 
-<p>
-  <%= form_for(@user, url: login_path) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.submit "login" %>
-  <% end %>
-</p>
+    <p>
+      <%= form_for(@user, url: login_path) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.submit "login" %>
+      <% end %>
+    </p>
+  </div>
+</div>
 
 
