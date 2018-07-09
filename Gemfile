@@ -35,6 +35,9 @@ gem 'bcrypt'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# For bootstrap
+gem 'bootstrap-sass', '>= 3.3.7'
+
 # For Image Upload
 gem 'carrierwave'
 
