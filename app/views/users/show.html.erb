@@ -5,15 +5,15 @@
 </p>
 <p>
   <h2>Published Topics</h2>
-  <%= render partial: 'topics/topic', collection: @user.topics, locals: { show_create_user: false }, layout: 'topics/frame' %>
+  <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/frame' %>
 </p>
 <p>
   <h2>Published Ideas</h2>
-  <%= render partial: 'ideas/idea', collection: @user.ideas, locals: { show_create_user: false }, layout: 'ideas/frame' %>
+  <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/frame' %>
 </p>
 <p>
   <h2>Liked Ideas</h2>
   <% @user.likes.each do |like| %>
-    <%= render partial: 'ideas/idea', locals: { idea: like.idea, show_create_user: false }, layout: 'ideas/frame' %>
+    <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/frame' %>
   <% end %>
 </p>
