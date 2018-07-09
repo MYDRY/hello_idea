@@ -12,8 +12,16 @@ html {
 }
 
 body {
-  color: black;
-  background-color: skyblue;
+  color: red;
   padding: 30px;
   min-height: 1vh;
+  background-color: skyblue;
+}
+
+.header {
+  color: red;
+}
+
+.footer {
+  border-top: solid 2px #eaeaea;
 }
