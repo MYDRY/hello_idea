@@ -3,16 +3,21 @@
 <p>
   <%= render partial: 'ideas/idea', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/frame' %>
   <% if already_liked? @idea %>
-    <%= button_to 'Cancel', like_path(id: @idea), method: :delete, class: 'btn btn-default' %>
+    <%= link_to like_path(id: @idea), method: :delete do %>
+      <span class="fa fa-heart like-btn-unlike"></span>
+    <% end %>
   <% else %>
-    <%= button_to 'Like!', idea_likes_path(idea_id: @idea), class: 'btn btn-default' %>
+    <%= link_to idea_likes_path(idea_id: @idea), method: :post do %>
+      <span class="fa fa-heart like-btn"></span>
+    <% end %>
+
   <% end %>
 
   <% if @idea.user_id == current_user.id %>
     <%= link_to "edit", edit_idea_path(id: @idea.id) %>
     <%= link_to "destroy", idea_path(id: @idea.id), method: :delete %>
   <% end %>
-
+  <%= @likes_count %>
 </p>
 <p>
   <h3>Liked Users</h3>
