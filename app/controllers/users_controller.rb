@@ -30,14 +30,16 @@ class UsersController < ApplicationController
   end
 
   def check_user
-    @user = User.find_by(name: params[:user][:name])
-    if @user
+    @user = User.find_by(email: params[:user][:email])
+    if @user && @user.authenticate(params[:password])
       log_in @user
       flash[:notice] = "SUCCESS"
       redirect_to @user
     else
       flash[:notice] = "ERROR"
-      redirect_to root_path
+      @email = params[:user][:email]
+      @password = params[:user][:password]
+      render "users/login"
     end
   end
 
