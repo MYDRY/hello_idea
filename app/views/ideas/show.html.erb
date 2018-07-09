@@ -13,14 +13,12 @@
     <%= link_to idea_likes_path(idea_id: @idea), method: :post do %>
       <span class="fa fa-heart like-btn"></span>
     <% end %>
-
   <% end %>
-
+  <%= @likes_count %>
   <% if @idea.user_id == current_user.id %>
     <%= link_to "edit", edit_idea_path(id: @idea.id) %>
     <%= link_to "destroy", idea_path(id: @idea.id), method: :delete %>
   <% end %>
-  <%= @likes_count %>
 </p>
 <p>
   <h3>Liked Users</h3>
