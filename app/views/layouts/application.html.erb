@@ -11,24 +11,20 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-logo">
-        <%= link_to 'Hello Idea', root_path %>
-      </div>
-      <ul class="header-menus">
-        <% if logged_in? %>
-          <li><%= link_to current_user.name, user_path(id: current_user) %></li> 
-          <li><%= link_to 'ジャンル一覧', topics_path %></li>
-          <li><%= link_to 'ユーザ一覧', users_path %></li>
-          <li><%= link_to 'ログアウト', logout_path %></li>
-        <% else %>
-          <li><%= link_to 'ログイン', login_path %></li>
-          <li><%= link_to '新規登録', new_user_path %></li>
-        <% end %>
-      </ul>
-    </header>
-    <%= flash[:notice] if flash[:notice] %>
-    <%= yield %>    
+    <%= link_to 'トップ', root_path %>
+    <% if logged_in? %>
+      <%= link_to current_user.name, user_path(id: current_user) %> 
+      <%= link_to 'ジャンル一覧', topics_path %>
+      <%= link_to 'ユーザ一覧', users_path %>
+      <%= link_to 'ログアウト', logout_path %>
+    <% else %>
+      <%= link_to 'ログイン', login_path %>
+    <% end %>
+    <% if flash[:notice] %>
+      <%= flash[:notice] if flash[:notice] %>
+    <% end %>
+    <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
