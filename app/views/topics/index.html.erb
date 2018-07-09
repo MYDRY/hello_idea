@@ -11,32 +11,16 @@
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
-      <p>
-        <% @topics.each do |topic| %>
-          <%= link_to topic.title, topic_path(topic) %><br />
-        <% end %>
-      </p>
+      <%= render partial: 'topics/topic', collection: @topics, layout: 'topics/frame' %>
     </div>
     <div class="tab-pane" id="tab2">
-      <p>
-        <% @ideal_topics.each do |topic| %>
-          <%= link_to topic.title, topic_path(topic) %><br />
-        <% end %>
-      </p>
+      <%= render partial: 'topics/topic', collection: @ideal_topics, layout: 'topics/frame' %>
     </div>
     <div class="tab-pane" id="tab3">
-      <p>
-        <% @trouble_topics.each do |topic| %> 
-          <%= link_to topic.title, topic_path(topic) %><br />
-        <% end %>                 
-      </p>
+      <%= render partial: 'topics/topic', collection: @trouble_topics, layout: 'topics/frame' %>
     </div>
     <div class="tab-pane" id="tab4">
-      <p>
-        <% @other_topics.each do |topic| %> 
-          <%= link_to topic.title, topic_path(topic) %><br />
-        <% end %>                 
-      </p>
+      <%= render partial: 'topics/topic', collection: @other_topics, layout: 'topics/frame' %>
     </div>
   </div>
 </div>
