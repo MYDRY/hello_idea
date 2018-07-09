@@ -8,9 +8,7 @@
 
 <p>
   Your Topics<br>
-  <% @user.topics.each do |topic| %>
-    <%= link_to topic.title, topic_path(id: topic) %><br>
-  <% end %>
+  <%= render partial: 'topics/topic', collection: @user.topics %>
 </p>
 <p>
   Your Ideas<br>
