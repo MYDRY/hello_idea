@@ -4,7 +4,7 @@
     Body:  <%= idea.body %><br>
     <div class="idea-time"><%= format_datetime(idea.created_at) %></div>
     <% if show_create_user %>
-      created by:<%= link_to @idea.user.name, user_path(id: @idea.user) %><br>
+      created by:<%= link_to idea.user.name, user_path(id: idea.user) %><br>
     <% end %>
   </div>
 </p>
