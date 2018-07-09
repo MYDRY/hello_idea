@@ -2,3 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.posts-show form {
+  display: inline;
+}
+
+.posts-show-item {
+  padding: 30px;
+  background-color: #ffccff;
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+}
+
+.posts-show-item p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.post-time {
+  color: #8899a6;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+.posts-show-item .fa {
+  font-size: 16px;
+}
+
+.post-menus {
+  float: right;
+}
+
+.post-menus a, .post-menus input {
+  color: #8899a6;
+  text-decoration: underline;
+  font-size: 14px;
+}
