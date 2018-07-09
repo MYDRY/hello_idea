@@ -1,10 +1,11 @@
 <h1>Ideas#show</h1>
 <p>Find me in app/views/ideas/show.html.erb</p>
 <p>
-  <%= @idea.title %><br>
-  <%= @idea.body %>
-  created by:
-  <%= link_to @idea.user.name, user_path(id: @idea.user)%>
+  <%= render partial: 'ideas/idea', locals: { idea: @idea }, layout: 'ideas/frame' %>
+  <div align="right">
+    created by:
+    <%= link_to @idea.user.name, user_path(id: @idea.user)%>
+  </div>
   <% if already_liked? @idea %>
     <%= button_to 'Cancel', like_path(id: @idea), method: :delete, class: 'btn btn-default' %>
   <% else %>
@@ -20,7 +21,7 @@
 <p>
   <h3>Liked Users</h3>
   <% @idea.likes.each do |like| %>
-    <%= link_to like.user.name, user_path(id: like.user) %><br>
+    <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/frame' %>
   <% end %>
 </p>
 <%= link_to 'Back', topic_path(id: @idea.topic) %>
