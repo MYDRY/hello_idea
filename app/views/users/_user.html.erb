@@ -1,6 +1,6 @@
 <p>
   <div class="users-show-item">
-    <div class="user-user-name">Name: <%= link_to user.name, user_path(id: user) %></div>
+    <div class="user-user-name">Name: <%= link_to_unless_current user.name, user_path(id: user) %></div>
     E-mail:  <%= user.email %><br>
   </div>
 </p>
