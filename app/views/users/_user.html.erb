@@ -1,5 +1,10 @@
 <p>
   <div class="users-show-item">
+    <% if user.image %>
+      <%= image_tag "/user_image/#{user.image}" %>
+    <% else %>
+      <%= image_tag 'default_profile_image.png' %>      
+    <% end %>
     <div class="user-user-name">Name: <%= link_to_unless_current user.name, user_path(id: user) %></div>
     E-mail:  <%= user.email %><br>
   </div>
