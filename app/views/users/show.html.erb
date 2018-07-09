@@ -5,7 +5,7 @@
 </p>
 <p>
   <h2>Published Topics</h2>
-  <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/frame' %>
+  <%= render partial: 'topics/topic', collection: @user.topics, locals: { show_create_user: false }, layout: 'topics/frame' %>
 </p>
 <p>
   <h2>Published Ideas</h2>
