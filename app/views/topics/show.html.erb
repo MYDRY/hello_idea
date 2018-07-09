@@ -8,5 +8,5 @@
 </p>
 <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
 <p>
-  <%= render partial: 'ideas/idea', collection: @topic.ideas, locals: { show_create_user: false }, layout: 'ideas/frame' %>
+  <%= render partial: 'ideas/idea', collection: @topic.ideas, layout: 'ideas/frame' %>
 </p>
