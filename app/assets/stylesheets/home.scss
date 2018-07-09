@@ -20,6 +20,7 @@ body {
   min-width: 100%;
   li {
     display: inline;
+    float: right;
   }
 }
 
@@ -29,5 +30,6 @@ body {
 }
 
 .footer {
+  float: right;
   border-top: solid 2px #eaeaea;
 }
