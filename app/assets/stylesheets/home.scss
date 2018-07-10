@@ -41,3 +41,23 @@ color: navy;
 color: royalblue;
 background-color: transparent;
 }
+
+.footer {
+  text-align: right;
+  border-top: solid 2px #eaeaea;
+  color: #777;
+  mergin-left: 15px;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left
+    }
+  }
+}
