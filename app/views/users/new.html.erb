@@ -1,13 +1,17 @@
-<h1>User#new</h1>
-<p>
+<div class="main">
+  <h1>User#new</h1>
   <% @user.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
-  <%= form_for(@user) do |f| %>
-    <%= f.label       :name %><br>
-    <%= f.text_field  :name, class: 'form-group form-control' %><br>
-    <%= f.label       :email %><br>
-    <%= f.email_field :email, class: 'form-group form-control' %><br>
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
-  <% end %>
-</p>
+  <div class="container">
+    <div class="form-group col-xs-4">
+      <%= form_for(@user) do |f| %>
+        <%= f.label       :name %><br>
+        <%= f.text_field  :name, class: 'form-control', size: "20" %><br>
+        <%= f.label       :email %><br>
+        <%= f.email_field :email, class: 'form-control' %><br>
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
