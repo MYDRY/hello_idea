@@ -30,14 +30,14 @@ class UsersController < ApplicationController
   end
 
   def check_user
-    @user = User.find_by(name: params[:user][:name])
-    if @user
+    @user = User.find_by(email: params[:user][:email])
+    if @user && @user.authenticate(params[:user][:password])
       log_in @user
       flash[:notice] = "SUCCESS"
       redirect_to @user
     else
       flash[:notice] = "ERROR"
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:name, :email, :image)
+    params.require(:user).permit(:name, :email, :image, :password)
   end
 
   def correct_user
