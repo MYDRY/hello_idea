@@ -1,7 +1,7 @@
 <h1>Login</h1>
 
 <p>
-  <%= form_for(@user, url: login_path, :method => :post) do |f| %>
+  <%= form_for(@user, url: login_path, method: :post) do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %>
     <%= f.label :password %>
