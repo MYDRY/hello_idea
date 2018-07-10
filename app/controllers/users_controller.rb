@@ -37,7 +37,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:notice] = "ERROR"
-      render "users/login"
+      redirect_to login_path
     end
   end
 
