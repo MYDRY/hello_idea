@@ -1,10 +1,13 @@
 .user {
+  background-color: azure;
   font-size: 28px;
-  color: pink;
   ul {
     padding: 0px;
     display: inline;
     list-style: none;
+    li {
+      padding-left: 15px;
+    }
   }
   .dtable {
     display: table;
