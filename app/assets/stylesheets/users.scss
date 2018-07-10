@@ -1,0 +1,14 @@
+.user {
+  font-size: 32px;
+  ul {
+    display: inline;
+    list-style: none;
+  }
+  .dtable {
+    display: table;
+  }  
+  .dtable_c {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

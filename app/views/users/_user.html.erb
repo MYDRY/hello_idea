@@ -1,8 +1,18 @@
-<p>
+<div class="user">
   <% profile_image = user.image.file ? user.image_url : 'default_profile_image.png' %>
   <% image_size = 100 unless local_assigns[:image_size] %>
-  <%= image_tag profile_image, size: "#{image_size}" %>      
-  Name: <%= link_to_unless_current user.name, user_path(id: user) %>
-  E-mail:  <%= user.email %><br>
-  <%= link_to 'Edit', edit_user_path(id: user) if user == current_user %>
-</p>
+  <div class="dtable">
+    <div class="dtable_c">
+      <div class="img-thumbnail">
+        <%= image_tag profile_image, size: "#{image_size}" %>
+      </div>
+    </div>
+    <div class="dtable_c">
+      <ul>
+        <li>Name: <%= link_to_unless_current user.name, user_path(id: user) %></li>
+        <li>E-mail:  <%= user.email %></li>
+      </ul>
+      <%= link_to 'Edit', edit_user_path(id: user) if user == current_user %>
+    </div>
+  </div>
+</div>
