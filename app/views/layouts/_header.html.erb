@@ -1,16 +1,17 @@
-<header class="navbar-header">
-  <div class="container">
-    <%= link_to 'Hello Idea', root_path, id: "logo" %>
-    <div class="memus">
-      <% if logged_in? %>
-        <li><%= link_to current_user.name, user_path(id: current_user) %></li> 
-        <li><%= link_to 'ジャンル一覧', topics_path %></li>
-        <li><%= link_to 'ユーザ一覧', users_path %></li>
-        <li><%= link_to 'ログアウト', logout_path %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', login_path %></li>
-        <li><%= link_to '新規登録', new_user_path %></li>
-      <% end %>
-    </div>
-  </div>
-</header>
+
+<nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Hello Idea</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right" style="display: inline;">
+          <% if logged_in? %>
+            <li><%= link_to current_user.name, user_path(id: current_user) %></li>
+            <li><%= link_to 'ジャンル一覧', topics_path %></li>
+            <li><%= link_to 'ユーザ一覧', users_path %></li>
+            <li><%= link_to 'ログアウト', logout_path %></li>
+          <% else %>
+            <li><%= link_to 'ログイン', login_path %></li>
+            <li><%= link_to '新規登録', new_user_path %></li>
+          <% end %>
+        </ul>
+</nav>
