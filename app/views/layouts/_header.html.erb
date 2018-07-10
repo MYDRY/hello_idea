@@ -1,5 +1,5 @@
 <header class="navbar navbar-default navbar-fixed-top">
-  <div class="header-logo"><%= link_to 'Hello Idea', root_path %></div>
+  <%= link_to 'Hello Idea', root_path, id: "logo" %>
         <% if logged_in? %>
           <li><%= link_to current_user.name, user_path(id: current_user) %></li> 
           <li><%= link_to 'ジャンル一覧', topics_path %></li>
