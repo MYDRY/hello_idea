@@ -5,9 +5,9 @@
   <% end %>
   <%= form_for(@user) do |f| %>
     <%= f.label       :name %><br>
-    <%= f.text_field  :name %><br>
+    <%= f.text_field  :name, class: 'form-group form-control' %><br>
     <%= f.label       :email %><br>
-    <%= f.email_field :email %><br>
-    <%= f.submit %>
+    <%= f.email_field :email, class: 'form-group form-control' %><br>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
   <% end %>
 </p>
