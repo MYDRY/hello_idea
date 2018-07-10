@@ -37,8 +37,6 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:notice] = "ERROR"
-      @email = params[:user][:email]
-      @password = params[:user][:password]
       render "users/login"
     end
   end
