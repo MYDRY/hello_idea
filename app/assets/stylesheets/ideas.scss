@@ -6,3 +6,20 @@
 .like-btn-unlike {
   color: #ff2581;
 }
+
+.idea {
+  a {
+    color: khaki;
+    &:hover {
+      color: darkyellow;
+    }
+  }
+  ul {
+    padding: 0px;
+    display: inline;
+    list-style: none;
+    li {
+      padding-left: 15px;
+    }
+  }
+}
