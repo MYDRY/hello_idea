@@ -1,7 +1,6 @@
 #!/bin/sh
 
 fixtures=(
-    'genres'
     'users'
     'topics'
     'ideas'
