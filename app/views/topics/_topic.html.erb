@@ -9,7 +9,7 @@
     <div class="panel-footer">
       <%= format_datetime(topic.created_at) %><br>
       <% if local_assigns[:show_create_user] %>
-        created by:<%= link_to topic.user.name, user_path(id: topic.user) %>
+        created by:<%= link_to topic.user.name, user_path(id: topic.user) %><br>
       <% end %>
       <% if topic.user_id == current_user.id %>
         <%= link_to "edit", edit_topic_path(id: topic.id) %>
