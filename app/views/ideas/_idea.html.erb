@@ -1,8 +1,16 @@
-<p>
-  Title: <%= link_to_unless_current idea.title, idea_path(id: idea) %><br>
-  Body:  <%= idea.body %><br>
-  <%= format_datetime(idea.created_at) %><br>
-  <% if local_assigns[:show_create_user] %><br>
-    created by:<%= link_to idea.user.name, user_path(id: idea.user) %><br>
-  <% end %>
-</p>
+<div class="panel panel-warning">
+  <div class="idea">
+    <div class="panel-heading" style="background-color: #fcf8e3">
+      Title: <%= link_to_unless_current idea.title, idea_path(id: idea) %>
+    </div>
+    <div class="panel-body">
+      Body:  <%= idea.body %>
+    </div>
+    <div class="panel-footer">
+      <%= format_datetime(idea.created_at) %><br>
+      <% if local_assigns[:show_create_user] %>
+        created by:<%= link_to idea.user.name, user_path(id: idea.user) %>
+      <% end %>
+    </div>
+  </div>
+</div>
