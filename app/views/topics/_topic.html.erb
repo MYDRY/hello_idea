@@ -1,8 +1,14 @@
-<p>
-  Title: <%= link_to_unless_current topic.title, topic_path(id: topic) %><br>
-  Body:  <%= topic.body %><br>
-  <%= format_datetime(topic.created_at) %><br>
-  <% if local_assigns[:show_create_user] %><br>
-    created by:<%= link_to topic.user.name, user_path(id: topic.user) %><br>
-  <% end %>
-</p>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    Title: <%= link_to_unless_current topic.title, topic_path(id: topic) %>
+  </div>
+  <div class="panel-body">
+    Body:  <%= topic.body %>
+  </div>
+  <div class="panel-footer">
+    <%= format_datetime(topic.created_at) %><br>
+    <% if local_assigns[:show_create_user] %>
+      created by:<%= link_to topic.user.name, user_path(id: topic.user) %>
+    <% end %>
+  </div>
+</div>
