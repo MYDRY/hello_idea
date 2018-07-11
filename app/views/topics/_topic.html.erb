@@ -11,6 +11,10 @@
       <% if local_assigns[:show_create_user] %>
         created by:<%= link_to topic.user.name, user_path(id: topic.user) %>
       <% end %>
+      <% if topic.user_id == current_user.id %>
+        <%= link_to "edit", edit_topic_path(id: topic.id) %>
+        <%= link_to "destroy", topic_path(id: topic.id), method: :delete %>
+      <% end %>
     </div>
   </div>
 </div>
