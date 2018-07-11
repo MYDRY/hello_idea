@@ -4,8 +4,8 @@
 <% 20.times do |n| %>
 idea<%= n + index * 20 %>:
   id: <%= n + index * 20 %>
-  title: idea_in_<%= topic_obj.title %><%= n %>
-  body: idea_about_<%= topic_obj.genre.name %>
+  title: <%= topic_obj.title %>に対するアイデア<%= n %>
+  body: アイデアの内容
   topic_id: <%= index %>
   user_id: <%= rand(10) %>
 <% end %>
