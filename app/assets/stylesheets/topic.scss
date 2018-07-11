@@ -1,4 +1,10 @@
 .topic {
+  a {
+    color: green;
+    &:hover {
+      color: darkgreen;
+    }
+  }
   ul {
     padding: 0px;
     display: inline;
