@@ -20,7 +20,7 @@
 <p>
   <h3>Liked Users</h3>
   <% @idea.likes.each do |like| %>
-    <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/frame' %>
+    <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/list_frame' %>
   <% end %>
 </p>
 <%= link_to 'Back', topic_path(id: @idea.topic) %>
