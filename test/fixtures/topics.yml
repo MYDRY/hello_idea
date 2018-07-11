@@ -4,8 +4,8 @@
 <% 10.times do |n| %>
 topic<%= n + index * 10 %>:
   id: <%= n + index * 10 %>
-  title: topic_<%= genre_obj.name %><%= n %>
-  body: text
+  title: <%= genre_obj.name %>に関するトピック<%= n %>
+  body: トピックの内容
   genre_id: <%= index + 1 %>
   user_id: <%= rand(10) %>
 <% end %>
