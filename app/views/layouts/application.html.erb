@@ -11,7 +11,12 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <%= flash[:notice] if flash[:notice] %>
+    <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %>">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= msg %>
+    </div>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
