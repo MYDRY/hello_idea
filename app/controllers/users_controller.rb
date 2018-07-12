@@ -1,3 +1,4 @@
+# coding: utf-8
 class UsersController < ApplicationController
   before_action :authorize, only: [:index, :show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
@@ -33,10 +34,10 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       log_in @user
-      flash[:notice] = "SUCCESS"
+      flash[:success] = "SUCCESS"
       redirect_to @user
     else
-      flash[:notice] = "ERROR"
+      flash[:danger] = "ERROR"
       redirect_to login_path
     end
   end
