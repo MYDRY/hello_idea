@@ -1,12 +1,13 @@
-<div class="main">
-  <h1>Login</h1>
-  <div class="container">
-    <div class="form-group col-xs-4">
-      <%= form_for(@user, url: login_path) do |f| %>
-        <%= f.label      :name  %><br>
-        <%= f.text_field :name, class: 'form-control' %><br>
-        <%= f.submit 'Submit', class: 'btn btn-primary' %>
-      <% end %>
-    </div>
+<h1>Login</h1>
+<div class="container">
+  <div class="form-group col-xs-4">
+    <%= form_for(@user, url: login_path) do |f| %>
+      <%= f.label      :name  %><br>
+      <%= f.text_field :name, class: 'form-control' %><br>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit 'Login', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>
