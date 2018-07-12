@@ -1,12 +1,8 @@
 <h1>Topic#show</h1>
 <p>
-  <%= render partial: 'topics/topic', locals: { topic: @topic, show_create_user: true }, layout: 'topics/frame' %>
-  <% if @topic.user_id == current_user.id %>
-    <%= link_to "edit", edit_topic_path(id: @topic.id) %>
-    <%= link_to "destroy", topic_path(id: @topic.id), method: :delete %>
-  <% end %>
+  <%= render partial: 'topics/topic', locals: { topic: @topic, show_create_user: true }, layout: 'topics/detail_frame' %>
 </p>
 <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
 <p>
-  <%= render partial: 'ideas/idea', collection: @topic.ideas, layout: 'ideas/frame' %>
+  <%= render partial: 'ideas/idea', collection: @topic.ideas, layout: 'ideas/list_frame' %>
 </p>
