@@ -1,15 +1,12 @@
 <div class="main">
+  <h1>Login</h1>
   <div class="container">
-    <h1>Login</h1>
-
-    <p>
+    <div class="form-group col-xs-4">
       <%= form_for(@user, url: login_path) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.submit "login" %>
+        <%= f.label      :name  %><br>
+        <%= f.text_field :name, class: 'form-control' %><br>
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
       <% end %>
-    </p>
+    </div>
   </div>
 </div>
-
-

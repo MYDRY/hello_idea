@@ -1,23 +1,19 @@
-<div class="main posts-new">
-  <div class="container"> 
-  <h1>User#Show</h1>
-  <p>
-    <h2>Profile</h2>
-    <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/frame' %>
-  </p>
-  <p>
-    <h2>Published Topics</h2>
-    <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/frame' %>
-  </p>
-  <p>
-    <h2>Published Ideas</h2>
-    <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/frame' %>
-  </p>
-  <p>
-    <h2>Liked Ideas</h2>
-    <% @user.likes.each do |like| %>
-      <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/frame' %>
-    <% end %>
-  </p>
-  </div>
-</div>
+<h1>User#Show</h1>
+<p>
+  <h2>Profile</h2>
+  <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/detail_frame' %>
+</p>
+<p>
+  <h2>Published Topics</h2>
+  <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/list_frame' %>
+</p>
+<p>
+  <h2>Published Ideas</h2>
+  <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/list_frame' %>
+</p>
+<p>
+  <h2>Liked Ideas</h2>
+  <% @user.likes.each do |like| %>
+    <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/list_frame' %>
+  <% end %>
+</p>
