@@ -1,5 +1,4 @@
 <h1>User#Show</h1>
-
 <div class="p-3">
   <ul class="nav nav-tabs">
     <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">Profile</a></li>
@@ -10,23 +9,23 @@
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
       <p>
-        <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/frame' %>
+        <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/detail_frame' %>
       </p>
     </div>
     <div class="tab-pane" id="tab2">
       <p>
-        <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/frame' %>
+        <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/list_frame' %>
       </p>
     </div>
     <div class="tab-pane" id="tab3">
       <p>
-        <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/frame' %>
+        <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/list_frame' %>
       </p>
     </div>
     <div class="tab-pane" id="tab4">
       <p>
         <% @user.likes.each do |like| %>
-          <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/frame' %>
+          <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/list_frame' %>
         <% end %>
       </p>
     </div>
