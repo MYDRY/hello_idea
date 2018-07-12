@@ -1,20 +1,18 @@
 <h1>User#new</h1>
 <% @user.errors.full_messages.each do |message| %>
-  <div class="form-error">
-    <%= message %>
-  </div>
+  <%= message %>
 <% end %>
-<p>
-  <%= form_for(@user) do |f| %>
-    <%= f.label       :name %><br>
-    <%= f.text_field  :name %><br>
-    
-    <%= f.label       :email %><br>
-    <%= f.email_field :email %><br>
+<div class="container">
+  <div class="form-group col-xs-4">
+    <%= form_for(@user) do |f| %>
+      <%= f.label       :name %><br>
+      <%= f.text_field  :name, class: 'form-control', size: "20" %><br>
+      <%= f.label       :email %><br>
+      <%= f.email_field :email, class: 'form-control' %><br>
+      <%= f.label       :password %><br>
+      <%= f.password_field :password %><br>
 
-    <%= f.label       :password %><br>
-    <%= f.password_field :password %><br>
-
-    <%= f.submit %>    
-  <% end %>
-</p>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <h1>Ideas#show</h1>
 <p>Find me in app/views/ideas/show.html.erb</p>
 <p>
-  <%= render partial: 'ideas/idea', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/frame' %>
+  <%= render partial: 'ideas/idea', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/detail_frame' %>
   <% if already_liked? @idea %>
     <%= link_to like_path(id: @idea), method: :delete do %>
       <span class="fa fa-heart like-btn-unlike"></span>
@@ -12,15 +12,11 @@
     <% end %>
   <% end %>
   <%= @likes_count %>
-  <% if @idea.user_id == current_user.id %>
-    <%= link_to "edit", edit_idea_path(id: @idea.id) %>
-    <%= link_to "destroy", idea_path(id: @idea.id), method: :delete %>
-  <% end %>
 </p>
 <p>
   <h3>Liked Users</h3>
   <% @idea.likes.each do |like| %>
-    <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/frame' %>
+    <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/list_frame' %>
   <% end %>
 </p>
 <%= link_to 'Back', topic_path(id: @idea.topic) %>
