@@ -1,0 +1,24 @@
+<div class="panel panel-warning", style="margin: 10px 75px 0px">
+  <div class="idea">
+    <div class="panel-heading" style="background-color: khaki;">
+      <%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %>
+      <%= link_to idea.user.name, "#idea-content-#{idea.id}", data: { toggle: 'collapse' } %>
+      <span class="fa fa-heart" aria-hidden="true"><%= idea.likes.count %></span>
+    </div>
+    <%= content_tag :div, class: 'panel-collapse collapse', id: "idea-content-#{idea.id}" do -%>
+      <div class="panel-body">
+        <%= idea.body %>
+      </div>
+      <div class="panel-footer">
+        <%= format_datetime(idea.created_at) %><br>
+        <% if local_assigns[:show_create_user] %>
+          created by:<%= link_to idea.user.name, user_path(id: idea.user) %><br>
+        <% end %>
+        <% if idea.user_id == current_user.id %>
+          <%= link_to "edit", edit_idea_path(id: idea.id) %>
+          <%= link_to "destroy", idea_path(id: idea.id), method: :delete %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
