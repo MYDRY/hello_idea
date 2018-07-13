@@ -14,4 +14,8 @@ module UsersHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def get_image(user)
+    profile_image = user.image.file ? user.image_url : 'default_profile_image.png'
+  end
 end
