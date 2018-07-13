@@ -1,5 +1,8 @@
 <h1>Login</h1>
 <div class="container">
+  <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
   <div class="form-group col-xs-4">
     <%= form_for(@user, url: login_path) do |f| %>
       <%= f.label      :email  %><br>
