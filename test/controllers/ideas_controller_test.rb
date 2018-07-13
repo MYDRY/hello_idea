@@ -13,7 +13,7 @@ class IdeasControllerTest < ActionDispatch::IntegrationTest
   test "ideas create action should create new idea" do
     @topic = topics(:topic0)
     assert_difference('Idea.count') do
-      post topic_ideas_path(idea: { title: 'test title', body: 'test_body', topic_id: @topic.id }, topic_id: @topic.id)
+      post topic_ideas_path(idea: { body: 'test_body', topic_id: @topic.id }, topic_id: @topic.id)
     end
     assert_response :redirect
     assert_redirected_to topic_path(@topic)
