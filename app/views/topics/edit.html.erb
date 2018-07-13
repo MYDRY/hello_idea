@@ -2,7 +2,9 @@
 <p>
   <%= form_for(@topic) do |f| %>
     <% @topic.errors.full_messages.each do |message| %>
+    <div class="alert-danger">
       <%= message %>
+    </div>
     <% end %>
     <%= f.label :genre_id %><br>
     <%= f.select :genre_id,[["理想",1], ["問題",2],["その他",3]] %><br>
