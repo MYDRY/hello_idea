@@ -1,21 +1,23 @@
-<h1>Ideas#new</h1>
-<p>
-  <% @idea.errors.full_messages.each do |message| %>
-    <div class="alert-danger">
-      <a class="close" data-dismiss="alert">×</a>
-      <%= message %>
-    </div>
-  <% end %>
-</p>
-<div class="container">
-  <div class="form-group col-xs-4">
-    <%= form_for(@idea, url: topic_ideas_path) do |f| %>
-      <%= f.label      :title %><br>
-      <%= f.text_field :title, class: 'form-control' %><br>
-      <%= f.label      :body %><br>
-      <%= f.text_area  :body, class: 'form-control' %><br>
-      
-      <%= f.submit class: 'btn btn-primary'%>
+<div class="main">
+  <h1>Ideas#new</h1>
+  <p>
+    <% @idea.errors.full_messages.each do |message| %>
+      <div class="alert-danger">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= message %>
+      </div>
     <% end %>
+  </p>
+  <div class="container">
+    <div class="form-group col-xs-4">
+      <%= form_for(@idea, url: topic_ideas_path) do |f| %>
+        <%= f.label      :title %><br>
+        <%= f.text_field :title, class: 'form-control' %><br>
+        <%= f.label      :body %><br>
+        <%= f.text_area  :body, class: 'form-control' %><br>
+
+        <%= f.submit class: 'btn btn-primary'%>
+      <% end %>
+    </div>
   </div>
 </div>
