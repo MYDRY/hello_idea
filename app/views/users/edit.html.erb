@@ -1,4 +1,12 @@
 <h1>User#edit</h1>
+<p>
+  <% @user.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= message %>
+    </div>
+  <% end %>
+</p>
 <div class="container">
   <div class="form-group col-xs-4">
     <%= form_for(@user) do |f| %>
