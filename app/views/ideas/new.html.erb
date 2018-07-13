@@ -1,7 +1,12 @@
 <h1>Ideas#new</h1>
 <p>
+  <% @idea.errors.full_messages.each do |message| %>
+  <div class="alert-danger">
+    <%= message %>
+  </div>
+  <% end %><br>
+ 
   <%= form_for(@idea, url: url_for(controller: 'ideas', action: 'create')) do |f| %>
-    <%= f.label :topic_id %><br />
     <%= f.label :title %><br />
     <%= f.text_field :title %><br />
     <%= f.label :body %><br />
