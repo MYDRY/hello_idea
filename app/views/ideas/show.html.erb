@@ -1,24 +1,24 @@
 <div class="main">
-<h1>Ideas#show</h1>
-<p>Find me in app/views/ideas/show.html.erb</p>
-<p>
-  <%= render partial: 'ideas/idea', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/detail_frame' %>
-  <% if already_liked? @idea %>
-    <%= link_to like_path(id: @idea), method: :delete do %>
-      <span class="fa fa-heart like-btn-unlike"></span>
+  <h1>Ideas#show</h1>
+  <p>Find me in app/views/ideas/show.html.erb</p>
+  <p>
+    <%= render partial: 'ideas/idea', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/detail_frame' %>
+    <% if already_liked? @idea %>
+      <%= link_to like_path(id: @idea), method: :delete do %>
+        <span class="fa fa-heart like-btn-unlike"></span>
+      <% end %>
+    <% else %>
+      <%= link_to idea_likes_path(idea_id: @idea), method: :post do %>
+        <span class="fa fa-heart like-btn"></span>
+      <% end %>
     <% end %>
-  <% else %>
-    <%= link_to idea_likes_path(idea_id: @idea), method: :post do %>
-      <span class="fa fa-heart like-btn"></span>
+    <%= @likes_count %>
+  </p>
+  <p>
+    <h3>Liked Users</h3>
+    <% @idea.likes.each do |like| %>
+      <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/list_frame' %>
     <% end %>
-  <% end %>
-  <%= @likes_count %>
-</p>
-<p>
-  <h3>Liked Users</h3>
-  <% @idea.likes.each do |like| %>
-    <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/list_frame' %>
-  <% end %>
-</p>
-<%= link_to 'Back', topic_path(id: @idea.topic) %>
+  </p>
+  <%= link_to 'Back', topic_path(id: @idea.topic) %>
 </div>
