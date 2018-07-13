@@ -17,8 +17,12 @@ class IdeasController < ApplicationController
     topic = Topic.find(params[:topic_id])
     @idea = topic.ideas.build(idea_params)
     @idea.user_id = current_user.id
-    @idea.save
-    redirect_to topic_path(topic)
+    if @idea.save
+      flash[:success] = "アイデアを投稿しました"
+      redirect_to topic_path(topic)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -28,6 +32,7 @@ class IdeasController < ApplicationController
   def update
     @idea = Idea.find(params[:id])
     if @idea.update(idea_params)
+      flash[:success] = "アイデアを編集しました"
       redirect_to idea_path(id: @idea)
     else
       render :edit
@@ -37,6 +42,7 @@ class IdeasController < ApplicationController
   def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy
+    flash[:success] = "アイデアを削除しました"
     redirect_to topic_path(id: @idea.topic)
   end
 
@@ -47,6 +53,9 @@ class IdeasController < ApplicationController
 
   def ensure_correct_user
     @idea = current_user.ideas.find_by(id: params[:id])
-    redirect_to topics_path if @idea.nil?
+    if @idea.nil?
+      flash[:danger] = "権限がありません"
+      redirect_back fallback_location: topics_path
+    end
   end
 end
