@@ -4,7 +4,7 @@
 <% 5.times do |n| %>
 comment_to_idea<%= n + index * 5 %>:
     id: <%= n + index * 5 %>
-    body: comment_to_<%= idea_obj.title %>%<%= n %>
+    body: comment_to_idea<%= n %>
     commentable_type: Idea
     commentable_id: <%= index %>
 <% end %>
