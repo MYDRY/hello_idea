@@ -8,6 +8,7 @@
       <% if local_assigns[:show_create_user] %>
         created by:<%= link_to idea.user.name, user_path(id: idea.user) %><br>
       <% end %>
+      <%= link_to "detail", idea_path(id: idea), class: 'btn btn-default btn-xs' %>
       <% if idea.user_id == current_user.id %>
         <%= link_to "edit", edit_idea_path(id: idea.id) %>
         <%= link_to "destroy", idea_path(id: idea.id), method: :delete %>
