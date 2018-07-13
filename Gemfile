@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bcrypt'
 
+#Use Translate error message
 gem 'rails-i18n'
 
 # Use ActiveStorage variant
