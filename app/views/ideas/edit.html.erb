@@ -1,7 +1,10 @@
 <h1>Ideas#edit</h1>
 <p>
   <% @idea.errors.full_messages.each do |message| %>
-    <%= message %><br>
+    <div class="alert alert-danger">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= message %>
+    </div>
   <% end %>
 </p>
 <div class="container">
