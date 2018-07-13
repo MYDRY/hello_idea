@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:notice] = "ユーザー登録が完了しました"
+      flash[:success] = "ユーザー登録が完了しました"
       redirect_to @user
     else
       render new_user_path
@@ -34,10 +34,10 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       log_in @user
-      flash[:success] = "SUCCESS"
+      flash[:success] = "ログインしました"
       redirect_to @user
     else
-      flash[:danger] = "ERROR"
+      flash[:danger] = "メールアドレスまたはパスワードが間違っています"
       redirect_to login_path
     end
   end
