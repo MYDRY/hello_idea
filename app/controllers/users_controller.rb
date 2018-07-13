@@ -44,6 +44,7 @@ class UsersController < ApplicationController
 
   def logout
     log_out
+    flash[:success] = "ログアウトしました"
     redirect_to root_path
   end
 
@@ -52,6 +53,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      flash[:success] = "更新しました"
       redirect_to @user
     else
       render :edit
