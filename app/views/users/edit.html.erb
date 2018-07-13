@@ -1,15 +1,15 @@
 <h1>User#edit</h1>
-<p>
-  <%= form_for(@user) do |f| %>
-    <%= f.label       :name %><br>
-    <%= f.text_field  :name %><br>
-    
-    <%= f.label       :email %><br>
-    <%= f.email_field :email %><br>
-
-    <%= f.label       :image %><br>
-    <%= f.file_field  :image %><br>
-    
-    <%= f.submit %>    
-  <% end %>
-</p>
+<div class="container">
+  <div class="form-group col-xs-4">
+    <%= form_for(@user) do |f| %>
+      <%= f.label       :name %><br>
+      <%= f.text_field  :name,  class: 'form-control' %><br>
+      <%= f.label       :email %><br>
+      <%= f.email_field :email, class: 'form-control' %><br>
+      <%= f.label       :image %><br>
+      <%= f.file_field  :image, class: 'btn btn-primary' %><br>
+      
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
