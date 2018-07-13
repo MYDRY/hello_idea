@@ -1,7 +1,7 @@
 <h1>Ideas#new</h1>
 <div class="container">
   <div class="form-group col-xs-4">
-    <%= form_for(@idea, url: url_for(controller: 'ideas', action: 'create')) do |f| %>
+    <%= form_for(@idea, url: topic_ideas_path) do |f| %>
       <%= f.label      :title %><br>
       <%= f.text_field :title, class: 'form-control' %><br>
       <%= f.label      :body %><br>
