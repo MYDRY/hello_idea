@@ -3,4 +3,5 @@ user<%= n %>:
   id:    <%= n %>
   name:  user<%= n %>
   email: example<%= n %>@mail.com
+  password_digest: <%= BCrypt::Password.create('pass', cost: 5) %>
 <% end %>
