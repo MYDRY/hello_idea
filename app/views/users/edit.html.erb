@@ -10,12 +10,15 @@
 <div class="container">
   <div class="form-group col-xs-4">
     <%= form_for(@user) do |f| %>
+      Previous image.<br>
+      <%= image_tag get_image(@user), size: '200', class: 'img-thumbnail' %><br>
+      <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;' %><br>
+      <%= f.label       :image, :Change, class: 'btn btn-default active' %><br>
+      <br>
       <%= f.label       :name %><br>
       <%= f.text_field  :name,  class: 'form-control' %><br>
       <%= f.label       :email %><br>
       <%= f.email_field :email, class: 'form-control' %><br>
-      <%= f.label       :image %><br>
-      <%= f.file_field  :image, class: 'btn btn-primary' %><br>
       
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
