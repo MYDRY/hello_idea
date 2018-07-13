@@ -1,13 +1,15 @@
-<h1>Ideas#edit</h1>
-<p>
-  <%= form_for(@idea) do |f| %>
-    <% @idea.errors.full_messages.each do |message| %>
-      <%= message %><br>
+<div class="main">
+  <h1>Ideas#edit</h1>
+  <p>
+    <%= form_for(@idea) do |f| %>
+      <% @idea.errors.full_messages.each do |message| %>
+        <%= message %><br>
+      <% end %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title, value: @idea.title %><br>
+      <%= f.label :body %><br>
+      <%= f.text_area :body, value: @idea.body %><br>
+      <%= f.submit %>
     <% end %>
-    <%= f.label :title %><br>
-    <%= f.text_field :title, value: @idea.title %><br>
-    <%= f.label :body %><br>
-    <%= f.text_area :body, value: @idea.body %><br>
-    <%= f.submit %>
-  <% end %>
-</p>
+  </p>
+</div>
