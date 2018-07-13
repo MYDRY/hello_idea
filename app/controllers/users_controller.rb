@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:notice] = "ユーザー登録が完了しました"
+      flash[:success] = "ユーザー登録が完了しました"
       redirect_to @user
     else
       render new_user_path
@@ -34,16 +34,17 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       log_in @user
-      flash[:success] = "SUCCESS"
+      flash[:success] = "ログインしました"
       redirect_to @user
     else
-      flash[:danger] = "ERROR"
+      flash[:danger] = "メールアドレスまたはパスワードが間違っています"
       redirect_to login_path
     end
   end
 
   def logout
     log_out
+    flash[:success] = "ログアウトしました"
     redirect_to root_path
   end
 
@@ -52,6 +53,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      flash[:success] = "更新しました"
       redirect_to @user
     else
       render :edit
@@ -65,6 +67,9 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find(params[:id])
-    redirect_to login_path unless @user == current_user
+    if @user != current_user
+      flash[:danger] = "権限がありません"
+      redirect_back fallback_location: users_path
+    end
   end
 end

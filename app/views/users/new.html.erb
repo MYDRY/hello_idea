@@ -1,8 +1,10 @@
 <h1>User#new</h1>
-<% @user.errors.full_messages.each do |message| %>
-  <%= message %>
-<% end %>
 <div class="container">
+  <% @user.errors.full_messages.each do |message| %>
+  <div class="alert-danger">
+    <%= message %>
+  </div>
+  <% end %><br>
   <div class="form-group col-xs-4">
     <%= form_for(@user) do |f| %>
       <%= f.label       :name %><br>
