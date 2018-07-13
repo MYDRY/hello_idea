@@ -67,6 +67,9 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find(params[:id])
-    redirect_to login_path unless @user == current_user
+    if @user != current_user
+      flash[:danger] = "権限がありません"
+      redirect_back fallback_location: users_path
+    end
   end
 end

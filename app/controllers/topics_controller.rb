@@ -61,7 +61,8 @@ class TopicsController < ApplicationController
   def ensure_correct_user
     @topic = Topic.find(params[:id])
     if @topic.user_id != current_user.id
-      redirect_to topics_path
+      flash[:danger] = "権限がありません"
+      redirect_back fallback_location: topics_path
     end
   end
 end

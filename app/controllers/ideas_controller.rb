@@ -53,6 +53,9 @@ class IdeasController < ApplicationController
 
   def ensure_correct_user
     @idea = current_user.ideas.find_by(id: params[:id])
-    redirect_to topics_path if @idea.nil?
+    if @idea.nil?
+      flash[:danger] = "権限がありません"
+      redirect_back fallback_location: topics_path
+    end
   end
 end
