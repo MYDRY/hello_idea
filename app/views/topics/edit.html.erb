@@ -10,9 +10,9 @@
       <%= f.label :genre_id %><br>
       <%= f.select :genre_id, options_for_select({'理想': 1, '問題': 2, 'その他': 3}), {}, class: 'form-control' %><br>
       <%= f.label :title %><br>
-      <%= f.text_field :title, value: @topic.title, class: 'form-control' %><br>
+      <%= f.text_field :title, class: 'form-control' %><br>
       <%= f.label :body %><br>
-      <%= f.text_area :body, value: @topic.body, class: 'form-control' %><br>
+      <%= f.text_area :body, class: 'form-control' %><br>
       
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
