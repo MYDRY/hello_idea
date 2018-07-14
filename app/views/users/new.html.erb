@@ -10,11 +10,11 @@
     <div class="form-group col-xs-4">
       <%= form_for(@user) do |f| %>
         <%= f.label       :name %><br>
-        <%= f.text_field  :name, class: 'form-control', size: "20" %><br>
+        <%= f.text_field  :name, class: 'form-control', placeholder: 'Enter your name...' %><br>
         <%= f.label       :email %><br>
-        <%= f.email_field :email, class: 'form-control' %><br>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'Enter your email...' %><br>
         <%= f.label       :password %><br>
-        <%= f.password_field :password, class: 'form-control' %><br>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'Enter your password...' %><br>
 
         <%= f.submit 'Submit', class: 'btn btn-primary' %>
       <% end %>
