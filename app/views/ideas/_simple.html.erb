@@ -13,6 +13,7 @@
           <span class="fa fa-heart like-btn"><%= idea.likes.count %></span>
         <% end %>
       <% end %>
+      <%= link_to "detail", idea_path(id: idea), class: 'btn btn-default btn-xs', style: 'float: right;' %>
     </div>
     <%= content_tag :div, class: 'panel-collapse collapse', id: "idea-content-#{idea.id}" do -%>
       <div class="panel-body">
