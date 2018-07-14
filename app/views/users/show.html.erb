@@ -20,13 +20,13 @@
       </div>
       <div class="tab-pane" id="tab3">
         <p>
-          <%= render partial: 'ideas/idea', collection: @user.ideas, layout: 'ideas/list_frame' %>
+          <%= render partial: 'ideas/simple', collection: @user.ideas, as: 'idea', layout: 'ideas/list_frame' %>
         </p>
       </div>
       <div class="tab-pane" id="tab4">
         <p>
           <% @user.likes.each do |like| %>
-            <%= render partial: 'ideas/idea', locals: { idea: like.idea }, layout: 'ideas/list_frame' %>
+            <%= render partial: 'ideas/simple', locals: { idea: like.idea }, as: 'idea', layout: 'ideas/list_frame' %>
           <% end %>
         </p>
       </div>
