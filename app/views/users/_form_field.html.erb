@@ -1,0 +1,26 @@
+<p>
+  <% user.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= message %>
+    </div>
+  <% end %>
+</p>
+<div class="container">
+  <div class="form-group col-xs-4">
+    <%= form_for(user) do |f| %>
+      <%= image_tag get_image(user), size: '200', class: 'img-thumbnail' -%>
+      <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;' %><br>
+      <%= f.label       :image, :Change, class: 'btn btn-default active' %><br>
+      <br>
+      <%= f.label       :name %><br>
+      <%= f.text_field  :name, class: 'form-control', placeholder: 'Enter your name...' %><br>
+      <%= f.label       :email %><br>
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Enter your email...' %><br>
+      <%= f.label       :password %><br>
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Enter your password...' %><br>
+
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
