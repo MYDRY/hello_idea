@@ -4,6 +4,9 @@
       <%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %>
       <%= idea.user.name %>
       <div class="well"><%= idea.body %></div>
+    </div>
+    <div class="panel-body">
+      Like
       <% if already_liked? @idea %>
         <%= link_to like_path(id: @idea), method: :delete do %>
           <span class="fa fa-heart like-btn-unlike"><%= @idea.likes.count %></span>
@@ -14,13 +17,8 @@
         <% end %>
       <% end %>
     </div>
-    <div class="panel-body">
-    </div>
     <div class="panel-footer">
-      <%= format_datetime(idea.created_at) %><br>
-      <% if local_assigns[:show_create_user] %>
-        created by:<%= link_to idea.user.name, user_path(id: idea.user) %><br>
-      <% end %>
+      <%= format_datetime(idea.created_at) %>
       <% if idea.user_id == current_user.id %>
         <%= link_to "edit", edit_idea_path(id: idea.id) %>
         <%= link_to "destroy", idea_path(id: idea.id), method: :delete %>
