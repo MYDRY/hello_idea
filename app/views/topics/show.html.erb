@@ -5,6 +5,6 @@
   </p>
   <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
   <p>
-    <%= render partial: 'ideas/idea', collection: @topic.ideas, layout: 'ideas/list_frame' %>
+    <%= render partial: 'ideas/simple', collection: @topic.ideas, as: 'idea', layout: 'ideas/list_frame' %>
   </p>
 </div>
