@@ -2,7 +2,7 @@
   <h1>Ideas#show</h1>
   <p>Find me in app/views/ideas/show.html.erb</p>
   <p>
-    <%= render partial: 'ideas/idea', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/detail_frame' %>
+    <%= render partial: 'ideas/detail', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/detail_frame' %>
     <% if already_liked? @idea %>
       <%= link_to like_path(id: @idea), method: :delete do %>
         <span class="fa fa-heart like-btn-unlike"></span>
