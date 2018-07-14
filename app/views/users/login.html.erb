@@ -4,9 +4,9 @@
     <div class="form-group col-xs-4">
       <%= form_for(@user, url: login_path) do |f| %>
         <%= f.label      :email  %><br>
-        <%= f.email_field :email, class: 'form-control' %><br>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'Enter your e-mail...' %><br>
         <%= f.label :password %>
-        <%= f.password_field :password , class: 'form-control' %><br>
+        <%= f.password_field :password , class: 'form-control', placeholder: 'Enter your password...'%><br>
 
         <%= f.submit 'Login', class: 'btn btn-primary' %>
       <% end %>
