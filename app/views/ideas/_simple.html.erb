@@ -1,0 +1,32 @@
+<div class="panel panel-warning", style="margin: 10px 75px 0px">
+  <div class="idea">
+    <div class="panel-heading" style="background-color: khaki;">
+      <%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %>
+      <%= link_to idea.body, "#idea-content-#{idea.id}",
+      data: { toggle: 'collapse' }, style: 'color: darkyellow; min-width: 80%; text-align: left;', class: 'btn btn-default'%>
+      <% if already_liked? idea %>
+        <%= link_to like_path(id: idea), method: :delete do %>
+          <span class="fa fa-heart like-btn-unlike"><%= idea.likes.count %></span>
+        <% end %>
+      <% else %>
+        <%= link_to idea_likes_path(idea_id: idea), method: :post do %>
+          <span class="fa fa-heart like-btn"><%= idea.likes.count %></span>
+        <% end %>
+      <% end %>
+      <%= link_to "detail", idea_path(id: idea), class: 'btn btn-default btn-xs', style: 'float: right;' %>
+    </div>
+    <%= content_tag :div, class: 'panel-collapse collapse', id: "idea-content-#{idea.id}" do -%>
+      <div class="panel-body">
+        created by
+        <%= link_to idea.user.name, user_path(id: idea.user) %>
+        /created at: <%= format_datetime(idea.created_at) %>
+      </div>
+      <% if idea.user_id == current_user.id %>
+        <div class="panel-footer">
+          <%= link_to "edit", edit_idea_path(id: idea.id) %>
+          <%= link_to "destroy", idea_path(id: idea.id), method: :delete %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
