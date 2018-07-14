@@ -1,10 +1,5 @@
 <div class="main">
   <h1>User#edit</h1>
-  <% @user.errors.full_messages.each do |message| %>
-    <div class="alert-danger">
-      <%= message %>
-    </div>
-  <% end %> 
   <p>
     <% @user.errors.full_messages.each do |message| %>
       <div class="alert alert-danger">
@@ -16,7 +11,6 @@
   <div class="container">
     <div class="form-group col-xs-4">
       <%= form_for(@user) do |f| %>
-        Previous image.<br>
         <%= image_tag get_image(@user), size: '200', class: 'img-thumbnail' %><br>
         <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;' %><br>
         <%= f.label       :image, :Change, class: 'btn btn-default active' %><br>
