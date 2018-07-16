@@ -8,7 +8,7 @@
     </div>
     <%= content_tag :div, class: 'panel-collapse collapse', id: "topic-content-#{topic.id}" do -%>      
       <div class="panel-body">
-        <%= topic.body %>
+        <%= simple_format(topic.body) %>
         <%= link_to 'detail', topic_path(id: topic), class: 'btn btn-default', style: 'float: right; background-color: #dff0d8;' %>
       </div>
       <div class="panel-footer">
