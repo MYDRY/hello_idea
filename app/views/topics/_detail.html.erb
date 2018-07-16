@@ -1,0 +1,20 @@
+<div class="panel panel-success">
+  <div class="topic">
+    <div class="panel-heading" style="background-color: #dff0d8">
+      Title: <%= link_to_unless_current topic.title, topic_path(id: topic) %>
+    </div>
+    <div class="panel-body">
+      Body:  <%= topic.body %>
+    </div>
+    <div class="panel-footer">
+      <%= format_datetime(topic.created_at) %><br>
+      <% if local_assigns[:show_create_user] %>
+        created by:<%= link_to topic.user.name, user_path(id: topic.user) %><br>
+      <% end %>
+      <% if topic.user_id == current_user.id %>
+        <%= link_to "edit", edit_topic_path(id: topic.id) %>
+        <%= link_to "destroy", topic_path(id: topic.id), method: :delete %>
+      <% end %>
+    </div>
+  </div>
+</div>
