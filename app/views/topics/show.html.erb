@@ -4,7 +4,4 @@
     <%= render partial: 'topics/detail', locals: { topic: @topic, show_create_user: true }, layout: 'topics/detail_frame' %>
   </p>
   <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
-  <p>
-    <%= render partial: 'ideas/simple', collection: @topic.ideas, as: 'idea', layout: 'ideas/list_frame' %>
-  </p>
 </div>
