@@ -15,7 +15,7 @@
       </div>
       <div class="tab-pane" id="tab2">
         <p>
-          <%= render partial: 'topics/topic', collection: @user.topics, layout: 'topics/list_frame' %>
+          <%= render partial: 'topics/simple', collection: @user.topics, as: 'topic', layout: 'topics/list_frame' %>
         </p>
       </div>
       <div class="tab-pane" id="tab3">

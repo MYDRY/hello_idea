@@ -1,7 +1,7 @@
 <div class="main">
   <h1>Topic#show</h1>
   <p>
-    <%= render partial: 'topics/topic', locals: { topic: @topic, show_create_user: true }, layout: 'topics/detail_frame' %>
+    <%= render partial: 'topics/detail', locals: { topic: @topic, show_create_user: true }, layout: 'topics/detail_frame' %>
   </p>
   <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
   <p>

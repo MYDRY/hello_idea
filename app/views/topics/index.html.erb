@@ -12,16 +12,16 @@
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="tab1">
-        <%= render partial: 'topics/list', collection: @topics, as: 'topic', layout: 'topics/list_frame' %>
+        <%= render partial: 'topics/simple', collection: @topics, as: 'topic', layout: 'topics/list_frame' %>
       </div>
       <div class="tab-pane" id="tab2">
-        <%= render partial: 'topics/topic', collection: @ideal_topics, layout: 'topics/list_frame' %>
+        <%= render partial: 'topics/simple', collection: @ideal_topics, as: 'topic', layout: 'topics/list_frame' %>
       </div>
       <div class="tab-pane" id="tab3">
-        <%= render partial: 'topics/topic', collection: @trouble_topics, layout: 'topics/list_frame' %>
+        <%= render partial: 'topics/simple', collection: @trouble_topics, as: 'topic', layout: 'topics/list_frame' %>
       </div>
       <div class="tab-pane" id="tab4">
-        <%= render partial: 'topics/topic', collection: @other_topics, layout: 'topics/list_frame' %>
+        <%= render partial: 'topics/simple', collection: @other_topics, as: 'topic', layout: 'topics/list_frame' %>
       </div>
     </div>
   </div>
