@@ -12,7 +12,7 @@
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="tab1">
-        <%= render partial: 'topics/topic', collection: @topics, layout: 'topics/list_frame' %>
+        <%= render partial: 'topics/list', collection: @topics, as: 'topic', layout: 'topics/list_frame' %>
       </div>
       <div class="tab-pane" id="tab2">
         <%= render partial: 'topics/topic', collection: @ideal_topics, layout: 'topics/list_frame' %>
