@@ -69,8 +69,14 @@ background-color: transparent;
 
 .detail {
   font-size: 28px;
+  word-wrap: break-word;
 }
 
 .list {
   font-size: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+           -webkit-box-orient: vertical;
+           -webkit-line-clamp: 4;
+
 }
