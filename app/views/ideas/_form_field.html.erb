@@ -4,12 +4,12 @@
 <div class="container">
   <div class="form-group col-xs-4">
     <%= form_for(idea, url: next_path) do |f| %>
-      <%= f.label      :body %><br>
+      <%= f.label      :body, "本文" %><br>
       <%= f.text_area  :body, class: 'form-control', placeholder: 'What\'s your Idea !?' %><br>
-      <% if request.path_info == new_topic_idea_path(idea) %>
-        <%= f.submit "投稿" ,class: 'btn btn-primary' %>
-      <% else %>
+      <% if request.path_info == edit_idea_path(topic_id: idea.topic) %>
         <%= f.submit class: 'btn btn-primary' %>
+      <% else %>
+        <%= f.submit "投稿", class: 'btn btn-primary' %>
       <% end %>
     <% end %>
   </div>
