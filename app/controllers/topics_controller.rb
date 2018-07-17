@@ -1,12 +1,13 @@
+# coding: utf-8
 class TopicsController < ApplicationController
   before_action :authorize, only: [:new, :create]
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
     @topics = Topic.all
-    @ideal_topics = Genre.find_by(name: 'ideal').topics
-    @trouble_topics = Genre.find_by(name: 'trouble').topics
-    @other_topics = Genre.find_by(name: 'other').topics
+    @ideal_topics = Genre.find_by(name: '理想').topics
+    @trouble_topics = Genre.find_by(name: '問題').topics
+    @other_topics = Genre.find_by(name: 'その他').topics
   end
 
   def show

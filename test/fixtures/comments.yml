@@ -4,7 +4,7 @@
 <% 5.times do |n| %>
 comment_to_idea<%= n + index * 5 %>:
     id: <%= n + index * 5 %>
-    body: comment_to_idea<%= n %>
+    body: <%= idea_obj.title %>に対するコメント<%= n %>
     commentable_type: Idea
     commentable_id: <%= index %>
 <% end %>
@@ -12,7 +12,7 @@ comment_to_idea<%= n + index * 5 %>:
 
 <% 1500.times do |n| %>
 comment_to_comment<%= n %>:
-  body: reply_to_comment<%= n %>
+  body: コメント<%= n %>に対する返信
   commentable_type: Comment
   commentable_id: <%= n %>
 <% end %>

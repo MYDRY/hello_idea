@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
+/************* 全体 ********************/
+
 * {
   box-sizing: border-box;
 }
@@ -15,7 +17,8 @@ html {
   min-height: 82vh;
 }
 
-/************* ヘッダー********************/
+/************* ヘッダー ********************/
+
 .navbar-header {
   margin-right: auto;
   margin-bottom: 40px;
@@ -23,29 +26,36 @@ html {
     font-size: 60px;
   }
 }
+
 /* navbar 背景色*/
 .navbar-default {
   background-color: azure;
 }
+
 /* navbar テキストカラー */
 .navbar-default .navbar-nav > li > a {
   color: blue;
 }
+
 /* navbar hover,focus時のテキストカラー */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: royalblue;
   background-color: transparent;
 }
+
 /* navbar Brandのカラー */
 .navbar-default .navbar-brand {
 color: navy;
 }
+
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
-color: royalblue;
-background-color: transparent;
+  color: royalblue;
+  background-color: transparent;
 }
+
+/************* フッター ********************/
 
 .footer {
   text-align: right;
@@ -66,6 +76,8 @@ background-color: transparent;
     }
   }
 }
+
+/************* パーシャル ********************/
 
 .detail {
   font-size: 28px;
