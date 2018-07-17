@@ -7,10 +7,12 @@
       </div>
       <div class="dtable_c">
         <ul>
-          <li>Name: <%= link_to_unless_current user.name, user_path(id: user) %></li>
-          <li>E-mail:  <%= user.email %></li>
+          <div style="margin-left: 15px; padding: 10px; width: 500px; border: solid 2px skyblue; border-radius: 9px; background-color: white;">
+            <li style="border-bottom: solid 2px lightgray;"><%= link_to_unless_current user.name, user_path(id: user) %></li>
+            <li><%= user.email %></li>
+          </div>
+          <li><%= link_to '編集', edit_user_path(id: user), class: 'btn btn-default', style: 'color: azure; background-color: skyblue;'  if user == current_user %></li>
         </ul>
-        <%= link_to '編集', edit_user_path(id: user) if user == current_user %>
       </div>
     </div>
   </div>
