@@ -6,7 +6,7 @@
       <div class="well"><%= simple_format(idea.body) %></div>
     </div>
     <div class="panel-body">
-      Like
+      いいね
       <% if already_liked? @idea %>
         <%= link_to like_path(id: @idea), method: :delete do %>
           <span class="fa fa-heart like-btn-unlike"><%= @idea.likes.count %></span>
@@ -20,8 +20,8 @@
     <div class="panel-footer" style="color: gray;">
       <%= format_datetime(idea.created_at) %>
       <% if idea.user_id == current_user.id %>
-        <%= link_to "edit", edit_idea_path(id: idea.id) %>
-        <%= link_to "destroy", idea_path(id: idea.id), method: :delete %>
+        <%= link_to '編集', edit_idea_path(id: idea.id) %>
+        <%= link_to '削除', idea_path(id: idea.id), method: :delete %>
       <% end %>
     </div>
   </div>
