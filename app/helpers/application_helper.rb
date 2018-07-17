@@ -1,4 +1,3 @@
-# coding: utf-8
 module ApplicationHelper
   def format_datetime(datetime, type = :datetime)
     return '' unless datetime
