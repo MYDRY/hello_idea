@@ -6,15 +6,15 @@
     <%= form_for(user) do |f| %>
       <%= image_tag get_image(user), size: '200', class: 'img-thumbnail' -%>
       <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;' %><br>
-      <%= f.label       :image, :Change, class: 'btn btn-default' %><br>
+      <%= f.label       :image, '変更', class: 'btn btn-default' %><br>
       <br>
-      <%= f.label       :name %><br>
-      <%= f.text_field  :name, class: 'form-control', placeholder: 'Enter your name...' %><br>
-      <%= f.label       :email %><br>
-      <%= f.email_field :email, class: 'form-control', placeholder: 'Enter your email...' %><br>
+      <%= f.label       :name, 'ユーザー名' %><br>
+      <%= f.text_field  :name, class: 'form-control', placeholder: 'ユーザー名を入力' %><br>
+      <%= f.label       :email, 'メールアドレス' %><br>
+      <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
       <% if password %>
-        <%= f.label       :password %><br>
-        <%= f.password_field :password, class: 'form-control', placeholder: 'Enter your password...' %><br>
+        <%= f.label       :password, 'パスワード' %><br>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力' %><br>
       <% end %>
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
