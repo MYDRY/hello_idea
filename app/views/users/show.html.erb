@@ -3,9 +3,9 @@
   <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/detail_frame' %>
   <div class="p-3">
     <ul class="nav nav-tabs">
-      <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">Published Topics<span class="badge badge-primary"><%= @user.topics.count %></span></a></li>
-      <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">Published Ideas<span class="badge badge-primary"><%= @user.ideas.count %></span></a></li>
-      <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">Liked Ideas<span class="badge badge-primary"><%= @user.likes.count %></span></a></li>
+      <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">投稿したトピック　<span class="badge badge-primary"><%= @user.topics.count %></span></a></li>
+      <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">投稿したアイデア　<span class="badge badge-primary"><%= @user.ideas.count %></span></a></li>
+      <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">いいね　<span class="badge badge-primary"><%= @user.likes.count %></span></a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="tab1">
