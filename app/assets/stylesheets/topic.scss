@@ -13,4 +13,11 @@
       padding-left: 15px;
     }
   }
+  .desc {
+    width: 80%;
+    height: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }

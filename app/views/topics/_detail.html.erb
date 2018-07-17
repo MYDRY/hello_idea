@@ -1,0 +1,18 @@
+<div class="panel panel-success" style="margin: 10px 20px 10px">
+  <div class="topic">
+    <div class="panel-heading" style="background-color: #dff0d8">
+      <%= topic.title %>
+    </div>
+    <div class="panel-body">
+      <div class="well"><%= simple_format(topic.body) %></div>
+      <span class="fa fa-comment"><%= topic.ideas.count %></span>
+      <% if topic.user_id == current_user.id %>
+        <%= link_to "edit", edit_topic_path(id: topic.id) %>
+        <%= link_to "destroy", topic_path(id: topic.id), method: :delete %>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= render partial: 'ideas/simple', collection: @topic.ideas, as: 'idea' %>
+    </div>
+  </div>
+</div>
