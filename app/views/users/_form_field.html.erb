@@ -6,7 +6,7 @@
     <%= form_for(user) do |f| %>
       <%= image_tag get_image(user), size: '200', class: 'img-thumbnail' -%>
       <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;' %><br>
-      <%= f.label       :image, '変更', class: 'btn btn-default active' %><br>
+      <%= f.label       :image, '変更', class: 'btn btn-default' %><br>
       <br>
       <%= f.label       :name, 'ユーザー名' %><br>
       <%= f.text_field  :name, class: 'form-control', placeholder: 'ユーザー名を入力' %><br>

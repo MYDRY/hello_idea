@@ -15,12 +15,4 @@
     display: table-cell;
     vertical-align: middle;
   }
-  
-  
 }
-
-.btn-default{
-    background-color:#fff;
- }
-
-
