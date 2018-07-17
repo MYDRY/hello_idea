@@ -1,10 +1,10 @@
 <div class="panel panel-success" style="margin: 10px 20px 10px">
   <div class="topic">
     <div class="panel-heading" style="background-color: #dff0d8">
-      <%= link_to_unless_current topic.title, topic_path(id: topic) %>
+      <%= topic.title %>
     </div>
     <div class="panel-body">
-      <%= simple_format(topic.body) %>
+      <div class="well"><%= simple_format(topic.body) %></div>
       <%= format_datetime(topic.created_at) %><br>
       <% if local_assigns[:show_create_user] %>
         created by:<%= link_to topic.user.name, user_path(id: topic.user) %><br>
