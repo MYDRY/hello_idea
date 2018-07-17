@@ -1,3 +1,4 @@
+# coding: utf-8
 class LikesController < ApplicationController
   before_action :authorize
   
@@ -6,7 +7,7 @@ class LikesController < ApplicationController
     like = current_user.likes.build(idea_id: @idea.id)
     like.save
     flash[:success] = "いいねしました"
-    redirect_to idea_path(@idea.id)
+    redirect_back fallback_location: topic_path(id: @idea.topic)
   end
 
   def destroy
@@ -14,6 +15,6 @@ class LikesController < ApplicationController
     like = Like.find_by(idea_id: @idea.id, user_id: current_user.id)
     like.destroy 
     flash[:success] = "いいねを取り消しました"
-    redirect_to idea_path(@idea.id)
+    redirect_back fallback_location: topic_path(id: @idea.topic)
   end
 end

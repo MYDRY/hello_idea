@@ -1,3 +1,4 @@
+# coding: utf-8
 class IdeasController < ApplicationController
   include LikesHelper
 
@@ -48,7 +49,7 @@ class IdeasController < ApplicationController
 
   private
   def idea_params
-    params.require(:idea).permit(:title, :body, :topic_id)
+    params.require(:idea).permit(:body, :topic_id)
   end
 
   def ensure_correct_user
