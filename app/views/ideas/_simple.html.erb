@@ -1,6 +1,7 @@
 <div class="panel panel-warning", style="margin: 10px 75px 0px">
   <div class="idea">
     <div class="panel-heading" style="background-color: khaki;">
+      <% content_id = local_assigns[:tab_name] ? "idea-content-#{tab_name}-#{idea.id}": "idea-content-#{idea.id}" %>
       <%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %>
       <%= link_to idea.body, "#idea-content-#{idea.id}",
       data: { toggle: 'collapse' }, style: 'color: darkyellow; min-width: 80%; text-align: left;', class: 'btn btn-default'%>
