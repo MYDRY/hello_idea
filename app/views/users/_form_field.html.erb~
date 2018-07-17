@@ -6,7 +6,7 @@
     <%= form_for(user) do |f| %>
       <%= image_tag get_image(user), size: '200', class: 'img-thumbnail' -%>
       <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;' %><br>
-      <%= f.label       :image, :Change, class: 'btn btn-default' %><br>
+      <%= f.label       :image, :Change, class: 'btn btn-default active' %><br>
       <br>
       <%= f.label       :name %><br>
       <%= f.text_field  :name, class: 'form-control', placeholder: 'Enter your name...' %><br>
