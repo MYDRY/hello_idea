@@ -2,25 +2,21 @@
   <div class="topic">
     <div class="panel-heading" style="background-color: #dff0d8">
       <%= link_to image_tag(get_image(topic.user), size: '50', class: 'img-thumbnail'), user_path(id: topic.user) %>      
-      <%= link_to topic.title, "#topic-content-#{topic.id}", class: 'btn btn-default',
-      data: { toggle: 'collapse' }, style: 'width: 80%; text-align: left;' %>
+      <%= link_to topic.title, topic_path(id: topic), class: 'btn btn-default', style: 'width: 80%; text-align: left;'%>
       <span class="fa fa-comment"><%= topic.ideas.count %></span>
     </div>
-    <%= content_tag :div, class: 'panel-collapse collapse', id: "topic-content-#{topic.id}" do -%>      
-      <div class="panel-body">
-        <%= simple_format(topic.body) %>
-        <%= link_to 'detail', topic_path(id: topic), class: 'btn btn-default', style: 'float: right; background-color: #dff0d8;' %>
-      </div>
-      <div class="panel-footer">
-        <%= format_datetime(topic.created_at) %><br>
-        <% if local_assigns[:show_create_user] %>
-          created by:<%= link_to topic.user.name, user_path(id: topic.user) %><br>
-        <% end %>
-        <% if topic.user_id == current_user.id %>
-          <%= link_to "edit", edit_topic_path(id: topic.id) %>
-          <%= link_to "destroy", topic_path(id: topic.id), method: :delete %>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="panel-body">
+      <%= simple_format(topic.body) %>
+    </div>
+    <div class="panel-footer">
+      <%= format_datetime(topic.created_at) %><br>
+      <% if local_assigns[:show_create_user] %>
+        created by:<%= link_to topic.user.name, user_path(id: topic.user) %><br>
+      <% end %>
+      <% if topic.user_id == current_user.id %>
+        <%= link_to "edit", edit_topic_path(id: topic.id) %>
+        <%= link_to "destroy", topic_path(id: topic.id), method: :delete %>
+      <% end %>
+    </div>
   </div>
 </div>
