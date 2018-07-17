@@ -11,7 +11,11 @@
       <%= f.label :body %><br>
       <%= f.text_area :body, class: 'form-control', placeholder: 'Enter new topic\'s body...' %><br>
 
-      <%= f.submit class: 'btn btn-primary' %>
+      <% if request.path_info == new_topic_path %>
+        <%= f.submit "投稿" ,class: 'btn btn-primary' %>
+      <% else %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
     <% end %>
   </div>
 </div>
