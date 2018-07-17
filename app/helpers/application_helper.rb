@@ -5,9 +5,9 @@ module ApplicationHelper
 
     case type
     when :datetime
-      format = '%Y年%m月%d日(%a) %H:%M:%S'
+      format = '%Y/%m/%d %H:%M:%S'
     when :date
-      format = '%Y年%m月%d日(%a)'
+      format = '%Y/%m/%d'
     when
       format = '%H:%M:%S'
     end

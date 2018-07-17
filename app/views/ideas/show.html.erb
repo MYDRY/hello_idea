@@ -1,12 +1,11 @@
 <div class="main">
-  <h1>Ideas#show</h1>
-  <p>Find me in app/views/ideas/show.html.erb</p>
+  <h1>ユーザー詳細</h1>
   <%= render partial: 'ideas/detail', locals: { idea: @idea, show_create_user: true }, layout: 'ideas/detail_frame' %>
   <p>
-    <h3>Liked Users</h3>
+    <h3>いいねしたユーザー</h3>
     <% @idea.likes.each do |like| %>
       <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/list_frame' %>
     <% end %>
   </p>
-  <%= link_to 'Back', topic_path(id: @idea.topic) %>
+  <%= link_to 'トピックへ', topic_path(id: @idea.topic) %>
 </div>
