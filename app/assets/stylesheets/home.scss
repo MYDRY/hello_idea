@@ -1,8 +1,89 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+@import "bootstrap-sprockets";
 
+/************* 全体 ********************/
 
-.form-error {
-  color: red;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+.main {
+  min-height: 82vh;
+}
+
+/************* ヘッダー ********************/
+
+.navbar-header {
+  margin-right: auto;
+  margin-bottom: 40px;
+  a {
+    font-size: 60px;
+  }
+}
+
+/* navbar 背景色*/
+.navbar-default {
+  background-color: azure;
+}
+
+/* navbar テキストカラー */
+.navbar-default .navbar-nav > li > a {
+  color: blue;
+}
+
+/* navbar hover,focus時のテキストカラー */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: royalblue;
+  background-color: transparent;
+}
+
+/* navbar Brandのカラー */
+.navbar-default .navbar-brand {
+color: navy;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: royalblue;
+  background-color: transparent;
+}
+
+/************* フッター ********************/
+
+.footer {
+  text-align: right;
+  border-top: solid 2px #eaeaea;
+  color: #777;
+  mergin-left: 15px;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left
+    }
+  }
+}
+
+/************* パーシャル ********************/
+
+.detail {
+  font-size: 28px;
+  word-wrap: break-word;
+}
+
+.list {
+  font-size: 16px;
 }

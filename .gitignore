@@ -31,3 +31,6 @@
 
 # Ignore vendor directory
 vendor/*
+
+# Ignore uploaded files
+/public/uploads/*

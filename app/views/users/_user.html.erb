@@ -1,0 +1,19 @@
+<div class="user">
+  <% image_size = 100 unless local_assigns[:image_size] %>
+  <div class="panel-body">
+    <div class="dtable">
+      <div class="dtable_c">
+        <%= image_tag get_image(user), size: "#{image_size}", class: 'img-thumbnail' %>
+      </div>
+      <div class="dtable_c">
+        <ul>
+          <div style="margin-left: 15px; padding: 10px; width: 500px; border: solid 2px skyblue; border-radius: 9px; background-color: white;">
+            <li style="border-bottom: solid 2px lightgray;"><%= link_to_unless_current user.name, user_path(id: user) %></li>
+            <li><%= user.email %></li>
+          </div>
+          <li><%= link_to '編集', edit_user_path(id: user), class: 'btn btn-default', style: 'color: azure; background-color: skyblue;'  if user == current_user %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
