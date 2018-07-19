@@ -12,9 +12,9 @@
       <%= f.text_area :body, class: 'form-control', placeholder: '本文を入力' %><br>
 
       <% if request.path_info == new_topic_path %>
-        <%= f.submit "投稿" ,class: 'btn btn-primary' %>
+        <%= f.submit "投稿", class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
       <% else %>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
       <% end %>
     <% end %>
   </div>
