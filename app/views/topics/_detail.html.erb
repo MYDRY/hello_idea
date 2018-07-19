@@ -20,8 +20,12 @@
       <span class="fa fa-comment"><%= topic.ideas.count %></span>
       <div style="float: right;">
         <% if topic.user_id == current_user.id %>
-          <%= link_to '編集', edit_topic_path(id: topic.id), class: 'btn btn-default', style: 'background-color: #dff0d8' %>
-          <%= link_to '削除', topic_path(id: topic.id), method: :delete, class: 'btn btn-default', style: 'background-color: #dff0d8' %>
+          <%= link_to edit_topic_path(id: topic.id) do %>
+            <span class="fa fa-edit"></span>
+          <% end %>
+          <%= link_to topic_path(id: topic.id), method: :delete do%>
+            <span class="fa fa-trash"></span>
+          <% end %>
         <% end %>
       </div>
     </div>
