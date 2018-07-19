@@ -46,7 +46,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.destroy
     flash[:success] = "トピックを削除しました"
-    redirect_to topics_path
+    redirect_back fallback_location: topics_path
   end
 
   def classfy_topic
