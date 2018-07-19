@@ -11,7 +11,11 @@
             <li style="border-bottom: solid 2px lightgray;"><%= link_to_unless_current user.name, user_path(id: user) %></li>
             <li><%= user.email %></li>
           </div>
-          <li><%= link_to '編集', edit_user_path(id: user), class: 'btn btn-default', style: 'color: azure; background-color: skyblue;'  if user == current_user %></li>
+          <% if user == current_user %>
+           <li> <%= link_to edit_user_path(id: user) do %>
+              <span class="fa fa-edit"></span>
+            <% end %></li>
+          <% end %>
         </ul>
       </div>
     </div>
