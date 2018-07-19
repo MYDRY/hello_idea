@@ -27,4 +27,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     post login_path(user: { name: @user.name, email: @user.email })
     assert_response :redirect
   end
+
+  test "users edit action renders edit form" do
+    get edit_user_path(id: @user)
+    assert_response :success
+    assert_template 'users/edit'
+  end
+
+  test "users update action should modify users profile" do
+    patch user_path(id: @user, user: { name: @user.name })
+    assert_response :redirect
+  end
 end

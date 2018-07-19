@@ -1,8 +1,10 @@
-<p>
-  <% @users.each do |user| %>
-	<%= link_to user.name, user_path(id: user) %>
-	<%= user.email %><br>
-  <% end %>
-</p>
+<div class="main">
+  <div class="container">
+    <h1>ユーザー一覧</h1>
+    <p>
+      <%= render partial: 'users/user', collection: @users, layout: 'users/list_frame' %>
+    </p>
+  </div>
+</div>
 
 

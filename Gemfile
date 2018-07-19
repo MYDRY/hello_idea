@@ -25,6 +25,11 @@ gem 'jbuilder', '~> 2.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'bcrypt'
+
+#Use Translate error message
+gem 'rails-i18n'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -33,6 +38,12 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+# For bootstrap
+gem 'bootstrap-sass', '>= 3.3.7'
+
+# For Image Upload
+gem 'carrierwave'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

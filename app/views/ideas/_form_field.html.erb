@@ -1,0 +1,16 @@
+<p>
+  <%= inform_validation_errror(idea) %>
+</p>
+<div class="container">
+  <div class="form-group col-xs-4">
+    <%= form_for(idea, url: next_path) do |f| %>
+      <%= f.label      :body, "本文" %><br>
+      <%= f.text_area  :body, class: 'form-control', placeholder: 'What\'s your Idea !?' %><br>
+      <% if local_assigns[:edit_flag].present? %>
+        <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
+      <% else %>
+        <%= f.submit "投稿", class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

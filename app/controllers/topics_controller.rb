@@ -20,8 +20,12 @@ class TopicsController < ApplicationController
 
   def create
     @topic = current_user.topics.build(topic_params)
-    @topic.save
-    redirect_to @topic
+    if @topic.save
+      flash[:success] = "トピックを投稿しました"
+      redirect_to @topic
+    else
+      render :new
+    end
   end
 
   def edit
@@ -31,6 +35,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
+      flash[:success] = "トピックを編集しました"
       redirect_to @topic
     else
       render :edit
@@ -40,7 +45,8 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-    redirect_to topics_path
+    flash[:success] = "トピックを削除しました"
+    redirect_back fallback_location: topics_path
   end
 
   def classfy_topic
@@ -56,7 +62,8 @@ class TopicsController < ApplicationController
   def ensure_correct_user
     @topic = Topic.find(params[:id])
     if @topic.user_id != current_user.id
-      redirect_to topics_path
+      flash[:danger] = "権限がありません"
+      redirect_back fallback_location: topics_path
     end
   end
 end

@@ -1,19 +1,8 @@
-<h1>Topic#show</h1>
-<p>
-  <%= @topic.id %>
-  <%= @topic.title %>
-  <%= @topic.body %>
-  <%= @topic.genre_id %>
-  created by: 
-  <%= link_to @topic.user.name, user_path(id: @topic.user) %>
-  <% if @topic.user_id == current_user.id %>
-    <%= link_to "edit", edit_topic_path(id: @topic.id) %>
-    <%= link_to "destroy", topic_path(id: @topic.id), method: :delete %>
-  <% end %>
-</p>
-<%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic) %><br>
-<p>
-  <% @topic.ideas.each do |idea| %>
-    <%= link_to "#{idea.title}", idea_path(idea) %><br>
-  <% end %>
-</p>
+<div class="main">
+  <div class="container">
+    <h1>トピック詳細</h1>
+    <p>
+      <%= render partial: 'topics/detail', locals: { topic: @topic, show_create_user: true }, layout: 'topics/detail_frame' %>
+    </p>
+  </div>
+</div>

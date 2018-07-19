@@ -1,6 +1,8 @@
+# coding: utf-8
 class UsersController < ApplicationController
-  before_action :authorize, only: [:index, :show]
-
+  before_action :authorize, only: [:index, :show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
+  
   def index
   	@users=User.all
   end
@@ -15,8 +17,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to @user
+    if @user.save
+      log_in @user
+      flash[:success] = "ユーザー登録が完了しました"
+      redirect_to @user
+    else
+      render new_user_path
+    end
   end
 
   def login
@@ -24,24 +31,45 @@ class UsersController < ApplicationController
   end
 
   def check_user
-    @user = User.find_by(name: params[:user][:name])
-    if @user
+    @user = User.find_by(email: params[:user][:email])
+    if @user && @user.authenticate(params[:user][:password])
       log_in @user
-      flash[:notice] = "SUCCESS"
+      flash[:success] = "ログインしました"
       redirect_to @user
     else
-      flash[:notice] = "ERROR"
-      redirect_to root_path
+      flash[:danger] = "メールアドレスまたはパスワードが間違っています"
+      redirect_to login_path
     end
   end
 
   def logout
     log_out
+    flash[:success] = "ログアウトしました"
     redirect_to root_path
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = "更新しました"
+      redirect_to @user
+    else
+      render :edit
+    end
   end
   
   private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :image, :password)
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    if @user != current_user
+      flash[:danger] = "権限がありません"
+      redirect_back fallback_location: users_path
+    end
   end
 end

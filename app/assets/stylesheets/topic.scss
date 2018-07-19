@@ -1,4 +1,42 @@
-// Place all the styles related to the post controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.topic {
 
+  a {
+    color: black;
+    &:hover {
+      color: silver;
+    }
+  }
+  ul {
+    padding: 0px;
+    display: inline;
+    list-style: none;
+    li {
+      padding-left: 15px;
+    }
+  }
+  .desc {
+    width: 80%;
+    height: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .dtable {
+    display: table;
+  }
+  .dtable_c {
+    vertical-align: top;
+    line-height: 40px;
+    display: table-cell;
+  }
+
+  .title {
+    color: #006E6F;
+    padding-left: 10px;
+  }
+
+}
+.nav-item a {
+  color: #00BABD;
+}

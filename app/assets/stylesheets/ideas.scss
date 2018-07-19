@@ -1,3 +1,25 @@
-// Place all the styles related to the ideas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* いいねボタン ==========================*/
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+.idea {
+  a {
+    color: black;
+    &:hover {
+      color: darkyellow;
+    }
+  }
+  ul {
+    padding: 0px;
+    display: inline;
+    list-style: none;
+    li {
+      padding-left: 15px;
+    }
+  }
+}
