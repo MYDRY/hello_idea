@@ -1,9 +1,20 @@
-<div class="panel panel-success" style="margin: 10px 75px 0px">
+<div class="panel" style="margin: 10px 75px 0px">
   <div class="topic">
-    <div class="panel-heading" style="background-color: #dff0d8">
-      <%= link_to image_tag(get_image(topic.user), size: '50', class: 'img-thumbnail'), user_path(id: topic.user) %>      
-      <%= link_to topic.title, topic_path(id: topic), class: 'btn btn-default', style: 'width: 80%; text-align: left;'%>
-      <span class="fa fa-comment"><%= topic.ideas.count %></span>
+    <div class="panel-heading">
+      <div class="dtable">
+        <div class="dtable_c">
+          <%= link_to image_tag(get_image(topic.user), size: '80', class: 'img-thumbnail'), user_path(id: topic.user) %>
+          <%= link_to topic.user.name, user_path(id: topic.user)%>
+        </div>
+        <div class="dtable_c">
+          <div class="box23">
+            <%= link_to topic.title, topic_path(id: topic), class: 'btn'%>
+          </div>
+        </div>
+        <div class="dtable_c">
+          <span class="fa fa-comment"><%= topic.ideas.count %></span>
+        </div>
+      </div>
     </div>
     <div class="panel-body">
       <div style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">

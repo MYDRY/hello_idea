@@ -15,7 +15,12 @@ html {
 
 .main {
   min-height: 82vh;
+  h1 {
+    color: #007B96;
+  }
 }
+
+
 
 /************* ヘッダー ********************/
 
@@ -29,30 +34,29 @@ html {
 
 /* navbar 背景色*/
 .navbar-default {
-  background-color: azure;
+  background-color: #006E6F;
 }
 
 /* navbar テキストカラー */
 .navbar-default .navbar-nav > li > a {
-  color: blue;
+  display: block;
+  color: white;
 }
 
 /* navbar hover,focus時のテキストカラー */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: royalblue;
-  background-color: transparent;
+  color: silver;
 }
 
 /* navbar Brandのカラー */
 .navbar-default .navbar-brand {
-color: navy;
+color: white;
 }
 
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
-  color: royalblue;
-  background-color: transparent;
+  color: #00B0B3;
 }
 
 /************* フッター ********************/

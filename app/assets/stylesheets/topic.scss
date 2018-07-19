@@ -1,8 +1,9 @@
 .topic {
+
   a {
-    color: green;
+    color: black;
     &:hover {
-      color: darkgreen;
+      color: silver;
     }
   }
   ul {
@@ -20,4 +21,43 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
+  .dtable {
+    display: table;
+  }
+  .dtable_c {
+    display: table-cell;
+    padding: 10px;
+  }
+
+  .box23 {
+    position: relative;
+    display: block;
+    margin: 2em 0 2em 40px;
+    padding: 8px 15px;
+    border: solid 3px #00BABD;/*線*/
+    border-radius: 30px;
+    word-break:break-all;
+}
+.box23:before{font-family: FontAwesome;
+    content: "\f10c";
+    position: absolute;
+    font-size: 15px;
+    left: -40px;
+    bottom: 0;
+    color: #00BABD;
+}
+.box23:after{
+    font-family: FontAwesome;
+    content: "\f10c";
+    position: absolute;
+    font-size: 23px;
+    left: -23px;
+    bottom: 0;
+    color: #00BABD;
+}
+.box23 p {
+    margin: 0;
+    padding: 0;
+}
 }
