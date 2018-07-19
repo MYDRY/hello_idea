@@ -5,7 +5,7 @@
   <ul class="nav navbar-nav navbar-right" style="display: inline;">
     <% if logged_in? %>
       <li class="btn btn-default" style="border: solid skyblue 2px;"><%= link_to current_user.name, user_path(id: current_user) %></li>
-      <li class="btn btn-default" style="border: solid skyblue 2px;"><%= link_to 'ジャンル一覧', topics_path %></li>
+      <li class="btn btn-default" style="border: solid skyblue 2px;"><%= link_to 'トピック一覧', topics_path %></li>
       <li class="btn btn-default" style="border: solid skyblue 2px;"><%= link_to 'ユーザ一覧', users_path %></li>
       <li class="btn btn-default" style="border: solid skyblue 2px;"><%= link_to 'ログアウト', logout_path %></li>
     <% else %>
