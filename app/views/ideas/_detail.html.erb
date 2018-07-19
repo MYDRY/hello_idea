@@ -18,10 +18,14 @@
       <% end %>
     </div>
     <div class="panel-footer" style="color: gray;">
-      <%= format_datetime(idea.created_at) %>
+      投稿日時：<%= format_datetime(idea.created_at) %>
       <% if idea.user_id == current_user.id %>
-        <%= link_to '編集', edit_idea_path(id: idea.id) %>
-        <%= link_to '削除', idea_path(id: idea.id), method: :delete %>
+          <%= link_to edit_idea_path(id: idea.id) do %>
+            <span class="fa fa-edit"></span>
+          <% end %>
+          <%= link_to idea_path(id: idea.id), method: :delete do %>
+            <span class="fa fa-trash"></span>
+          <% end %>
       <% end %>
     </div>
   </div>
