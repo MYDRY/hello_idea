@@ -44,7 +44,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     @idea.destroy
     flash[:success] = "アイデアを削除しました"
-    redirect_to topic_path(id: @idea.topic)
+    redirect_back fallback_location: topics_path
   end
 
   private
