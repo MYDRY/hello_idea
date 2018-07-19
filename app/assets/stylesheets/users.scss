@@ -1,3 +1,22 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user {
+  background-color: azure;
+  ul {
+    padding: 0px;
+    display: inline;
+    list-style: none;
+    li {
+      padding-left: 15px;
+    }
+  }
+  .dtable {
+    display: table;
+  }
+  .dtable_c {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .btn-default{
+      background-color: #00BABD;
+  }
+}

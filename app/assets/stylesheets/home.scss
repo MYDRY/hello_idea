@@ -1,8 +1,111 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+@import "bootstrap-sprockets";
 
+/************* 全体 ********************/
 
-.form-error {
-  color: red;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+.main {
+  min-height: 82vh;
+  h1 {
+    color: #007B96;
+  }
+}
+
+.top {
+  background-image: url('top.png');
+  background-position: 30%;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: contain;
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: white;
+  .message{
+    padding-top: 50px;
+    text-align: right;
+    color: red;
+    h1 {
+      font-size: 64px;
+    }
+    font-size: 32px;
+  }
+}
+
+/************* ヘッダー ********************/
+
+.navbar-header {
+  margin-right: auto;
+  margin-bottom: 40px;
+  a {
+    font-size: 60px;
+  }
+}
+
+/* navbar 背景色*/
+.navbar-default {
+  background-color: #006E6F;
+}
+
+/* navbar テキストカラー */
+.navbar-default .navbar-nav > li > a {
+  display: block;
+  color: white;
+}
+
+/* navbar hover,focus時のテキストカラー */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: silver;
+}
+
+/* navbar Brandのカラー */
+.navbar-default .navbar-brand {
+color: white;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #00B0B3;
+}
+
+/************* フッター ********************/
+
+.footer {
+  text-align: right;
+  border-top: solid 2px #eaeaea;
+  color: #777;
+  mergin-left: 15px;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left
+    }
+  }
+}
+
+/************* パーシャル ********************/
+
+.detail {
+  font-size: 28px;
+  word-wrap: break-word;
+}
+
+.list {
+  font-size: 16px;
 }

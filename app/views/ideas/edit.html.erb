@@ -1,17 +1,6 @@
-<h1>Ideas#edit</h1>
-
-<p>
-  <%= form_for(@idea) do |f| %>
-    <% @idea.errors.full_messages.each do |message| %>
-      <div class="form-error">
-        <%= message %>
-      </div>
-    <% end %>
-    <div class="field">
-      <%= f.label :title %><br />
-      <%= f.text_field :title, value: @idea.title %><br />
-      <%= f.label :body %><br />
-      <%= f.text_area :body, value: @idea.body %><br />
-      <%= f.submit %>
-  <% end %>
-</p>
+<div class="main">
+  <div class="container">
+    <h1>アイデア編集</h1>
+    <%= render partial: 'form_field', locals: { idea: @idea, next_path: idea_path, edit_flag: true } %>
+  </div>
+</div>
