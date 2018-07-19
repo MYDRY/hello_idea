@@ -1,8 +1,9 @@
 .topic {
+
   a {
-    color: green;
+    color: black;
     &:hover {
-      color: darkgreen;
+      color: silver;
     }
   }
   ul {
@@ -19,5 +20,17 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  .dtable {
+    display: table;
+  }
+  .dtable_c {
+    display: table-cell;
+  }
+
+  .title {
+    color: #00BABD;
+    padding-left: 10px;
   }
 }
