@@ -20,7 +20,7 @@
         投稿者:
         <%= link_to idea.user.name, user_path(id: idea.user) %>
         / 投稿日時: <%= format_datetime(idea.created_at) %>
-        <%= link_to '詳細', idea_path(id: idea), class: 'btn btn-default btn-xs', style: 'float: right; background-color: white;' %>
+        <%= link_to '詳細', idea_path(id: idea), class: 'btn btn-primary btn-xs', style: 'float: right;color: white; background-color: #00BABD;' %>
         <% if idea.user_id == current_user.id %>
           <%= link_to edit_idea_path(id: idea.id) do %>
             <span class="fa fa-edit"></span>
