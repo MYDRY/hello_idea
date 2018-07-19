@@ -4,12 +4,12 @@
       <div class="dtable">
         <div class="dtable_c">
           <%= link_to image_tag(get_image(topic.user), size: '150', class: 'img-thumbnail'), user_path(id: topic.user) %>
-          <%= link_to topic.user.name, user_path(id: topic.user), class: 'well' %>
         </div>
-        <div class="dtable_c">
-          <div class="title">
-            <%= topic.title %>
-          </div>
+        <div class="dtable_c" style="padding-left: 50px;">
+          <ul>
+            <li style="font-size: 20px;"><%= link_to topic.user.name, user_path(id: topic.user), style: 'color: white;' %></li>
+            <li class="well"><%= topic.title %></li>
+          </ul>
         </div>
       </div>
 
