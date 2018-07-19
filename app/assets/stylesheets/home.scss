@@ -20,7 +20,24 @@ html {
   }
 }
 
-
+.top {
+  background-image: url('top.png');
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: contain;
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: white;
+  .message{
+    padding-top: 50px;
+    text-align: right;
+    color: red;
+    h1 {
+      font-size: 64px;
+    }
+    font-size: 32px;
+  }
+}
 
 /************* ヘッダー ********************/
 
