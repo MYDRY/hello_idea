@@ -1,10 +1,10 @@
 <div class="panel panel-success" style="margin: 10px 20px 10px">
   <div class="topic">
-    <div class="panel-heading">
+    <div class="panel-heading" style="background-color: #00BABD">
       <div class="dtable">
         <div class="dtable_c">
           <%= link_to image_tag(get_image(topic.user), size: '150', class: 'img-thumbnail'), user_path(id: topic.user) %>
-          <%= link_to topic.user.name, user_path(id: topic.user)%>
+          <%= link_to topic.user.name, user_path(id: topic.user), class: 'well' %>
         </div>
         <div class="dtable_c">
           <div class="title">
