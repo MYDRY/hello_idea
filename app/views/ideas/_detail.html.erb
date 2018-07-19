@@ -19,16 +19,19 @@
       <div style="float: right; color: gray; font-size: 16px;">
         <%= format_datetime(idea.created_at) %>
       </div>
+    </div> 
+    <div class="panel-footer" style="color: gray;">
+      <%= link_to 'トピックへ', topic_path(id: @idea.topic), class: 'btn btn-primary', style: 'color: white; background-color: #00BABD;' %>
+      <% if idea.user_id == current_user.id %>
+        <div style="float: right;">
+          <%= link_to edit_idea_path(id: idea.id) do %>
+            <span class="fa fa-edit"></span>
+          <% end %>
+          <%= link_to idea_path(id: idea.id), method: :delete do %>
+            <span class="fa fa-trash"></span>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-    <% if idea.user_id == current_user.id %>
-      <div class="panel-footer" style="color: gray;">
-        <%= link_to edit_idea_path(id: idea.id) do %>
-          <span class="fa fa-edit"></span>
-        <% end %>
-        <%= link_to idea_path(id: idea.id), method: :delete do %>
-          <span class="fa fa-trash"></span>
-        <% end %>
-      </div>
-    <% end %>
   </div>
 </div>
