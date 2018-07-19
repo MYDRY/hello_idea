@@ -16,7 +16,7 @@
     </div>
     <div class="panel-body">
       <div class="well"><%= simple_format(topic.body) %></div>
-      <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic), class: 'btn btn-default', style: 'color: black; background-color: khaki' %>
+      <%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic), class: 'btn btn-default', style: 'color: black; background-color: #00DFE3' %>
       <span class="fa fa-comment"><%= topic.ideas.count %></span>
       <div style="float: right;">
         <% if topic.user_id == current_user.id %>
