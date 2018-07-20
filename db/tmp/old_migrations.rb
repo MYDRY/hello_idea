@@ -1,3 +1,97 @@
+class CreateUsers < ActiveRecord::Migration[5.2]
+  def change
+    create_table :users do |t|
+      t.string :name
+      t.string :email
+
+      t.timestamps
+    end
+  end
+end
+
+class AddImageToUsers < ActiveRecord::Migration[5.2]
+  def change
+    add_column :users, :image, :string
+  end
+end
+
+class AddPassword < ActiveRecord::Migration[5.2]
+  def change
+    add_column :users, :password_digest, :string
+  end
+end
+
+class CreateGenres < ActiveRecord::Migration[5.2]
+  def change
+    create_table :genres do |t|
+      t.string :name
+
+      t.timestamps
+    end
+  end
+end
+
+class CreateTopics < ActiveRecord::Migration[5.2]
+  def change
+    create_table :topics do |t|
+      t.string :title
+      t.text :body
+      t.references :genre, foreign_key: true
+      
+      t.timestamps
+    end
+  end
+end
+
+class CreateIdeas < ActiveRecord::Migration[5.2]
+  def change
+    create_table :ideas do |t|
+      t.string :title
+      t.text :body
+      t.references :topic, foreign_key: true
+      
+      t.timestamps
+    end
+  end
+end
+
+class AddUserIdOnTopicAndIdeas < ActiveRecord::Migration[5.2]
+  def change
+    add_column :topics, :user_id, :integer
+    add_index  :topics, :user_id
+
+    add_column :ideas, :user_id, :integer
+    add_index  :ideas, :user_id
+  end
+end
+
+class RemoveTitleFromIdeas < ActiveRecord::Migration[5.2]
+  def change
+    remove_column :ideas, :title, :string
+  end
+end
+
+class CreateComments < ActiveRecord::Migration[5.2]
+  def change
+    create_table :comments do |t|
+      t.text :body
+      t.references :commentable, polymorphic: true, index: true
+      t.timestamps
+    end
+  end
+end
+
+class CreateLikes < ActiveRecord::Migration[5.2]
+  def change
+    create_table :likes do |t|
+      t.references :user, foreign_key: true
+      t.references :idea, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -65,5 +159,4 @@ ActiveRecord::Schema.define(version: 2018_07_13_113352) do
     t.string "image"
     t.string "password_digest"
   end
-
 end
