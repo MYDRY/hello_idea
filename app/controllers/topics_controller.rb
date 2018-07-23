@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
-    @topics = Topic.all
+    @topics = Topic.all.reverse_order
     @ideal_topics = Genre.find_by(name: '理想').topics
     @trouble_topics = Genre.find_by(name: '問題').topics
     @other_topics = Genre.find_by(name: 'その他').topics
