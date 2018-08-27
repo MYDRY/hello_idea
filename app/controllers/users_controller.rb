@@ -2,6 +2,7 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:index, :show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
+  before_action: :admin_user, only: :destroy
   
   def index
   	@users=User.all
@@ -80,4 +81,9 @@ class UsersController < ApplicationController
       redirect_back fallback_location: users_path
     end
   end
+
+  def admmin_user
+    redirect _to root_path unless current_user.admin?
+  end
+
 end
