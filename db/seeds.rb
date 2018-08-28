@@ -11,10 +11,8 @@ initial_genres = Genre.create([{ id: 1, name: '理想' },
                                { id: 3, name: 'その他'}
                               ])
 
-
-User.create!(name: "Example User",
+User.create!( name: "Example User",
               email: "example@email",
               password: "test",
               admin: true)
-
 
