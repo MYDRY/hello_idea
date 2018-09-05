@@ -22,14 +22,30 @@
       padding-left: 15px;
     }
   }
+
+  .box {
+    display: flex;
+    .b-item1 {
+      width: 20%;
+    }
+    .b-item2 {
+      width: 100%;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 5%;
+      padding-right: 10%;
+    }
+    .b-item3 {
+      width: 10%;
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 p.normal {
   word-wrap: normal;
-}
-
-.white-space {
-  white-space: pre-line;
 }
 
 .over {
