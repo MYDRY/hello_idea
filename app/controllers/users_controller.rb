@@ -65,7 +65,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:success] = "ユーザーを削除しました"
-    redirect_back fallback_location: users_path
+    redirect_to users_path
  
   end
   
