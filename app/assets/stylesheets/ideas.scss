@@ -31,3 +31,8 @@ p.normal {
 .white-space {
   white-space: pre-line;
 }
+
+.over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
