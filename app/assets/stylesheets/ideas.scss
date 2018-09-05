@@ -26,14 +26,13 @@
   .box {
     display: flex;
     .b-item1 {
-      width: 20%;
+      min-width: 10%;
     }
     .b-item2 {
       width: 100%;
       text-align: left;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding-left: 5%;
       padding-right: 10%;
     }
     .b-item3 {
