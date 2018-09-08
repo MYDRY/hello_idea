@@ -43,6 +43,43 @@ html {
   }
 }
 
+.detail{
+  color: #007B96;
+  //line-height: 100px;
+  h1{
+    line-height: 250px;
+    font-size: 64px;
+    text-align: center;
+    .small{
+      font-size: 43px;
+      color: #007B96;
+    }
+  }
+  .is_helloidea{
+    font-size: 50px;
+    text-align: center;
+    line-height: 70px;
+    .theme{
+      line-height: 250px;
+      font-weight: bold;
+      font-size: 100px;
+    }
+  }
+
+  .is_object{
+    font-size: 40px;
+    text-align: center;
+    .theme{
+      font-weight: bold;
+    }
+  }
+
+  .how_to{
+    padding-left: 250px;
+    padding-top: 250px;
+  }
+}
+
 /************* ヘッダー ********************/
 
 .navbar-header {
