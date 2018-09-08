@@ -10,8 +10,11 @@
       <br>
       <%= f.label       :name, 'ユーザー名' %><br>
       <%= f.text_field  :name, class: 'form-control', placeholder: 'ユーザー名を入力' %><br>
+    <!--
       <%= f.label       :email, 'メールアドレス' %><br>
       <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
+    -->
+      <%= f.hidden_field :email, value: "examle@email" %>
       <% if password %>
         <%= f.label       :password, 'パスワード' %><br>
         <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力' %><br>
