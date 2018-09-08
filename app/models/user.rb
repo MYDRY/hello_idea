@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :ideas
   has_many :topics
   has_many :likes, dependent: :destroy
+  has_many :notices, dependent: :destroy
 
   mount_uploader :image, ProfileImageUploader
 end
