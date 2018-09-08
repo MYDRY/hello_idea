@@ -5,7 +5,7 @@
   <div class="form-group col-xs-4">
     <%= form_for(user) do |f| %>
       <%= image_tag get_image(user), size: '200', class: 'img-thumbnail' -%>
-      <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;', onchange: 'alert("Wow!");' %><br>
+      <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;', onchange: 'previewImage()' %><br>
       <%= f.label       :image, '変更', class: 'btn btn-default' %><br>
       <br>
       <%= f.label       :name, 'ユーザー名' %><br>
@@ -20,3 +20,16 @@
     <% end %>
   </div>
 </div>
+<script type="text/javascript">
+ function previewImage() {
+     var preview = document.querySelector('img');
+     var file    = document.querySelector('input[type=file]').files[0];
+     var reader  = new FileReader();
+     reader.addEventListener("load", function () {
+         preview.src = reader.result;
+     }, false);
+     if (file) {
+         reader.readAsDataURL(file);
+     }
+ }
+</script>
