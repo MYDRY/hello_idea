@@ -2,7 +2,7 @@
   <div class="idea">
     <div class="panel-heading" style="background-color: white;">
       <%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %>
-      <%= idea.user.name %>
+      <%= link_to idea.user.name, user_path(id: idea.user), style: 'color: #007B96; font-weight: 700;' %>
       <div class="well"><p class="normal"><%= simple_format(idea.body) %></p></div>
     </div>
     <div class="panel-body">
@@ -19,7 +19,7 @@
       <div style="float: right; color: gray; font-size: 16px;">
         <%= format_datetime(idea.created_at) %>
       </div>
-    </div> 
+    </div>
     <div class="panel-footer" style="color: gray;">
       <%= link_to 'トピックへ', topic_path(id: @idea.topic), class: 'btn btn-primary', style: 'color: white; background-color: #00BABD;' %>
       <% if idea.user_id == current_user.id %>
