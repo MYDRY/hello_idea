@@ -79,7 +79,6 @@ html {
     h2{
       text-align: center;
       font-weight: bold;
-      padding-bottom: 4vw;
     }
     p{
       text-align: center;
@@ -89,6 +88,9 @@ html {
     img{
       margin-bottom:45px;
       width: 50vw;
+    }
+    .example-img img{
+      width: 40vw;
     }
     padding-bottom: 4vw;
   }
