@@ -43,33 +43,51 @@ html {
   }
 }
 
-.detail{
+.detail-message{
   color: #006E6F;
   //line-height: 100px;
   h1{
-    line-height: 20vw;
+    line-height: 10vw;
     font-size: 5vw;
-    text-align: center;
     color: #006E6F;
     .small{
       font-size: 3vw;
       color: #006E6F;
     }
   }
+  h2{
+    line-height: 3vw;
+    font-size: 3vw;
+    color: #006E6F;
+    .small{
+      font-size: 2vw;
+      color: #006E6F;
+    }
+  }
+  h3{
+    line-height: 5vw;
+    font-size: 2vw;
+  }
+  .message-item {
+    p {
+      line-height: 5vw;
+      font-size: 2vw;
+      @media screen and (min-width: 769px) {
+        line-height: 4vw;
+        font-size: 25px;
+      }
+    }
+  }
+
   .is_helloidea{
-    font-size: 8vw;
     text-align: center;
     .theme{
-      line-height: 20vw;
       font-weight: bold;
-      font-size: 10vw;
     }
   }
 
   .is_object{
-    font-size: 3vw;
     text-align: center;
-    line-height: 17vw
   }
 
   .how_to{
@@ -82,15 +100,15 @@ html {
     }
     p{
       text-align: center;
-      line-height: 3vw;
-      font-size: 2vw;
+      line-height: 2vw;
+      font-size: 1.5vw;
     }
     img{
       margin-bottom:45px;
-      width: 50vw;
+      width: 40vw;
     }
     .example-img img{
-      width: 40vw;
+      width: 30vw;
     }
     padding-bottom: 4vw;
   }
