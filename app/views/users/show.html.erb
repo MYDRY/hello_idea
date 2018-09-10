@@ -35,7 +35,7 @@
         </div>
         <div class="tab-pane" id="tab3">
           <p>
-            <% if @user.ideas.empty? %>
+            <% if @user.likes.empty? %>
               <div style="text-align: center; font-size: 30px;">
                 <br>あなたは まだ いいね！ を投稿していません<br><br>
                 <%= link_to 'アイデアに いいね！ してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
