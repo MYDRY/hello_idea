@@ -45,16 +45,18 @@
       margin: 0;
       li{
         display: inline;
-        .b-item3{
-          
-        }
-        .b-item4{
-          width: 80%;
-          margin-right: 50%;
-          overflow: hidden;
-          text-overflow: ellipsis;
+        span{
+          text-align:right;
         }
       }
+    }
+    .b-item4{
+      display: block;
+      width: 80%;
+      white-space: nowrap;
+      margin-right: 50%;
+      overflow: hidden;
+      text-overflow: ellipsis    
     } 
 /*
     display: flex; 
