@@ -4,11 +4,12 @@
       <div class="box">
         <ul>
         <li class="b-item1"><%= link_to image_tag(get_image(topic.user), size: '50', class: 'img-thumbnail'), user_path(id: topic.user) %></li>
-        <li class="b-item2"><%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %></li>
-        <li class="b-item3"><span class="fa fa-comment"><%= topic.ideas.count %></span></li>
-        <li><div class="b-item4"><%= link_to topic.title, topic_path(id: topic), style: 'width: 100%; text-align: left;',class: 'btn btn-default'%></div></li>
-        <!--<li class="b-item4"><span class="fa fa-comment"><%= topic.ideas.count %></span></li>-->
+        <li class="b-item2"><%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
+        <span class="fa fa-comment" style="float: right; padding-top: 2%;"><%= topic.ideas.count %></span></li>
         </ul>
+        <div class="b-item4"><%= link_to topic.title, topic_path(id: topic), style: 'width: 100%; text-align: left;',class: 'btn btn-default'%></div>
+        <!--<li class="b-item4"><span class="fa fa-comment"><%= topic.ideas.count %></span></li>-->
+        
       </div>
     </div>
     <div class="panel-body">
