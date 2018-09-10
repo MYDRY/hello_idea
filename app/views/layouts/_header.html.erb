@@ -4,10 +4,12 @@
       <a class="navbar-brand" href="/">Hello Idea</a>
     </div>
     <ul class="nav navbar-nav navbar-right" style="display: inline;">
+      <li><%= link_to 'HelloIdeaとは', "/detail" %></li>
       <% if logged_in? %>
         <li><%= link_to current_user.name, user_path(id: current_user) %></li>
         <li><%= link_to 'トピック一覧', topics_path %></li>
         <li><%= link_to 'ユーザ一覧', users_path %></li>
+        <li><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></li>
         <li><%= link_to 'ログアウト', logout_path %></li>
       <% else %>
         <li><%= link_to 'ログイン', login_path %></li>
