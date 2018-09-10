@@ -1,5 +1,11 @@
 .user {
   background-color: azure;
+  a {
+    &:hover {
+      color: silver;
+      text-decoration: none;
+    }
+  }
   ul {
     padding: 0px;
     display: inline;
