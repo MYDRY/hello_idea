@@ -3,13 +3,16 @@
     <div class="panel-heading" style="background-color: white">
       <div class="box">
         <div class="b-item1"><%= link_to image_tag(get_image(topic.user), size: '50', class: 'img-thumbnail'), user_path(id: topic.user) %></div>
-        <div class="b-item2"><%= link_to topic.title, topic_path(id: topic), style: 'width: 100%; text-align: left;',class: 'btn btn-default'%></div>
+        <div class="b-item2">
+          <%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
+          <%= link_to topic.title, topic_path(id: topic), style: 'width: 100%; text-align: left;',class: 'btn btn-default'%>
+        </div>
         <div class="b-item3"><span class="fa fa-comment"><%= topic.ideas.count %></span></div>
       </div>
     </div>
     <div class="panel-body">
       <div style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-        <%= simple_format(topic.body) %>
+        <%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;',class: 'btn btn-default'%>
       </div>
     </div>
     <div class="panel-footer" style="text-align: right;">
