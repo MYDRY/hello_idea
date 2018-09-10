@@ -39,7 +39,25 @@
   }
 
   .box {
-    display: flex;
+    ul{
+      list-style: none inside;
+      width: 100%;
+      margin: 0;
+      li{
+        display: inline;
+        .b-item3{
+          
+        }
+        .b-item4{
+          width: 80%;
+          margin-right: 50%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    } 
+/*
+    display: flex; 
     .b-item1 {
       min-width: 10%;
     }
@@ -48,13 +66,14 @@
       text-align: left;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding-right: 10%;
+      padding-right: 5%;
     }
     .b-item3 {
       width: 10%;
       display: flex;
       align-items: center;
     }
+*/
   }
 
 }
