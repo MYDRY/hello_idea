@@ -3,7 +3,7 @@ ja:
   models:
   attributes:
     user:
-    name: 名前
+    name: ユーザー名
     email: メールアドレス
     password: パスワード
     password_confirmation: パスワード確認
