@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get '/login' => 'users#login'
   post '/login' => 'users#check_user'
   get '/logout' => 'users#logout'
-  resources :users
+  
+  resources :users, shallow: true do
+    resources :notices
+  end
+  
   resources :topics, shallow: true do
     resources :ideas do
       resources :likes, only: [:create, :destroy]
