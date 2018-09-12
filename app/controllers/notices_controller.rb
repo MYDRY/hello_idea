@@ -9,4 +9,10 @@ class NoticesController < ApplicationController
     @notice.save
     redirect_to  user_notices_path(user_id: current_user)
   end
+
+  def destroy
+    @notice = Notice.find(params[:id])
+    @notice.destroy
+    redirect_to  user_notices_path(user_id: current_user)
+  end
 end
