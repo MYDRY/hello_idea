@@ -22,6 +22,7 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build(topic_params)
     if @topic.save
       flash[:success] = "トピックを投稿しました"
+      current_user.notices.create(message: "トピック「#{@topic.title[0..9]}...」を投稿しました。")
       redirect_to @topic
     else
       render :new
