@@ -5,5 +5,6 @@
   <%= "ID: #{notice.id}" %><br>
   <%= "Message: #{notice.message}" %><br>
   <%= "Has read?: #{notice.has_read}" %><br>
+  <%= button_to 'Mark as read', notice_path(id: notice)%>
   <br>
 <% end %>
