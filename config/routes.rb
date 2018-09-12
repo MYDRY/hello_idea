@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get '/logout' => 'users#logout'
   
   resources :users, shallow: true do
-    resources :notices
+    resources :notices, except: :create
   end
-  post 'notices/:id/mark', to: 'notices#mark'
+  get 'notices/:id/mark', to: 'notices#mark', as: :mark_notice
   
   resources :topics, shallow: true do
     resources :ideas do
