@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, shallow: true do
     resources :notices
   end
+  post 'notices/:id/mark', to: 'notices#mark'
   
   resources :topics, shallow: true do
     resources :ideas do
