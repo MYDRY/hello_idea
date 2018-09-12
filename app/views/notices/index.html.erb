@@ -3,7 +3,7 @@
 <% @notices.each do |notice| %>
   <br>
   <%= "ID: #{notice.id}" %><br>
-  <%= "Message: #{notice.message}" %><br>
+  <%= simple_format "Message: #{notice.message}" %><br>
   <%= "Has read?: #{notice.has_read}" %><br>
   <%= link_to 'Mark as read', mark_notice_path(id: notice)%><br>
   <%= link_to 'Delete', notice_path(id: notice.id), method: :delete, data: { confirm: '通知を削除しますか？' } if notice.has_read %><br>
