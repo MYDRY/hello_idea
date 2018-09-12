@@ -1,11 +1,11 @@
 <h1>通知</h1>
-
+<%= link_to 'Delete Notice Has Read', delete_notice_has_read_path(user: current_user), method: :delete, data: { confirm: '既読の通知を削除しますか？' } %>
 <% @notices.each do |notice| %>
   <br>
   <%= "ID: #{notice.id}" %><br>
   <%= "Message: #{notice.message}" %><br>
   <%= "Has read?: #{notice.has_read}" %><br>
   <%= link_to 'Mark as read', mark_notice_path(id: notice)%><br>
-  <%= link_to 'Delete', notice_path(id: notice.id), method: :delete, data: { confirm: '通知を削除しますか？' }%><br>
+  <%= link_to 'Delete', notice_path(id: notice.id), method: :delete, data: { confirm: '通知を削除しますか？' } %><br>
   <br>
 <% end %>
