@@ -1,8 +1,8 @@
-file_name = ARGV[0]
+message_filename = 'lib/tasks/message.txt'
 message_string = ''
 
 begin
-  file = open(file_name)
+  file = open(message_filename)
   message_string = file.read
 rescue => err
   puts '[ERROR] Failed to read message file.'
@@ -14,3 +14,5 @@ User.transaction do
     user.notices.create(message: message_string)
   end
 end
+
+File.delete(message_filename)
