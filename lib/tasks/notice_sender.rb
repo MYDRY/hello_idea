@@ -7,6 +7,15 @@ begin
 rescue => err
   puts '[ERROR] Failed to read message file.'
   puts err.message
+  exit
+end
+
+p message_string
+p 'Are you sure ? (y/n)'
+
+ans = gets
+if ans == 'y\n' then
+    exit
 end
 
 User.transaction do
