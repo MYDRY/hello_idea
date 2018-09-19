@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="panel-body">
-      <div class="b-item4"><%= link_to topic.title, style: 'width: 100%; text-align: left;' %></div>
+      <div class="b-item4"><%= link_to topic.title, topic_path(id: topic) style: 'width: 100%; text-align: left;' %></div>
 	<br>
       <div style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
         <%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;' %>
