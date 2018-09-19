@@ -7,12 +7,11 @@
         <li class="b-item2"><%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
         <span class="fa fa-comment" style="float: right; padding-top: 2%;"><%= topic.ideas.count %></span></li>
         </ul>
-        <div class="b-item4"><%= link_to topic.title, topic_path(id: topic), style: 'width: 100%; text-align: left; font-weight: bold;' %></div>
-        <!--<li class="b-item4"><span class="fa fa-comment"><%= topic.ideas.count %></span></li>-->
-        
       </div>
     </div>
     <div class="panel-body">
+      <div class="b-item4"><%= link_to topic.title, style: 'width: 100%; text-align: left;' %></div>
+	<br>
       <div style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
         <%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;' %>
       </div>
