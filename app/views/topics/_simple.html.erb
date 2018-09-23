@@ -10,11 +10,10 @@
       </div>
     </div>
     <div class="panel-body">
-      <div class="b-item4"><%= link_to topic.title, topic_path(id: topic) style: 'width: 100%; text-align: left;' %></div>
-	<br>
-      <div style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
+      <p class="b-item4"><%=link_to topic.title, topic_path(id: topic), style: 'width: 100%; text-align: left;' %></p>
+      <p style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
         <%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;' %>
-      </div>
+      </p>
     </div>
     <div class="panel-footer" style="text-align: right;">
       投稿日時：<%= format_datetime(topic.created_at) %>
@@ -25,7 +24,7 @@
         <%= link_to topic_path(id: topic.id), method: :delete do%>
           <span class="fa fa-trash"></span>
         <% end %>
-      <% end %>
+       <% end %>
     </div>
   </div>
 </div>
