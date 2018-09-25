@@ -39,25 +39,29 @@
   }
 
   .box {
-    display: flex;
-    .b-item1 {
-      min-width: 10%;
-    }
-    .b-item2 {
+    ul{
+      list-style: none inside;
       width: 100%;
-      text-align: left;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding-right: 10%;
-    }
-    .b-item3 {
-      width: 10%;
-      display: flex;
-      align-items: center;
+      margin: 0;
+      li{
+        display: inline;
+        span{
+          text-align:right;
+        }
+      }
     }
   }
 
+  .b-item4{
+    width: 80%;
+    white-space: nowrap;
+    margin-right: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 1vw;
+  }
 }
+
 .nav-item a {
   color: #00BABD;
 }

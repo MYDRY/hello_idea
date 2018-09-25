@@ -25,7 +25,19 @@
   }
 
   .box {
-    display: flex;
+    ul{
+      li{
+        display: inline;
+        .b-item4{
+          width: 80%;
+          margin-right: 50%;
+          overflow: hidden;
+          text-align: ellipsis;
+        }
+      }
+    }
+
+/*    display: flex;
     .b-item1 {
       min-width: 10%;
     }
@@ -40,7 +52,8 @@
       width: 10%;
       display: flex;
       align-items: center;
-    }
+      }
+*/
   }
 }
 
