@@ -9,7 +9,7 @@
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core1" />
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -24,7 +24,7 @@
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core2" />
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -39,7 +39,7 @@
       <input type="text" class="col-xl-3" />
 
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core3" />
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -58,7 +58,7 @@
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core4" />
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -68,17 +68,17 @@
     </div>
     <!-- 5 -->
     <div class="col-xl-3">
-      <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" onkeypress="setValue(1, this.value)" />
+      <input type="text" class="col-xl-3" onkeypress="setValue(2, this.value)" />
+      <input type="text" class="col-xl-3" onkeypress="setValue(3, this.value)" />
       
+      <input type="text" class="col-xl-3" onkeypress="setValue(4, this.value)" />
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" onkeypress="setValue(6, this.value)" />
       
-      <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" onkeypress="setValue(7, this.value)" />
+      <input type="text" class="col-xl-3" onkeypress="setValue(8, this.value)" />
+      <input type="text" class="col-xl-3" onkeypress="setValue(9, this.value)" />
       
     </div>
     <!-- 6 -->
@@ -88,7 +88,7 @@
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core6"/>
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -107,7 +107,7 @@
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core7" />
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -122,7 +122,7 @@
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core8"/>
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -137,7 +137,7 @@
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
-      <input type="text" class="col-xl-3" />
+      <input type="text" class="col-xl-3" id="core9" />
       <input type="text" class="col-xl-3" />
       
       <input type="text" class="col-xl-3" />
@@ -147,3 +147,9 @@
     </div>
   </div>
 </p>
+<script>
+ function setValue(coreNum, value) {
+     var coreStringForm = document.getElementById('core' + coreNum);
+     coreStringForm.defaultValue = value;
+ }
+</script>
