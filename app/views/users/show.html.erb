@@ -28,7 +28,7 @@
                 <br>あなたは まだアイデアを投稿していません<br><br>
                 <%= link_to 'アイデアを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
               </div>
-            <% else %>              
+            <% else %>
               <%= render partial: 'ideas/simple', collection: @user.ideas, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
             <% end %>
           </p>
@@ -40,7 +40,7 @@
                 <br>あなたは まだ いいね！ を投稿していません<br><br>
                 <%= link_to 'アイデアに いいね！ してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
               </div>
-            <% else %>              
+            <% else %>
               <% @user.likes.each do |like| %>
                 <%= render partial: 'ideas/simple', locals: { idea: like.idea, tab_name: 'like' }, layout: 'ideas/list_frame' %>
               <% end %>
