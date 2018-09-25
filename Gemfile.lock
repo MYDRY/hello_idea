@@ -44,6 +44,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    anime_js_rails (1.1.0)
     ansi (1.5.0)
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
@@ -52,14 +53,14 @@ GEM
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
-    bootsnap (1.3.1)
+    bootsnap (1.3.2)
       msgpack (~> 1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
-    capybara (3.7.1)
+    capybara (3.8.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -72,7 +73,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (1.2.0)
+    chromedriver-helper (2.1.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coderay (1.1.2)
@@ -122,7 +123,7 @@ GEM
     lumberjack (1.0.13)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
-    marcel (0.3.2)
+    marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
     mime-types (3.2.2)
@@ -194,7 +195,7 @@ GEM
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
-    sass (3.5.7)
+    sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -233,7 +234,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.18)
+    uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
     web-console (3.7.0)
       actionview (>= 5.0)
@@ -250,6 +251,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anime_js_rails
   bcrypt
   bootsnap (>= 1.1.0)
   bootstrap-sass (>= 3.3.7)
