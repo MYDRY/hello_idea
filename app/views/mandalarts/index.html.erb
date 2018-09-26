@@ -70,7 +70,7 @@
     <div class="col-xl-3">
       <input id="5-1" type="text" class="col-xl-3" onkeypress="setCoreValue(1, this.value)" />
       <input id="5-2" type="text" class="col-xl-3" onkeypress="setCoreValue(2, this.value)" />
-      <input id="5-3" type="text" class="col-xl-3" onkeypress="setCoreValue(3, this.value)" />
+      <input id="5-3" type="text" class="col-xl-3" onchange="animeTest1(3, this.value)" />
       
       <input id="5-4" type="text" class="col-xl-3" onkeypress="setCoreValue(4, this.value)" />
       <input id="5-5" type="text" class="col-xl-3" />
@@ -151,5 +151,15 @@
  function setCoreValue(coreNum, value) {
      var coreStringForm = document.getElementById(coreNum + '-5');
      coreStringForm.defaultValue = value;
+ }
+
+ function animeTest1(coreNum, value) {
+     var coreStringForm = document.getElementById('5-' + 3);
+     coreStringForm.defaultValue = value;
+     anime({
+         targets: coreStringForm,
+         translateX: 255,
+         translateY: -75
+     });
  }
 </script>
