@@ -161,8 +161,14 @@
      anime({
          targets: coreStringForm,
          translateX: 255 * directions[coreNum-1][0],
-         translateY: 75  * directions[coreNum-1][1]
+         translateY: 75  * directions[coreNum-1][1],
+         easing:'easeOutCubic'
      });
-     subElems.style.display="";
+     subElems.style.display = "";
+     anime({
+         delay:   500,
+         targets: subElems,
+         opacity: [0, 1]
+     });
  }
 </script>
