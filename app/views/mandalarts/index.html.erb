@@ -33,7 +33,7 @@
       
     </div>
     <!-- 3 -->
-    <div class="col-xl-3">
+    <div id="3" class="col-xl-3" style="display: none;" >
       <input id="3-1" type="text" class="col-xl-3" />
       <input id="3-2" type="text" class="col-xl-3" />
       <input id="3-3" type="text" class="col-xl-3" />
@@ -154,12 +154,14 @@
  }
 
  function animeTest1(coreNum, value) {
-     var coreStringForm = document.getElementById('5-' + 3);
+     var coreStringForm = document.getElementById('5-' + coreNum);
+     var subElems = document.getElementById(coreNum)
      coreStringForm.defaultValue = value;
      anime({
          targets: coreStringForm,
          translateX: 255,
          translateY: -75
      });
+     subElems.style.display="";
  }
 </script>
