@@ -68,17 +68,17 @@
     </div>
     <!-- 5 -->
     <div class="col-xl-3">
-      <input id="5-1" type="text" class="col-xl-3" onkeypress="setCoreValue(1, this.value)" />
-      <input id="5-2" type="text" class="col-xl-3" onkeypress="setCoreValue(2, this.value)" />
+      <input id="5-1" type="text" class="col-xl-3" onchange="animeTest1(1, this.value)" />
+      <input id="5-2" type="text" class="col-xl-3" onchange="animeTest1(2, this.value)" />
       <input id="5-3" type="text" class="col-xl-3" onchange="animeTest1(3, this.value)" />
       
-      <input id="5-4" type="text" class="col-xl-3" onkeypress="setCoreValue(4, this.value)" />
+      <input id="5-4" type="text" class="col-xl-3" onchange="animeTest1(4, this.value)" />
       <input id="5-5" type="text" class="col-xl-3" />
-      <input id="5-6" type="text" class="col-xl-3" onkeypress="setCoreValue(6, this.value)" />
+      <input id="5-6" type="text" class="col-xl-3" onchange="animeTest1(6, this.value)" />
       
-      <input id="5-7" type="text" class="col-xl-3" onkeypress="setCoreValue(7, this.value)" />
-      <input id="5-8" type="text" class="col-xl-3" onkeypress="setCoreValue(8, this.value)" />
-      <input id="5-9" type="text" class="col-xl-3" onkeypress="setCoreValue(9, this.value)" />
+      <input id="5-7" type="text" class="col-xl-3" onchange="animeTest1(7, this.value)" />
+      <input id="5-8" type="text" class="col-xl-3" onchange="animeTest1(8, this.value)" />
+      <input id="5-9" type="text" class="col-xl-3" onchange="animeTest1(9, this.value)" />
       
     </div>
     <!-- 6 -->
@@ -148,19 +148,20 @@
   </div>
 </p>
 <script>
- function setCoreValue(coreNum, value) {
-     var coreStringForm = document.getElementById(coreNum + '-5');
-     coreStringForm.defaultValue = value;
- }
-
+ var directions = [
+     [-1, -1], [0, -1],      [1, -1],
+     [-1,  0], [null, null], [1,  0],
+     [-1,  1], [0, 1],       [1,  1]
+ ];
+ 
  function animeTest1(coreNum, value) {
      var coreStringForm = document.getElementById('5-' + coreNum);
      var subElems = document.getElementById(coreNum)
      coreStringForm.defaultValue = value;
      anime({
          targets: coreStringForm,
-         translateX: 255,
-         translateY: -75
+         translateX: 255 * directions[coreNum-1][0],
+         translateY: 75  * directions[coreNum-1][1]
      });
      subElems.style.display="";
  }
