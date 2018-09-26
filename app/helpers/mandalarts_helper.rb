@@ -1,14 +1,13 @@
 module MandalartsHelper
-  def put_sub_elem
+  def show_sub_elem(subNum)
     html_text = ''
+    default_attributes = {type: 'text', class: 'col-xl-3'}
+    core_attributes = {type: 'text', class: 'col-xl-3', style: 'visibility: hidden;'}
     (1..9).each do |n|
-      if n == 5 
-        elem = '<input id="1-' +  n.to_s + '" type="text" class="col-xl-3" style="visibility: hidden;" />'
-      else
-        elem = '<input id="1-' +  n.to_s + '" type="text" class="col-xl-3" />'
-      end
-      html_text += elem
+      attributes = (n == 5) ? core_attributes : default_attributes
+      html_text += content_tag(:input, ' ', { id: subNum.to_s + '-' + n.to_s }.merge(attributes))
     end
-    return html_text
+    html_text.html_safe
   end
+
 end
