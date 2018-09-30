@@ -128,6 +128,41 @@ html {
 
 
 /************* ヘッダー ********************/
+.header{
+  height: 50px;
+  .header-brand a{
+    float: left;
+    font-size: 60px;
+    color: white;
+    text-decoration: none;
+    line-height: 100px;
+  }
+  .header-list{
+    float: right;
+    height: 50px;
+    display: inline;
+    div{
+      list-style: none;
+      float: left;
+      padding-left: 8px;
+      padding-right: 8px;
+      a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	line-height: 100px;
+	padding-left: 4px;
+	padding-right: 4px;
+	height: 100px;
+      }
+      a:hover{
+	transition:all 0.5s;
+        background-color: #5f9ea0;
+      }
+    }
+  }
+}
+
 
 .navbar-header {
   margin-right: auto;
@@ -163,11 +198,6 @@ color: white;
 .navbar-default .navbar-brand:hover {
   color: #00B0B3;
 }
-
-@media(max-width: 1000px){
-
-}
-
 /************* フッター ********************/
 
 .footer {
