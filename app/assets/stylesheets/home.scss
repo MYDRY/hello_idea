@@ -129,6 +129,7 @@ html {
 
 /************* ヘッダー ********************/
 .header{
+  width: 1200px;
   height: 50px;
   .header-brand a{
     float: left;
@@ -161,6 +162,10 @@ html {
       }
     }
   }
+}
+
+@media(max-width:1000px){
+
 }
 
 /************* フッター ********************/
