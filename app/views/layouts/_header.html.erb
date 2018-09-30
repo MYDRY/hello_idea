@@ -1,20 +1,22 @@
-<div class="container">
-  <div class="header">
-    <div class="header-brand"><a href="/">Hello Idea</a></div>
-    <div class="header-list">
-      <ul>
-         <li><%= link_to 'HelloIdeaとは', "/detail" %></li>
-      <% if logged_in? %>
-        <li><%= link_to current_user.name, user_path(id: current_user) %></li>
-        <li><%= link_to 'トピック一覧', topics_path %></li>
-        <li><%= link_to 'ユーザー一覧', users_path %></li>
-        <li><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></li>
-        <li><%= link_to 'ログアウト', logout_path %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', login_path %></li>
-        <li><%= link_to '新規登録', new_user_path %></li>
-      <% end %>
-      </ul>
+<div style="background-color: #006E6F;">
+  <div class="container">
+    <div class="header">
+      <div class="header-brand"><a href="/">Hello Idea</a></div>
+      <div class="header-list">
+        <!--<ul>-->
+          <div><%= link_to 'HelloIdeaとは', "/detail" %></div>
+        <% if logged_in? %>
+          <div><%= link_to current_user.name, user_path(id: current_user) %></div>
+          <div><%= link_to 'トピック一覧', topics_path %></div>
+          <div><%= link_to 'ユーザー一覧', users_path %></div>
+          <div><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></div>
+          <div><%= link_to 'ログアウト', logout_path %></div>
+        <% else %>
+          <div><%= link_to 'ログイン', login_path %></div>
+          <div><%= link_to '新規登録', new_user_path %></div>
+        <% end %>
+        <!--</ul>-->
+      </div>
     </div>
   </div>
 </div>
