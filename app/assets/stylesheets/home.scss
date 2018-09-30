@@ -163,41 +163,6 @@ html {
   }
 }
 
-
-.navbar-header {
-  margin-right: auto;
-  margin-bottom: 40px;
-  a {
-    font-size: 60px;
-  }
-}
-
-/* navbar 背景色*/
-.navbar-default {
-  background-color: #006E6F;
-}
-
-/* navbar テキストカラー */
-.navbar-default .navbar-nav > li > a {
-  display: block;
-  color: white;
-}
-
-/* navbar hover,focus時のテキストカラー */
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: silver;
-}
-
-/* navbar Brandのカラー */
-.navbar-default .navbar-brand {
-color: white;
-}
-
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:hover {
-  color: #00B0B3;
-}
 /************* フッター ********************/
 
 .footer {
