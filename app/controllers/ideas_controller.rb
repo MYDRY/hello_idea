@@ -20,7 +20,7 @@ class IdeasController < ApplicationController
     @idea.user_id = current_user.id
     if @idea.save
       flash[:success] = "アイデアを投稿しました"
-      @idea.topic.user.notices.create(message: "#{current_user.name}さんがあなたのニーズ「#{@idea.topic.title[0..9]}...」にアイデアを投稿しました")
+      view_context.spawn_new_idea_notice(topic)
       redirect_to topic_path(topic)
     else
       render :new
