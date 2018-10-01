@@ -1,3 +1,12 @@
 // Place all the styles related to the mandalarts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+input[type=core] {
+  margin: 2px;
+  border: 3px solid #999;
+}
+
+input[type=sub] {
+  margin: 2px;
+}
