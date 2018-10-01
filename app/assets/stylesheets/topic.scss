@@ -51,14 +51,35 @@
       }
     }
   }
-
-  .b-item4{
-    width: 80%;
-    white-space: nowrap;
-    margin-right: 50%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-left: 1vw;
+  
+  .panel-body{
+    .b-item4{
+      width: 80%;
+      padding-left: 1vw;
+ 
+      a{
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        height: 40px;
+        line-height: 20px;
+        margin-bottom: 0;
+      }
+    }
+    .b-item5{
+      
+      a{
+        display:block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+        margin-top: 0;
+	margin-bottom: 0;
+      }
+    }
   }
 }
 

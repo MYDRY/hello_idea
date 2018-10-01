@@ -10,10 +10,10 @@
       </div>
     </div>
     <div class="panel-body">
-      <p class="b-item4"><%=link_to topic.title, topic_path(id: topic), style: 'width: 100%; text-align: left;' %></p>
-      <p style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
-        <%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;' %>
-      </p>
+      <div class="b-item4"><span title="詳細ページへ"><%=link_to topic.title, topic_path(id: topic) %></span></div>
+      <div class="b-item5" style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
+        <span title="詳細ページへ"><%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;' %></span>
+      </div>
     </div>
     <div class="panel-footer" style="text-align: right;">
       投稿日時：<%= format_datetime(topic.created_at) %>
