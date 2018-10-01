@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Jpmobile::ViewSelector
   include UsersHelper
   
   def authorize
