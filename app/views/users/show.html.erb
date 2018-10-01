@@ -4,7 +4,7 @@
     <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/detail_frame' %>
     <div class="p-3">
       <ul class="nav nav-tabs">
-        <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">投稿したトピック　<span class="badge badge-primary"><%= @user.topics.count %></span></a></li>
+        <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">投稿したニーズ　<span class="badge badge-primary"><%= @user.topics.count %></span></a></li>
         <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">投稿したアイデア　<span class="badge badge-primary"><%= @user.ideas.count %></span></a></li>
         <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">いいね　<span class="badge badge-primary"><%= @user.likes.count %></span></a></li>
       </ul>
@@ -13,8 +13,8 @@
           <p>
             <% if @user.topics.empty? %>
               <div style="text-align: center; font-size: 30px;">
-                <br>あなたは まだトピックを投稿していません<br><br>
-                <%= link_to 'トピックを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
+                <br>あなたは まだニーズを投稿していません<br><br>
+                <%= link_to 'ニーズを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
               </div>
             <% else %>
               <%= render partial: 'topics/simple', collection: @user.topics, as: 'topic', layout: 'topics/list_frame' %>
