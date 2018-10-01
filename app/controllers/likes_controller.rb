@@ -6,6 +6,7 @@ class LikesController < ApplicationController
     @idea = Idea.find(params[:idea_id])
     like = current_user.likes.build(idea_id: @idea.id)
     like.save
+    @idea.user.notices.create(message: "#{current_user.name}さんがあなたのアイデア「#{@idea.body[0..9]}...」にいいね！しました")
     flash[:success] = "いいねしました"
     redirect_back fallback_location: topic_path(id: @idea.topic)
   end
