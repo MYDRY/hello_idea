@@ -26,3 +26,17 @@
       background-color: #00BABD;
   }
 }
+
+  .mobile{
+  input[type="text"] {
+          width: 500px;
+          height: 100px;
+      }
+
+  input[type="password"] {
+          width: 500px;
+          height: 100px;
+      }
+  font-size: 25px;
+  white-space: nowrap;
+  }
