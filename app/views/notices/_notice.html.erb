@@ -1,14 +1,16 @@
-<div class="panel panel-default" style="border: solid 3px lightskyblue;">
-  <% back_color = notice.has_read ? 'white' : 'lightskyblue' %>
-  <%= content_tag(:div, style: "background-color: #{back_color};") do %>
-    <div class="panel-body" style="height: 70px;">
-      <%= notice.message %>
-      <% unless notice.has_read %>
-        <%= link_to 'Mark as read', mark_notice_path(id: notice), class: 'btn btn-default', style: 'float: right;' %><br>
-      <% end %>
-    </div>
-    <div class="panel-footer">
-      <%= "作成日時: #{format_datetime(notice.created_at)}" %>
-    </div>
-  <% end %>
-</div>
+<%= link_to mark_notice_path(id: notice) do %>
+  <div class="panel panel-default" style="border: solid 3px lightskyblue;">
+    <% back_color = notice.has_read ? 'white' : 'lightskyblue' %>
+
+    <%= content_tag(:div, style: "background-color: #{back_color};") do %>
+      <div class="panel-body" style="height: 70px;">
+        <%= notice.message %>
+        <% unless notice.has_read %>
+        <% end %>
+      </div>
+      <div class="panel-footer">
+        <%= "作成日時: #{format_datetime(notice.created_at)}" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
