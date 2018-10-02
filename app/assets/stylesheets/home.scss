@@ -236,12 +236,12 @@ html {
     left: 0;
     z-index: 9999;/*最前面に*/
     width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-    max-width: 330px;/*最大幅（調整してください）*/
+    max-width: 380px;/*最大幅（調整してください）*/
     height: 100%;
     background: #006E6F;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
-    -webkit-transform: translateX(310%);
-    transform: translateX(310%);/*左に隠しておく*/
+    -webkit-transform: translateX(400%);
+    transform: translateX(400%);/*左に隠しておく*/
   }
 
   /*チェックが入ったらもろもろ表示*/
@@ -251,18 +251,26 @@ html {
   }
 
   #nav-input:checked ~ #nav-content {
-    -webkit-transform: translateX(250%);
-    transform: translateX(250%);/*中身を表示（右へスライド）*/
+    -webkit-transform: translateX(100vw);
+    transform: translateX(65vw);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
   
   #nav-content{
     div{
       list-style: none;
+      margin-left: 0;
+      padding-left: 0;
       a{
         display:block;
         text-decoration: none;
         color: white;
+        height: 50px;
+        line-height: 50px;
+      }
+      a:hover{
+	transition:all 0.5s;
+	background-color: #5f9ea0;
       }
     }
   }
