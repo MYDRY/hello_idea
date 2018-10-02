@@ -111,6 +111,8 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jpmobile (5.2.2)
+      mail (~> 2.7.0)
     libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -262,6 +264,7 @@ DEPENDENCIES
   guard (~> 2.13.0)
   guard-minitest (~> 2.4.4)
   jbuilder (~> 2.7)
+  jpmobile
   listen (>= 3.0.5, < 3.2)
   minitest-reporters (~> 1.1.14)
   pg (~> 0.18.4)
