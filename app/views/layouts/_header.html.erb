@@ -7,7 +7,7 @@
       <li><%= link_to 'HelloIdeaとは', "/detail" %></li>
       <% if logged_in? %>
         <li><%= link_to current_user.name, user_path(id: current_user) %></li>
-        <li><%= link_to 'トピック一覧', topics_path %></li>
+        <li><%= link_to 'ニーズ', topics_path %></li>
         <li><%= link_to 'ユーザー一覧', users_path %></li>
         <li><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></li>
         <li><%= link_to 'ログアウト', logout_path %></li>
