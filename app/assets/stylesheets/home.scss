@@ -192,6 +192,8 @@ html {
     width: 30px;
     height: 22px;
     vertical-align: middle;
+    float: right;
+    margin-top: 45px;
   }
 
   /*ハンバーガーアイコンをCSSだけで表現*/
@@ -238,8 +240,8 @@ html {
     height: 100%;
     background: #fff;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
-    -webkit-transform: translateX(-105%);
-    transform: translateX(-105%);/*左に隠しておく*/
+    -webkit-transform: translateX(310%);
+    transform: translateX(310%);/*左に隠しておく*/
   }
 
   /*チェックが入ったらもろもろ表示*/
@@ -249,8 +251,8 @@ html {
   }
 
   #nav-input:checked ~ #nav-content {
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    -webkit-transform: translateX(250%);
+    transform: translateX(250%);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
 }
