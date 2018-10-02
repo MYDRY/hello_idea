@@ -1,16 +1,17 @@
-<%= link_to mark_notice_path(id: notice) do %>
-  <div class="panel panel-default" style="border: solid 3px lightskyblue;">
-    <% back_color = notice.has_read ? 'white' : 'lightskyblue' %>
+  <%= link_to mark_notice_path(id: notice), class: 'btn btn-default', style: 'margin: 0px; padding: 0px;' do %>
+    <div class="panel panel-default" style="border: solid 3px lightskyblue; margin: 0px;">
+      <% back_color = notice.has_read ? 'white' : 'lightskyblue' %>
 
-    <%= content_tag(:div, style: "background-color: #{back_color};") do %>
-      <div class="panel-body" style="height: 70px;">
-        <%= notice.message %>
-        <% unless notice.has_read %>
-        <% end %>
-      </div>
-      <div class="panel-footer">
-        <%= "作成日時: #{format_datetime(notice.created_at)}" %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+      <%= content_tag(:div, style: "background-color: #{back_color};") do %>
+        <div class="panel-body" style="height: 70px; text-decoration: none;">
+          <%= notice.message %>
+          <% unless notice.has_read %>
+          <% end %>
+        </div>
+        <div class="panel-footer" style=" text-decoration: none;">
+          <%= "作成日時: #{format_datetime(notice.created_at)}" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <br>
