@@ -132,7 +132,7 @@ html {
 
 /************* ヘッダー ********************/
 .header{
-  width: 1200px;
+  width: 100%;
   height: 50px;
   .header-brand a{
     float: left;
@@ -165,8 +165,8 @@ html {
   }
 }
 
-@media(max-width:1000px){
-
+/*width:1200px 以下*/
+@media(max-width:1200px){
 }
 
 /************* フッター ********************/
@@ -175,7 +175,7 @@ html {
   text-align: right;
   border-top: solid 2px #eaeaea;
   color: #777;
-  mergin-left: 15px;
+  margin-left: 15px;
   a {
     color: red;
     &:hover {
