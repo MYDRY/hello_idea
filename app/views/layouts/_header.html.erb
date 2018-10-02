@@ -8,7 +8,7 @@
         <% if logged_in? %>
           <div><%= link_to current_user.name, user_path(id: current_user) %></div>
           <div><%= link_to 'トピック一覧', topics_path %></div>
-          <div><%= link_to 'ユーザー一覧', users_path %></div>
+          <div><%= link_to 'ユーザーリスト', users_path %></div>
           <div><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></div>
           <div><%= link_to 'ログアウト', logout_path %></div>
         <% else %>
