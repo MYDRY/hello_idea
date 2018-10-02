@@ -3,8 +3,8 @@
       <% back_color = notice.has_read ? 'white' : 'lightskyblue' %>
 
       <%= content_tag(:div, style: "background-color: #{back_color};") do %>
-        <div class="panel-body" style="height: 70px; text-decoration: none;">
-          <%= notice.message %>
+        <div class="panel-body" style="">
+          <%= simple_format notice.message %>
           <% unless notice.has_read %>
           <% end %>
         </div>

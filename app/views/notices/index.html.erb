@@ -1,8 +1,9 @@
 <div class="main">
   <h1>通知</h1>
-  <div class="panel panel-info" style="margin: 10px 20px;">
-    <%= link_to 'Delete Notice Has Read', delete_notice_has_read_path(user: current_user),
-    method: :delete, data: { confirm: '既読の通知を削除しますか？' } unless @notices.where(has_read: true).empty? %>
+  <%= link_to 'チェック済みの通知を一括削除', delete_notice_has_read_path(user: current_user),
+  method: :delete, data: { confirm: '既読の通知を削除しますか？' }, class: 'btn btn-primary', style: 'float: right; background-color: #00BABD' %>
+
+  <div class="panel panel-info" style="margin: 50px 20px; float: center;">
     <%= render partial: 'notices/notice', collection: @notices %>
   </div>
 </div>
