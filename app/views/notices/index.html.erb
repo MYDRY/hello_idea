@@ -1,11 +1,24 @@
-<h1>通知</h1>
-<%= link_to 'Delete Notice Has Read', delete_notice_has_read_path(user: current_user), method: :delete, data: { confirm: '既読の通知を削除しますか？' } unless @notices.where(has_read: true).empty? %>
-<% @notices.each do |notice| %>
-  <br>
-  <%= "ID: #{notice.id}" %><br>
-  <%= simple_format "Message: #{notice.message}" %><br>
-  <%= "Has read?: #{notice.has_read}" %><br>
-  <%= link_to 'Mark as read', mark_notice_path(id: notice)%><br>
-  <%= link_to 'Delete', notice_path(id: notice.id), method: :delete, data: { confirm: '通知を削除しますか？' } if notice.has_read %><br>
-  <br>
-<% end %>
+<div class="main">
+  <div class="container">
+      <h1>通知</h1>
+        <div class="panel panel-info" style="margin: 10px 20px;">
+          <div class="list">
+            <div class="dtable_c">
+              <ul>
+                  <%= link_to 'Delete Notice Has Read', delete_notice_has_read_path(user: current_user), method: :delete, data: { confirm: '既読の通知を削除しますか？' } unless @notices.where(has_read: true).empty? %>
+                    <% @notices.each do |notice| %>
+                      <div style="margin-left: 15px; padding: 10px; width: 500px; border: solid 2px skyblue; border-radius: 9px; background-color: white;"><br>
+                        <%= "ID: #{notice.id}" %><br>
+                        <%= link_to image_tag(get_image(notice.user), size: '50', class: 'img-thumbnail'), user_path(id: notice.user) %>
+                        <%= simple_format "Message: #{notice.message}" %><br>
+                        <%= "Has read?: #{notice.has_read}" %><br>
+                        <%= link_to 'Mark as read', mark_notice_path(id: notice), class: 'btn btn-warning'%><br>
+                        <%= link_to 'Delete', notice_path(id: notice.id), class: 'btn btn-info', method: :delete, data: { confirm: '通知を削除しますか？' } if notice.has_read %><br>
+                      </div>
+                    <% end %>
+            　 </ul>
+            </div>
+          </div>
+      　</div>
+  </div>
+</div>
