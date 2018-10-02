@@ -257,16 +257,20 @@ html {
   }
   
   #nav-content{
+    ul{
+      padding-left: 0;
+      margin-left: 0;
+    }
     div{
       list-style: none;
-      margin-left: 0;
-      padding-left: 0;
       a{
         display:block;
         text-decoration: none;
         color: white;
         height: 50px;
         line-height: 50px;
+        padding-left: 15px;
+        border-bottom: thin solid #fff;
       }
       a:hover{
 	transition:all 0.5s;
