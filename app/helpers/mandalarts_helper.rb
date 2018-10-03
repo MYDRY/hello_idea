@@ -11,13 +11,13 @@ module MandalartsHelper
   end
 
   def show_core_elem
-    html_text = ''
-    get_attributes = lambda{|n| { id: "5-#{n}", type: 'core', class: 'col-xl-3'}}
-    (1..9).each do |n|
-      attributes = get_attributes.call(n)
-      attributes.merge!(onchange: "animeTest1(#{n}, this.value)") unless n == 5
-      html_text += content_tag(:input, ' ', attributes)
+    content_tag(:div, id: 'core', class: 'col-xl-3') do
+      get_attributes = lambda{|n| { id: "5-#{n}", type: 'core', class: 'col-xl-3'}}
+      (1..9).each do |n|
+        attributes = get_attributes.call(n)
+        attributes.merge!(onchange: "animeTest1(#{n}, this.value)") unless n == 5
+        concat content_tag(:input, ' ', attributes)
+      end
     end
-    html_text.html_safe
   end
 end
