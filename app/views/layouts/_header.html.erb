@@ -8,7 +8,17 @@
         <li><%= link_to current_user.name, user_path(id: current_user) %></li>
         <li><%= link_to 'トピック一覧', topics_path %></li>
         <li><%= link_to 'ユーザ一覧', users_path %></li>
-        <li><%= link_to '通知', user_notices_path(user_id: current_user) %></li>
+        <li>
+          <%= link_to user_notices_path(user_id: current_user) do %>
+            <% unread_notices = current_user.notices.where(has_read: false) %>
+            <% unless unread_notices.empty? %>
+              通知
+              <span class="icon badge badge-danger">
+                <%= unread_notices.count %>
+              </span>
+            <% end %>
+          <% end %>
+        </li>
         <li><%= link_to 'ログアウト', logout_path %></li>
       <% else %>
         <li><%= link_to 'ログイン', login_path %></li>
