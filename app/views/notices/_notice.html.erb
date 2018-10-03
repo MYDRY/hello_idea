@@ -1,6 +1,6 @@
-<%= link_to mark_notice_path(id: notice), class: 'btn btn-default', style: 'width: 90%; margin-top: 15px;  padding: 0px;' do %>
-  <div class="panel panel-default" style="border: solid 3px lightskyblue; margin: 0px;">
-    <% back_color = notice.has_read ? 'lightgray' : 'lightskyblue' %>
+<%= link_to mark_notice_path(id: notice), class: 'btn btn-default', style: 'width: 90%; margin-top: 15px; padding: 0px;' do %>
+  <div class="panel panel-default" >
+    <% back_color = notice.has_read ? 'lightgray' : 'white' %>
     <% font_color = notice.has_read ? 'gray' : 'black' %>
     <%= content_tag(:div, style: "background-color: #{back_color};") do %>
       <%= content_tag(:div, class: 'panel-body', style: "color: #{font_color}; font-weight: 900;") do %>
