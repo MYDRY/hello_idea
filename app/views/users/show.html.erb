@@ -11,18 +11,39 @@
       <div class="tab-content">
         <div class="tab-pane active" id="tab1">
           <p>
-            <%= render partial: 'topics/simple', collection: @user.topics, as: 'topic', layout: 'topics/list_frame' %>
+            <% if @user.topics.empty? %>
+              <div style="text-align: center; font-size: 30px;">
+                <br>あなたは まだトピックを投稿していません<br><br>
+                <%= link_to 'トピックを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
+              </div>
+            <% else %>
+              <%= render partial: 'topics/simple', collection: @user.topics, as: 'topic', layout: 'topics/list_frame' %>
+            <% end %>
           </p>
         </div>
         <div class="tab-pane" id="tab2">
           <p>
-            <%= render partial: 'ideas/simple', collection: @user.ideas, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
+            <% if @user.ideas.empty? %>
+              <div style="text-align: center; font-size: 30px;">
+                <br>あなたは まだアイデアを投稿していません<br><br>
+                <%= link_to 'アイデアを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
+              </div>
+            <% else %>
+              <%= render partial: 'ideas/simple', collection: @user.ideas, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
+            <% end %>
           </p>
         </div>
         <div class="tab-pane" id="tab3">
           <p>
-            <% @user.likes.each do |like| %>
-              <%= render partial: 'ideas/simple', locals: { idea: like.idea, tab_name: 'like' }, layout: 'ideas/list_frame' %>
+            <% if @user.likes.empty? %>
+              <div style="text-align: center; font-size: 30px;">
+                <br>あなたは まだ いいね！ を投稿していません<br><br>
+                <%= link_to 'アイデアに いいね！ してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
+              </div>
+            <% else %>
+              <% @user.likes.each do |like| %>
+                <%= render partial: 'ideas/simple', locals: { idea: like.idea, tab_name: 'like' }, layout: 'ideas/list_frame' %>
+              <% end %>
             <% end %>
           </p>
         </div>
