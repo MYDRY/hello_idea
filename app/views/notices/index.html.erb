@@ -1,8 +1,8 @@
 <div class="main">
-  <h1>通知</h1>
+  <h1 style="margin-left: 50px;">通知</h1>
   <p>
-  <%= link_to 'チェック済みの通知を一括削除', delete_notice_has_read_path(user: current_user),
-  method: :delete, data: { confirm: '既読の通知を削除しますか？' }, class: 'btn btn-primary', style: 'float: right; background-color: #00BABD' %>
+    <%= link_to 'チェック済みの通知を一括削除', delete_notice_has_read_path(user: current_user),
+    method: :delete, data: { confirm: '既読の通知を削除しますか？' }, class: 'btn btn-primary', style: 'float: right; margin-right: 50px; background-color: #00BABD' %>
   </p>
   <br>
   <%= render partial: 'notices/notice', collection: @notices %>
