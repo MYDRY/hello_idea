@@ -10,6 +10,6 @@ module LikesHelper
       return
     end
     idea_body_string = idea.body.length > 10 ? idea.body[0..9] + '...' : idea.body
-    subscribe_user.notices.create(message: "#{current_user.name}さんがあなたのアイデア「#{idea_body_string}」にいいね！しました")
+    subscribe_user.notices.create(message: "#{current_user.name}さんがあなたのアイデア「#{idea_body_string}」に\nいいね！しました")
   end
 end
