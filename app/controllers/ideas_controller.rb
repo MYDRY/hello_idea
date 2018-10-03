@@ -6,8 +6,12 @@ class IdeasController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def show
-    @idea = Idea.find(params[:id])
-    @likes_count = Like.where(idea_id: @idea.id).count
+    @idea = Idea.find_by(id: params[:id])
+    if @idea.nil?
+      redirect_to topics_path
+    else 
+      @likes_count = Like.where(idea_id: @idea.id).count
+    end
   end
 
   def new

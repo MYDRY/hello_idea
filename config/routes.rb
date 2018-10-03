@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  get 'mandalarts/index'
   root 'home#top'
+  get '/detail' => 'home#detail'
   post 'topics/classfy_topic'
   get '/login' => 'users#login'
   post '/login' => 'users#check_user'

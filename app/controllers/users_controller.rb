@@ -2,11 +2,12 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:index, :show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
-  
+  before_action :admin_user, only: :destroy
+
   def index
   	@users=User.all
   end
-  
+
   def show
     @user = User.find(params[:id])
   end
@@ -31,13 +32,13 @@ class UsersController < ApplicationController
   end
 
   def check_user
-    @user = User.find_by(email: params[:user][:email])
+    @user = User.find_by(name: params[:user][:name])
     if @user && @user.authenticate(params[:user][:password])
       log_in @user
       flash[:success] = "ログインしました"
       redirect_to @user
     else
-      flash[:danger] = "メールアドレスまたはパスワードが間違っています"
+      flash[:danger] = "ユーザー名またはパスワードが間違っています"
       redirect_to login_path
     end
   end
@@ -59,10 +60,18 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "ユーザーを削除しました"
+    redirect_to users_path
+
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email, :image, :password)
+    params.require(:user).permit(:name, :email, :image, :password, :password_confirmation)
   end
 
   def correct_user
@@ -72,4 +81,9 @@ class UsersController < ApplicationController
       redirect_back fallback_location: users_path
     end
   end
+
+  def admin_user
+    redirect _to root_path unless current_user.admin?
+  end
+
 end
