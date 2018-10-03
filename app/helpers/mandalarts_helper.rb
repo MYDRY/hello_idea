@@ -1,13 +1,13 @@
 module MandalartsHelper
   def show_sub_elem(subNum)
-    html_text = ''
-    default_attributes = {type: 'sub', class: 'col-xl-3'}
-    core_attributes = default_attributes.merge({ style: 'visibility: hidden; border: 1px dotted #999;'})
-    (1..9).each do |n|
-      attributes = (n == 5) ? core_attributes : default_attributes
-      html_text += content_tag(:input, ' ', { id: "#{subNum}-#{n}" }.merge(attributes))
+    content_tag(:div, id: subNum, class: 'col-xl-3', style: 'visibility: hidden;') do
+      default_attributes = {type: 'sub', class: 'col-xl-3'}
+      core_attributes = default_attributes.merge({ style: 'visibility: hidden; border: 1px dotted #999;'})
+      (1..9).each do |n|
+        attributes = (n == 5) ? core_attributes : default_attributes
+        concat content_tag(:input, ' ', { id: "#{subNum}-#{n}" }.merge(attributes))
+      end
     end
-    html_text.html_safe
   end
 
   def show_core_elem
