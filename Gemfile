@@ -45,6 +45,9 @@ gem 'bootstrap-sass', '>= 3.3.7'
 # For Image Upload
 gem 'carrierwave'
 
+# animejs for tool
+gem 'anime_js_rails'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
