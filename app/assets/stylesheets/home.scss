@@ -17,6 +17,7 @@ html {
   min-height: 82vh;
   h1 {
     color: #007B96;
+    padding: 20px;
   }
 }
 
@@ -43,6 +44,12 @@ html {
   }
   .aroundbrank {
     padding: 30px;
+  }
+}
+
+.smart-phone{
+  h1{
+    padding: 20px;
   }
 }
 
@@ -179,16 +186,16 @@ html {
   .header-list div{
     display: none;
   }
- 
+
   #nav-drawer {
     position: relative;
-  } 
+  }
 
   /*チェックボックス等は非表示に*/
   .nav-unshown {
     display:none;
   }
- 
+
   /*アイコンのスペース*/
   #nav-open {
     display: inline-block;
@@ -215,7 +222,7 @@ html {
   }
   #nav-open span:after {
     bottom: -16px;
- } 
+ }
 
   /*閉じる用の薄黒カバー*/
   #nav-close {
@@ -258,7 +265,7 @@ html {
     transform: translateX(65vw);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
-  
+
   #nav-content{
     ul{
       padding-left: 0;
