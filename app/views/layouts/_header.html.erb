@@ -7,7 +7,7 @@
           <div><%= link_to 'HelloIdeaとは', "/detail" %></div>
         <% if logged_in? %>
           <div><%= link_to current_user.name, user_path(id: current_user) %></div>
-          <div><%= link_to 'トピック一覧', topics_path %></div>
+          <div><%= link_to 'ニーズ', topics_path %></div>
           <% if current_user.admin? %><div><%= link_to 'ユーザーリスト', users_path %></div><% end %>
           <div><%= show_notice_link %></div>
           <div><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></div>
@@ -28,7 +28,7 @@
                <div><%= link_to 'HelloIdeaとは', "/detail" %></div>
               <% if logged_in? %>
                <div><%= link_to current_user.name, user_path(id: current_user) %></div>
-               <div><%= link_to 'トピック一覧', topics_path %></div>
+               <div><%= link_to 'ニーズ', topics_path %></div>
                <div><%= link_to 'ユーザーリスト', users_path %></div>
                <div><%= show_notice_link %></div>
                <div><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></div>
@@ -55,7 +55,7 @@
       <li><%= link_to 'HelloIdeaとは', "/detail" %></li>
       <% if logged_in? %>
         <li><%= link_to current_user.name, user_path(id: current_user) %></li>
-        <li><%= link_to 'トピック一覧', topics_path %></li>
+        <li><%= link_to 'ニーズ', topics_path %></li>
         <li><%= show_notice_link %></li>
         <li><%= link_to 'ユーザー一覧', users_path %></li>
         <li><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></li>
