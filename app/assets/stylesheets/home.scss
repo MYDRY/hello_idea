@@ -99,7 +99,6 @@ html {
       }
     }
   }
-
   .is_helloidea{
     text-align: center;
     .theme{
@@ -146,6 +145,42 @@ html {
       font-size: 3vw;
       line-height: 5vw;
       font-weight:bold;
+    }
+  }
+
+  .detail-smart-phone{
+    padding: 30px;
+    h1{
+      line-height: 10vw;
+      font-size: 7vw;
+      color: #006E6F;
+      .small{
+        font-size: 4vw;
+        color: #006E6F;
+      }
+    }
+    h2{
+      line-height: 7vw;
+      font-size: 5vw;
+      color: #006E6F;
+      .small{
+        font-size: 3vw;
+        color: #006E6F;
+      }
+    }
+    h3{
+      line-height: 6vw;
+      font-size: 4vw;
+    }
+    .message-item {
+      p {
+        line-height: 5vw;
+        font-size: 2vw;
+        @media screen and (min-width: 769px) {
+          line-height: 7vw;
+          font-size: 4vw;
+        }
+      }
     }
   }
 }
