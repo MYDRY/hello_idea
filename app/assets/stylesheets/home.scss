@@ -139,7 +139,6 @@ html {
   }
 }
 
-
 /************* ヘッダー ********************/
 .header{
   width: 100%;
@@ -222,7 +221,7 @@ html {
   }
   #nav-open span:after {
     bottom: -16px;
- }
+  }
 
   /*閉じる用の薄黒カバー*/
   #nav-close {
@@ -283,8 +282,8 @@ html {
         border-bottom: thin solid #fff;
       }
       a:hover{
-	transition:all 0.5s;
-	background-color: #5f9ea0;
+        transition:all 0.5s;
+        background-color: #5f9ea0;
       }
     }
   }
