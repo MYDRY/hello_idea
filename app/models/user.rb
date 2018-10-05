@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :ideas,  dependent: :destroy
   has_many :topics, dependent: :destroy
   has_many :likes,  dependent: :destroy
+  has_many :notices, dependent: :destroy
 
   mount_uploader :image, ProfileImageUploader
 end

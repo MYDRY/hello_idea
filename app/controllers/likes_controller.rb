@@ -6,6 +6,7 @@ class LikesController < ApplicationController
     @idea = Idea.find(params[:idea_id])
     like = current_user.likes.build(idea_id: @idea.id)
     like.save
+    view_context.spawn_like_notice(@idea)
     flash[:success] = "いいねしました"
     redirect_back fallback_location: topic_path(id: @idea.topic)
   end
