@@ -5,7 +5,7 @@
       <% delete_button_class = 'btn btn-primary ' + (@notices.where(has_read: true).empty? ? 'disabled' : '') %>
       <%= link_to '既読の通知を一括削除', delete_notice_has_read_path(user: current_user),
       method: :delete, data: { confirm: '既読の通知を削除しますか？' }, class: "#{delete_button_class}",
-      style: 'float: right;  background-color: #00BABD' %>
+      style: 'float: right;  background-color: #00BABD; margin-right: 20px;' %>
     </p>
     <br>
     <%= render partial: 'notices/notice', collection: @notices %>
