@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="panel-footer" style="color: gray;">
-      <%= link_to 'トピックへ', topic_path(id: @idea.topic), class: 'btn btn-primary', style: 'color: white; background-color: #00BABD;' %>
+      <%= link_to 'ニーズへ', topic_path(id: @idea.topic), class: 'btn btn-primary', style: 'color: white; background-color: #00BABD;' %>
       <% if idea.user_id == current_user.id %>
         <div style="float: right;">
           <%= link_to edit_idea_path(id: idea.id) do %>

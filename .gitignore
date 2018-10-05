@@ -34,3 +34,6 @@ vendor/*
 
 # Ignore uploaded files
 /public/uploads/*
+
+# Ignore message file
+/lib/tasks/message.txt
