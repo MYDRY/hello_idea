@@ -1,0 +1,77 @@
+<div class="main">
+  <div class="detail-message">
+    <div class="detail-smart-phone">
+      <h1>Hello Idea<span class="small">は</span></h1>
+      <h2>アイデア創出プラットフォーム<span class="small">です。</span></h2>
+      <br>
+      <div class="message-item">
+        <p>
+          <b>アイデア出しに苦労したことはありませんか？<br>
+          アイデア出しをサポートするサービスを目指し、<br>
+          Hello Ideaを開発しました。</b><br>
+        </p>
+      </div>
+      <br>
+      <h3>本β版では、SNS機能による<br><strong>自由にアイデアを出し合える場</strong>を提供します。</h3>
+      <br>
+      <div class="message-item">
+        <p>
+          本SNSの特徴として、他者のアイデアに対して<br>
+          コメントできないようになっています。<br>
+          これは人のアイデアを否定してはいけないという、<br>
+          アイデア出しの大原則に則ったものです。<br>
+          <b>良いと思ったアイデア</b>に対しては、<br>
+          「<b>いいね</b>」をすることができます。<br>
+        </p>
+      </div>
+      <br>
+      <div class="message-item">
+        <p>
+          Hello IdeaのSNS機能は,<br>
+          <b>ニーズ</b>と<b>アイデア</b>の2つで構成されています。<br>
+          ニーズは、大きく分けると理想と問題に<br>
+          分けることができます。<br>
+          アイデアは、<b>理想の最大化</b>や<br>
+          <b>問題の最小化</b>をすることができるものです。
+        </p>
+      </div>
+      <br>
+      <div class="message-item">
+        <p>
+          ニーズを投稿し、集まったアイデアを<br>
+          自身のアイデア創出の<b>ヒント</b>にするのもよし。<br>
+          自身のアイデアを投稿し、<br>
+          集まったいいねの数を世間の反応の指標にするのもよし。<br>
+          <b>あなたなりの使い方を見つけてください。</b><br>
+        </p>
+      </div>
+    </div>
+<!--      <div class="how_to">
+        <h2 class="how_to_title">Hello Ideaの使い方</h2>
+
+        <p>理想、問題、その他からジャンルを選択</p>
+        <p>各ジャンル毎のニーズが一覧として閲覧できます</p>
+        <div class="image" align="center"><img src="exp-1.jpg"></div>
+
+        <p>ジャンルを選択してニーズを投稿できます</p>
+        <div class="image" align="center"><img src="exp-2.jpg"></div>
+
+        <p>ニーズを選択すると、ニーズ詳細に移動できます</p>
+        <p>ニーズ詳細ページでは、ニーズが一覧として表示されます</p>
+        <div class="image" align="center"><img src="exp-3.jpg"></div>
+
+        <p>ニーズ詳細ページから、アイデアを投稿できます</p>
+        <div class="image" align="center"><img src="exp-4.jpg"></div>
+
+        <p>投稿されているアイデアに「いいね」することができます</p>
+        <p>「いいね」したアイデアはユーザーページから確認できます</p>
+        <div class="image" align="center"><img src="exp-5.jpg"></div>
+      </div>
+-->      <br>
+      <% if !(logged_in?) %>
+        <%= link_to 'Hello Ideaを始める', new_user_path, class: 'btn btn-default btn-block btn-lg', style: 'text-align: center; background-color: #ff9190; color: white;' %>
+      <% end %>
+      <br>
+    </div>
+
+</div>
