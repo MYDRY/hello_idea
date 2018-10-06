@@ -17,6 +17,7 @@ html {
   min-height: 82vh;
   h1 {
     color: #007B96;
+    padding: 20px;
   }
 }
 
@@ -43,6 +44,23 @@ html {
   }
   .aroundbrank {
     padding: 30px;
+  }
+}
+
+.smart-phone{
+  h1{
+    padding: 20px;
+  }
+  .nav-item {
+    width: 15%;
+    font-size: 30px;
+  }
+  .nav-item-lg {
+    font-size: 30px;
+    background-color: #00BABD;
+  }
+  .nav-item-lg a {
+    color: white;
   }
 }
 
@@ -81,7 +99,6 @@ html {
       }
     }
   }
-
   .is_helloidea{
     text-align: center;
     .theme{
@@ -130,8 +147,43 @@ html {
       font-weight:bold;
     }
   }
-}
 
+  .detail-smart-phone{
+    padding: 30px;
+    h1{
+      line-height: 10vw;
+      font-size: 7vw;
+      color: #006E6F;
+      .small{
+        font-size: 4vw;
+        color: #006E6F;
+      }
+    }
+    h2{
+      line-height: 7vw;
+      font-size: 5vw;
+      color: #006E6F;
+      .small{
+        font-size: 3vw;
+        color: #006E6F;
+      }
+    }
+    h3{
+      line-height: 6vw;
+      font-size: 4vw;
+    }
+    .message-item {
+      p {
+        line-height: 5vw;
+        font-size: 2vw;
+        @media screen and (min-width: 769px) {
+          line-height: 7vw;
+          font-size: 4vw;
+        }
+      }
+    }
+  }
+}
 
 /************* ヘッダー ********************/
 .header{
@@ -179,16 +231,16 @@ html {
   .header-list div{
     display: none;
   }
- 
+
   #nav-drawer {
     position: relative;
-  } 
+  }
 
   /*チェックボックス等は非表示に*/
   .nav-unshown {
     display:none;
   }
- 
+
   /*アイコンのスペース*/
   #nav-open {
     display: inline-block;
@@ -215,7 +267,7 @@ html {
   }
   #nav-open span:after {
     bottom: -16px;
- } 
+  }
 
   /*閉じる用の薄黒カバー*/
   #nav-close {
@@ -258,7 +310,7 @@ html {
     transform: translateX(65vw);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
-  
+
   #nav-content{
     ul{
       padding-left: 0;
@@ -276,8 +328,8 @@ html {
         border-bottom: thin solid #fff;
       }
       a:hover{
-	transition:all 0.5s;
-	background-color: #5f9ea0;
+        transition:all 0.5s;
+        background-color: #5f9ea0;
       }
     }
   }
