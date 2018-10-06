@@ -1,46 +1,30 @@
 <div class="panel panel-default", style="margin: 10px 75px 0px; border-width: 3px;">
   <div class="idea">
     <div class="panel-heading" style="background-color: white;">
-      <!--<% content_id = local_assigns[:tab_name] ? "idea-content-#{tab_name}-#{idea.id}": "idea-content-#{idea.id}" %>-->
       <div class="box">
         <ul>
-        <li class="b-item1"><%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %></li>
-        <li class="b-item2">
-          <!-- <%= link_to idea.body, '#'+content_id, data: { toggle: 'collapse' }, style: 'width: 100%; text-align: left;', class: 'btn btn-default'%> -->
-          <%= link_to idea.user.name, user_path(id: idea.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
-         <span class="b-item3" style="float: right;">
-          <% if already_liked? idea %>
-          <%= link_to like_path(id: idea), method: :delete do %>
-          <span class="fa fa-heart like-btn-unlike"><%= idea.likes.count %></span>
-          <% end %>
-          <% else %>
-          <%= link_to idea_likes_path(idea_id: idea), method: :post do %>
-          <span class="fa fa-heart like-btn"><%= idea.likes.count %></span>
-          <% end %>
-          <% end %>
-        </span></li>
+          <li class="b-item1"><%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %></li>
+          <li class="b-item2">
+            <%= link_to idea.user.name, user_path(id: idea.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
+            <span style="float: right; padding-top: 2%;">
+              <% if already_liked? idea %>
+              <%= link_to like_path(id: idea), method: :delete do %>
+              <span class="fa fa-heart like-btn-unlike"><%= idea.likes.count %></span>
+              <% end %>
+              <% else %>
+              <%= link_to idea_likes_path(idea_id: idea), method: :post do %>
+              <span class="fa fa-heart like-btn"><%= idea.likes.count %></span>
+              <% end %>
+              <% end %>
+            </span>
+          </li>
         </ul>
-        <div> <%= link_to idea.body, idea_path(id:idea), style: 'width: 100%; text-align: left;' %></div>
-        
       </div>
     </div>
-    <!--
-    <%= content_tag :div, class: 'panel-collapse collapse', id: content_id do -%>
-    <div class="panel-body" style="font-size: 16px;">
-    投稿者:
-    <%= link_to idea.user.name, user_path(id: idea.user) %>
-    / 投稿日時: <%= format_datetime(idea.created_at) %>
-    <%= link_to '詳細', idea_path(id: idea), class: 'btn btn-primary btn-xs', style: 'float: right;color: white; background-color: #00BABD;' %>
-    <% if idea.user_id == current_user.id %>
-    <%= link_to edit_idea_path(id: idea.id) do %>
-    <span class="fa fa-edit"></span>
-    <% end %>
-    <%= link_to idea_path(id: idea.id), method: :delete do %>
-    <span class="fa fa-trash"></span>
-    <% end %>
-    <% end %>
+    <div class="panel-body">
+      <div class="b-item5" style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
+        <span title="詳細ページへ"><%= link_to idea.body, idea_path(id: idea), style: 'width: 100%; text-align: left;' %></span>
+      </div>
+    </div>
   </div>
-  <% end %>
--->
-</div>
 </div>
