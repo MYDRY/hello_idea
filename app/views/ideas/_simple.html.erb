@@ -9,11 +9,11 @@
             <span style="float: right; padding-top: 2%;">
               <% if already_liked? idea %>
               <%= link_to like_path(id: idea), method: :delete do %>
-              <span class="fa fa-heart like-btn-unlike"><%= idea.likes.count %></span>
+              <span class="fa fa-heart like-btn-unlike fa-2x"><%= idea.likes.count %></span>
               <% end %>
               <% else %>
               <%= link_to idea_likes_path(idea_id: idea), method: :post do %>
-              <span class="fa fa-heart like-btn"><%= idea.likes.count %></span>
+              <span class="fa fa-heart like-btn fa-2x"><%= idea.likes.count %></span>
               <% end %>
               <% end %>
             </span>
