@@ -252,6 +252,15 @@ html {
     float: right;
     height: 125px;
     display: inline;
+    span{
+      float: left;
+      a{
+        line-height: 125px;
+        color: #fff;
+        font-size: 60px;
+        padding-left: 0;
+      }
+    }
     div{
       list-style: none;
       float: left;
@@ -288,7 +297,7 @@ html {
     width: 125px;
     height: 125px;
     vertical-align: middle;
-    padding-left: 25px;
+    padding-left: 40px;
     padding-top: 40px;
   }
 
