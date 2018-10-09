@@ -1,5 +1,5 @@
 <div style="background-color: #006E6F;">
-  <div class="container">
+  <div class="pad">
     <div class="header">
       <div class="header-brand"><a href="/">Hello Idea</a></div>
       <div class="header-list">
@@ -18,7 +18,7 @@
         <% end %>
         <!--</ul>-->
       </div>
-      <div class="hun">
+      <div class="hamburger">
         <div id="nav-drawer">
           <input id="nav-input" type="checkbox" class="nav-unshown">
           <label id="nav-open" for="nav-input"><span></span></label>
@@ -40,34 +40,10 @@
             </ul>
           </div>
         </div>
-      </div>
+     </div>
     </div>
   </div>
 </div>
-
-<!--
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Hello Idea</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right" style="display: inline;">
-      <li><%= link_to 'HelloIdeaとは', "/detail" %></li>
-      <% if logged_in? %>
-        <li><%= link_to current_user.name, user_path(id: current_user) %></li>
-        <li><%= link_to 'ニーズ', topics_path %></li>
-        <li><%= show_notice_link %></li>
-        <li><%= link_to 'ユーザー一覧', users_path %></li>
-        <li><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></li>
-        <li><%= link_to 'ログアウト', logout_path %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', login_path %></li>
-        <li><%= link_to '新規登録', new_user_path %></li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
--->
 
 <% flash.each do |type, msg| %>
   <div class="alert alert-<%= type %>" style="margin: -20px 0px 10px; padding: 15px 100px 15px; ">
