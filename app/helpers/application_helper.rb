@@ -14,14 +14,14 @@ module ApplicationHelper
     datetime.strftime(format)
   end
 
-  def inform_validation_errror(obj)
-    html_text = ''
-    obj.errors.full_messages.each do |message|
-      html_text += content_tag(:div, class: 'alert alert-danger') do
-        content_tag(:a, 'x', data: { dismiss: 'alert' })
-        message
+  def inform_validation_errors(obj)
+    content_tag(:p) do
+      obj.errors.full_messages.each do |message|
+        concat content_tag(:div, class: 'alert alert-danger') do
+          concat content_tag(:a, 'x', data: { dismiss: 'alert' })
+          message
+        end
       end
     end
-    raw(html_text)
   end
 end

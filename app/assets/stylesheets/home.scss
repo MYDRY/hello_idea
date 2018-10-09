@@ -17,16 +17,17 @@ html {
   min-height: 82vh;
   h1 {
     color: #007B96;
+    padding: 20px;
   }
 }
 
 .top {
-//  background-image: url('top.png');
-//  background-position: 30%;
+  //  background-image: url('top.png');
+  //  background-position: 30%;
   /* 画像をタイル状に繰り返し表示しない */
-//  background-repeat: no-repeat;
+  //  background-repeat: no-repeat;
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-//  background-size: contain;
+  //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: white;
   .message{
@@ -40,6 +41,26 @@ html {
   }
   .top-image {
     padding-left: 10%;
+  }
+  .aroundbrank {
+    padding: 30px;
+  }
+}
+
+.smart-phone{
+  h1{
+    padding: 20px;
+  }
+  .nav-item {
+    width: 15%;
+    font-size: 30px;
+  }
+  .nav-item-lg {
+    font-size: 30px;
+    background-color: #00BABD;
+  }
+  .nav-item-lg a {
+    color: white;
   }
 }
 
@@ -78,7 +99,6 @@ html {
       }
     }
   }
-
   .is_helloidea{
     text-align: center;
     .theme{
@@ -127,13 +147,53 @@ html {
       font-weight:bold;
     }
   }
+
+  .detail-smart-phone{
+    padding: 30px;
+    h1{
+      line-height: 10vw;
+      font-size: 7vw;
+      color: #006E6F;
+      .small{
+        font-size: 4vw;
+        color: #006E6F;
+      }
+    }
+    h2{
+      line-height: 7vw;
+      font-size: 5vw;
+      color: #006E6F;
+      .small{
+        font-size: 3vw;
+        color: #006E6F;
+      }
+    }
+    h3{
+      line-height: 6vw;
+      font-size: 4vw;
+    }
+    .message-item {
+      p {
+        line-height: 5vw;
+        font-size: 2vw;
+        @media screen and (min-width: 769px) {
+          line-height: 7vw;
+          font-size: 4vw;
+        }
+      }
+    }
+  }
 }
 
-
 /************* ヘッダー ********************/
+.pad{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 .header{
-  width: 1200px;
-  height: 50px;
+  width: 100%;
+  height: 100px;
   .header-brand a{
     float: left;
     font-size: 60px;
@@ -149,24 +209,150 @@ html {
       list-style: none;
       float: left;
       a{
-	display: block;
-	color: white;
-	text-decoration: none;
-	line-height: 100px;
-	padding-left: 12px;
-	padding-right: 12px;
-	height: 100px;
+        display: block;
+        color: white;
+        text-decoration: none;
+        line-height: 100px;
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 100px;
       }
       a:hover{
-	transition:all 0.5s;
+        transition:all 0.5s;
         background-color: #5f9ea0;
       }
     }
   }
 }
 
-@media(max-width:1000px){
+@media(min-width:1200px){
+  .hamburger{
+    display:none;
+  }
+}
 
+/*width:1200px 以下*/
+@media(max-width:1200px){
+  .pad{
+    padding: 0;
+  }
+
+  .header{
+    height: 125px;
+    .header-brand a{
+      line-height: 125px;
+      width:350px;
+      text-align: center;
+    }
+  }
+
+  .header-list div{
+    display: none;
+  }
+
+  #nav-drawer {
+    position: relative;
+  }
+
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    float: right;
+    width: 125px;
+    margin-top: 45px;
+  }
+
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 5px;/*線の太さ*/
+    width: 50px;/*長さ*/
+    border-radius: 3px;
+    background: #fff;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -16px;
+  }
+  #nav-open span:after {
+    bottom: -32px;
+  }
+
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 380px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #006E6F;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(400%);
+    transform: translateX(400%);/*左に隠しておく*/
+  }
+
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(100vw);
+    transform: translateX(65vw);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+  #nav-content{
+    ul{
+      padding-left: 0;
+      margin-left: 0;
+    }
+    div{
+      list-style: none;
+      a{
+        display:block;
+        text-decoration: none;
+        color: white;
+        height: 80px;
+        line-height: 80px;
+        padding-left: 15px;
+        border-bottom: thin solid #fff;
+        font-size: 40px;
+      }
+      a:hover{
+        transition:all 0.5s;
+        background-color: #5f9ea0;
+      }
+    }
+  }
 }
 
 /************* フッター ********************/
@@ -175,7 +361,7 @@ html {
   text-align: right;
   border-top: solid 2px #eaeaea;
   color: #777;
-  mergin-left: 15px;
+  margin-left: 15px;
   a {
     color: red;
     &:hover {

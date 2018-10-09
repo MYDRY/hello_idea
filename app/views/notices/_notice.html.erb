@@ -1,0 +1,15 @@
+<%= link_to mark_notice_path(id: notice), class: 'btn', style: 'width: 100%; margin-top: 15px; padding: 0;' do %>
+  <div class="panel panel-default" >
+    <% back_color = notice.has_read ? 'lightgray' : 'white' %>
+    <% font_color = notice.has_read ? 'gray' : 'black' %>
+    <%= content_tag(:div, style: "background-color: #{back_color};") do %>
+      <%= content_tag(:div, class: 'panel-body', style: "color: #{font_color}; font-weight: 900;") do %>
+        <%= simple_format notice.message %>
+      <% end %>
+      <div class="panel-footer" style="font-size: 30; text-decoration: none; text-align: right; color: gray;">
+        <%= format_datetime(notice.created_at) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<br>
