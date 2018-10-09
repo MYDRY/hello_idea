@@ -186,9 +186,14 @@ html {
 }
 
 /************* ヘッダー ********************/
+.pad{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 .header{
   width: 100%;
-  height: 50px;
+  height: 100px;
   .header-brand a{
     float: left;
     font-size: 60px;
@@ -221,13 +226,26 @@ html {
 }
 
 @media(min-width:1200px){
-  .hun{
+  .hamburger{
     display:none;
   }
 }
 
 /*width:1200px 以下*/
 @media(max-width:1200px){
+  .pad{
+    padding: 0;
+  }
+
+  .header{
+    height: 125px;
+    .header-brand a{
+      line-height: 125px;
+      width:350px;
+      text-align: center;
+    }
+  }
+
   .header-list div{
     display: none;
   }
@@ -244,18 +262,19 @@ html {
   /*アイコンのスペース*/
   #nav-open {
     display: inline-block;
-    width: 30px;
-    height: 22px;
+    width: 50px;
+    height: 50px;
     vertical-align: middle;
     float: right;
+    width: 125px;
     margin-top: 45px;
   }
 
   /*ハンバーガーアイコンをCSSだけで表現*/
   #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
-    height: 3px;/*線の太さ*/
-    width: 25px;/*長さ*/
+    height: 5px;/*線の太さ*/
+    width: 50px;/*長さ*/
     border-radius: 3px;
     background: #fff;
     display: block;
@@ -263,10 +282,10 @@ html {
     cursor: pointer;
   }
   #nav-open span:before {
-    bottom: -8px;
+    bottom: -16px;
   }
   #nav-open span:after {
-    bottom: -16px;
+    bottom: -32px;
   }
 
   /*閉じる用の薄黒カバー*/
@@ -322,10 +341,11 @@ html {
         display:block;
         text-decoration: none;
         color: white;
-        height: 50px;
-        line-height: 50px;
+        height: 80px;
+        line-height: 80px;
         padding-left: 15px;
         border-bottom: thin solid #fff;
+        font-size: 40px;
       }
       a:hover{
         transition:all 0.5s;
