@@ -51,6 +51,14 @@ html {
   h1{
     padding: 20px;
   }
+
+  ul{
+    display: inline;
+  }
+  div .nav-item-lg{
+    float: right;
+  }
+
   .nav-item {
     width: 15%;
     font-size: 30px;
