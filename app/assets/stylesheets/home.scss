@@ -201,6 +201,7 @@ html {
 
 .header{
   width: 100%;
+  min-width: 500px;
   height: 100px;
   .header-brand a{
     float: left;
@@ -237,6 +238,9 @@ html {
   .smap_header{
     display:none;
   }
+  .hamburger_header{
+    display: none;
+  }
 }
 
 /*width:1200px 以下*/
@@ -245,9 +249,61 @@ html {
     padding: 0;
   }
 
-  .header{
+  .smap_header{
     height: 125px;
   }
+
+  .hamburger_header{
+    display: inline;
+     .header_brand{
+      padding-left: 20px;
+      float: left;
+      a{
+        line-height: 100px;
+        color: #fff;
+        font-size: 60px;
+        padding-left: 0;
+        text-decoration: none;
+        float: left;
+      }
+    }
+  }
+  .hamburger_header_list{
+    float: right; 
+    height: 100px;
+    display: inline;
+    padding-right: 20px;
+    .header_brand{
+      float: left;
+      a{
+        line-height: 100px;
+        color: #fff;
+        font-size: 60px;
+        padding-left: 0;
+        text-decoration: none;
+        float: left;
+      }
+    }
+    div{
+      list-style: none;
+      float: left;
+      a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        line-height: 100px;
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 100px;
+        float: left; 
+      }
+      a:hover{
+        transition:all 0.5s;
+        background-color: #5f9ea0;
+      }
+    }
+  }
+
 
   .header-brand{
     display: none;
@@ -260,7 +316,7 @@ html {
     float: right;
     height: 125px;
     display: inline;
-    span{
+    .smap_header_brand{
       float: left;
       a{
         line-height: 125px;
