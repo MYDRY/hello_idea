@@ -16,8 +16,8 @@ html {
 .main {
   min-height: 82vh;
   h1 {
-    color: #007B96;
-    padding: 20px;
+     color: #007B96;
+     padding: 20px;
   }
 }
 
@@ -51,14 +51,6 @@ html {
   h1{
     padding: 20px;
   }
-
-  ul{
-    display: inline;
-  }
-  div .nav-item-lg{
-    float: right;
-  }
-
   .nav-item {
     width: 15%;
     font-size: 30px;
@@ -81,7 +73,9 @@ html {
     color: #006E6F;
     .small{
       font-size: 3vw;
-      color: #006E6F;
+      color: #:kill-session
+      
+006E6F;
     }
   }
   h2{
