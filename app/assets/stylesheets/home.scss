@@ -47,6 +47,37 @@ html {
   }
 }
 
+
+.container{
+  h1{
+    padding: 20px;
+  }
+
+  ul{
+    display: inline;
+  }
+  div .nav-item-lg{
+    float: right;
+  }
+
+  .nav-item {
+    //width: 10%;
+    font-size: 16px;
+  }
+  .nav-item-lg {
+    font-size: 16px;
+    background-color: #00BABD;
+  }
+  .nav-item-lg:hover {
+    background-color: #006e6f;
+    transition: all 0.3s;
+  }
+  .nav-item-lg a {
+    color: white;
+  }
+}
+
+
 .smart-phone{
   h1{
     padding: 20px;
