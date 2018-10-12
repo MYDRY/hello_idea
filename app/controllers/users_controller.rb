@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if @user.update_attributes(user_params)
       flash[:success] = "更新しました"
       redirect_to @user
     else
