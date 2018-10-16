@@ -47,7 +47,6 @@ html {
   }
 }
 
-
 .container{
   h1{
     padding: 20px;
@@ -75,8 +74,21 @@ html {
   .nav-item-lg a {
     color: white;
   }
+   
 }
 
+@media(min-width: 1201px){
+  .padding{
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
+@media(max-width: 1200px){
+  .padding{
+    min-width: 750px;
+  }
+}
 
 .smart-phone{
   h1{
