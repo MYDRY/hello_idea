@@ -1,7 +1,7 @@
 <div class="main">
   <div class="padding">
-      <h1>ユーザー詳細</h1>
-      <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/detail_frame' %>
+    <h1>ユーザー詳細</h1>
+    <%= render partial: 'users/user', locals: { user: @user, image_size: 200 }, layout: 'users/detail_frame' %>
     <div class="p-3">
       <ul class="nav nav-tabs">
         <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">投稿したニーズ　<span class="badge badge-primary"><%= @user.topics.count %></span></a></li>
