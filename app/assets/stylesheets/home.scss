@@ -394,7 +394,7 @@ html {
     height: 125px;
     vertical-align: middle;
     padding-left: 40px;
-    padding-top: 40px;
+    padding-top: 36px;
   }
 
 /*ハンバーガーアイコンをCSSだけで表現*/
@@ -410,10 +410,10 @@ html {
     
   }
   #nav-open span:before {
-    bottom: -16px;
+    bottom: -15px;
   }
   #nav-open span:after {
-    bottom: -32px;
+    bottom: -31px;
   }
 
 /*閉じる用の薄黒カバー*/
@@ -430,7 +430,7 @@ html {
     transition: .3s ease-in-out;
   }
 
-/*中身*/
+/*中身*/ 
   #nav-content {
     overflow: auto;
     position: fixed;
@@ -475,6 +475,47 @@ html {
     transform: translateX(0%);/*中身を表示*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
+
+/* 以下PCのhamburger */
+    #pc-nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る*/
+    max-width: 230px;/*最大幅*/
+    height: 100%;
+    background: #006e6f;/*背景色*/
+    transition: .2s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+     div{
+      list-style: none;
+      text-align: right;
+      a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        line-height: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 50px;
+        font-size: 20px;
+      }
+      a:hover{
+        transition:all 0.5s;
+        background-color: #5f9ea0;
+      }
+    }
+  }
+
+  #nav-input:checked ~ #pc-nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
 
 }
 
