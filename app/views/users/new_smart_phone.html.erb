@@ -1,6 +1,10 @@
 <div class="main">
   <div class="smart-phone">
-    <h1>アカウント作成</h1>
-    <%= render partial: 'form_field', locals: { user: @user, password: true } %>
+    <div class="mobile">
+      <h1 align="center">アカウント作成</h1>
+      <div style="float:center;">
+        <%= render partial: 'form_field_smart_phone', locals: { user: @user, password: true } %>
+      </div>
+    </div>
   </div>
 </div>

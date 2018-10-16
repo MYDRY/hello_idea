@@ -47,10 +47,49 @@ html {
   }
 }
 
+
+.container{
+  h1{
+    padding: 20px;
+  }
+
+  ul{
+    display: inline;
+  }
+  div .nav-item-lg{
+    float: right;
+  }
+
+  .nav-item {
+    //width: 10%;
+    font-size: 16px;
+  }
+  .nav-item-lg {
+    font-size: 16px;
+    background-color: #00BABD;
+  }
+  .nav-item-lg:hover {
+    background-color: #006e6f;
+    transition: all 0.3s;
+  }
+  .nav-item-lg a {
+    color: white;
+  }
+}
+
+
 .smart-phone{
   h1{
     padding: 20px;
   }
+
+  ul{
+    display: inline;
+  }
+  div .nav-item-lg{
+    float: right;
+  }
+
   .nav-item {
     width: 15%;
     font-size: 30px;
@@ -186,9 +225,15 @@ html {
 }
 
 /************* ヘッダー ********************/
+.pad{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 .header{
   width: 100%;
-  height: 50px;
+  min-width: 500px;
+  height: 100px;
   .header-brand a{
     float: left;
     font-size: 60px;
@@ -221,55 +266,157 @@ html {
 }
 
 @media(min-width:1200px){
-  .hun{
+  .smap_header{
     display:none;
+  }
+  .hamburger_header{
+    display: none;
   }
 }
 
 /*width:1200px 以下*/
 @media(max-width:1200px){
+  .pad{
+    padding: 0;
+  }
+
+  .smap_header{
+    height: 125px;
+  }
+
+  .hamburger_header{
+    display: inline;
+     .header_brand{
+      padding-left: 20px;
+      float: left;
+      a{
+        line-height: 100px;
+        color: #fff;
+        font-size: 60px;
+        padding-left: 0;
+        text-decoration: none;
+        float: left;
+      }
+    }
+  }
+  .hamburger_header_list{
+    float: right; 
+    height: 100px;
+    display: inline;
+    padding-right: 20px;
+    .header_brand{
+      float: left;
+      a{
+        line-height: 100px;
+        color: #fff;
+        font-size: 60px;
+        padding-left: 0;
+        text-decoration: none;
+        float: left;
+      }
+    }
+    div{
+      list-style: none;
+      float: left;
+      a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        line-height: 100px;
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 100px;
+        float: left; 
+      }
+      a:hover{
+        transition:all 0.5s;
+        background-color: #5f9ea0;
+      }
+    }
+  }
+
+
+  .header-brand{
+    display: none;
+  }
   .header-list div{
     display: none;
   }
 
+  .smap_header_list{
+    float: right;
+    height: 125px;
+    display: inline;
+    .smap_header_brand{
+      float: left;
+      a{
+        line-height: 125px;
+        color: #fff;
+        font-size: 60px;
+        padding-left: 0;
+        text-decoration: none;
+      }
+    }
+    div{
+      list-style: none;
+      float: left;
+      a{
+        display: block;
+        color: white;
+        text-decoration: none;
+        line-height: 125px;
+        padding-left: 25px;
+        padding-right: 25px;
+        height: 125px;
+        font-size: 35px;
+      }
+      a:hover{
+        transition:all 0.5s;
+        background-color: #5f9ea0;
+      }
+    }
+  }
+  
+
   #nav-drawer {
-    position: relative;
+    //position: relative;
   }
 
-  /*チェックボックス等は非表示に*/
+/*チェックボックス等は非表示に*/
   .nav-unshown {
     display:none;
   }
 
-  /*アイコンのスペース*/
+/*アイコンのスペース*/
   #nav-open {
     display: inline-block;
-    width: 30px;
-    height: 22px;
+    width: 125px;
+    height: 125px;
     vertical-align: middle;
-    float: right;
-    margin-top: 45px;
+    padding-left: 40px;
+    padding-top: 40px;
   }
 
-  /*ハンバーガーアイコンをCSSだけで表現*/
+/*ハンバーガーアイコンをCSSだけで表現*/
   #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
-    height: 3px;/*線の太さ*/
-    width: 25px;/*長さ*/
+    height: 5px;/*線の太さ*/
+    width: 50px;/*長さ*/
     border-radius: 3px;
-    background: #fff;
+    background: #fff;/*color*/
     display: block;
     content: '';
     cursor: pointer;
+    
   }
   #nav-open span:before {
-    bottom: -8px;
-  }
-  #nav-open span:after {
     bottom: -16px;
   }
+  #nav-open span:after {
+    bottom: -32px;
+  }
 
-  /*閉じる用の薄黒カバー*/
+/*閉じる用の薄黒カバー*/
   #nav-close {
     display: none;/*はじめは隠しておく*/
     position: fixed;
@@ -283,49 +430,32 @@ html {
     transition: .3s ease-in-out;
   }
 
-  /*中身*/
+/*中身*/
   #nav-content {
     overflow: auto;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-    max-width: 380px;/*最大幅（調整してください）*/
+    width: 90%;/*右側に隙間を作る*/
+    max-width: 500px;/*最大幅*/
     height: 100%;
-    background: #006E6F;/*背景色*/
-    transition: .3s ease-in-out;/*滑らかに表示*/
-    -webkit-transform: translateX(400%);
-    transform: translateX(400%);/*左に隠しておく*/
-  }
-
-  /*チェックが入ったらもろもろ表示*/
-  #nav-input:checked ~ #nav-close {
-    display: block;/*カバーを表示*/
-    opacity: .5;
-  }
-
-  #nav-input:checked ~ #nav-content {
-    -webkit-transform: translateX(100vw);
-    transform: translateX(65vw);/*中身を表示（右へスライド）*/
-    box-shadow: 6px 0 25px rgba(0,0,0,.15);
-  }
-
-  #nav-content{
-    ul{
-      padding-left: 0;
-      margin-left: 0;
-    }
-    div{
+    background: #006e6f;/*背景色*/
+    transition: .2s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+     div{
       list-style: none;
+      text-align: right;
       a{
-        display:block;
-        text-decoration: none;
+        display: block;
         color: white;
-        height: 50px;
-        line-height: 50px;
-        padding-left: 15px;
-        border-bottom: thin solid #fff;
+        text-decoration: none;
+        line-height: 125px;
+        padding-left: 25px;
+        padding-right: 25px;
+        height: 125px;
+        font-size: 35px;
       }
       a:hover{
         transition:all 0.5s;
@@ -333,6 +463,19 @@ html {
       }
     }
   }
+
+/*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
 }
 
 /************* フッター ********************/
@@ -342,7 +485,7 @@ html {
   border-top: solid 2px #eaeaea;
   color: #777;
   margin-left: 15px;
-  a {
+  a{
     color: red;
     &:hover {
       color: blue;
@@ -360,10 +503,10 @@ html {
 /************* パーシャル ********************/
 
 .detail {
-  font-size: 28px;
-  word-wrap: break-word;
+	font-size: 28px;
+	word-wrap: break-word;
 }
 
 .list {
-  font-size: 16px;
+	font-size: 16px;
 }

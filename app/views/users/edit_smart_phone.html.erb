@@ -1,6 +1,8 @@
 <div class="main">
   <div class="smart-phone">
-    <h1>ユーザー情報の編集</h1>
-    <%= render partial: 'form_field', locals: { user: @user, password: false } %>
+   <div class="mobile">
+      <h1 align="center">ユーザー情報の編集</h1>
+      <%= render partial: 'form_field_smart_phone', locals: { user: @user, password: false } %>
+   </div>
   </div>
 </div>

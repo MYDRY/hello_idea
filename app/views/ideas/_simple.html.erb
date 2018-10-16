@@ -22,9 +22,7 @@
       </div>
     </div>
     <div class="panel-body">
-      <div class="b-item5" style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
-        <span title="詳細ページへ"><%= link_to idea.body, idea_path(id: idea), style: 'width: 100%; text-align: left;' %></span>
-      </div>
+        <div class="well"><p class="normal"><%= link_to simple_format(idea.body), idea_path(id: idea)%></p></div>
     </div>
   </div>
 </div>
