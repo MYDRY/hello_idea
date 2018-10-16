@@ -22,11 +22,16 @@ response = conn.get do |req|
   req.params['json'] = true
 end
 
+suggestions = []
+
 puts "============================================================"
 puts "keyword: " + keyword
 suggestion_xml = REXML::Document.new(response.body)
 suggestion_xml.elements['toplevel'].each do |elem|
-  p elem.elements['suggestion']['data'].tr!(keyword, '')
-end  
+  suggested_str = elem.elements['suggestion']['data'].tr!(keyword, '')
+  suggestions << suggested_str unless suggested_str.empty?
+end
+
+suggestions.each {|str| p str}
 puts "============================================================"
 
