@@ -1,13 +1,12 @@
 <p>
   <%= inform_validation_errror(user) %>
 </p>
-<div class="smart-phone">
-  <div class="form-group col-xs-4">
-    <div style="float:center;">
+<div class="mobile">
+  <div align="center">
       <%= form_for(user) do |f| %>
-      <%= image_tag get_image(user), size: '200', class: 'img-thumbnail' -%>
+      <%= image_tag get_image(user), size: '350', class: 'img-thumbnail' -%>
       <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;', onchange: 'previewImage()' %><br>
-      <%= f.label       :image, '変更', class: 'btn btn-default' %><br>
+      <%= f.label       :image, '変更', class: 'btn btn-default' ,style:"font-size: 40px"%><br>
       <br>
       <%= f.label       :name, 'ユーザー名' %><br>
       <%= f.text_field  :name, class: 'form-control', placeholder: 'ユーザー名を入力' , style:"font-size: 50px" %><br>
@@ -26,7 +25,6 @@
     <%= f.submit class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;"%>
     <% end %>
   </div>
-</div>
 </div>
 <script type="text/javascript">
 function previewImage() {
