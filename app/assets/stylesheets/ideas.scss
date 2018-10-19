@@ -82,3 +82,10 @@ p.normal {
 .word-break {
   word-break: break-all;
 }
+
+.input_field_lg{
+  input[type="text"] {
+    width: 500px;
+    height: 80px;
+  }
+}
