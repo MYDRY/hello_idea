@@ -1,21 +1,17 @@
 <div class="main">
- <div class="smart-phone">                               
   <div class="mobile">
-    <h1 align="center">ログイン</h1>
-      <div align="center">
-        <%= form_for(@user, url: login_path) do |f| %>
-        <!--
-          <%= f.label :email, 'メールアドレス'  %><br>
-          <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
-        -->
-          <%= f.label :name, 'ユーザー名'  %><br>
-          <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名を入力' %><br>
-          <%= f.label :password, 'パスワード' %>
-          <%= f.password_field :password , class: 'form-control', placeholder: 'パスワードを入力'%><br>
-
-          <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %>
-        <% end %>
-      </div>
+    <div align="center">
+      <%= form_for(@user, url: login_path) do |f| %>
+      <!--
+        <%= f.label :email, 'メールアドレス'  %><br>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
+      -->
+        <%= f.label :name, 'ユーザー名'  %><br>
+        <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名を入力', style:"font-size: 50px" %><br>
+        <%= f.label :password, 'パスワード' %>
+        <%= f.password_field :password , class: 'form-control', placeholder: 'パスワードを入力', style:"font-size: 50px" %><br>
+        <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %>
+      <% end %>
     </div>
   </div>
 </div>
