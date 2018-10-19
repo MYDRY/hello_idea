@@ -1,0 +1,41 @@
+<p>
+  <%= inform_validation_errror(user) %>
+</p>
+<div class="mobile">
+  <div align="center">
+      <%= form_for(user) do |f| %>
+      <%= image_tag get_image(user), size: '350', class: 'img-thumbnail' -%>
+      <%= f.file_field  :image, class: 'form-control-file', style: 'display:none;', onchange: 'previewImage()' %><br>
+      <%= f.label       :image, '変更', class: 'btn btn-default' ,style:"font-size: 40px"%><br>
+      <br>
+      <%= f.label       :name, 'ユーザー名' %><br>
+      <%= f.text_field  :name, class: 'form-control', placeholder: 'ユーザー名を入力' , style:"font-size: 50px" %><br>
+      <!--
+      <%= f.label       :email, 'メールアドレス' %><br>
+      <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
+    -->
+    <%= f.hidden_field :email, value: "examle@email" %>
+    <% if password %>
+    <%= f.label       :password, 'パスワード' %><br>
+    <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力' , style:"font-size: 50px" %><br>
+
+    <%= f.label       :password_confirmation, 'パスワード（確認用）' %>
+    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワードを入力' , style:"font-size: 50px" %><br>
+    <% end %>
+    <%= f.submit class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;"%>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+function previewImage() {
+  var preview = document.querySelector('img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+</script>
