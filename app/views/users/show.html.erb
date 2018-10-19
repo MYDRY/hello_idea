@@ -14,7 +14,9 @@
             <% if @user.topics.empty? %>
               <div style="text-align: center; font-size: 30px;">
                 <br>あなたは まだニーズを投稿していません<br><br>
+                <% if @user == current_user %>
                 <%= link_to 'ニーズを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
+                <% end %>
               </div>
             <% else %>
               <%= render partial: 'topics/simple', collection: @user.topics, as: 'topic', layout: 'topics/list_frame' %>
@@ -25,8 +27,10 @@
           <p>
             <% if @user.ideas.empty? %>
               <div style="text-align: center; font-size: 30px;">
-                <br>あなたは まだアイデアを投稿していません<br><br>
+                <br>まだアイデアを投稿していません<br><br>
+                <% if @user == current_user %>
                 <%= link_to 'アイデアを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
+                <% end %>
               </div>
             <% else %>
               <%= render partial: 'ideas/simple', collection: @user.ideas, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
@@ -37,8 +41,10 @@
           <p>
             <% if @user.likes.empty? %>
               <div style="text-align: center; font-size: 30px;">
-                <br>あなたは まだ いいね！ をしていません<br><br>
+                <br>まだ いいね！ をしていません<br><br>
+                <% if @user == current_user %>
                 <%= link_to 'アイデアに いいね！ してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
+                <% end %>
               </div>
             <% else %>
               <% @user.likes.each do |like| %>
