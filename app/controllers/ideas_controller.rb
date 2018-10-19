@@ -9,7 +9,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by(id: params[:id])
     if @idea.nil?
       redirect_to topics_path
-    else 
+    else
       @likes_count = Like.where(idea_id: @idea.id).count
     end
   end
