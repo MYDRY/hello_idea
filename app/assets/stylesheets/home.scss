@@ -74,7 +74,7 @@ html {
   .nav-item-lg a {
     color: white;
   }
-   
+
 }
 
 @media(min-width: 1201px){
@@ -90,7 +90,7 @@ html {
   }
   .pad .header{
     min-width: 800px;
-  } 
+  }
 }
 
 .smart-phone{
@@ -315,7 +315,7 @@ html {
     }
   }
   .hamburger_header_list{
-    float: right; 
+    float: right;
     height: 100px;
     display: inline;
     padding-right: 20px;
@@ -341,7 +341,7 @@ html {
         padding-left: 12px;
         padding-right: 12px;
         height: 100px;
-        float: left; 
+        float: left;
       }
       a:hover{
         transition:all 0.5s;
@@ -391,7 +391,7 @@ html {
       }
     }
   }
-  
+
 
   #nav-drawer {
     //position: relative;
@@ -422,7 +422,7 @@ html {
     display: block;
     content: '';
     cursor: pointer;
-    
+
   }
   #nav-open span:before {
     bottom: -15px;
@@ -445,7 +445,7 @@ html {
     transition: .3s ease-in-out;
   }
 
-/*中身*/ 
+/*中身*/
   #nav-content {
     overflow: auto;
     position: fixed;
