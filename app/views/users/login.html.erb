@@ -1,18 +1,20 @@
 <div class="main">
   <div class="container">
     <div class="form-group col-xs-4">
-      <%= form_for(@user, url: login_path) do |f| %>
-      <!--
-        <%= f.label :email, 'メールアドレス'  %><br>
-        <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
-      -->
-        <%= f.label :name, 'ユーザー名'  %><br>
-        <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名を入力' %><br>
-        <%= f.label :password, 'パスワード' %>
-        <%= f.password_field :password , class: 'form-control', placeholder: 'パスワードを入力'%><br>
+      <div class="login_pad">
+          <%= form_for(@user, url: login_path) do |f| %>
+        <!--
+          <%= f.label :email, 'メールアドレス'  %><br>
+          <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
+        -->
+          <!--<%= f.label :name, 'ユーザー名'  %><br>-->
+          <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名を入力' %><br>
+          <!--<%= f.label :password, 'パスワード' %>-->
+          <%= f.password_field :password , class: 'form-control', placeholder: 'パスワードを入力'%><br>
 
-        <%= f.submit 'ログイン', class: 'btn btn-default', style: "background-color: #00BABD; color: white;" %>
-      <% end %>
+          <%= f.submit 'ログイン', class: 'btn btn-default', style: "background-color: #00BABD; color: white;" %>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
