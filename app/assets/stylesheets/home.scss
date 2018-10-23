@@ -19,6 +19,10 @@ html {
     color: #007B96;
     padding: 20px;
   }
+  h2 {
+    color: #007B96;
+    padding: 20px;
+  }
 }
 
 .top {
@@ -30,7 +34,7 @@ html {
   //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: white;
-  .message{
+  /*.message{
     padding-top: 50px;
     text-align: right;
     color: red;
@@ -38,9 +42,18 @@ html {
       font-size: 64px;
     }
     font-size: 32px;
-  }
+  }*/
   .top-image {
     padding-left: 10%;
+    float: left;
+  }
+  .top-form{
+    color: red;
+    h1 {
+      font-size: 50px;
+    }
+    font-size: 32px;
+    float: right;
   }
   .aroundbrank {
     padding: 30px;
