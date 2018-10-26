@@ -1,35 +1,38 @@
-<h1>Mandalarts#index</h1>
+<h1>Mandalarts</h1>
 <hr>
-<p>
-  <div class="row">
-    <!-- 1 -->
-    <%= show_sub_elem(1) %>
+
+<div class="mandalart">
+  <p>
+    <div class="row">
+      <!-- 1 -->
+      <%= show_sub_elem(1) %>
     <!-- 2 -->
-    <%= show_sub_elem(2) %>
+      <%= show_sub_elem(4) %>
     <!-- 3 -->
-    <%= show_sub_elem(3) %>
-  </div>
-</p>
-<p>
-  <div class="row">
-    <!-- 4 -->
-    <%= show_sub_elem(4) %>
-    <!-- 5 -->
-    <%= show_core_elem %>
-    <!-- 6 -->
-    <%= show_sub_elem(6) %>
-  </div>
-</p>
-<p>
-  <div class="row">
-    <!-- 7 -->
-    <%= show_sub_elem(7) %>
-    <!-- 8 -->
-    <%= show_sub_elem(8) %>
-    <!-- 9 -->
-    <%= show_sub_elem(9) %>
-  </div>
-</p>
+      <%= show_sub_elem(7) %>
+    </div>
+  </p>
+  <p>
+    <div class="row">
+      <!-- 4 -->
+      <%= show_sub_elem(2) %>
+      <!-- 5 -->
+      <%= show_core_elem %>
+      <!-- 6 -->
+      <%= show_sub_elem(8) %>
+    </div>
+  </p>
+  <p>
+    <div class="row">
+      <!-- 7 -->
+      <%= show_sub_elem(3) %>
+      <!-- 8 -->
+      <%= show_sub_elem(6) %>
+      <!-- 9 -->
+     <%= show_sub_elem(9) %>
+    </div>
+  </p>
+</div>
 <script>
  var directions = [
      [-1, -1], [0, -1],      [1, -1],
@@ -43,8 +46,8 @@
      coreStringForm.defaultValue = value;
      anime({
          targets: coreStringForm,
-         translateX: 253 * directions[coreNum-1][0],
-         translateY: 84  * directions[coreNum-1][1],
+         translateX: 261 * directions[coreNum-1][0],
+         translateY: 208  * directions[coreNum-1][1],
          easing:'easeOutCubic'
      });
      subElems.style.visibility = "";
