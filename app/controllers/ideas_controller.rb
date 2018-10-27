@@ -27,7 +27,8 @@ class IdeasController < ApplicationController
       view_context.spawn_new_idea_notice(topic)
       redirect_to topic_path(topic)
     else
-      render :new
+      flash[:danger] = "アイデア投稿に失敗しました"
+      redirect_to topic_path(topic)
     end
   end
 
