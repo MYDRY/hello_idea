@@ -5,7 +5,7 @@
     <div class="input_field_lg">
       <%= form_for(idea, url: next_path) do |f| %>
       <%= f.label      :body, "アイデア" %><br>
-      <%= f.text_area  :body, class: 'form-control', placeholder: 'What\'s your Idea !?' %>
+      <%= f.text_area :body ,maxlength: '140', class: 'form-control', placeholder: 'What\'s your Idea !?' %>
       <div align="right">
       <% if local_assigns[:edit_flag].present? %>
       <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
