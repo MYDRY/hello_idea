@@ -6,7 +6,7 @@
     <%= form_for(idea, url: next_path) do |f| %>
     <%= f.label      :body, "アイデア" %><br>
     <span class="count_textarea"></span>
-    <%= f.text_area :body ,name: 'textarea', maxlength: '140', class: 'form-control', placeholder: 'What\'s your Idea !?' %>
+    <%= f.text_area :body, id: '1', maxlength: '140', class: 'form-control', placeholder: 'What\'s your Idea !?' %>
     <div align="right">
       <% if local_assigns[:edit_flag].present? %>
       <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
@@ -22,17 +22,17 @@
 <script type="text/javascript">
 $(function(){
   var textareaCountMax = 140;
-  $('textarea').bind('keydown keyup keypress change',function(){
+  $('#1').bind('keydown keyup keypress change',function(){
     var thisValueLength = $(this).val().length;
     var countDown = (textareaCountMax)-(thisValueLength);
     $('.count_textarea').html(countDown);
 
     if(countDown < 0){
       $('.count_textarea').css({color:'#ff0000',fontWeight:'bold'});
-      $('textarea').css({background:'#ffcccc'});
+      $('#1').css({background:'#ffcccc'});
     } else {
       $('.count_textarea').css({color:'#000000',fontWeight:'normal'});
-      $('textarea').css({background:'#ffffff'});
+      $('#1').css({background:'#ffffff'});
     }
   });
 
