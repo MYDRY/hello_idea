@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :notices, except: :create
   end
   get 'notices/:id/mark', to: 'notices#mark', as: :mark_notice
+  get 'notices/:user/markall', to: 'notices#mark_all', as: :mark_notice_all
   delete 'notices/:user/delete', to: 'notices#destroy_has_read', as: :delete_notice_has_read
   
   resources :topics, shallow: true do
