@@ -1,6 +1,6 @@
 class NoticesController < ApplicationController
   def index
-    @notices = current_user.notices
+    @notices = current_user.notices.reverse_order
   end
 
   def mark
