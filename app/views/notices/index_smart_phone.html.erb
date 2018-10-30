@@ -2,10 +2,13 @@
   <div class="smart-phone">
     <h1>通知</h1>
     <p>
-      <% delete_button_class = 'btn btn-primary ' + (@notices.where(has_read: true).empty? ? 'disabled' : '') %>
+      <% delete_button_class = 'btn btn-danger ' + (@notices.where(has_read: true).empty? ? 'disabled' : '') %>
       <%= link_to '既読の通知を一括削除', delete_notice_has_read_path(user: current_user),
       method: :delete, data: { confirm: '既読の通知を削除しますか？' }, class: "#{delete_button_class}",
-      style: 'float: right;  background-color: #00BABD; margin-right: 20px;' %>
+      style: 'float: right; margin-right: 20px;' %>
+      <% mark_button_class = 'btn btn-primary ' + (@notices.where(has_read: false).empty? ? 'disabled' : '') %>
+      <%= link_to 'すべて既読にする', mark_notice_all_path(user: current_user), class: "#{mark_button_class}",
+      style: 'float: right;  background-color: #00BABD' %>
     </p>
     <br>
     <%= render partial: 'notices/notice', collection: @notices %>
