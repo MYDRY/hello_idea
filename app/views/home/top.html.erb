@@ -18,11 +18,11 @@
           <%= f.label :email, 'メールアドレス'  %><br>
           <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
         -->
-          <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名を入力', style:"font-size: 25px" %>
-          <%= f.password_field :password , class: 'form-control', placeholder: 'パスワードを入力', style:"font-size: 25px" %><br>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名', style:"font-size: 25px" %>
+          <%= f.password_field :password , class: 'form-control', placeholder: 'パスワード', style:"font-size: 25px" %><br>
           <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %><br>
           <% end %>
-          <h2 align="center">------------または------------</h2>
+          <h2 align="center">-----------または-----------</h2>
           <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
         </div>
         <br>
