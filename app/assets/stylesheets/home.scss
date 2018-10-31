@@ -48,9 +48,13 @@ html {
     float: left;
   }
   .top-form{
-    color: red;
     h1 {
       font-size: 50px;
+      margin-top: 0; margin-bottom: 0;
+    }
+    p{
+      color: red;
+      margin-top: 0; margin-bottom: 25px;
     }
     font-size: 32px;
     float: right;
@@ -61,10 +65,18 @@ html {
 }
 
 .container{
+  input[type="text"] {
+    width: 500px;
+    height: 40px;
+  }
+
+  input[type="password"] {
+    width: 500px;
+    height: 40px;
+  }
   h1{
     padding: 20px;
   }
-
   ul{
     display: inline;
   }
@@ -87,7 +99,6 @@ html {
   .nav-item-lg a {
     color: white;
   }
-
 }
 
 @media(min-width: 1201px){
