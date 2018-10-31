@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
     if @topic.nil?
       redirect_to topics_path
     end
+    @idea = Idea.new
   end
 
   def new
