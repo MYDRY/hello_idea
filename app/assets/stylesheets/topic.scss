@@ -87,11 +87,22 @@
   color: #00BABD;
 }
 .form-size{
-  input[type="submit"] {
-    width: 300px;
+  margin: 25px auto;
+  width: 500px;
+  input[type="text"] {
+    width: 500px;
+    height: 40px;
+  }
+  textarea {
+    width: 500px;
     height: 80px;
   }
-  text-align: center;
+  input[type="submit"] {
+    width: 500px;
+    height: 80px;
+    font-size: 30px;
+  }
+  //text-align: center;
   .btn {
     padding: 14px 24px;
     border: 0 none;

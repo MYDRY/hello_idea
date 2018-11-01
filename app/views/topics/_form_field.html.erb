@@ -13,7 +13,7 @@
       <%= f.text_area :body, class: 'form-control', placeholder: '本文を入力' ,cols: "20",rows: "5" ,maxlength: "140" %><br>
 
       <% if request.path_info == new_topic_path %>
-        <%= f.submit "投稿", class: 'btn btn-primary', style: 'background-color: #00BABD;, font-size: 100px' %>
+        <%= f.submit "投稿", class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
       <% else %>
         <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
       <% end %>
