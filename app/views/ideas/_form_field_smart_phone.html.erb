@@ -4,13 +4,13 @@
 <div class="smart-phone">
   <div class="input_field_lg">
     <%= form_for(idea, url: next_path) do |f| %>
-    <%= f.label      :body, "アイデア" %><br>
+    <%= f.label      :body, "アイデア" %>
+    <span class="count_textarea"></span>
     <%= f.text_area :body, id: '1', maxlength: '140', class: 'form-control', placeholder: 'What\'s your Idea !?' %>
     <div align="right">
       <% if local_assigns[:edit_flag].present? %>
       <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
       <% else %>
-      <span class="count_textarea"></span>
       <%= f.submit "投稿", class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
       <% end %>
       <% end %>
