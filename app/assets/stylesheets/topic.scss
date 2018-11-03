@@ -86,3 +86,34 @@
 .nav-item a {
   color: #00BABD;
 }
+
+.needs-tile{
+    margin: 10px;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    border: medium solid #006e6f;
+    .topic-title{
+        width: 245px;
+        height: 125px;
+        background: #fff;
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: #006e8f;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: break-word;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+    .good-btn{
+        width: 245px;
+        height: 122px;
+        background: #006e6f;
+    }
+}
