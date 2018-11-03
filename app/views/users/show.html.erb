@@ -13,7 +13,7 @@
           <p>
             <% if @user.topics.empty? %>
               <div style="text-align: center; font-size: 30px;">
-                <br>あなたは まだニーズを投稿していません<br><br>
+                <br>まだニーズを投稿していません<br><br>
                 <% if @user == current_user %>
                 <%= link_to 'ニーズを投稿してみる', topics_path, class: 'btn btn-primary btn-lg', style: 'background-color: #00BABD;' %>
                 <% end %>
