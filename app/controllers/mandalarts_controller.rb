@@ -1,18 +1,17 @@
 class MandalartsController < ApplicationController
+  def index
+      @simple_mandal = SimpleMandal.all
+  end
+  
   def show
-    @simple_mandal = SimpleMandal.find(params[:id])
-    if @simple_mandal.nil?
-      @simple_mandal = ''
-    end
+      @simple_mandal = SimpleMandal.find_by(user_id: current_user.id)
+      if @simple_mandal.nil?
+          @simple_mandal = ''
+      end
   end
   
   def create
-    @simple_mandal = SimpleMandal.new(params[])
-    @simple_mandal.user_id = current_user
-    @simple_mandal.save
-  end
-  
-  def index
-      
+      @simple_mandal = SimpleMandal.new
+      @simple_mandal.save
   end
 end

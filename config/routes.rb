@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'mandalarts/index'
+  post 'mandalarts/create' => 'mandalarts#create'
   root 'home#top'
   get '/detail' => 'home#detail'
   post 'topics/classfy_topic'

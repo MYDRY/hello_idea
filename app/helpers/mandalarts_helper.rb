@@ -5,7 +5,7 @@ module MandalartsHelper
       core_attributes = default_attributes.merge({ style: 'visibility: hidden; border: 1px dotted #999;'})
       (1..9).each do |n|
         attributes = (n == 5) ? core_attributes : default_attributes
-        concat content_tag(:input, '', {value: @simple_mandal, id: "#{subNum}-#{n}" }.merge(attributes))
+        concat content_tag(:textarea, '', {value: "a", name: "elem_#{subNum}_#{n}" }.merge(attributes))
       end
     end
   end
@@ -16,7 +16,7 @@ module MandalartsHelper
       (1..9).each do |n|
         attributes = get_attributes.call(n)
         attributes.merge!(onchange: "animeTest1(#{n}, this.value)") unless n == 5
-        concat content_tag(:input, '',{value: @simple_mandal}, attributes)
+        concat content_tag(:textarea, '', {value: "@simple_mandal.elem_5_#{n}", name: "elem_5_#{n}" }.merge(attributes))
       end
     end
   end
