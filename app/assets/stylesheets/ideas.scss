@@ -84,13 +84,21 @@ p.normal {
 }
 
 .input_field_lg{
+  .form-control{
+    width: 100%;
+  }
   input[type="text"] {
     width: 500px;
     height: 80px;
   }
   textarea {
-    width: 600px;
+    width: 1000px;
     height: 80px;
+  }
+  input[type="submit"] {
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
   }
 }
 .smart_input_field_lg{
@@ -104,12 +112,12 @@ p.normal {
   textarea {
     width: 700px;
     height: 150px;
-    font-size: 50px;
+    font-size: 35px;
   }
   input[type="submit"] {
     width: 500px;
     height: 80px;
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
