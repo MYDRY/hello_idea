@@ -102,7 +102,34 @@
     height: 80px;
     font-size: 30px;
   }
-  //text-align: center;
+  .btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+.smart_form-size{
+  margin: 25px auto;
+  width: 700px;
+  text-align: center;
+  font-size: 30px;
+  input[type="text"] {
+    width: 700px;
+    height: 80px;
+    font-size: 25px;
+  }
+  textarea {
+    width: 700px;
+    height: 160px;
+    font-size: 25px;
+  }
+  input[type="submit"] {
+    width: 700px;
+    height: 80px;
+    font-size: 30px;
+  }
   .btn {
     padding: 14px 24px;
     border: 0 none;
