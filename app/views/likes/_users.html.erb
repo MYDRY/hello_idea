@@ -1,0 +1,4 @@
+<h3>いいねしたユーザー</h3>
+<% idea.likes.each do |like| %>
+  <%= render partial: 'users/user', locals: { user: like.user }, layout: 'users/list_frame' %>
+<% end %>
