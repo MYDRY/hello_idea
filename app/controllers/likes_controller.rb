@@ -7,8 +7,7 @@ class LikesController < ApplicationController
     like = current_user.likes.build(idea_id: @idea.id)
     like.save
     view_context.spawn_like_notice(@idea)
-    flash[:success] = "いいねしました"
-  #  redirect_back fallback_location: topic_path(id: @idea.topic)
+#    flash[:success] = "いいねしました"
     @idea.reload
   end
 
@@ -16,7 +15,7 @@ class LikesController < ApplicationController
     @idea = Idea.find(params[:id])
     like = Like.find_by(idea_id: @idea.id, user_id: current_user.id)
     like.destroy
-    flash[:success] = "いいねを取り消しました"
+#    flash[:success] = "いいねを取り消しました"
     @idea.reload
   end
 end
