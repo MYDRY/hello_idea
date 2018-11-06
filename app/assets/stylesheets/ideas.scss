@@ -88,6 +88,29 @@ p.normal {
     width: 500px;
     height: 80px;
   }
+  textarea {
+    width: 600px;
+    height: 80px;
+  }
+}
+.smart_input_field_lg{
+  margin: 25px auto;
+  width: 700px;
+  text-align: center;
+  input[type="text"] {
+    width: 700px;
+    height: 80px;
+  }
+  textarea {
+    width: 700px;
+    height: 150px;
+    font-size: 50px;
+  }
+  input[type="submit"] {
+    width: 500px;
+    height: 80px;
+    font-size: 30px;
+  }
 }
 
 /* 投稿時の残り文字数＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
