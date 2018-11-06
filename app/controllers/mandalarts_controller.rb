@@ -1,9 +1,6 @@
 class MandalartsController < ApplicationController
-  def show
-    @simple_mandal = SimpleMandal.find(params[:id])
-    if @simple_mandal.nil?
-      @simple_mandal = ''
-    end
+  def index
+      @simple_mandal = SimpleMandal.all
   end
     
   def index
