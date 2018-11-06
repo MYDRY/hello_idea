@@ -9,7 +9,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by(id: params[:id])
     if @idea.nil?
       redirect_to topics_path
-    else 
+    else
       @likes_count = Like.where(idea_id: @idea.id).count
     end
   end
@@ -27,7 +27,8 @@ class IdeasController < ApplicationController
       view_context.spawn_new_idea_notice(topic)
       redirect_to topic_path(topic)
     else
-      render :new
+      flash[:danger] = "アイデア投稿に失敗しました"
+      redirect_to topic_path(topic)
     end
   end
 
