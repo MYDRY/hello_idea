@@ -19,6 +19,9 @@
 <% end %>
     <div class="topic-title">
         <%= link_to topic.title, topic_path(id: topic) %>
-        <p class="dodon">testtesttest</p>
+        <div class="dodon">
+            <span class="fa fa-comment" style="float: left; padding-top: 2%;"><%= topic.ideas.count %></span>
+            <%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;' %>
+        </div>
     </div>
 </div>

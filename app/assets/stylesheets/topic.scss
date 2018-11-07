@@ -112,26 +112,61 @@
         animation: flash 1s both;
     }
     .dodon {
-      display: none;
-      width: 200px;
-      position: absolute;
-      z-index: 999;
-      top: 0;
-      left: 250px;
-      padding: 16px;
-      border-radius: 5px;
-      background: rgba(205,92,92,1);
-      color: #fff;
-      font-weight: bold;
+        display: none;
+        width: 350px;
+        height: 200px;
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 200px;
+        padding: 16px;
+        background: rgba(205,92,92,1);
+        color: #fff;
+        font-weight: bold;
+        
+        .balloon1{
+            position: relative;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            color: black;
+            font-size: 25px;
+            background-color: #fff;
+        }
+        .balloon1::before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            left: -3px;
+            top: 32px;
+            border-right: 20px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            transform: rotate(-45deg);
+        }
+        a{
+            margin: 0;
+        }
     }
     a:hover + .dodon{
         display: block;
+        animation: spread 0.5s both;
     }
  
     @keyframes flash {
     	0% {background: #20b2aa;}
     	10% { background: #96e9e6; }
     	100% { background: #20b2aa; }
+    }
+    
+    @keyframes spread {
+        0%  {width: 0px;}
+        100% {width: 330px;}
     }
 }
 
