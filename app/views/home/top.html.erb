@@ -13,6 +13,7 @@
         <div class="top-form">
           <h1 align="center">アイデアに出会おう!</h1>
           <p align="center">Let's meet the idea!</p>
+           <% if !logged_in? %>
           <%= form_for(@user, url: login_path) do |f| %>
           <!--
           <%= f.label :email, 'メールアドレス'  %><br>
@@ -25,6 +26,8 @@
           <h2 align="center">-----------または-----------</h2>
           <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
         </div>
+         <%else%>
+          <%end%>
         <br>
       <!-- ここまで　-->
     </div>
