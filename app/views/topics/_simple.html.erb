@@ -13,11 +13,8 @@
 </div>
 -->
 
-<div class="needs-tile" style="float: left;">
+<div class="needs-tile" style="float: left; background-color: rgba(32,178,170,1)">
     <div class="topic-title">
-        <%=link_to topic.title, topic_path(id: topic) %>
-    </div>
-    <div class="good-btn">
-        <span class="fa fa-comment" style="padding-top: 2%; color: #fff;"><%= topic.ideas.count %></span>
+        <p><%= link_to topic.title, topic_path(id: topic) %></p>
     </div>
 </div>
