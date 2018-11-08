@@ -39,15 +39,15 @@
      [-1,  0], [null, null], [1,  0],
      [-1,  1], [0, 1],       [1,  1]
  ];
- 
+
  function animeTest1(coreNum, value) {
      var coreStringForm = document.getElementById('5-' + coreNum);
      var subElems = document.getElementById(coreNum)
      coreStringForm.defaultValue = value;
      anime({
          targets: coreStringForm,
-         translateX: 261 * directions[coreNum-1][0],
-         translateY: 208  * directions[coreNum-1][1],
+         translateX: 266 * directions[coreNum-1][0],
+         translateY: 215  * directions[coreNum-1][1],
          easing:'easeOutCubic'
      });
      subElems.style.visibility = "";

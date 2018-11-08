@@ -19,6 +19,10 @@ html {
     color: #007B96;
     padding: 20px;
   }
+  h2 {
+    color: #007B96;
+    padding: 20px;
+  }
 }
 
 .top {
@@ -30,7 +34,7 @@ html {
   //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: white;
-  .message{
+  /*.message{
     padding-top: 50px;
     text-align: right;
     color: red;
@@ -39,8 +43,23 @@ html {
     }
     font-size: 32px;
   }
+  */
+
   .top-image {
     padding-left: 10%;
+    float: left;
+  }
+  .top-form{
+    h1 {
+      font-size: 50px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    p{
+      color: red;
+      margin-top: 0; margin-bottom: 25px;
+    }
+    font-size: 32px;
   }
   .aroundbrank {
     padding: 30px;
@@ -48,10 +67,18 @@ html {
 }
 
 .container{
+  input[type="text"] {
+    width: 500px;
+    height: 40px;
+  }
+
+  input[type="password"] {
+    width: 500px;
+    height: 40px;
+  }
   h1{
     padding: 20px;
   }
-
   ul{
     display: inline;
   }
@@ -74,13 +101,16 @@ html {
   .nav-item-lg a {
     color: white;
   }
-   
 }
 
 @media(min-width: 1201px){
   .padding{
     padding-left: 10vw;
     padding-right: 10vw;
+  }
+
+  .top-form{
+     float: right;
   }
 }
 
@@ -90,7 +120,14 @@ html {
   }
   .pad .header{
     min-width: 800px;
-  } 
+  }
+  .top-image{
+    display: none;
+  }
+  .top-form{
+    float: left;
+    padding-left: 20%;
+  }
 }
 
 .smart-phone{
@@ -315,7 +352,7 @@ html {
     }
   }
   .hamburger_header_list{
-    float: right; 
+    float: right;
     height: 100px;
     display: inline;
     padding-right: 20px;
@@ -341,7 +378,7 @@ html {
         padding-left: 12px;
         padding-right: 12px;
         height: 100px;
-        float: left; 
+        float: left;
       }
       a:hover{
         transition:all 0.5s;
@@ -391,7 +428,7 @@ html {
       }
     }
   }
-  
+
 
   #nav-drawer {
     //position: relative;
@@ -422,7 +459,7 @@ html {
     display: block;
     content: '';
     cursor: pointer;
-    
+
   }
   #nav-open span:before {
     bottom: -15px;
@@ -445,7 +482,7 @@ html {
     transition: .3s ease-in-out;
   }
 
-/*中身*/ 
+/*中身*/
   #nav-content {
     overflow: auto;
     position: fixed;
