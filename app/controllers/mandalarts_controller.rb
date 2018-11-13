@@ -4,6 +4,7 @@ class MandalartsController < ApplicationController
   end
   
   def show
+    @simple_mandal = SimpleMandal.find(params[:id])
   end
 
   def new
