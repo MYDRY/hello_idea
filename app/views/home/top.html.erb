@@ -1,32 +1,19 @@
 <div class="top">
   <div class="main">
-    <div class="container">
-      <%#= link_to 'mandalarts', mandalarts_index_path %>
-      <!--<div class="message">
-        <h1>アイデアに出会おう!</h1>
-        <p>Let's meet the idea!</p>
-      </div>-->
       <div class="top-image">
-        <%= image_tag('top.png') %>
+        <span style="color:dimgray; font-weight:bold; font-size:30px;">Let's  meet</span>
+        <%= image_tag('top_den4.png') %>
+        <!--<span style="color:dimgray; font-weight:bold;">出会おう</span>-->
       </div>
-      <!-- ここから　-->
-        <div class="top-form">
-          <h1 align="center">アイデアに出会おう!</h1>
-          <p align="center">Let's meet the idea!</p>
+      <div class="top-form">
           <%= form_for(@user, url: login_path) do |f| %>
-          <!--
-          <%= f.label :email, 'メールアドレス'  %><br>
-          <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
-        -->
-          <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名', style:"font-size: 25px" %>
-          <%= f.password_field :password , class: 'form-control', placeholder: 'パスワード', style:"font-size: 25px" %><br>
-          <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %><br>
+            <div class="centering"><%= f.text_field :name, placeholder: 'ユーザー名', style:"font-size: 25px" %></div>
+            <div class="centering"><%= f.password_field :password , placeholder: 'パスワード', style:"font-size: 25px" %></div>
+            <%= f.submit 'ログイン', class: 'login-btn', style: "background-color: #00BABD; color: white; height: 30%;" %><br>
           <% end %>
-          <h2 align="center">-----------または-----------</h2>
-          <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
-        </div>
-        <br>
-      <!-- ここまで　-->
+          <span style="font-weight: bold;">or</span><br>
+          <%= link_to 'アカウント作成', new_user_path, class: 'register-btn', style: " color: white; height: 30%;" %>
+      </div>
     </div>
   </div>
 </div>
