@@ -12,6 +12,7 @@
         <div class="mobile">
           <div align="center">
             <div class="login_pad">
+              <% if !logged_in? %>
               <%= form_for(@user, url: login_path) do |f| %>
               <!--
               <%= f.label :email, 'メールアドレス'  %><br>
@@ -27,6 +28,7 @@
           <h1 align="center">----------または----------</h1>
           <!--<div><%= link_to '新規登録', new_user_path %></div>-->
           <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
+          <% end %>
           </div>
         </div>
       <!--　ここまで--------------->
