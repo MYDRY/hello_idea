@@ -1,1 +1,7 @@
 <h1>Mandalarts#index</h1>
+
+<%= link_to '新規作成', new_mandalart_path %>
+
+<% @simple_mandals.each do |mandal|  %>
+  <%= mandal.elem_5_5 %><br>
+<% end %>
