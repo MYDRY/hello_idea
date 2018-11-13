@@ -1,9 +1,12 @@
 <div class="container">
-  <h1>Words#index</h1>
-  <p>Find me in app/views/words/index.html.erb</p>
-
-  <% @words.each do |word| %>
-  <%= word.id %>.
-  <%= word.title %>
-  <% end %>
+  <h1>ランダムワード</h1>
+  <div class="random-tool">
+    <%= @word1.title %>×<%= @word2.title %>
+  </div>
+  <div class="words-index">
+    <% @words.each do |word| %>
+    <%= word.id %>.
+    <%= word.title %><br>
+    <% end %>
+  </div>
 </div>
