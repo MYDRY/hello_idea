@@ -119,7 +119,7 @@
         top: 0;
         left: 200px;
         padding: 16px;
-        background: rgba(205,92,92,1);
+        background: rgba(205,92,92,0.9);
         color: #fff;
         font-weight: bold;
     }
@@ -127,13 +127,13 @@
         display: block;
         animation: spread 0.5s both;
     }
- 
+
     @keyframes flash {
     	0% {background: #20b2aa;}
     	10% { background: #96e9e6; }
     	100% { background: #20b2aa; }
     }
-    
+
     @keyframes spread {
         0%  {width: 0px;}
         100% {width: 330px;}

@@ -16,11 +16,11 @@ html {
 .main {
   min-height: 82vh;
   h1 {
-    color: #007B96;
+    color: 	#fd884c; //#007B96;
     padding: 20px;
   }
   h2 {
-    color: #007B96;
+    color: 	#fd884c; //#007B96;
     padding: 20px;
   }
 }
@@ -289,7 +289,7 @@ html {
   .header-brand a{
     float: left;
     font-size: 60px;
-    color: white;
+    color: black;
     text-decoration: none;
     line-height: 100px;
   }
@@ -302,7 +302,7 @@ html {
       float: left;
       a{
         display: block;
-        color: white;
+        color: black;
         text-decoration: none;
         line-height: 100px;
         padding-left: 12px;
@@ -311,7 +311,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: 	#fff8d4; //rgba(250,224,76,1); //#5f9ea0;
       }
     }
   }
