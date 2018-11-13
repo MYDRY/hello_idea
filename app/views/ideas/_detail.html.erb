@@ -7,15 +7,9 @@
     </div>
     <div class="panel-body">
       いいね
-      <% if already_liked? @idea %>
-        <%= link_to like_path(id: @idea), method: :delete do %>
-          <span class="fa fa-heart like-btn-unlike"><%= @idea.likes.count %></span>
-        <% end %>
-      <% else %>
-        <%= link_to idea_likes_path(idea_id: @idea), method: :post do %>
-          <span class="fa fa-heart like-btn"><%= @idea.likes.count %></span>
-        <% end %>
-      <% end %>
+      <div id="likes_buttons_<%= @idea.id %>">
+        <%= render "likes/like", idea: @idea %>
+      </div>
       <div style="float: right; color: gray; font-size: 16px;">
         <%= format_datetime(idea.created_at) %>
       </div>

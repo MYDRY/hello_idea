@@ -3,18 +3,18 @@
     <div class="header">
       <div class="header-brand"><a href="/">Hello Idea</a></div>
       <div class="header-list">
-          <div><%= link_to 'HelloIdeaとは', "/detail" %></div>
+          <!--<div><%= link_to 'HelloIdeaとは', "/detail" %></div>-->
         <% if logged_in? %>
           <div><%= link_to current_user.name, user_path(id: current_user) %></div>
           <div><%= link_to 'ニーズ', topics_path %></div>
-          <!--<div><a href="/mandalarts/index">ツール</a></div>-->
+          <div><%= link_to 'ツール', mandalarts_path %></div>
           <% if current_user.admin? %><div><%= link_to 'ユーザーリスト', users_path %></div><% end %>
           <div><%= show_notice_link %></div>
           <div><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></div>
           <div><%= link_to 'ログアウト', logout_path %></div>
         <% else %>
-          <div><%= link_to 'ログイン', login_path %></div>
-          <div><%= link_to '新規登録', new_user_path %></div>
+          <!--<div><%= link_to 'ログイン', login_path %></div>
+          <div><%= link_to '新規登録', new_user_path %></div>-->
         <% end %>
       </div>
 
@@ -30,9 +30,9 @@
          <!-- <div><a href="mandalarts/index">ツール</a></div>-->
           <div><%= show_notice_link %></div>
         <% else %>
-          <div><%= link_to 'HelloIdeaとは', "/detail" %></div>
+          <!--<div><%= link_to 'HelloIdeaとは', "/detail" %></div>
           <div><%= link_to 'ログイン', login_path %></div>
-          <div><%= link_to '新規登録', new_user_path %></div>
+          <div><%= link_to '新規登録', new_user_path %></div>-->
         <% end %>
         </div>
         <% if logged_in? %>
