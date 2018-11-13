@@ -1,0 +1,2 @@
+class Mandal < ApplicationRecord
+end

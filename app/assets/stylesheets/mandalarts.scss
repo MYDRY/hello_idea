@@ -2,11 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-input[type=core] {
-  margin: 2px;
-  border: 3px solid #999;
+.mandalart{
+  width: 1200px;
+  height: 1200px;
+  margin-left: 100px;
+  .row{
+    float: left;
+    width: 400px;
+    height: 400px;
+  }
 }
 
-input[type=sub] {
-  margin: 2px;
+textarea[type=core] {
+  width: 100px;
+  height: 100px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 3px solid #999;
+  text-align: center;
+  word-wrap: break-word;
+  resize: none;
+}
+
+textarea[type=sub] {
+  width: 100px;
+  height: 100px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  resize: none;
 }

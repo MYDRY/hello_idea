@@ -39,7 +39,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:danger] = "ユーザー名またはパスワードが間違っています"
-      redirect_to login_path
+      redirect_to root_path
     end
   end
 
