@@ -5,6 +5,10 @@ class MandalartsController < ApplicationController
   
   def show
   end
+
+  def new
+    @simple_mandal = SimpleMandal.new
+  end
   
   def create
   end
