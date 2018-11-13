@@ -9,10 +9,10 @@
           <%= form_for(@user, url: login_path) do |f| %>
             <div class="centering"><%= f.text_field :name, placeholder: 'ユーザー名', style:"font-size: 25px" %></div>
             <div class="centering"><%= f.password_field :password , placeholder: 'パスワード', style:"font-size: 25px" %></div>
-            <%= f.submit 'ログイン', class: 'login-btn', style: "background-color: #00BABD; color: white; height: 30%;" %><br>
+            <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; height: 30%; font-weight: bold;" %><br>
           <% end %>
           <span style="font-weight: bold;">or</span><br>
-          <%= link_to 'アカウント作成', new_user_path, class: 'register-btn', style: " color: white; height: 30%;" %>
+          <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-default btn-lg', style: "background-color: #ffa300; color: white; height: 30%; font-weight:bold" %>
       </div>
     </div>
   </div>
