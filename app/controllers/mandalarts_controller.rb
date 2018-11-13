@@ -5,13 +5,6 @@ class MandalartsController < ApplicationController
           @simple_mandal = ''
       end
   end
-    
-  def index
-    @simple_mandal = SimpleMandal.find_by(user_id: current_user.id)
-    if @simple_mandal.nil?
-      @simple_mandal = ''
-    end
-  end
   
   def show
     @simple_mandal = SimpleMandal.find_by(user_id: current_user.id)
