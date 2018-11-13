@@ -14,6 +14,7 @@ class MandalartsController < ApplicationController
   def create
     @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
     @simple_mandal.save
+    redirect_to mandalart_path(id: @simple_mandal)
   end
 
   private
