@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'words/index'
   get 'mandalarts/index'
   root 'home#top'
   get '/detail' => 'home#detail'
