@@ -1,0 +1,8 @@
+<h1>Words#new</h1>
+<p>Find me in app/views/words/new.html.erb</p>
+
+<%= form_for @word do |f| %>
+  <%= f.label 'Word' %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<% end %>
