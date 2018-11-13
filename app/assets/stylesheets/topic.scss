@@ -102,12 +102,12 @@
         width: 200px;
         height: 200px;
         text-decoration: none;
-        color: #fff;
+        color: black;
         text-align: center;
     }
     a:hover{
         text-decoration: none;
-        color: #fff;
+        color: black;
         animation: flash 1s both;
     }
     .dodon {
@@ -129,9 +129,9 @@
     }
 
     @keyframes flash {
-    	0% {background: #20b2aa;}
-    	10% { background: #96e9e6; }
-    	100% { background: #20b2aa; }
+    	0% {background: #fde04c;}
+    	10% { background: #fee97e; }
+    	100% { background: #fde04c; }
     }
 
     @keyframes spread {
