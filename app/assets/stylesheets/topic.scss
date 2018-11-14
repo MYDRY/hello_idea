@@ -102,12 +102,12 @@
         width: 200px;
         height: 200px;
         text-decoration: none;
-        color: #fff;
+        color: #000;
         text-align: center;
     }
     a:hover{
         text-decoration: none;
-        color: #fff;
+        color: #000;
         animation: flash 1s both;
     }
     .dodon {
@@ -119,9 +119,12 @@
         top: 0;
         left: 200px;
         padding: 16px;
-        background: rgba(205,92,92,1);
+        background: rgba(205,92,92,0.9);
         color: #fff;
         font-weight: bold;
+      a{
+        color: #fff;
+      }
     }
     a:hover + .dodon{
         display: block;
@@ -129,9 +132,9 @@
     }
  
     @keyframes flash {
-    	0% {background: #20b2aa;}
-    	10% { background: #96e9e6; }
-    	100% { background: #20b2aa; }
+    	0% {background: #ffe000;}
+    	10% { background: #fff; }
+    	100% { background: #ffe000; }
     }
     
     @keyframes spread {

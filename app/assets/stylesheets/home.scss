@@ -33,7 +33,7 @@ html {
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
   //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
-  background-color: white;
+  background-color: #fff;
   /*.message{
     padding-top: 50px;
     text-align: right;
@@ -44,7 +44,6 @@ html {
     font-size: 32px;
   }
   */
-
   .top-image {
     width: 100%;
     height: 50%;
@@ -515,7 +514,7 @@ html {
       text-align: right;
       a{
         display: block;
-        color: white;
+        color: #000;
         text-decoration: none;
         line-height: 125px;
         padding-left: 25px;
