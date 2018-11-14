@@ -7,6 +7,7 @@
         <% if logged_in? %>
           <div><%= link_to current_user.name, user_path(id: current_user) %></div>
           <div><%= link_to 'ニーズ', topics_path %></div>
+
           <div><%= link_to 'ツール', mandalarts_path %></div>
           <% if current_user.admin? %><div><%= link_to 'ユーザーリスト', users_path %></div><% end %>
           <div><%= show_notice_link %></div>
