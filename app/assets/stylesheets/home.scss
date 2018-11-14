@@ -287,6 +287,7 @@ html {
   min-width: 500px;
   height: 100px;
   .header-brand a{
+    font-family: 'Impact',sans-serif;
     float: left;
     font-size: 60px;
     color: black;
@@ -414,7 +415,7 @@ html {
       float: left;
       a{
         display: block;
-        color: white;
+        color: black; //white
         text-decoration: none;
         line-height: 125px;
         padding-left: 25px;
@@ -424,7 +425,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: #fff8d4; //#5f9ea0;
       }
     }
   }
@@ -455,7 +456,7 @@ html {
     height: 5px;/*線の太さ*/
     width: 50px;/*長さ*/
     border-radius: 3px;
-    background: #fff;/*color*/
+    background: black;/*color*/
     display: block;
     content: '';
     cursor: pointer;
@@ -492,7 +493,7 @@ html {
     width: 90%;/*右側に隙間を作る*/
     max-width: 500px;/*最大幅*/
     height: 100%;
-    background: #006e6f;/*背景色*/
+    background: #fed04c;/*背景色*/
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -501,7 +502,7 @@ html {
       text-align: right;
       a{
         display: block;
-        color: white;
+        color: black; //white
         text-decoration: none;
         line-height: 125px;
         padding-left: 25px;
@@ -511,7 +512,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: #fff8d4;
       }
     }
   }
