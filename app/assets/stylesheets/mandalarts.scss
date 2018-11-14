@@ -71,3 +71,53 @@
     }
   }
 }
+
+#index{
+  text-align: center;
+  width: 100%;
+  height: 500px;
+  .square_btn a{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #ffe000;
+    color: #000;
+    font-weight: bold;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+  .square_btn a:hover{
+    text-decoration: none;
+    color: #fff;
+  }
+  .square_btn a:active {/*ボタンを押したとき*/
+    text-decoration: none;
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+  .dates{
+    width: 100%;
+    text-align: center;
+    .square_btn a{
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      background: #ffe000;
+      color: #000;
+      font-weight: bold;
+      border-bottom: solid 4px #627295;
+    }
+    .square_btn a:hover{
+      text-decoration: none;
+      color: #fff;
+    }
+    .square_btn a:active {/*ボタンを押したとき*/
+      text-decoration: none;
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+    }
+  }
+}
