@@ -1,2 +1,3 @@
 module MandalartsHelper
+
 end
