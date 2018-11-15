@@ -1,11 +1,14 @@
-<h1>マンダラート</h1>
-<div id="index">
-  <div class="square_btn"><%= link_to '新規作成', new_mandalart_path %></div>
+<div class="main">
+  <div class="container">
+    <h1>マンダラート</h1>
+    <div id="index">
+      <div class="square_btn"><%= link_to '新規作成', new_mandalart_path %></div>
 
-  <div class="dates">
-  <% @simple_mandals.each do |mandal|  %>
-  <span class="square_btn"><%= link_to "#{mandal.elem_5_5}", mandalart_path(id: mandal) %></span>
-  <% end %>
+      <div class="dates">
+        <% @simple_mandals.each do |mandal|  %>
+        <span class="square_btn"><%= link_to "#{mandal.elem_5_5}", mandalart_path(id: mandal) %></span>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
