@@ -3,35 +3,122 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .mandalart{
-  width: 1200px;
-  height: 1200px;
+
+  width: 900px;
+  height: 1000px;
   margin-left: 100px;
-  .row{
-    float: left;
-    width: 400px;
-    height: 400px;
+  //float: left;
+    .block{
+      width: 300px;
+      height: 300px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      float: left;
+      textarea{
+        display: block;
+        float: left;
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        border: 1px solid #999;
+        text-align: center;
+        word-wrap: break-word;
+        resize: none;
+      }
+      .core textarea{
+        display: block;
+        background-color: rgba(100,100,100,0.3);
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+        word-wrap: break-word;
+        resize: none;
+      }
+      .corecore textarea{
+        display: block;
+        background-color: #ffd700;
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        //border: 3px solid #999;
+        text-align: center;
+        word-wrap: break-word;
+        resize: none;
+      }
+  }
+  .pop{
+    position: absolute;
+    left: 1100px;
+    top: 165px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+    .save-btn{
+      background: none;
+      border: none;
+    }
   }
 }
 
-textarea[type=core] {
-  width: 100px;
-  height: 100px;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border: 3px solid #999;
+#index{
   text-align: center;
-  word-wrap: break-word;
-  resize: none;
-}
-
-textarea[type=sub] {
-  width: 100px;
-  height: 100px;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  resize: none;
+  width: 100%;
+  height: 500px;
+  .square_btn a{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #ffe000;
+    color: #000;
+    font-weight: bold;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+  .square_btn a:hover{
+    text-decoration: none;
+    color: #fff;
+  }
+  .square_btn a:active {/*ボタンを押したとき*/
+    text-decoration: none;
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+  .dates{
+    width: 100%;
+    text-align: center;
+    .square_btn a{
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      background: #ffe000;
+      color: #000;
+      font-weight: bold;
+      border-bottom: solid 4px #627295;
+    }
+    .square_btn a:hover{
+      text-decoration: none;
+      color: #fff;
+    }
+    .square_btn a:active {/*ボタンを押したとき*/
+      text-decoration: none;
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+    }
+  }
 }
