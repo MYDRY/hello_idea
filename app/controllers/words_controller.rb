@@ -22,7 +22,7 @@ class WordsController < ApplicationController
   end
 
   def destroy
-    @word = Word.find_by(params[:id])
+    @word = Word.find(params[:id])
     @word.destroy
     flash[:success] = "単語を削除しました"
     redirect_to words_path
