@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'mandalarts/index'
   root 'home#top'
   get '/detail' => 'home#detail'
   post 'topics/classfy_topic'
@@ -19,4 +18,6 @@ Rails.application.routes.draw do
       resources :likes, only: [:create, :destroy]
     end
   end
+
+  resources :mandalarts
 end

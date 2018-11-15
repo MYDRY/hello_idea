@@ -1,0 +1,7 @@
+require 'test_helper'
+
+class SimpleMandalTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

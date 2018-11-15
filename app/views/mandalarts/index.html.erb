@@ -1,60 +1,11 @@
-<h1>Mandalarts</h1>
-<hr>
+<h1>Mandalarts#index</h1>
+<div id="index">
+  <div class="square_btn"><%= link_to '新規作成', new_mandalart_path %></div>
 
-<div class="mandalart">
-  <p>
-    <div class="row">
-      <!-- 1 -->
-      <%= show_sub_elem(1) %>
-    <!-- 2 -->
-      <%= show_sub_elem(4) %>
-    <!-- 3 -->
-      <%= show_sub_elem(7) %>
-    </div>
-  </p>
-  <p>
-    <div class="row">
-      <!-- 4 -->
-      <%= show_sub_elem(2) %>
-      <!-- 5 -->
-      <%= show_core_elem %>
-      <!-- 6 -->
-      <%= show_sub_elem(8) %>
-    </div>
-  </p>
-  <p>
-    <div class="row">
-      <!-- 7 -->
-      <%= show_sub_elem(3) %>
-      <!-- 8 -->
-      <%= show_sub_elem(6) %>
-      <!-- 9 -->
-     <%= show_sub_elem(9) %>
-    </div>
-  </p>
+  <div class="dates">
+  <% @simple_mandals.each do |mandal|  %>
+  <span class="square_btn"><%= link_to "#{mandal.elem_5_5}", mandalart_path(id: mandal) %></span>
+  <% end %>
+  </div>
 </div>
-<script>
- var directions = [
-     [-1, -1], [0, -1],      [1, -1],
-     [-1,  0], [null, null], [1,  0],
-     [-1,  1], [0, 1],       [1,  1]
- ];
 
- function animeTest1(coreNum, value) {
-     var coreStringForm = document.getElementById('5-' + coreNum);
-     var subElems = document.getElementById(coreNum)
-     coreStringForm.defaultValue = value;
-     anime({
-         targets: coreStringForm,
-         translateX: 266 * directions[coreNum-1][0],
-         translateY: 215  * directions[coreNum-1][1],
-         easing:'easeOutCubic'
-     });
-     subElems.style.visibility = "";
-     anime({
-         delay:   500,
-         targets: subElems,
-         opacity: [0, 1]
-     });
- }
-</script>
