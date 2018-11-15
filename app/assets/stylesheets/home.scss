@@ -10,9 +10,13 @@
 :root{
   --head_bgd_color: #FDE04C; //yellow
   --head_hov_color: #fff8d4; //白に近い黄色
+  --top_bgd_color: white;
   --main_font_color: #fd884c; //orange
-}
+  --nav_item_btn_color: #00BABD; //green
+  --nav_hov_btn_color: #006e6f; //ニーズ新規投稿ボタンの色
+  --nav_a_font_color: white; //ニーズ新規投稿ボタン文字の色
 
+}
 html {
   font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
   line-height: 1.7;
@@ -38,7 +42,7 @@ html {
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
   //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
-  background-color: white;
+  background-color: var(--top_bgd_color);
   /*.message{
     padding-top: 50px;
     text-align: right;
@@ -97,14 +101,14 @@ html {
   }
   .nav-item-lg {
     font-size: 16px;
-    background-color: #00BABD;
+    background-color: var(--nav_item_btn_color);
   }
   .nav-item-lg:hover {
-    background-color: #006e6f;
+    background-color: var(--nav_hov_btn_color);
     transition: all 0.3s;
   }
   .nav-item-lg a {
-    color: white;
+    color: var(--nav_a_font_color);
   }
 }
 
@@ -156,7 +160,7 @@ html {
     background-color: #00BABD;
   }
   .nav-item-lg a {
-    color: white;
+    color: var(--nav_a_font_color);
   }
 }
 
