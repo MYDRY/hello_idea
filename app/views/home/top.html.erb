@@ -9,24 +9,23 @@
       <div class="top-image">
         <%= image_tag('top.png') %>
       </div>
-      <!-- ここから　-->
         <div class="top-form">
           <h1 align="center">アイデアに出会おう!</h1>
           <p align="center">Let's meet the idea!</p>
-          <%= form_for(@user, url: login_path) do |f| %>
+           <% if !logged_in? %>
+            <%= form_for(@user, url: login_path) do |f| %>
           <!--
           <%= f.label :email, 'メールアドレス'  %><br>
           <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
         -->
-          <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名', style:"font-size: 25px" %>
-          <%= f.password_field :password , class: 'form-control', placeholder: 'パスワード', style:"font-size: 25px" %><br>
-          <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %><br>
-          <% end %>
-          <h2 align="center">-----------または-----------</h2>
-          <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
+            <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名', style:"font-size: 25px" %>
+            <%= f.password_field :password , class: 'form-control', placeholder: 'パスワード', style:"font-size: 25px" %><br>
+            <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %><br>
+            <% end %>
+            <h2 align="center">-----------または-----------</h2>
+            <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
+          <%end%>
         </div>
-        <br>
-      <!-- ここまで　-->
     </div>
   </div>
 </div>

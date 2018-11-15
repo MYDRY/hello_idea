@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="container">
+    <div class="random-words">
+      <h1>ランダムワード</h1>
+      <div class="random-tool">
+        <%= @word1.word %>×<%= @word2.word %><br>
+        <%= link_to "もう一度", words_path %><br>
+        <%= link_to "単語追加", new_word_path %>
+      </div>
+      <div class="words-index">
+        <% @words.each do |word| %>
+          <%= word.id %>.
+          <%= word.word %>
+          <% if current_user.admin? %>
+            <%= link_to "delete", word_path(word), method: :delete, data: {confirm: "You sure?"} %>
+          <% end %>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
