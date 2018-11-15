@@ -9,12 +9,10 @@
       </div>
       <div class="words-index">
         <% @words.each do |word| %>
-          <%= word.id %>.
           <%= word.word %>
           <% if current_user.admin? %>
             <%= link_to "delete", word_path(word), method: :delete, data: {confirm: "You sure?"} %>
-          <% end %>
-          <br>
+          <% end %>　　　
         <% end %>
       </div>
     </div>
