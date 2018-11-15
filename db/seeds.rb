@@ -16,3 +16,6 @@ User.create!( name: "Example User",
               password: "test",
               admin: true)
 
+Word.create!( [{ word: "IT" },
+               { word: "猫" }])
+
