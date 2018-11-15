@@ -1,4 +1,6 @@
 class WordsController < ApplicationController
+  before_action :admin_user, only: :destroy
+
   def index
     @words = Word.all
     random_words = Word.order("RANDOM()").limit(2)
@@ -19,9 +21,21 @@ class WordsController < ApplicationController
     end
   end
 
+  def destroy
+    @word = Word.find_by(params[:id])
+    @word.destroy
+    flash[:success] = "単語を削除しました"
+    redirect_to words_path
+  end
+
   private
 
   def word_params
     params.require(:word).permit(:word)
   end
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
+  end
+
 end
