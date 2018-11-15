@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'mandalarts/index'
   root 'home#top'
   get '/detail' => 'home#detail'
   post 'topics/classfy_topic'
@@ -21,4 +20,5 @@ Rails.application.routes.draw do
   end
 
   resources :words
+  resources :mandalarts
 end
