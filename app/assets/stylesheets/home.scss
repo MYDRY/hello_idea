@@ -6,21 +6,26 @@
 * {
   box-sizing: border-box;
 }
+/*---------------　CSS変数の定義--------------------*/
+:root{
+  --head_bgd_color: #FDE04C; //yellow
+  --head_hov_color: #fff8d4; //白に近い黄色
+  --main_font_color: #fd884c; //orange
+}
 
 html {
   font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
   line-height: 1.7;
   letter-spacing: 1px;
 }
-
 .main {
   min-height: 82vh;
   h1 {
-    color: 	#fd884c; //#007B96;
+    color: 	var(--main_font_color); //#007B96;
     padding: 20px;
   }
   h2 {
-    color: 	#fd884c; //#007B96;
+    color: 	var(--main_font_color); //#007B96;
     padding: 20px;
   }
 }
@@ -281,13 +286,17 @@ html {
   padding-left: 100px;
   padding-right: 100px;
 }
-
+.head_style{
+  background-color: var(--head_bgd_color);
+}
 .header{
   width: 100%;
   min-width: 500px;
   height: 100px;
   .header-brand a{
-    font-family: 'Impact',sans-serif;
+    display: inline;
+    //font-family: 'Impact',sans-serif;
+    //font-style: italic;
     float: left;
     font-size: 60px;
     color: black;
@@ -312,7 +321,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: 	#fff8d4; //rgba(250,224,76,1); //#5f9ea0;
+        background-color: var(--head_hov_color); //rgba(250,224,76,1); //#5f9ea0;
       }
     }
   }
@@ -425,7 +434,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #fff8d4; //#5f9ea0;
+        background-color: var(--head_hov_color); //#5f9ea0;
       }
     }
   }
@@ -512,7 +521,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #fff8d4;
+        background-color: var(--head_hov_color);
       }
     }
   }
