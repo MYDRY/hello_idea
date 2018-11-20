@@ -8,12 +8,12 @@
 }
 /*---------------　CSS変数の定義--------------------*/
 :root{
-  --head_bgd_color: #FDE04C; //yellow
-  --head_hov_color: #fff8d4; //白に近い黄色
-  --top_bgd_color: white;
-  --main_font_color: #fd884c; //orange
-  --nav_item_btn_color: #00BABD; //green
-  --nav_hov_btn_color: #006e6f; //ニーズ新規投稿ボタンの色
+  --head_bgd_color: #FDE04C; //ヘッダーの背景色
+  --head_hov_color: #fff8d4; //ヘッダークリック時の色
+  --top_bgd_color: white; //トップページ背景色
+  --main_font_color: #fd884c; //見出しの文字の色
+  --nav_item_btn_color: #00BABD; //ニーズ新規投稿ボタンの色
+  --nav_hov_btn_color: #006e6f; //ニーズ新規投稿ボタンクリック時の色
   --nav_a_font_color: white; //ニーズ新規投稿ボタン文字の色
 
 }
