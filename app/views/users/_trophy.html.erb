@@ -20,30 +20,80 @@
     <% end %>
   </div>
   <div class="trophy-item">
-    <% @topics.each_with_index do |topic, count| %>
-      <% if topic.ideas.count == 1 %>
+    <% @user.topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count >= 1 %>
         <div class="attainment">
           投稿したニーズにアイデアが投稿された！
         </div>
         <% break %>
       <% else %>
-        <% if @topics.count == count+1 %>
+        <% if @user.topics.count == count+1 %>
           <div class="non-attainment">
             投稿したニーズにアイデアが投稿された！
           </div>
         <% end %>
       <% end %>
     <% end %>
-    <% @topics.each_with_index do |topic, count| %>
-      <% if topic.ideas.count == 3 %>
+    <% @user.topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count >= 3 %>
         <div class="attainment">
           投稿したニーズにアイデアが3つ投稿された！
         </div>
         <% break %>
       <% else %>
-        <% if @topics.count == count+1 %>
+        <% if @user.topics.count == count+1 %>
           <div class="non-attainment">
             投稿したニーズにアイデアが3つ投稿された！
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="trophy-item">
+    <% if !@user.ideas.empty? %>
+    <div class="attainment">
+      アイデア初投稿！
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      アイデア初投稿！
+    </div>
+    <% end %>
+    <% if @user.ideas.count >= 3 %>
+    <div class="attainment">
+      アイデアを３つ投稿！
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      アイデアを３つ投稿！
+    </div>
+    <% end %>
+  </div>
+  <div class="trophy-item">
+    <% @user.ideas.each_with_index do |idea, count| %>
+      <% if idea.likes.count >= 1 %>
+        <div class="attainment">
+          投稿したアイデアがいいねされた！
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.ideas.count == count+1 %>
+          <div class="non-attainment">
+              投稿したアイデアがいいねされた！
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @user.ideas.each_with_index do |idea, count| %>
+      <% if idea.likes.count >= 3 %>
+        <div class="attainment">
+          投稿したアイデアが３人からいいねされた！
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.ideas.count == count+1 %>
+          <div class="non-attainment">
+            投稿したアイデアが３人からいいねされた！
           </div>
         <% end %>
       <% end %>
