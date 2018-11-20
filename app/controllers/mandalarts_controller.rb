@@ -17,6 +17,14 @@ class MandalartsController < ApplicationController
     redirect_to mandalart_path(id: @simple_mandal)
   end
 
+  def suggest
+    @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
+    @simple_mandal.save
+
+    result = { target: params[:target], position: 1, sub: []}
+    redirect_to mandalart_path(id: @simple_mandal)
+  end
+  
   private
   def simple_mandal_params
     params.require(:simple_mandal).permit(

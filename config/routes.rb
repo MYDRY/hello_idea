@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   resources :words
   resources :mandalarts
+  post 'mandalarts/suggest', to: 'mandalarts#suggest', as: :suggest_mandalart
 end
