@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @topics = Topic.where(user_id: @user)
   end
 
   def new
