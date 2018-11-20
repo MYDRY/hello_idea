@@ -18,6 +18,15 @@
       ニーズを３つ投稿！
     </div>
     <% end %>
+    <% if @user.topics.count >= 5 %>
+    <div class="attainment">
+      ニーズを5つ投稿！
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      ニーズを5つ投稿！
+    </div>
+    <% end %>
   </div>
   <div class="trophy-item">
     <% @user.topics.each_with_index do |topic, count| %>
@@ -48,6 +57,20 @@
         <% end %>
       <% end %>
     <% end %>
+    <% @user.topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count >= 5 %>
+        <div class="attainment">
+          投稿したニーズにアイデアが5つ投稿された！
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.topics.count == count+1 %>
+          <div class="non-attainment">
+            投稿したニーズにアイデアが5つ投稿された！
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
   <div class="trophy-item">
     <% if !@user.ideas.empty? %>
@@ -66,6 +89,15 @@
     <% else %>
     <div class="non-attainment">
       アイデアを３つ投稿！
+    </div>
+    <% end %>
+    <% if @user.ideas.count >= 5 %>
+    <div class="attainment">
+      アイデアを5つ投稿！
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      アイデアを5つ投稿！
     </div>
     <% end %>
   </div>
@@ -94,6 +126,20 @@
         <% if @user.ideas.count == count+1 %>
           <div class="non-attainment">
             投稿したアイデアが３人からいいねされた！
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @user.ideas.each_with_index do |idea, count| %>
+      <% if idea.likes.count >= 5 %>
+        <div class="attainment">
+          投稿したアイデアが5人からいいねされた！
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.ideas.count == count+1 %>
+          <div class="non-attainment">
+            投稿したアイデアが5人からいいねされた！
           </div>
         <% end %>
       <% end %>
