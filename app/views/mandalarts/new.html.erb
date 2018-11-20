@@ -7,7 +7,7 @@
       <!-- elem_1 -->
       <!-- <div class="row"> -->
       <div class="block">
-        <%= f.text_area :elem_1_1 %>
+        <%= f.text_area :elem_1_1  %>
         <%= f.text_area :elem_1_2 %>
         <%= f.text_area :elem_1_3 %>
         <%= f.text_area :elem_1_4 %>
@@ -55,7 +55,7 @@
         <%= f.text_area :elem_4_9 %>
       </div>
       <div class="block">
-        <div class="core"><%= f.text_area :elem_5_1 %></div>
+        <div class="core"><%= f.text_area :elem_5_1 =%></div>
         <div class="core"><%= f.text_area :elem_5_2 %></div>
         <div class="core"><%= f.text_area :elem_5_3 %></div>
         <div class="core"><%= f.text_area :elem_5_4 %></div>
@@ -123,3 +123,14 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(function() {
+  var $input = $('#elem_5_1');
+  var $output = $('#elem_1_1');
+    $input.on('input', function(event) {
+      var value = $input.val();
+      $output.text(value);
+    });
+  });
+</script>
