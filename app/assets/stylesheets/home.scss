@@ -42,7 +42,9 @@ html {
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
   //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
+
   background-color: var(--top_bgd_color);
+
   /*.message{
     padding-top: 50px;
     text-align: right;
@@ -53,25 +55,37 @@ html {
     font-size: 32px;
   }
   */
-
   .top-image {
-    padding-left: 10%;
-    float: left;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(221,221,221);
+    text-align:center;
+    .catch{
+      display: inline;
+      width: 25%;
+    }
   }
   .top-form{
-    h1 {
-      font-size: 50px;
-      margin-top: 0;
-      margin-bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+    .centering{
+      display: block;
+      width: 100%;
+      text-align: center;
+      input[type="text"] {
+        width: 300px;
+        height: 40px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      input[type="password"] {
+        width: 300px;
+        height: 40px;
+        margin-bottom: 20px;
+      }
     }
-    p{
-      color: red;
-      margin-top: 0; margin-bottom: 25px;
-    }
-    font-size: 32px;
-  }
-  .aroundbrank {
-    padding: 30px;
   }
 }
 
@@ -117,10 +131,6 @@ html {
     padding-left: 10vw;
     padding-right: 10vw;
   }
-
-  .top-form{
-     float: right;
-  }
 }
 
 @media(max-width: 1200px){
@@ -164,6 +174,8 @@ html {
   }
 }
 
+
+//Detail page//
 .detail-message{
   color: #006E6F;
   //line-height: 100px;
@@ -303,6 +315,7 @@ html {
     //font-style: italic;
     float: left;
     font-size: 60px;
+    font-weight: bold;
     color: black;
     text-decoration: none;
     line-height: 100px;
@@ -322,10 +335,13 @@ html {
         padding-left: 12px;
         padding-right: 12px;
         height: 100px;
+        font-weight: bold;
       }
       a:hover{
         transition:all 0.5s;
         background-color: var(--head_hov_color); //rgba(250,224,76,1); //#5f9ea0;
+        background-color: rgb(230,200,0);
+
       }
     }
   }
@@ -357,11 +373,12 @@ html {
       float: left;
       a{
         line-height: 100px;
-        color: #fff;
+        color: #000;
         font-size: 60px;
         padding-left: 0;
         text-decoration: none;
         float: left;
+        font-weight: bold;
       }
     }
   }
@@ -374,8 +391,9 @@ html {
       float: left;
       a{
         line-height: 100px;
-        color: #fff;
+        color: #000;
         font-size: 60px;
+        font-weight: bold;
         padding-left: 0;
         text-decoration: none;
         float: left;
@@ -386,8 +404,9 @@ html {
       float: left;
       a{
         display: block;
-        color: white;
+        color: #000;
         text-decoration: none;
+        font-weight:bold;
         line-height: 100px;
         padding-left: 12px;
         padding-right: 12px;
@@ -396,7 +415,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: rgb(230,200,0);
       }
     }
   }
@@ -417,8 +436,9 @@ html {
       float: left;
       a{
         line-height: 125px;
-        color: #fff;
+        color: #000;
         font-size: 60px;
+        font-weight: bold;
         padding-left: 0;
         text-decoration: none;
       }
@@ -435,6 +455,7 @@ html {
         padding-right: 25px;
         height: 125px;
         font-size: 35px;
+        font-weight: bold;
       }
       a:hover{
         transition:all 0.5s;
@@ -522,6 +543,7 @@ html {
         padding-right: 25px;
         height: 125px;
         font-size: 35px;
+        font-weight: bold;
       }
       a:hover{
         transition:all 0.5s;
@@ -552,7 +574,7 @@ html {
     width: 90%;/*右側に隙間を作る*/
     max-width: 230px;/*最大幅*/
     height: 100%;
-    background: #006e6f;/*背景色*/
+    background: #ffe000;/*背景色*/
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -561,17 +583,18 @@ html {
       text-align: right;
       a{
         display: block;
-        color: white;
+        color: #000;
         text-decoration: none;
         line-height: 50px;
         padding-left: 15px;
         padding-right: 15px;
         height: 50px;
         font-size: 20px;
+        font-weight: bold;
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: rgb(230,200,0);
       }
     }
   }
