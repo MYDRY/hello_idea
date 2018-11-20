@@ -1,0 +1,52 @@
+<div class="trophy">
+  <div class="trophy-item">
+    <% if !@user.topics.empty? %>
+    <div class="attainment">
+      Tニーズ初投稿！
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      ニーズ初投稿！
+    </div>
+    <% end %>
+    <% if @user.topics.count >= 3 %>
+    <div class="attainment">
+      ニーズを３つ投稿！
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      ニーズを３つ投稿！
+    </div>
+    <% end %>
+  </div>
+  <div class="trophy-item">
+    <% @topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count == 1 %>
+        <div class="attainment">
+          投稿したニーズにアイデアが投稿された！
+        </div>
+        <% break %>
+      <% else %>
+        <% if @topics.count == count+1 %>
+          <div class="non-attainment">
+            投稿したニーズにアイデアが投稿された！
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count == 3 %>
+        <div class="attainment">
+          投稿したニーズにアイデアが3つ投稿された！
+        </div>
+        <% break %>
+      <% else %>
+        <% if @topics.count == count+1 %>
+          <div class="non-attainment">
+            投稿したニーズにアイデアが3つ投稿された！
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
