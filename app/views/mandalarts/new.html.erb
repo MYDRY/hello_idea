@@ -115,11 +115,12 @@
       <hr>
       <div class="pop">
         <%= button_tag type: 'submit', class: "save-btn" do %>
-        <i class="far fa-save fa-4x"></i>
+          <i class="far fa-save fa-4x"></i>
         <% end %>
         save
       </div>
       <% end %>
     </div>
   </div>
+  <%= link_to 'suggest', suggest_mandalart_path(simple_mandal: @simple_mandal), method: :post %>
 </div>

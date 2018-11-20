@@ -19,9 +19,22 @@ class MandalartsController < ApplicationController
 
   def suggest
     @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
+
+    # test
+    @simple_mandal.elem_1_1 = 'HEY'
+    @simple_mandal.elem_1_2 = 'HEY'
+    @simple_mandal.elem_1_3 = 'HEY'
+    @simple_mandal.elem_1_4 = 'HEY'
+    @simple_mandal.elem_1_5 = 'HEY'
+    @simple_mandal.elem_1_6 = 'HEY'
+    @simple_mandal.elem_1_7 = 'HEY'
+    @simple_mandal.elem_1_8 = 'HEY'
+    @simple_mandal.elem_1_9 = 'HEY'
+
     @simple_mandal.save
 
-    result = { target: params[:target], position: 1, sub: []}
+    # result = { target: params[:target], position: 1, sub: []}
+    
     redirect_to mandalart_path(id: @simple_mandal)
   end
   
