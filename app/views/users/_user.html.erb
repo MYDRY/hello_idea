@@ -21,6 +21,26 @@
           <% end %></li>
         </ul>
       </div>
+      <div class="dtable_c">
+        <% if !@user.topics.empty? %>
+          Trophy-1
+        <% end %>
+        <% if @user.topics.count >= 3 %>
+          Trophy-2
+        <% end %>
+        <% @topics.each do |topic| %>
+          <% if topic.ideas.count == 1 %>
+            trophy-3
+            <% break %>
+          <% end %>
+        <% end %>
+        <% @topics.each do |topic| %>
+          <% if topic.ideas.count == 5 %>
+            trophy-4
+            <% break %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
