@@ -64,10 +64,16 @@
 .trophy {
   .trophy-item {
     .attainment {
-      
+      img{
+        float: left;
+        width: 128px;
+      }
     }
     .non-attainment {
-      
+      img{
+        float: left;
+        width: 128px;
+      }
     }
   }
 }

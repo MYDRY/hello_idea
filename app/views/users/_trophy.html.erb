@@ -32,13 +32,13 @@
     <% @user.topics.each_with_index do |topic, count| %>
       <% if topic.ideas.count >= 1 %>
         <div class="attainment">
-          投稿したニーズにアイデアが投稿された！
+          <%= image_tag('ideas_c1.png', :title=>"アナタのニーズにアイデアが投稿された") %>
         </div>
         <% break %>
       <% else %>
         <% if @user.topics.count == count+1 %>
           <div class="non-attainment">
-            投稿したニーズにアイデアが投稿された！
+            <%= image_tag('ideas_g1.png', :title=>"アナタのニーズにアイデアが投稿された") %>
           </div>
         <% end %>
       <% end %>
@@ -46,13 +46,13 @@
     <% @user.topics.each_with_index do |topic, count| %>
       <% if topic.ideas.count >= 3 %>
         <div class="attainment">
-          投稿したニーズにアイデアが3つ投稿された！
+          <%= image_tag('ideas_c2.png', :title=>"アナタのニーズにアイデアが３つ投稿された") %>
         </div>
         <% break %>
       <% else %>
         <% if @user.topics.count == count+1 %>
           <div class="non-attainment">
-            投稿したニーズにアイデアが3つ投稿された！
+            <%= image_tag('ideas_g2.png', :title=>"アナタのニーズにアイデアが３つ投稿された") %>
           </div>
         <% end %>
       <% end %>
@@ -60,13 +60,13 @@
     <% @user.topics.each_with_index do |topic, count| %>
       <% if topic.ideas.count >= 5 %>
         <div class="attainment">
-          投稿したニーズにアイデアが5つ投稿された！
+          <%= image_tag('ideas_c3.png', :title=>"アナタのニーズにアイデアが５つ投稿された") %>
         </div>
         <% break %>
       <% else %>
         <% if @user.topics.count == count+1 %>
           <div class="non-attainment">
-            投稿したニーズにアイデアが5つ投稿された！
+            <%= image_tag('ideas_g3.png', :title=>"アナタのニーズにアイデアが５つ投稿された") %>
           </div>
         <% end %>
       <% end %>
