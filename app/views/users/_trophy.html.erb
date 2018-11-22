@@ -145,4 +145,33 @@
       <% end %>
     <% end %>
   </div>
+  <div class="trophy-item">
+    <% if !@user.likes.empty? %>
+    <div class="attainment">
+      はじめてのいいね
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      はじめてのいいね
+    </div>
+    <% end %>
+    <% if @user.likes.count == 3 %>
+    <div class="attainment">
+      3回目ののいいね
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      ３回目のいいね
+    </div>
+    <% end %>
+    <% if @user.likes.count == 5 %>
+    <div class="attainment">
+      5回目ののいいね
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      5回目のいいね
+    </div>
+    <% end %>
+  </div>
 </div>
