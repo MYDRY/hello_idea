@@ -105,13 +105,13 @@
     <% @user.ideas.each_with_index do |idea, count| %>
       <% if idea.likes.count >= 1 %>
         <div class="attainment">
-          投稿したアイデアがいいねされた！
+          <%= image_tag('g_good_c1.png', :title=>"アナタのアイデアがいいねされた") %>
         </div>
         <% break %>
       <% else %>
         <% if @user.ideas.count == count+1 %>
           <div class="non-attainment">
-              投稿したアイデアがいいねされた！
+              <%= image_tag('g_good_g1.png', :title=>"アナタのアイデアがいいねされた") %>
           </div>
         <% end %>
       <% end %>
@@ -119,13 +119,13 @@
     <% @user.ideas.each_with_index do |idea, count| %>
       <% if idea.likes.count >= 3 %>
         <div class="attainment">
-          投稿したアイデアが３人からいいねされた！
+          <%= image_tag('g_good_c2.png', :title=>"アナタのアイデアが３人にいいねされた") %>
         </div>
         <% break %>
       <% else %>
         <% if @user.ideas.count == count+1 %>
           <div class="non-attainment">
-            投稿したアイデアが３人からいいねされた！
+            <%= image_tag('g_good_g1.png', :title=>"アナタのアイデアが３人にいいねされた") %>
           </div>
         <% end %>
       <% end %>
@@ -133,13 +133,13 @@
     <% @user.ideas.each_with_index do |idea, count| %>
       <% if idea.likes.count >= 5 %>
         <div class="attainment">
-          投稿したアイデアが5人からいいねされた！
+          <%= image_tag('g_good_c3.png', :title=>"アナタのアイデアが５人にいいねされた") %>
         </div>
         <% break %>
       <% else %>
         <% if @user.ideas.count == count+1 %>
           <div class="non-attainment">
-            投稿したアイデアが5人からいいねされた！
+            <%= image_tag('g_good_g1.png', :title=>"アナタのアイデアが５人にいいねされた") %>
           </div>
         <% end %>
       <% end %>
