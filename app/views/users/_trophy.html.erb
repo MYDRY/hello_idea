@@ -2,29 +2,29 @@
   <div class="trophy-item">
     <% if !@user.topics.empty? %>
     <div class="attainment">
-      Tニーズ初投稿！
+      <%= image_tag('needs_c1.png', :title=>"ニーズ初投稿") %>
     </div>
     <% else %>
     <div class="non-attainment">
-      ニーズ初投稿！
+      <%= image_tag('needs_g1.png', :title=>"ニーズ初投稿") %>
     </div>
     <% end %>
     <% if @user.topics.count >= 3 %>
     <div class="attainment">
-      ニーズを３つ投稿！
+      <%= image_tag('needs_c2.png', :title=>"ニーズ３つ投稿") %>
     </div>
     <% else %>
     <div class="non-attainment">
-      ニーズを３つ投稿！
+      <%= image_tag('needs_g2.png', :title=>"ニーズ３つ投稿") %>
     </div>
     <% end %>
     <% if @user.topics.count >= 5 %>
     <div class="attainment">
-      ニーズを5つ投稿！
+      <%= image_tag('needs_c3.png', :title=>"ニーズ５つ投稿") %>
     </div>
     <% else %>
     <div class="non-attainment">
-      ニーズを5つ投稿！
+      <%= image_tag('needs_g3.png', :title=>"ニーズ５つ投稿") %>
     </div>
     <% end %>
   </div>
