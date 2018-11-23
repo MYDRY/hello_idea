@@ -25,7 +25,7 @@ class MandalartsController < ApplicationController
     @simple_mandal = SimpleMandal.find(params[:id])
     if @simple_mandal.update(simple_mandal_params)
       flash[:success] = "トピックを編集しました"
-      redirect_to @simple_mandal
+      redirect_to edit_mandalart_path(id: @simple_mandal)
     else
       render :edit
     end
