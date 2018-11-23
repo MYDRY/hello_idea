@@ -14,7 +14,21 @@ class MandalartsController < ApplicationController
   def create
     @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
     @simple_mandal.save
-    redirect_to mandalart_path(id: @simple_mandal)
+    redirect_to edit_mandalart_path(id: @simple_mandal)
+  end
+
+  def edit
+    @simple_mandal = SimpleMandal.find(params[:id])
+  end
+
+  def update
+    @simple_mandal = SimpleMandal.find(params[:id])
+    if @simple_mandal.update(simple_mandal_params)
+      flash[:success] = "トピックを編集しました"
+      redirect_to edit_mandalart_path(id: @simple_mandal)
+    else
+      render :edit
+    end
   end
 
   def suggest
