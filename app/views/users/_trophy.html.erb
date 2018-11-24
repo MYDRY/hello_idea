@@ -148,29 +148,29 @@
   <div class="trophy-item">
     <% if !@user.likes.empty? %>
     <div class="attainment">
-      はじめてのいいね
+      <%= image_tag('send_good_c1.png', :title=>"アイデアにいいねした") %>
     </div>
     <% else %>
     <div class="non-attainment">
-      はじめてのいいね
+      <%= image_tag('send_good_g1.png', :title=>"アイデアにいいねした") %>
     </div>
     <% end %>
-    <% if @user.likes.count == 3 %>
+    <% if @user.likes.count >= 3 %>
     <div class="attainment">
-      3回目ののいいね
+      <%= image_tag('send_good_c2.png', :title=>"アイデアに３回いいねした") %>
     </div>
     <% else %>
     <div class="non-attainment">
-      ３回目のいいね
+      <%= image_tag('send_good_g1.png', :title=>"アイデアに３回いいねした") %>
     </div>
     <% end %>
-    <% if @user.likes.count == 5 %>
+    <% if @user.likes.count >= 5 %>
     <div class="attainment">
-      5回目ののいいね
+      <%= image_tag('send_good_c3.png', :title=>"アイデアに５回いいねした") %>
     </div>
     <% else %>
     <div class="non-attainment">
-      5回目のいいね
+      <%= image_tag('send_good_g1.png', :title=>"アイデアに５回いいねした") %>
     </div>
     <% end %>
   </div>
