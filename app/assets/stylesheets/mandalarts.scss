@@ -1,7 +1,6 @@
 // Place all the styles related to the mandalarts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .mandalart{
 
   width: 900px;
@@ -60,8 +59,8 @@
   }
   .pop{
     position: absolute;
-    left: 1400px;
-    top: 165px;
+    left: 1100px;
+    top: 110px;
     width: 100px;
     height: 100px;
     text-align: center;
@@ -120,5 +119,118 @@
       transform: translateY(4px);/*下に動く*/
       border-bottom: none;/*線を消す*/
     }
+  }
+}
+
+/* modal window */
+.modal_popUp,
+input[name="modal_switch"],
+#modal_open + label ~ label {
+  display: none;
+}
+/* HAND MARK */
+#modal_open + label{
+  position: relative;
+  top: -85px;
+  left: 300px;
+  margin-right:100px;
+  margin-top:10px;
+  color:#006e6f;
+  font-size:20px;
+  cursor: pointer;
+}
+#modal_close-button + label {
+  margin-right:100px;
+  margin-top:10px;
+  color:#006e6f;
+  font-size:20px;
+  cursor: pointer;
+}
+
+.modal_popUp {
+  animation: fadeIn 1s ease 0s 1 normal;
+}
+#modal_open:checked ~ #modal_close-button + label{
+  animation: fadeIn 2s ease 0s 1 normal;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#modal_open:checked + label ~ .modal_popUp {
+  background: #fff;
+  display: block;
+  width: 1350px;
+  height: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 998;
+}
+
+#modal_open:checked + label ~ .modal_popUp > .modal_popUp-content {
+  width: calc(100% - 40px);
+  height: calc(100% - 20px - 44px );
+  padding: 10px 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+#modal_open:checked + label + #modal_close-overlay + label {
+  background: rgba(0, 0, 0, 0.70);
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  z-index: 997;
+}
+
+/* CLOSE BTN */
+#modal_open:checked ~ #modal_close-button + label {
+  display: block;
+  margin-left: 30px;
+  background: #fff;
+  text-align: center;
+  font-size: 25px;
+  line-height: 44px;
+  width: 1300px;
+  height: 44px;
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  z-index: 999;
+}
+
+#modal_open:checked ~ #modal_close-button + label::before {
+  content: '×';
+}
+#modal_open:checked ~ #modal_close-button + label::after {
+  content: 'CLOSE';
+  margin-left: 5px;
+  font-size: 80%;
+}
+
+/* CONTENT */
+.contents{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 30px;
+  //float: left;
+  .mandal-img{
+    width: 50%;
+    img{
+      width: 90%;
+    }
+  }
+  .modal-contents{
+    width: 50%;
   }
 }
