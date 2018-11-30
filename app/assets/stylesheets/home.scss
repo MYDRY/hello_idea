@@ -6,7 +6,20 @@
 * {
   box-sizing: border-box;
 }
+/*---------------　CSS変数の定義--------------------*/
+:root{
+  --head_bgd_color: #FDE04C; //ヘッダーの背景色
+  --head_hov_color: #fff8d4; //ヘッダークリック時の色
+  --head_font_color: black; //ヘッダーの文字の色.
+  //--head_font: 'Impact',"Yu Gothic","Meiryo","ヒラギノ角ゴ","sans-serif"; //ヘッダーフォントの指定
+  --top_bgd_color: white; //トップページ背景色
+  --main_font_color: #fd884c; //見出しの文字の色
+  --nav_item_btn_color: #00BABD; //ニーズ新規投稿ボタンの色,
+  --nav_hov_btn_color: #006e6f; //ニーズ新規投稿ボタンクリック時の色
+  --nav_a_font_color: white; //ニーズ新規投稿ボタン文字の色
+  --ham_icon_color: black; //ハンバーガーアイコンの色
 
+}
 html {
   font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
   line-height: 1.7;
@@ -16,11 +29,11 @@ html {
 .main {
   min-height: 82vh;
   h1 {
-    color: #007B96;
+    color: 	var(--main_font_color); //#007B96;
     padding: 20px;
   }
   h2 {
-    color: #007B96;
+    color: 	var(--main_font_color); //#007B96;
     padding: 20px;
   }
 }
@@ -33,7 +46,7 @@ html {
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
   //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
-  background-color: white;
+  background-color: var(--top_bgd_color);
   /*.message{
     padding-top: 50px;
     text-align: right;
@@ -92,14 +105,14 @@ html {
   }
   .nav-item-lg {
     font-size: 16px;
-    background-color: #00BABD;
+    background-color: var(--nav_item_btn_color);
   }
   .nav-item-lg:hover {
-    background-color: #006e6f;
+    background-color: var(--nav_hov_btn_color);
     transition: all 0.3s;
   }
   .nav-item-lg a {
-    color: white;
+    color: var(--nav_a_font_color);
   }
 }
 
@@ -148,10 +161,10 @@ html {
   }
   .nav-item-lg {
     font-size: 30px;
-    background-color: #00BABD;
+    background-color: var(--nav_item_btn_color);
   }
   .nav-item-lg a {
-    color: white;
+    color: var(--nav_a_font_color);
   }
 }
 
@@ -281,15 +294,18 @@ html {
   padding-left: 100px;
   padding-right: 100px;
 }
-
+.head_style{
+  background-color: var(--head_bgd_color);
+}
 .header{
   width: 100%;
   min-width: 500px;
   height: 100px;
+  //font-family: var(--head_font);
   .header-brand a{
     float: left;
     font-size: 60px;
-    color: white;
+    color: var(--head_font_color);
     text-decoration: none;
     line-height: 100px;
   }
@@ -302,7 +318,7 @@ html {
       float: left;
       a{
         display: block;
-        color: white;
+        color: var(--head_font_color);
         text-decoration: none;
         line-height: 100px;
         padding-left: 12px;
@@ -311,7 +327,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: var(--head_hov_color); //#5f9ea0;
       }
     }
   }
@@ -338,12 +354,13 @@ html {
 
   .hamburger_header{
     display: inline;
+    background-color: var(--head_bgd_color);
      .header_brand{
       padding-left: 20px;
       float: left;
       a{
         line-height: 100px;
-        color: #fff;
+        color: var(--head_font_color);
         font-size: 60px;
         padding-left: 0;
         text-decoration: none;
@@ -360,7 +377,7 @@ html {
       float: left;
       a{
         line-height: 100px;
-        color: #fff;
+        color: var(--head_font_color);
         font-size: 60px;
         padding-left: 0;
         text-decoration: none;
@@ -372,7 +389,7 @@ html {
       float: left;
       a{
         display: block;
-        color: white;
+        color: var(--head_font_color);
         text-decoration: none;
         line-height: 100px;
         padding-left: 12px;
@@ -382,7 +399,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: var(--head_hov_color);
       }
     }
   }
@@ -403,7 +420,7 @@ html {
       float: left;
       a{
         line-height: 125px;
-        color: #fff;
+        color: var(--head_font_color);
         font-size: 60px;
         padding-left: 0;
         text-decoration: none;
@@ -414,7 +431,7 @@ html {
       float: left;
       a{
         display: block;
-        color: white;
+        color: var(--head_font_color);
         text-decoration: none;
         line-height: 125px;
         padding-left: 25px;
@@ -424,7 +441,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: var(--head_hov_color);
       }
     }
   }
@@ -455,7 +472,7 @@ html {
     height: 5px;/*線の太さ*/
     width: 50px;/*長さ*/
     border-radius: 3px;
-    background: #fff;/*color*/
+    background: var(--ham_icon_color);/*color*/
     display: block;
     content: '';
     cursor: pointer;
@@ -492,7 +509,7 @@ html {
     width: 90%;/*右側に隙間を作る*/
     max-width: 500px;/*最大幅*/
     height: 100%;
-    background: #006e6f;/*背景色*/
+    background: var(--head_bgd_color);/*背景色*/
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -501,7 +518,7 @@ html {
       text-align: right;
       a{
         display: block;
-        color: white;
+        color: var(--head_font_color);
         text-decoration: none;
         line-height: 125px;
         padding-left: 25px;
@@ -511,7 +528,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: var(--head_hov_color);
       }
     }
   }
@@ -538,7 +555,7 @@ html {
     width: 90%;/*右側に隙間を作る*/
     max-width: 230px;/*最大幅*/
     height: 100%;
-    background: #006e6f;/*背景色*/
+    background: var(--head_bgd_color);/*背景色*/
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -547,7 +564,7 @@ html {
       text-align: right;
       a{
         display: block;
-        color: white;
+        color: var(--head_font_color);
         text-decoration: none;
         line-height: 50px;
         padding-left: 15px;
@@ -557,7 +574,7 @@ html {
       }
       a:hover{
         transition:all 0.5s;
-        background-color: #5f9ea0;
+        background-color: var(--head_hov_color);
       }
     }
   }
