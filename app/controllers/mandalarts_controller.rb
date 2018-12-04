@@ -1,3 +1,10 @@
+# coding: utf-8
+require 'rexml/document'
+require "json"
+require "rubygems"
+require "faraday"
+require "faraday_middleware"
+
 class MandalartsController < ApplicationController
   def index
     @simple_mandals = current_user.simple_mandals
@@ -32,24 +39,32 @@ class MandalartsController < ApplicationController
   end
 
   def suggest
-    @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
-
-    # test
-    @simple_mandal.elem_1_1 = 'HEY'
-    @simple_mandal.elem_1_2 = 'HEY'
-    @simple_mandal.elem_1_3 = 'HEY'
-    @simple_mandal.elem_1_4 = 'HEY'
-    @simple_mandal.elem_1_5 = 'HEY'
-    @simple_mandal.elem_1_6 = 'HEY'
-    @simple_mandal.elem_1_7 = 'HEY'
-    @simple_mandal.elem_1_8 = 'HEY'
-    @simple_mandal.elem_1_9 = 'HEY'
-
-    @simple_mandal.save
-
-    # result = { target: params[:target], position: 1, sub: []}
+    keyword = params[:keyword]
     
-    redirect_to mandalart_path(id: @simple_mandal)
+    conn = Faraday::Connection.new(:url => 'https://www.google.com') do |builder|
+      builder.request :url_encoded
+      builder.response :logger
+      builder.response :json, :content_type => /\bjson/
+      builder.adapter Faraday.default_adapter
+    end
+    
+    response = conn.get do |req|
+      req.url '/complete/search'
+      req.params['hl'] = "en"
+      req.params['q']  = keyword
+      req.params['output'] = "toolbar"
+      req.params['json'] = true
+    end
+
+    @suggestions = []
+
+    suggestion_xml = REXML::Document.new(response.body)
+    suggestion_xml.elements['toplevel'].each do |elem|
+      suggested_str = elem.elements['suggestion']['data'].tr!(keyword, '')
+      @suggestions << suggested_str unless suggested_str.empty?
+    end
+
+    # redirect_to edit_mandalart_path(id: @simple_mandal)
   end
   
   private
