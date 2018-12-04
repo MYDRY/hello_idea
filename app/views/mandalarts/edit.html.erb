@@ -9,11 +9,15 @@
 
     <p>
       <input type="text" id="keyword_form" size="40" maxlength="20">
-      <input type="button" value="検索" onClick="jump_to_suggest()">
+      <input type="button" value="検索" onClick="jump_to_suggest(<%= @simple_mandal.id%>)">
     </p>
     </div>
   </div>
-  <%= link_to 'suggest', suggest_mandalart_path(keyword: "東京"), method: :get %>
+  <% unless @suggestions.nil? %>
+    <% @suggestions.each do |s|%>
+      <%= s %><br>
+    <% end %>
+  <% end %>
 </div>
 <script>
  function myFnc1(obj){
@@ -40,12 +44,12 @@
  function myFnc8(obj){
      document.getElementById( "simple_mandal_elem_9_5" ).value = obj.value ;
  }
- function jump_to_suggest() {
+ function jump_to_suggest(id) {
     keyword_str = document.getElementById("keyword_form").value;
     if (keyword_str == "") {
       return;
     }
     alert(keyword_str);
-    location.href = "/mandalarts_suggest?keyword="+keyword_str;
+    location.href = "/mandalarts_suggest?id="+id+"&keyword="+keyword_str;
  }
 </script>
