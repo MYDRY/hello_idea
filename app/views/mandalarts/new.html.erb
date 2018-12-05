@@ -2,14 +2,206 @@
   <div class="container">
     <h1>マンダラート</h1>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     
     <%= render partial: 'description' %>
     
     <div class="mandalart">
       <%= form_for(@simple_mandal, url: mandalarts_path) do |f| %>
         <%= render partial: 'mandal_form', locals: { f: f } %>
+
+    <!-- modal window explain mandalart -->
+      <div>
+        <input id="modal_open" type="radio" name="modal_switch" />
+        <label for="modal_open"><i class="fa fa-question-circle" style="font-size:48px;color:#627295"></i></label>
+        <input id="modal_close-overlay" type="radio" name="modal_switch" />
+        <label for="modal_close-overlay">窓の外を触ると閉じるんだよっ</label>
+        <input id="modal_close-button" type="radio" name="modal_switch" />
+        <label for="modal_close-button"></label>
+        <div class="modal_popUp">
+        <div class="modal_popUp-content"> 
+        <!-- CONTENT -->
+        <div class="contents">
+          <div class="mandal-img"><%= image_tag('mandal-default.png') %></div>
+          <div class="modal-contents">
+            <h2>マンダラートはアイデア・思考の整理を支援します！</h2>
+            <h4>テーマや問題を細分化・関連付けして情報整理をして<br>新たな課題やアイデアの発見につなげましょう！</h4>
+          </div>
+        </div>
+          <hr>
+        <div class="contents">
+          <div class="mandal-img"><%= image_tag('explain-mandalart.gif') %></div>
+          <div class="modal-contents">
+            <h2>使い方</h2>
+            <p>1.黄色のマスに全体のテーマ・キーワードを置きます</p>
+            <p>2.周りの灰色のマスに黄色のマスと関連する情報・キーワードを置きます</p>
+            <p>3.最後に白色のマスに灰色のマスと関連する情報・キーワードを置いて完成です</p>
+            <p>※SAVEボタンは完成してから押してください</p>
+          </div>
+        </div>
+          <hr>
+        <div class="contents">
+          <div class="mandal-img"><%= image_tag('mandalart-example.png') %></div>
+          <div class="modal-contents">
+            <h2>使用例</h2>
+            <h3>ニーズ「楽しい夢が見たい！」</h3>
+            <p>まず夢を見るための情報を整理するために、テーマに「睡眠」と入れました</p>
+            <p>左図の通り情報を書き出し、これらを踏まえてアイデアを考えてみます</p>
+            <p>夢にはレム睡眠が強く関係があるような気がします</p>
+            <p>脳波について調べてみると、睡眠時には複数の脳波が存在するようです</p>
+            <h3>思いついたアイデア<br>「脳波を音楽などで操作してみよう！」<br>「睡眠前に楽しい記憶を思い返そう！」</h3>
+          </div>
+        </div>
+        <!-- CONTENT END-->
+        </div>
+       </div>
+      </div>
+      <!-- end modal window -->
+    <div class="mandalart">
+      <%= form_for(@simple_mandal, url: mandalarts_path) do |f| %>
+      <!-- elem_1 -->
+      <!-- <div class="row"> -->
+      <div class="block">
+        <%= f.text_area :elem_1_1 %>
+        <%= f.text_area :elem_1_2 %>
+        <%= f.text_area :elem_1_3 %>
+        <%= f.text_area :elem_1_4 %>
+        <div class="core"><%= f.text_area :elem_1_5 %></div>
+        <%= f.text_area :elem_1_6 %>
+        <%= f.text_area :elem_1_7 %>
+        <%= f.text_area :elem_1_8 %>
+        <%= f.text_area :elem_1_9 %>
+      </div>
+      <!-- elem_2 -->
+      <div class="block">
+        <%= f.text_area :elem_2_1 %>
+        <%= f.text_area :elem_2_2 %>
+        <%= f.text_area :elem_2_3 %>
+        <%= f.text_area :elem_2_4 %>
+        <div class="core"><%= f.text_area :elem_2_5 %></div>
+        <%= f.text_area :elem_2_6 %>
+        <%= f.text_area :elem_2_7 %>
+        <%= f.text_area :elem_2_8 %>
+        <%= f.text_area :elem_2_9 %>
+      </div>
+      <!-- elem_3 -->
+      <div class="block">
+        <%= f.text_area :elem_3_1 %>
+        <%= f.text_area :elem_3_2 %>
+        <%= f.text_area :elem_3_3 %>
+        <%= f.text_area :elem_3_4 %>
+        <div class="core"><%= f.text_area :elem_3_5 %></div>
+        <%= f.text_area :elem_3_6 %>
+        <%= f.text_area :elem_3_7 %>
+        <%= f.text_area :elem_3_8 %>
+        <%= f.text_area :elem_3_9 %>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+      <div class="block">
+        <%= f.text_area :elem_4_1 %>
+        <%= f.text_area :elem_4_2 %>
+        <%= f.text_area :elem_4_3 %>
+        <%= f.text_area :elem_4_4 %>
+        <div class="core"><%= f.text_area :elem_4_5 %></div>
+        <%= f.text_area :elem_4_6 %>
+        <%= f.text_area :elem_4_7 %>
+        <%= f.text_area :elem_4_8 %>
+        <%= f.text_area :elem_4_9 %>
+      </div>
+      <div class="block">
+        <div class="core"><%= f.text_area :elem_5_1, onblur:"myFnc1(this);" %></div>
+        <div class="core"><%= f.text_area :elem_5_2, onblur:"myFnc2(this);" %></div>
+        <div class="core"><%= f.text_area :elem_5_3, onblur:"myFnc3(this);" %></div>
+        <div class="core"><%= f.text_area :elem_5_4, onblur:"myFnc4(this);" %></div>
+        <div class="corecore"><%= f.text_area :elem_5_5 %></div>
+        <div class="core"><%= f.text_area :elem_5_6, onblur:"myFnc5(this);" %></div>
+        <div class="core"><%= f.text_area :elem_5_7, onblur:"myFnc6(this);" %></div>
+        <div class="core"><%= f.text_area :elem_5_8, onblur:"myFnc7(this);" %></div>
+        <div class="core"><%= f.text_area :elem_5_9, onblur:"myFnc8(this);" %></div>
+      </div>
+      <div class="block">
+        <%= f.text_area :elem_6_1 %>
+        <%= f.text_area :elem_6_2 %>
+        <%= f.text_area :elem_6_3 %>
+        <%= f.text_area :elem_6_4 %>
+        <div class="core"><%= f.text_area :elem_6_5 %></div>
+        <%= f.text_area :elem_6_6 %>
+        <%= f.text_area :elem_6_7 %>
+        <%= f.text_area :elem_6_8 %>
+        <%= f.text_area :elem_6_9 %>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+      <div class="block">
+        <%= f.text_area :elem_7_1 %>
+        <%= f.text_area :elem_7_2 %>
+        <%= f.text_area :elem_7_3 %>
+        <%= f.text_area :elem_7_4 %>
+        <div class="core"><%= f.text_area :elem_7_5 %></div>
+        <%= f.text_area :elem_7_6 %>
+        <%= f.text_area :elem_7_7 %>
+        <%= f.text_area :elem_7_8 %>
+        <%= f.text_area :elem_7_9 %>
+      </div>
+      <div class="block">
+        <%= f.text_area :elem_8_1 %>
+        <%= f.text_area :elem_8_2 %>
+        <%= f.text_area :elem_8_3 %>
+        <%= f.text_area :elem_8_4 %>
+        <div class="core"><%= f.text_area :elem_8_5 %></div>
+        <%= f.text_area :elem_8_6 %>
+        <%= f.text_area :elem_8_7 %>
+        <%= f.text_area :elem_8_8 %>
+        <%= f.text_area :elem_8_9 %>
+      </div>
+      <div class="block">
+        <%= f.text_area :elem_9_1 %>
+        <%= f.text_area :elem_9_2 %>
+        <%= f.text_area :elem_9_3 %>
+        <%= f.text_area :elem_9_4 %>
+        <div class="core"><%= f.text_area :elem_9_5 %></div>
+        <%= f.text_area :elem_9_6 %>
+        <%= f.text_area :elem_9_7 %>
+        <%= f.text_area :elem_9_8 %>
+        <%= f.text_area :elem_9_9 %>
+      </div>
+      <hr>
+      <div class="pop">
+        <%= button_tag type: 'submit', class: "save-btn" do %>
+        <i class="far fa-save fa-4x"></i>
+        <% end %>
+        save
+      </div>
       <% end %>
     </div>
   </div>
   <%= link_to 'suggest', suggest_mandalart_path(simple_mandal: @simple_mandal), method: :post %>
 </div>
+
+<script>
+function myFnc1(obj){
+  document.getElementById( "simple_mandal_elem_1_5" ).value = obj.value ;
+}
+function myFnc2(obj){
+  document.getElementById( "simple_mandal_elem_2_5" ).value = obj.value ;
+}
+function myFnc3(obj){
+  document.getElementById( "simple_mandal_elem_3_5" ).value = obj.value ;
+}
+function myFnc4(obj){
+  document.getElementById( "simple_mandal_elem_4_5" ).value = obj.value ;
+}
+function myFnc5(obj){
+  document.getElementById( "simple_mandal_elem_6_5" ).value = obj.value ;
+}
+function myFnc6(obj){
+  document.getElementById( "simple_mandal_elem_7_5" ).value = obj.value ;
+}
+function myFnc7(obj){
+  document.getElementById( "simple_mandal_elem_8_5" ).value = obj.value ;
+}
+function myFnc8(obj){
+  document.getElementById( "simple_mandal_elem_9_5" ).value = obj.value ;
+}
+</script>
