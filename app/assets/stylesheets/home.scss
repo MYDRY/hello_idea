@@ -276,6 +276,59 @@ html {
   }
 }
 
+/************* ツール *******************/
+#tool{
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  .hirameki-tool{
+    margin-right: 10px;
+    float: left;
+    width: 500px;
+    height: 500px;
+    background-color: #ffa500;
+    text-align: center;
+    .tool-title{
+     color: snow;
+     font-weight: bold;
+    }
+    .tool-message{
+     color: snow;
+     font-weight: bold;
+     //font-size: 20px;
+    }
+    a{
+     text-decoration: none;
+     font-size: 25px;
+     font-weight: bold;
+     color: snow;
+    }
+  }
+  .seiri-tool{
+    margin-left: 10px;
+    float: right;
+    width: 500px;
+    height: 500px;
+    background-color: #66cdaa;
+    text-align: center;
+    .tool-title{
+     color: snow;
+     font-weight: bold;
+    }
+    .tool-message{
+     color: snow;
+     font-weight: bold;
+     //font-size: 20px;
+    }
+    a{
+     text-decoration: none;
+     font-size: 25px;
+     font-weight: bold;
+     color: snow;
+    }
+  }
+}
+
 /************* ヘッダー ********************/
 .pad{
   padding-left: 100px;

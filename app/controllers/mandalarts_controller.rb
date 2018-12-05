@@ -17,7 +17,7 @@ class MandalartsController < ApplicationController
     redirect_to mandalart_path(id: @simple_mandal)
   end
 
-  private
+  public
   def simple_mandal_params
     params.require(:simple_mandal).permit(
       :elem_1_1, :elem_1_2, :elem_1_3,

@@ -5,4 +5,7 @@ class HomeController < ApplicationController
 
   def detail
   end
+
+  def tools
+  end
 end
