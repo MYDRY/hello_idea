@@ -21,6 +21,7 @@ class MandalartsController < ApplicationController
   def create
     @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
     @simple_mandal.save
+    flash[:success] = "マンダラートを保存しました"
     redirect_to edit_mandalart_path(id: @simple_mandal)
   end
 
@@ -34,7 +35,7 @@ class MandalartsController < ApplicationController
   def update
     @simple_mandal = SimpleMandal.find(params[:id])
     if @simple_mandal.update(simple_mandal_params)
-      flash[:success] = "トピックを編集しました"
+      flash[:success] = "マンダラートを更新しました"
       redirect_to edit_mandalart_path(id: @simple_mandal)
     else
       render :edit
