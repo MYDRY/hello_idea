@@ -78,3 +78,22 @@
     }
   }
 }
+
+#smart-trophy{
+  width: 100%;
+  height: 2000px;
+  .trophy-item {
+    .attainment {
+      float: left;
+      img{
+        width: 256px;
+      }
+    }
+    .non-attainment {
+      float: left;
+      img{
+        width: 256px;
+      }
+    }
+  }
+}
