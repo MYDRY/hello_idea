@@ -6,18 +6,25 @@
       <%= form_for(@simple_mandal, url: "/mandalarts/#{@simple_mandal.id}") do |f| %>
         <%= render partial: 'mandal_form', locals: { f: f } %>
       <% end %>
-
-    <p>
-      <input type="text" id="keyword_form" size="40" maxlength="20">
-      <input type="button" value="検索" onClick="jump_to_suggest(<%= @simple_mandal.id%>)">
-    </p>
     </div>
   </div>
-  <% unless @suggestions.nil? %>
-    <% @suggestions.each do |s|%>
-      <%= s %><br>
-    <% end %>
-  <% end %>
+  
+  <div class="suggest">
+    <h3>キーワード検索フォーム</h3>
+    <input class="suggest-form" type="text" id="keyword_form" size="40" maxlength="20" placeholder="探したい関連情報のキーワードを入力してください">
+    <button value="検索" onClick="jump_to_suggest(<%= @simple_mandal.id%>)">
+        <i class="fas fa-search"></i> 検索
+      </button>
+    <div class="result">
+      <h3>検索結果：</3>
+      <% unless @suggestions.nil? %>
+        <% @suggestions.each do |s|%>
+          <%= s %>
+          <%= '/' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <script>
  function myFnc1(obj){
