@@ -9,7 +9,7 @@ class MandalartsController < ApplicationController
   def index
     @simple_mandals = current_user.simple_mandals
   end
-  
+
   def show
     @simple_mandal = SimpleMandal.find(params[:id])
   end
@@ -17,7 +17,7 @@ class MandalartsController < ApplicationController
   def new
     @simple_mandal = SimpleMandal.new
   end
-  
+
   def create
     @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
     @simple_mandal.save
@@ -44,14 +44,14 @@ class MandalartsController < ApplicationController
   def suggest
     @simple_mandal = params[:id]
     keyword = params[:keyword]
-    
+
     conn = Faraday::Connection.new(:url => 'https://www.google.com') do |builder|
       builder.request :url_encoded
       builder.response :logger
       builder.response :json, :content_type => /\bjson/
       builder.adapter Faraday.default_adapter
     end
-    
+
     response = conn.get do |req|
       req.url '/complete/search'
       req.params['hl'] = "en"
@@ -64,20 +64,20 @@ class MandalartsController < ApplicationController
 
     suggestion_xml = REXML::Document.new(response.body)
     suggestion_xml.elements['toplevel'].each do |elem|
-      suggested_str = elem.elements['suggestion']['data'].tr!(keyword, '')
-      @suggestions << suggested_str unless suggested_str.empty?
+      suggested_str = elem.elements['suggestion']['data']
+      @suggestions << suggested_str
     end
 
     redirect_to edit_mandalart_path(id: @simple_mandal, suggestions: @suggestions)
   end
-  
+
   private
   def simple_mandal_params
     params.require(:simple_mandal).permit(
       :elem_1_1, :elem_1_2, :elem_1_3,
       :elem_1_4, :elem_1_5, :elem_1_6,
       :elem_1_7, :elem_1_8, :elem_1_9,
-      
+
       :elem_2_1, :elem_2_2, :elem_2_3,
       :elem_2_4, :elem_2_5, :elem_2_6,
       :elem_2_7, :elem_2_8, :elem_2_9,
