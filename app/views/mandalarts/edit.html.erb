@@ -2,6 +2,7 @@
   <div class="container">
     <h1>マンダラート</h1>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <%= render partial: 'description' %>
     <div class="mandalart">
       <%= form_for(@simple_mandal, url: "/mandalarts/#{@simple_mandal.id}") do |f| %>
         <%= render partial: 'mandal_form', locals: { f: f } %>
@@ -10,29 +11,3 @@
       <%= render partial: 'suggest', locals: { suggestions: @suggestions, id: @simple_mandal.id } %>
   </div>
 </div>
-<script>
- function myFnc1(obj){
-     document.getElementById( "simple_mandal_elem_1_5" ).value = obj.value ;
- }
- function myFnc2(obj){
-     document.getElementById( "simple_mandal_elem_2_5" ).value = obj.value ;
- }
- function myFnc3(obj){
-     document.getElementById( "simple_mandal_elem_3_5" ).value = obj.value ;
- }
- function myFnc4(obj){
-     document.getElementById( "simple_mandal_elem_4_5" ).value = obj.value ;
- }
- function myFnc5(obj){
-     document.getElementById( "simple_mandal_elem_6_5" ).value = obj.value ;
- }
- function myFnc6(obj){
-     document.getElementById( "simple_mandal_elem_7_5" ).value = obj.value ;
- }
- function myFnc7(obj){
-     document.getElementById( "simple_mandal_elem_8_5" ).value = obj.value ;
- }
- function myFnc8(obj){
-     document.getElementById( "simple_mandal_elem_9_5" ).value = obj.value ;
- }
-</script>

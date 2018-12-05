@@ -49,15 +49,15 @@
   <%= f.text_area :elem_4_9 %>
 </div>
 <div class="block">
-  <div class="core"><%= f.text_area :elem_5_1 %></div>
-  <div class="core"><%= f.text_area :elem_5_2 %></div>
-  <div class="core"><%= f.text_area :elem_5_3 %></div>
-  <div class="core"><%= f.text_area :elem_5_4 %></div>
+  <div class="core"><%= f.text_area :elem_5_1, onblur:"myFnc1(this);" %></div>
+  <div class="core"><%= f.text_area :elem_5_2, onblur:"myFnc2(this);" %></div>
+  <div class="core"><%= f.text_area :elem_5_3, onblur:"myFnc3(this);" %></div>
+  <div class="core"><%= f.text_area :elem_5_4, onblur:"myFnc4(this);" %></div>
   <div class="corecore"><%= f.text_area :elem_5_5 %></div>
-  <div class="core"><%= f.text_area :elem_5_6 %></div>
-  <div class="core"><%= f.text_area :elem_5_7 %></div>
-  <div class="core"><%= f.text_area :elem_5_8 %></div>
-  <div class="core"><%= f.text_area :elem_5_9 %></div>
+  <div class="core"><%= f.text_area :elem_5_6, onblur:"myFnc5(this);" %></div>
+  <div class="core"><%= f.text_area :elem_5_7, onblur:"myFnc6(this);" %></div>
+  <div class="core"><%= f.text_area :elem_5_8, onblur:"myFnc7(this);" %></div>
+  <div class="core"><%= f.text_area :elem_5_9, onblur:"myFnc8(this);" %></div>
 </div>
 <div class="block">
   <%= f.text_area :elem_6_1 %>
@@ -113,3 +113,30 @@
   <% end %>
   save
 </div>
+
+<script>
+function myFnc1(obj){
+  document.getElementById( "simple_mandal_elem_1_5" ).value = obj.value ;
+}
+function myFnc2(obj){
+  document.getElementById( "simple_mandal_elem_2_5" ).value = obj.value ;
+}
+function myFnc3(obj){
+  document.getElementById( "simple_mandal_elem_3_5" ).value = obj.value ;
+}
+function myFnc4(obj){
+  document.getElementById( "simple_mandal_elem_4_5" ).value = obj.value ;
+}
+function myFnc5(obj){
+  document.getElementById( "simple_mandal_elem_6_5" ).value = obj.value ;
+}
+function myFnc6(obj){
+  document.getElementById( "simple_mandal_elem_7_5" ).value = obj.value ;
+}
+function myFnc7(obj){
+  document.getElementById( "simple_mandal_elem_8_5" ).value = obj.value ;
+}
+function myFnc8(obj){
+  document.getElementById( "simple_mandal_elem_9_5" ).value = obj.value ;
+}
+</script>
