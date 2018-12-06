@@ -53,7 +53,7 @@
 
       <div class="dates">
         <% @simple_mandals.each do |mandal|  %>
-        <span class="square_btn"><%= link_to "#{mandal.elem_5_5}", mandalart_path(id: mandal) %></span>
+        <span class="square_btn"><%= link_to "#{mandal.elem_5_5}", edit_mandalart_path(id: mandal) %></span>
         <% end %>
       </div>
     </div>

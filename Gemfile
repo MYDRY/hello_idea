@@ -48,6 +48,10 @@ gem 'carrierwave'
 # animejs for tool
 gem 'anime_js_rails'
 
+# suggestion for mandalart
+gem 'faraday'
+gem 'faraday_middleware'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
