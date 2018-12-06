@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#top'
   get '/detail' => 'home#detail'
+  get '/tools' => 'home#tools'
   post 'topics/classfy_topic'
   get '/login' => 'users#login'
   post '/login' => 'users#check_user'
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
 
   resources :words
   resources :mandalarts
+  get 'mandalarts_suggest', to: 'mandalarts#suggest', as: :suggest_mandalart
 end

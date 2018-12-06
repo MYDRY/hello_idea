@@ -1,0 +1,47 @@
+<!-- modal window explain mandalart -->
+<div>
+  <input id="modal_open" type="radio" name="modal_switch" />
+  <label for="modal_open"><i class="fa fa-question-circle" style="font-size:48px;color:#627295"></i></label>
+  <input id="modal_close-overlay" type="radio" name="modal_switch" />
+  <label for="modal_close-overlay">窓の外を触ると閉じるんだよっ</label>
+  <input id="modal_close-button" type="radio" name="modal_switch" />
+  <label for="modal_close-button"></label>
+  <div class="modal_popUp">
+    <div class="modal_popUp-content"> 
+      <!-- CONTENT -->
+      <div class="contents">
+        <div class="mandal-img"><%= image_tag('mandal-default.png') %></div>
+        <div class="modal-contents">
+          <h2>マンダラートはアイデア・思考の整理を支援します！</h2>
+          <h4>テーマや問題を細分化・関連付けして情報整理をして<br>新たな課題やアイデアの発見につなげましょう！</h4>
+        </div>
+      </div>
+      <hr>
+      <div class="contents">
+        <div class="mandal-img"><%= image_tag('explain-mandalart.gif') %></div>
+        <div class="modal-contents">
+          <h2>使い方</h2>
+          <p>1.黄色のマスに全体のテーマ・キーワードを置きます</p>
+          <p>2.周りの灰色のマスに黄色のマスと関連する情報・キーワードを置きます</p>
+          <p>3.最後に白色のマスに灰色のマスと関連する情報・キーワードを置いて完成です</p>
+          <p>※SAVEボタンは完成してから押してください</p>
+        </div>
+      </div>
+      <hr>
+      <div class="contents">
+        <div class="mandal-img"><%= image_tag('mandalart-example.png') %></div>
+        <div class="modal-contents">
+          <h2>使用例</h2>
+          <h3>ニーズ「楽しい夢が見たい！」</h3>
+          <p>まず夢を見るための情報を整理するために、テーマに「睡眠」と入れました</p>
+          <p>左図の通り情報を書き出し、これらを踏まえてアイデアを考えてみます</p>
+          <p>夢にはレム睡眠が強く関係があるような気がします</p>
+          <p>脳波について調べてみると、睡眠時には複数の脳波が存在するようです</p>
+          <h3>思いついたアイデア<br>「脳波を音楽などで操作してみよう！」<br>「睡眠前に楽しい記憶を思い返そう！」</h3>
+        </div>
+      </div>
+      <!-- CONTENT END-->
+    </div>
+  </div>
+</div>
+<!-- end modal window -->

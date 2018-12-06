@@ -1,0 +1,207 @@
+<div id="smart-trophy">
+  <div class="trophy-item">
+    <% if !@user.topics.empty? %>
+    <div class="attainment">
+      <%= image_tag('needs_c1.png', :title=>"ニーズ初投稿") %>
+      <p>ニーズ初投稿</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('needs_g1.png', :title=>"ニーズ初投稿") %>
+      <p>ニーズ初投稿</p>
+    </div>
+    <% end %>
+    <% if @user.topics.count >= 3 %>
+    <div class="attainment">
+      <%= image_tag('needs_c2.png', :title=>"ニーズ３つ投稿") %>
+      <p>ニーズを３つ投稿</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('needs_g1.png', :title=>"ニーズ３つ投稿") %>
+      <p>ニーズを３つ投稿</p>
+    </div>
+    <% end %>
+    <% if @user.topics.count >= 5 %>
+    <div class="attainment">
+      <%= image_tag('needs_c3.png', :title=>"ニーズ５つ投稿") %>
+      <p>ニーズを５つ投稿</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('needs_g1.png', :title=>"ニーズ５つ投稿") %>
+      <p>ニーズを５つ投稿</p>
+    </div>
+    <% end %>
+  </div>
+  <div class="trophy-item">
+    <% @user.topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count >= 1 %>
+        <div class="attainment">
+          <%= image_tag('ideas_c1.png', :title=>"アナタのニーズにアイデアが投稿された") %>
+          <p>アイデアが投稿された</p>
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.topics.count == count+1 %>
+          <div class="non-attainment">
+            <%= image_tag('ideas_g1.png', :title=>"アナタのニーズにアイデアが投稿された") %>
+            <p>アイデアが投稿された</p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @user.topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count >= 3 %>
+        <div class="attainment">
+          <%= image_tag('ideas_c2.png', :title=>"アナタのニーズにアイデアが３つ投稿された") %>
+          <p>アイデアが３つ投稿された</p>
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.topics.count == count+1 %>
+          <div class="non-attainment">
+            <%= image_tag('ideas_g1.png', :title=>"アナタのニーズにアイデアが３つ投稿された") %>
+            <p>アイデアが３つ投稿された</p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @user.topics.each_with_index do |topic, count| %>
+      <% if topic.ideas.count >= 5 %>
+        <div class="attainment">
+          <%= image_tag('ideas_c3.png', :title=>"アナタのニーズにアイデアが５つ投稿された") %>
+          <p>アイデアが５つ投稿された</p>
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.topics.count == count+1 %>
+          <div class="non-attainment">
+            <%= image_tag('ideas_g1.png', :title=>"アナタのニーズにアイデアが５つ投稿された") %>
+            <p>アイデアが５つ投稿された</p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="trophy-item">
+    <% if !@user.ideas.empty? %>
+    <div class="attainment">
+      <%= image_tag('giveideas_c1.png', :title=>"アイデアを投稿した") %>
+      <p>アイデアを投稿した</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('giveideas_g1.png', :title=>"アイデアを投稿した") %>
+      <p>アイデアを投稿した</p>
+    </div>
+    <% end %>
+    <% if @user.ideas.count >= 3 %>
+    <div class="attainment">
+      <%= image_tag('giveideas_c2.png', :title=>"アイデアを３つ投稿した") %>
+      <p>アイデアを３つ投稿した</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('giveideas_g1.png', :title=>"アイデアを３つ投稿した") %>
+      <p>アイデアを３つ投稿した</p>
+    </div>
+    <% end %>
+    <% if @user.ideas.count >= 5 %>
+    <div class="attainment">
+      <%= image_tag('giveideas_c3.png', :title=>"アイデアを５つ投稿した") %>
+      <p>アイデアを５つ投稿した</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('giveideas_g1.png', :title=>"アイデアを５つ投稿した") %>
+      <p>アイデアを５つ投稿した</p>
+    </div>
+    <% end %>
+  </div>
+  <div class="trophy-item">
+    <% @user.ideas.each_with_index do |idea, count| %>
+      <% if idea.likes.count >= 1 %>
+        <div class="attainment">
+          <%= image_tag('g_good_c1.png', :title=>"アナタのアイデアがいいねされた") %>
+          <p>アイデアがいいねされた</p>
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.ideas.count == count+1 %>
+          <div class="non-attainment">
+              <%= image_tag('g_good_g1.png', :title=>"アナタのアイデアがいいねされた") %>
+            <p>アイデアがいいねされた</p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @user.ideas.each_with_index do |idea, count| %>
+      <% if idea.likes.count >= 3 %>
+        <div class="attainment">
+          <%= image_tag('g_good_c2.png', :title=>"アナタのアイデアが３人にいいねされた") %>
+          <p>アイデアが３人にいいねされた</p>
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.ideas.count == count+1 %>
+          <div class="non-attainment">
+            <%= image_tag('g_good_g1.png', :title=>"アナタのアイデアが３人にいいねされた") %>
+            <p>アイデアが３人にいいねされた</p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @user.ideas.each_with_index do |idea, count| %>
+      <% if idea.likes.count >= 5 %>
+        <div class="attainment">
+          <%= image_tag('g_good_c3.png', :title=>"アナタのアイデアが５人にいいねされた") %>
+          <p>アイデアが５人にいいねされた</p>
+        </div>
+        <% break %>
+      <% else %>
+        <% if @user.ideas.count == count+1 %>
+          <div class="non-attainment">
+            <%= image_tag('g_good_g1.png', :title=>"アナタのアイデアが５人にいいねされた") %>
+            <p>アイデアが５人にいいねされた</p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="trophy-item">
+    <% if !@user.likes.empty? %>
+    <div class="attainment">
+      <%= image_tag('send_good_c1.png', :title=>"アイデアにいいねした") %>
+      <p>アイデアにいいねした</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('send_good_g1.png', :title=>"アイデアにいいねした") %>
+      <p>アイデアにいいねした</p>
+    </div>
+    <% end %>
+    <% if @user.likes.count >= 3 %>
+    <div class="attainment">
+      <%= image_tag('send_good_c2.png', :title=>"アイデアに３回いいねした") %>
+      <p>アイデアに３回いいねした</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('send_good_g1.png', :title=>"アイデアに３回いいねした") %>
+      <p>アイデアに３回いいねした</p>
+    </div>
+    <% end %>
+    <% if @user.likes.count >= 5 %>
+    <div class="attainment">
+      <%= image_tag('send_good_c3.png', :title=>"アイデアに５回いいねした") %>
+      <p>アイデアに５回いいねした</p>
+    </div>
+    <% else %>
+    <div class="non-attainment">
+      <%= image_tag('send_good_g1.png', :title=>"アイデアに５回いいねした") %>
+      <p>アイデアに５回いいねした</p>
+    </div>
+    <% end %>
+  </div>
+</div>

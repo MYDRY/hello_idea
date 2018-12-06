@@ -32,8 +32,8 @@
     padding: 20px;
   }
   .nav-item {
-    width: 33%;
-    font-size: 25px;
+    width: 25%;
+    font-size: 30px;
   }
 }
 .mobile{
@@ -74,6 +74,25 @@
       img{
         float: left;
         width: 128px;
+      }
+    }
+  }
+}
+
+#smart-trophy{
+  width: 100%;
+  height: 2000px;
+  .trophy-item {
+    .attainment {
+      float: left;
+      img{
+        width: 256px;
+      }
+    }
+    .non-attainment {
+      float: left;
+      img{
+        width: 256px;
       }
     }
   }
