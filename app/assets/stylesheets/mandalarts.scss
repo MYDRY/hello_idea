@@ -195,12 +195,12 @@ input[name="modal_switch"],
 /* CLOSE BTN */
 #modal_open:checked ~ #modal_close-button + label {
   display: block;
-  margin-left: 30px;
+  margin-left: 20%;
   background: #fff;
   text-align: center;
   font-size: 25px;
   line-height: 44px;
-  width: 1300px;
+  width: 50%;
   height: 44px;
   position: fixed;
   bottom: 10%;
