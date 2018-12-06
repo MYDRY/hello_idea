@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .mandalart{
-
+  position: relative;
   width: 900px;
   height: 1000px;
   margin-left: 100px;
@@ -59,8 +59,8 @@
   }
   .pop{
     position: absolute;
-    left: 1100px;
-    top: 110px;
+    left: 90%;
+    top: -160px;
     width: 100px;
     height: 100px;
     text-align: center;
