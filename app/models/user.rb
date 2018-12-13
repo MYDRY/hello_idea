@@ -18,4 +18,9 @@ class User < ApplicationRecord
   has_many :simple_mandals, dependent: :destroy
   
   mount_uploader :image, ProfileImageUploader
+
+  def change_point(amount)
+    self.point += amount
+    self.save!
+  end
 end
