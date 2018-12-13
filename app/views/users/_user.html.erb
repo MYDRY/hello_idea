@@ -11,7 +11,7 @@
             <li><%= link_to_unless_current user.name, user_path(id: user) %></li>
             <!--<li><%= user.email %></li>-->
           </div>
-          <%= user.point %> points
+          <%= user.point %> points <!--!!!!!!!!!!!!!!!!!!!  EDIT HERE !!!!!!!!!!!!!!!!!!!-->
           <% if user == current_user %>
            <li> <%= link_to edit_user_path(id: user) do %>
               <div style="float: right;"><span class="fa fa-edit fa-2x "></span> 編集</div>
