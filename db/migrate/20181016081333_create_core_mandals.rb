@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCoreMandals < ActiveRecord::Migration[5.2]
   def change
     create_table :core_mandals do |t|

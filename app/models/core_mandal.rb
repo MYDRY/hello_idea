@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CoreMandal < ApplicationRecord
   belongs_to :user
 

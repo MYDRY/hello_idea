@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Idea < ApplicationRecord
-  validates :body, {presence: true, length: {maximum: 140}}
-  
+  validates :body, presence: true, length: { maximum: 140 }
+
   belongs_to :topic
   belongs_to :user
 

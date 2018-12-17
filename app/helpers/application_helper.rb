@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def format_datetime(datetime, type = :datetime)
     return '' unless datetime
@@ -10,7 +12,7 @@ module ApplicationHelper
     when
       format = '%H:%M:%S'
     end
-    
+
     datetime.strftime(format)
   end
 

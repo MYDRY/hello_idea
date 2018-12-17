@@ -1,4 +1,5 @@
-# coding: utf-8
+# frozen_string_literal: true
+
 module NoticesHelper
   def show_notice_link
     unread_notices = current_user.notices.where(has_read: false)

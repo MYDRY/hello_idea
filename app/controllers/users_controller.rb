@@ -1,11 +1,12 @@
-# coding: utf-8
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :authorize, only: [:index, :show, :edit, :update]
-  before_action :correct_user, only: [:edit, :update]
-  before_action :admin_user, only: [:destroy, :index]
+  before_action :authorize, only: %i[index show edit update]
+  before_action :correct_user, only: %i[edit update]
+  before_action :admin_user, only: %i[destroy index]
 
   def index
-  	@users=User.all
+    @users = User.all
   end
 
   def show
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "ユーザー登録が完了しました"
+      flash[:success] = 'ユーザー登録が完了しました'
       redirect_to @user
     else
       render new_user_path
@@ -33,28 +34,27 @@ class UsersController < ApplicationController
 
   def check_user
     @user = User.find_by(name: params[:user][:name])
-    if @user && @user.authenticate(params[:user][:password])
+    if @user&.authenticate(params[:user][:password])
       log_in @user
-      flash[:success] = "ログインしました"
+      flash[:success] = 'ログインしました'
       redirect_to @user
     else
-      flash[:danger] = "ユーザー名またはパスワードが間違っています"
+      flash[:danger] = 'ユーザー名またはパスワードが間違っています'
       redirect_to root_path
     end
   end
 
   def logout
     log_out
-    flash[:success] = "ログアウトしました"
+    flash[:success] = 'ログアウトしました'
     redirect_to root_path
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "更新しました"
+      flash[:success] = '更新しました'
       redirect_to @user
     else
       render :edit
@@ -64,11 +64,12 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:success] = "ユーザーを削除しました"
+    flash[:success] = 'ユーザーを削除しました'
     redirect_to users_path
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :image, :password, :password_confirmation)
   end
@@ -76,7 +77,7 @@ class UsersController < ApplicationController
   def correct_user
     @user = User.find(params[:id])
     if @user != current_user
-      flash[:danger] = "権限がありません"
+      flash[:danger] = '権限がありません'
       redirect_back fallback_location: users_path
     end
   end
@@ -84,5 +85,4 @@ class UsersController < ApplicationController
   def admin_user
     redirect_to root_path unless current_user.admin?
   end
-
 end

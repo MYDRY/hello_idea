@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
@@ -9,7 +11,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   # def teardown
   #   log_out
   # end
-  
+
   # test "users show page should exist" do
   #   get user_path(@user)
   #   assert_response :success
