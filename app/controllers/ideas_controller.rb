@@ -27,11 +27,10 @@ class IdeasController < ApplicationController
       @idea.user.change_point 5
       flash[:success] = 'アイデアを投稿しました'
       view_context.spawn_new_idea_notice(topic)
-      redirect_to topic_path(topic)
     else
       flash[:danger] = 'アイデア投稿に失敗しました'
-      redirect_to topic_path(topic)
     end
+    redirect_to topic_path(topic)
   end
 
   def edit
@@ -51,7 +50,7 @@ class IdeasController < ApplicationController
   def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy
-    @idea.user.change_point -5
+    @idea.user.change_point(-5)
     flash[:success] = 'アイデアを削除しました'
     redirect_back fallback_location: topics_path
   end
@@ -64,9 +63,9 @@ class IdeasController < ApplicationController
 
   def ensure_correct_user
     @idea = current_user.ideas.find_by(id: params[:id])
-    if @idea.nil?
-      flash[:danger] = '権限がありません'
-      redirect_back fallback_location: topics_path
-    end
+    return unless @idea.nil?
+
+    flash[:danger] = '権限がありません'
+    redirect_back fallback_location: topics_path
   end
 end

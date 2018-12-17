@@ -6,9 +6,9 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   # validates :email, {presence: true, uniqueness: true}
   validates :password,
-            confirmation: true,
-            presence: { message: 'を入力してください' },
-            allow_nil: true
+    confirmation: true,
+    presence:     { message: 'を入力してください' },
+    allow_nil:    true
 
   has_many :ideas,  dependent: :destroy
   has_many :topics, dependent: :destroy

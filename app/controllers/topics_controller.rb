@@ -49,7 +49,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-    @topic.user.change_point -5
+    @topic.user.change_point(-5)
     flash[:success] = 'トピックを削除しました'
     redirect_back fallback_location: topics_path
   end
@@ -67,9 +67,9 @@ class TopicsController < ApplicationController
 
   def ensure_correct_user
     @topic = Topic.find(params[:id])
-    if @topic.user_id != current_user.id
-      flash[:danger] = '権限がありません'
-      redirect_back fallback_location: topics_path
-    end
+    return if @topic.user_id == current_user.id
+
+    flash[:danger] = '権限がありません'
+    redirect_back fallback_location: topics_path
   end
 end

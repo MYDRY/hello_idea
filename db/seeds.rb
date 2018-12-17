@@ -11,10 +11,10 @@ initial_genres = Genre.create([{ id: 1, name: '理想' },
                                { id: 2, name: '問題' },
                                { id: 3, name: 'その他' }])
 
-User.create!(name: 'Example User',
-             email: 'example@email',
+User.create!(name:     'Example User',
+             email:    'example@email',
              password: 'test',
-             admin: true)
+             admin:    true)
 
 Word.create!([{ word: 'IT' },
               { word: '猫' }])

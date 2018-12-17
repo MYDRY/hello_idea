@@ -76,10 +76,10 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find(params[:id])
-    if @user != current_user
-      flash[:danger] = '権限がありません'
-      redirect_back fallback_location: users_path
-    end
+    return if @user == current_user
+
+    flash[:danger] = '権限がありません'
+    redirect_back fallback_location: users_path
   end
 
   def admin_user

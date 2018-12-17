@@ -4,14 +4,14 @@ module ApplicationHelper
   def format_datetime(datetime, type = :datetime)
     return '' unless datetime
 
-    case type
-    when :datetime
-      format = '%Y/%m/%d %H:%M:%S'
-    when :date
-      format = '%Y/%m/%d'
-    when
-      format = '%H:%M:%S'
-    end
+    format = case type
+             when :datetime
+               '%Y/%m/%d %H:%M:%S'
+             when :date
+               '%Y/%m/%d'
+             else
+               '%H:%M:%S'
+             end
 
     datetime.strftime(format)
   end
