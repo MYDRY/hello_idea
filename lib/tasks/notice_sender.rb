@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 message_filename = 'lib/tasks/message.txt'
 message_string = ''
 
 begin
   file = open(message_filename)
   message_string = file.read
-rescue => err
+rescue StandardError => err
   puts '[ERROR] Failed to read message file.'
   puts err.message
   exit
@@ -14,9 +16,7 @@ p message_string
 p 'Are you sure ? (y/n)'
 
 ans = gets
-if ans == 'y\n' then
-    exit
-end
+exit if ans == 'y\n'
 
 User.transaction do
   User.all.each do |user|

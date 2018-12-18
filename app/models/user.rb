@@ -1,14 +1,14 @@
-# coding: utf-8
-class User < ApplicationRecord
+# frozen_string_literal: true
 
+class User < ApplicationRecord
   has_secure_password
 
-  validates :name, {presence: true, uniqueness: true}
-  #validates :email, {presence: true, uniqueness: true}
+  validates :name, presence: true, uniqueness: true
+  # validates :email, {presence: true, uniqueness: true}
   validates :password,
-            confirmation: true,
-            presence: { message: 'を入力してください'},
-            allow_nil: true
+    confirmation: true,
+    presence:     { message: 'を入力してください' },
+    allow_nil:    true
 
   has_many :ideas,  dependent: :destroy
   has_many :topics, dependent: :destroy
@@ -16,11 +16,11 @@ class User < ApplicationRecord
   has_many :notices, dependent: :destroy
   has_many :core_mandals, dependent: :destroy
   has_many :simple_mandals, dependent: :destroy
-  
+
   mount_uploader :image, ProfileImageUploader
 
   def change_point(amount)
     self.point += amount
-    self.save!
+    save!
   end
 end

@@ -1,7 +1,8 @@
-# coding: utf-8
+# frozen_string_literal: true
+
 class TopicsController < ApplicationController
-  before_action :authorize, only: [:new, :create]
-  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :authorize, only: %i[new create]
+  before_action :ensure_correct_user, only: %i[edit update destroy]
 
   def index
     @topics = Topic.all.reverse_order
@@ -12,9 +13,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find_by(id: params[:id])
-    if @topic.nil?
-      redirect_to topics_path
-    end
+    redirect_to topics_path if @topic.nil?
     @idea = Idea.new
   end
 
@@ -26,7 +25,7 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build(topic_params)
     if @topic.save
       @topic.user.change_point 5
-      flash[:success] = "トピックを投稿しました"
+      flash[:success] = 'トピックを投稿しました'
       redirect_to @topic
     else
       render :new
@@ -40,7 +39,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
-      flash[:success] = "トピックを編集しました"
+      flash[:success] = 'トピックを編集しました'
       redirect_to @topic
     else
       render :edit
@@ -50,8 +49,8 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-    @topic.user.change_point -5
-    flash[:success] = "トピックを削除しました"
+    @topic.user.change_point(-5)
+    flash[:success] = 'トピックを削除しました'
     redirect_back fallback_location: topics_path
   end
 
@@ -61,15 +60,16 @@ class TopicsController < ApplicationController
   end
 
   private
+
   def topic_params
     params.require(:topic).permit(:title, :body, :genre_id)
   end
 
   def ensure_correct_user
     @topic = Topic.find(params[:id])
-    if @topic.user_id != current_user.id
-      flash[:danger] = "権限がありません"
-      redirect_back fallback_location: topics_path
-    end
+    return if @topic.user_id == current_user.id
+
+    flash[:danger] = '権限がありません'
+    redirect_back fallback_location: topics_path
   end
 end

@@ -1,0 +1,150 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - .gemspec
+    - vendor/**/*
+    - bin/*
+    - db/**/*
+    - config/**/*
+    - Gemfile
+    - test/**/*
+    - lib/**/*
+    - app/helpers/users_helper.rb
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: false
+
+Lint/RescueException:
+  Severity: fatal
+  Enabled: true
+
+Lint/UnusedBlockArgument:
+  Severity: fatal
+  Enabled: true
+
+Metrics/LineLength:
+  Severity: fatal
+  Enabled: true
+
+Layout/AlignHash:
+  Severity: fatal
+  Enabled: true
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/AlignParameters:
+  Severity: fatal
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Style/BracesAroundHashParameters:
+  Severity: fatal
+  Enabled: true
+
+ClassAndModuleChildren:
+  Severity: fatal
+  Enabled: true
+
+Naming/ConstantName:
+  Severity: fatal
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Severity: fatal
+  Enabled: true
+
+Layout/ExtraSpacing:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+Style/HashSyntax:
+  Severity: fatal
+  Enabled: true
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Layout/IndentationConsistency:
+  Severity: fatal
+  Enabled: true
+
+Layout/IndentationWidth:
+  Severity: fatal
+  Enabled: true
+
+Layout/IndentHash:
+  Severity: fatal
+  Enabled: true
+  EnforcedStyle: consistent
+
+Style/InlineComment:
+  Enabled: false
+
+Style/LineEndConcatenation:
+  Severity: fatal
+  Enabled: true
+
+Naming/MethodName:
+  Severity: fatal
+  Enabled: true
+
+Style/MultilineTernaryOperator:
+  Enabled: false
+
+Style/NegatedIf:
+  Severity: fatal
+  Enabled: true
+
+Style/Not:
+  Severity: fatal
+  Enabled: true
+
+Style/RaiseArgs:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Severity: fatal
+  Enabled: true
+
+Style/StringLiterals:
+  Severity: fatal
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+Layout/TrailingBlankLines:
+  Severity: fatal
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Severity: fatal
+  Enabled: true
+
+Naming/VariableName:
+  Severity: fatal
+  Enabled: true
+
+Metrics/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  Max: 120
+
+Style/CollectionMethods:
+  Severity: fatal
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'find'
+    find_all: 'select'
+
+Layout/DotPosition:
+  Severity: fatal
+  EnforcedStyle: leading
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 30
