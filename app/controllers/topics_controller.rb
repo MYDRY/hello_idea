@@ -2,7 +2,7 @@
 
 class TopicsController < ApplicationController
   before_action :authorize, only: %i[new create]
-  before_action :ensure_correct_user, only: %i[edit update destroy]
+  before_action :ensure_correct_user, only: %i[edit update destroy support]
 
   def index
     @topics = Topic.all.reverse_order
@@ -57,6 +57,10 @@ class TopicsController < ApplicationController
   def classfy_topic
     @topics = Topic.where(genre_id: params[:genre_id])
     render 'index'
+  end
+
+  def support
+    redirect_to @topic
   end
 
   private
