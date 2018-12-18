@@ -60,6 +60,9 @@ class TopicsController < ApplicationController
   end
 
   def support
+    support = params[:support_amount].to_i
+    @topic.get_supported(support)
+    current_user.change_point(-support)
     redirect_to @topic
   end
 

@@ -1,2 +1,4 @@
 <% maximum_support_amount = (topic.user.point / 100) * 100 %>
-<input type="number" name="support_amount" step="100" value="0" min="0" max="<%= maximum_support_amount %>">
+<%= form_tag(support_topic_path(topic.id)) do %>
+  <input type="number" name="support_amount" step="100" value="0" min="0" max="<%= maximum_support_amount %>">
+<% end %>
