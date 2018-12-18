@@ -11,6 +11,7 @@
             <li class="well"><div class="word-break"><%= topic.title %></div></li>
           </ul>
           <%= "support: #{topic.support}" %>
+          <%= render partial: 'support_form', locals: { topic: @topic } if @topic.user == current_user %>
         </div>
       </div>
 
