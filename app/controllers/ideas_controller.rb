@@ -24,6 +24,7 @@ class IdeasController < ApplicationController
     @idea = topic.ideas.build(idea_params)
     @idea.user_id = current_user.id
     if @idea.save
+      topic.user.change_point(20)
       @idea.user.change_point(10)
       flash[:success] = 'アイデアを投稿しました'
       view_context.spawn_new_idea_notice(topic)
@@ -49,8 +50,9 @@ class IdeasController < ApplicationController
 
   def destroy
     @idea = Idea.find(params[:id])
-    @idea.destroy
+    @idea.topic.user.change_point(-20)
     @idea.user.change_point(-10)
+    @idea.destroy
     flash[:success] = 'アイデアを削除しました'
     redirect_back fallback_location: topics_path
   end
