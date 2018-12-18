@@ -52,7 +52,7 @@ class IdeasController < ApplicationController
 
   def destroy
     @idea = Idea.find(params[:id])
-    unless topic.user == @idea.user
+    unless @idea.topic.user == @idea.user
       @idea.topic.user.change_point(-20)
       @idea.user.change_point(-10)
     end
