@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     @user = User.find_by(name: params[:user][:name])
     if @user&.authenticate(params[:user][:password])
       log_in @user
+      @user.change_point(5)
       flash[:success] = 'ログインしました'
       redirect_to @user
     else
