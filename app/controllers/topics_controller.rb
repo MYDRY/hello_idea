@@ -5,10 +5,11 @@ class TopicsController < ApplicationController
   before_action :ensure_correct_user, only: %i[edit update destroy support]
 
   def index
-    @topics = Topic.order({ support: :desc }, {created_at: :desc})
-    @ideal_topics = Genre.find_by(name: '理想').topics.order({ support: :desc }, {created_at: :desc})
-    @trouble_topics = Genre.find_by(name: '問題').topics.order({ support: :desc }, {created_at: :desc})
-    @other_topics = Genre.find_by(name: 'その他').topics.order({ support: :desc }, {created_at: :desc})
+    @topics = Topic.order({created_at: :desc})
+    @ideal_topics = Genre.find_by(name: '理想').topics.order({created_at: :desc})
+    @trouble_topics = Genre.find_by(name: '問題').topics.order({created_at: :desc})
+    @other_topics = Genre.find_by(name: 'その他').topics.order({created_at: :desc})
+    @point_ordered_topics = Topic.order({ support: :desc }, {created_at: :desc})
   end
 
   def show
