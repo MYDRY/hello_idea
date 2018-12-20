@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = 'ユーザー登録が完了しました'
-      redirect_to @user
+      redirect_to topics_path
     else
       render new_user_path
     end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     if @user&.authenticate(params[:user][:password])
       log_in @user
       flash[:success] = 'ログインしました'
-      redirect_to @user
+      redirect_to topics_path
     else
       flash[:danger] = 'ユーザー名またはパスワードが間違っています'
       redirect_to root_path
