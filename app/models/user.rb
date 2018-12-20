@@ -21,6 +21,7 @@ class User < ApplicationRecord
 
   def change_point(amount)
     self.point += amount
+    self.point = 0 if self.point.negative?
     save!
   end
 end

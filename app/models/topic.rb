@@ -8,4 +8,9 @@ class Topic < ApplicationRecord
   belongs_to :user
 
   has_many   :ideas, dependent: :destroy
+
+  def get_supported(support_amount)
+    self.support += support_amount
+    save!
+  end
 end

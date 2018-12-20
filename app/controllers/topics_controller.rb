@@ -2,13 +2,14 @@
 
 class TopicsController < ApplicationController
   before_action :authorize, only: %i[new create]
-  before_action :ensure_correct_user, only: %i[edit update destroy]
+  before_action :ensure_correct_user, only: %i[edit update destroy support]
 
   def index
-    @topics = Topic.all.reverse_order
-    @ideal_topics = Genre.find_by(name: '理想').topics
-    @trouble_topics = Genre.find_by(name: '問題').topics
-    @other_topics = Genre.find_by(name: 'その他').topics
+    @topics = Topic.order(created_at: :desc)
+    @ideal_topics = Genre.find_by(name: '理想').topics.order(created_at: :desc)
+    @trouble_topics = Genre.find_by(name: '問題').topics.order(created_at: :desc)
+    @other_topics = Genre.find_by(name: 'その他').topics.order(created_at: :desc)
+    @point_ordered_topics = Topic.order({ support: :desc }, created_at: :desc)
   end
 
   def show
@@ -24,7 +25,7 @@ class TopicsController < ApplicationController
   def create
     @topic = current_user.topics.build(topic_params)
     if @topic.save
-      @topic.user.change_point 5
+      @topic.user.change_point(10)
       flash[:success] = 'トピックを投稿しました'
       redirect_to @topic
     else
@@ -49,7 +50,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-    @topic.user.change_point(-5)
+    @topic.user.change_point(-10)
     flash[:success] = 'トピックを削除しました'
     redirect_back fallback_location: topics_path
   end
@@ -57,6 +58,13 @@ class TopicsController < ApplicationController
   def classfy_topic
     @topics = Topic.where(genre_id: params[:genre_id])
     render 'index'
+  end
+
+  def support
+    support = params[:support_amount].to_i
+    @topic.get_supported(support)
+    current_user.change_point(-support)
+    redirect_to @topic
   end
 
   private

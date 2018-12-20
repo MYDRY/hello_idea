@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :likes, only: %i[create destroy]
     end
   end
+  post 'topics_support/:id', to: 'topics#support', as: :support_topic
 
   resources :words
   resources :mandalarts
