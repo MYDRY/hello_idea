@@ -1,0 +1,7 @@
+<% maximum_support_amount = (topic.user.point / 100) * 100 %>
+<% enable_amounts = Array(0.step(maximum_support_amount, 100)) %>
+<%= form_tag(support_topic_path(topic.id)) do %>
+  <!-- <input type="number" name="support_amount" step="100" value="0" min="0" max="<%= maximum_support_amount %>"> -->
+  <%= select_tag(:support_amount, options_for_select(enable_amounts)) %>
+  <%= submit_tag '投資' %>
+<% end %>

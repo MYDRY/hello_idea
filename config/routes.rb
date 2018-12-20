@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'home#top'
   get '/detail' => 'home#detail'
@@ -16,9 +18,10 @@ Rails.application.routes.draw do
 
   resources :topics, shallow: true do
     resources :ideas do
-      resources :likes, only: [:create, :destroy]
+      resources :likes, only: %i[create destroy]
     end
   end
+  post 'topics_support/:id', to: 'topics#support', as: :support_topic
 
   resources :words
   resources :mandalarts

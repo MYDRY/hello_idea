@@ -1,20 +1,20 @@
-# coding: utf-8
+# frozen_string_literal: true
+
 class TopicsController < ApplicationController
-  before_action :authorize, only: [:new, :create]
-  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :authorize, only: %i[new create]
+  before_action :ensure_correct_user, only: %i[edit update destroy support]
 
   def index
-    @topics = Topic.all.reverse_order
-    @ideal_topics = Genre.find_by(name: '理想').topics
-    @trouble_topics = Genre.find_by(name: '問題').topics
-    @other_topics = Genre.find_by(name: 'その他').topics
+    @topics = Topic.order(created_at: :desc)
+    @ideal_topics = Genre.find_by(name: '理想').topics.order(created_at: :desc)
+    @trouble_topics = Genre.find_by(name: '問題').topics.order(created_at: :desc)
+    @other_topics = Genre.find_by(name: 'その他').topics.order(created_at: :desc)
+    @point_ordered_topics = Topic.order({ support: :desc }, created_at: :desc)
   end
 
   def show
     @topic = Topic.find_by(id: params[:id])
-    if @topic.nil?
-      redirect_to topics_path
-    end
+    redirect_to topics_path if @topic.nil?
     @idea = Idea.new
   end
 
@@ -25,8 +25,8 @@ class TopicsController < ApplicationController
   def create
     @topic = current_user.topics.build(topic_params)
     if @topic.save
-      @topic.user.change_point 5
-      flash[:success] = "トピックを投稿しました"
+      @topic.user.change_point(10)
+      flash[:success] = 'トピックを投稿しました'
       redirect_to @topic
     else
       render :new
@@ -40,7 +40,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
-      flash[:success] = "トピックを編集しました"
+      flash[:success] = 'トピックを編集しました'
       redirect_to @topic
     else
       render :edit
@@ -50,8 +50,8 @@ class TopicsController < ApplicationController
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-    @topic.user.change_point -5
-    flash[:success] = "トピックを削除しました"
+    @topic.user.change_point(-10)
+    flash[:success] = 'トピックを削除しました'
     redirect_back fallback_location: topics_path
   end
 
@@ -60,16 +60,24 @@ class TopicsController < ApplicationController
     render 'index'
   end
 
+  def support
+    support = params[:support_amount].to_i
+    @topic.get_supported(support)
+    current_user.change_point(-support)
+    redirect_to @topic
+  end
+
   private
+
   def topic_params
     params.require(:topic).permit(:title, :body, :genre_id)
   end
 
   def ensure_correct_user
     @topic = Topic.find(params[:id])
-    if @topic.user_id != current_user.id
-      flash[:danger] = "権限がありません"
-      redirect_back fallback_location: topics_path
-    end
+    return if @topic.user_id == current_user.id
+
+    flash[:danger] = '権限がありません'
+    redirect_back fallback_location: topics_path
   end
 end

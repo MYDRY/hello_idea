@@ -1,4 +1,5 @@
-# coding: utf-8
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :authorize
 
@@ -6,9 +7,11 @@ class LikesController < ApplicationController
     @idea = Idea.find(params[:idea_id])
     like = current_user.likes.build(idea_id: @idea.id)
     like.save
-    @idea.user.change_point 10
+    unless current_user == @idea.user
+      current_user.change_point(5)
+      @idea.user.change_point(20)
+    end
     view_context.spawn_like_notice(@idea)
-#    flash[:success] = "いいねしました"
     @idea.reload
   end
 
@@ -16,8 +19,10 @@ class LikesController < ApplicationController
     @idea = Idea.find(params[:id])
     like = Like.find_by(idea_id: @idea.id, user_id: current_user.id)
     like.destroy
-    @idea.user.change_point -10
-#    flash[:success] = "いいねを取り消しました"
+    unless current_user == @idea.user
+      current_user.change_point(-5)
+      @idea.user.change_point(-20)
+    end
     @idea.reload
   end
 end
