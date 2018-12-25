@@ -11,7 +11,12 @@
             <li class="well"><div class="word-break"><%= topic.title %></div></li>
           </ul>
           <%= "support: #{topic.support}" %>
-          <%= render partial: 'support_form', locals: { topic: @topic } if @topic.user == current_user %>
+          <% if @topic.user == current_user %>
+            <%= render partial: 'support_form', locals: { topic: @topic } %>
+          <% else %>
+            <%= render partial: 'invests/create', locals: { topic: @topic }%>
+            <%#= render partial: 'invests/edit', locals: { topic: @topic } %>
+          <% end%>
         </div>
       </div>
 
