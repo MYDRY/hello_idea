@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RandomWordsIdeasController < ApplicationController
   def index
     word1 = params[:word1]
@@ -11,9 +13,7 @@ class RandomWordsIdeasController < ApplicationController
   def create
     @sea = Sea.new(sea_params)
     @sea.user_id = current_user.id
-    unless @sea.save
-      redirect_to root_path
-    end
+    redirect_to words_path unless @sea.save
 
     @random = RandomWordsIdea.new
     @random.word1_id = params[:sea][:word1]
@@ -22,7 +22,7 @@ class RandomWordsIdeasController < ApplicationController
     if @random.save
       redirect_to random_words_ideas_path(word1: @random.word1_id, word2: @random.word2_id)
     else
-      redirect_to root_path #仮
+      redirect_to words_path
     end
   end
 
