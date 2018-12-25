@@ -11,11 +11,13 @@
             <li class="well"><div class="word-break"><%= topic.title %></div></li>
           </ul>
           <%= "support: #{topic.support}" %>
+          <% topics_invest = Invest.find_by(topic_id: @topic.id, user_id: current_user.id) %>
           <% if @topic.user == current_user %>
             <%= render partial: 'support_form', locals: { topic: @topic } %>
-          <% else %>
+          <% elsif topics_invest.nil? %>
             <%= render partial: 'invests/create', locals: { topic: @topic }%>
-            <%#= render partial: 'invests/edit', locals: { topic: @topic } %>
+          <% else %>
+            <%= render partial: 'invests/edit', locals: { topic: @topic, invest: topics_invest } %>
           <% end%>
         </div>
       </div>

@@ -3,5 +3,5 @@
 <%= form_tag(topic_invests_path(topic.id)) do %>
   <!-- <input type="number" name="support_amount" step="100" value="0" min="0" max="<%= maximum_support_amount %>"> -->
   <%= select_tag(:invests_amount, options_for_select(enable_amounts)) %>
-  <%= submit_tag '投資' %>
+  <%= submit_tag '投資（新規）' %>
 <% end %>
