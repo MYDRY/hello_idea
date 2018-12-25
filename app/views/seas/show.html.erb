@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="container">
+    <%= @sea.body %>
+    <%= @sea.user.name %>
+    <br>
+
+    <% if @random_words %>
+      <%= @random_words.word1.word %>　×　<%= @random_words.word2.word %>
+    <% end %>
+    <br>
+    <%= link_to "アイデアの海", seas_path %>
+  </div>
+</div>

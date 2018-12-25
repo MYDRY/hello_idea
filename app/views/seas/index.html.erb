@@ -1,7 +1,14 @@
 <div class="main">
   <div class="container">
     <% @seas.each do |sea| %>
-      <%= sea.body %>
-      <% end %>
+      <%= link_to sea.body, sea_path(sea) %>
+      <%= sea.user.name %>
+      <br>
+    <% end %>
+    <br>
+    <%= form_for(@sea) do |f| %>
+      <%= f.text_area :body %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>
