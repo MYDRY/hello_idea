@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete 'notices/:user/delete', to: 'notices#destroy_has_read', as: :delete_notice_has_read
 
   resources :topics, shallow: true do
-    resources :invests, only: %i[create edit]
+    resources :invests, only: %i[create update]
     resources :ideas do
       resources :likes, only: %i[create destroy]
     end

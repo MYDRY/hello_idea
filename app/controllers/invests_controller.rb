@@ -10,6 +10,6 @@ class InvestsController < ApplicationController
     redirect_to invested_topic
   end
 
-  def edit
+  def update
   end
 end
