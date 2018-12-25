@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'invests/create'
+  get 'invests/edit'
   root 'home#top'
   get '/detail' => 'home#detail'
   get '/tools' => 'home#tools'
