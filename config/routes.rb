@@ -25,4 +25,6 @@ Rails.application.routes.draw do
   resources :words
   resources :mandalarts
   get 'mandalarts_suggest', to: 'mandalarts#suggest', as: :suggest_mandalart
+
+  resources :random_words_ideas
 end

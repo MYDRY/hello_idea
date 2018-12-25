@@ -8,6 +8,7 @@ class WordsController < ApplicationController
     random_words = Word.order('RANDOM()').limit(2)
     @word1 = random_words[0]
     @word2 = random_words[1]
+    @sea = Sea.new
   end
 
   def new

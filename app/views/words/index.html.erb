@@ -11,7 +11,7 @@
         <input id="modal_close-button" type="radio" name="modal_switch" />
         <label for="modal_close-button"></label>
         <div class="modal_popUp">
-        <div class="modal_popUp-content"> 
+        <div class="modal_popUp-content">
         <!-- CONTENT -->
         <div class="contents">
           <div class="mandal-img"><%= image_tag('random1.png') %></div>
@@ -36,6 +36,14 @@
       <!-- end modal window -->
       <div class="random-tool">
         <%= @word1.word %>×<%= @word2.word %><br>
+
+        <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
+          <%= f.hidden_field :word1, value: @word1.id %>
+          <%= f.hidden_field :word2, value: @word2.id %>
+          <%= f.text_area :body %>
+          <%= f.submit %>
+        <% end %>
+
         <%= link_to "もう一度", words_path %><br>
         <%= link_to "単語追加", new_word_path %>
       </div>
