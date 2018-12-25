@@ -1,4 +1,4 @@
-<% maximum_support_amount = (currentuser.point / 100) * 100 %>
+<% maximum_support_amount = (current_user.point / 100) * 100 %>
 <% enable_amounts = Array(0.step(maximum_support_amount, 100)) %>
 <%= form_tag(topic_invests_path(topic.id)) do %>
   <!-- <input type="number" name="support_amount" step="100" value="0" min="0" max="<%= maximum_support_amount %>"> -->
