@@ -1,0 +1,11 @@
+<div class="main">
+  <div class="container">
+    <%= @word1.word %> ×　<%= @word2.word %>
+    <br>
+    <% @ideas.each do |idea| %>
+      <%= idea.sea.body %>
+      <%= idea.sea.user.name %>
+      <br>
+    <% end %>
+  </div>
+</div>
