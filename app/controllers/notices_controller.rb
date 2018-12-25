@@ -9,7 +9,11 @@ class NoticesController < ApplicationController
     @notice = Notice.find(params[:id])
     @notice.mark_as_read
     @notice.save
-    redirect_to user_notices_path(user_id: current_user)
+    if @notice.link.nil?
+      redirect_to user_notices_path(user_id: current_user)
+    else
+      redirect_to @notice.link
+    end
   end
 
   def mark_all
