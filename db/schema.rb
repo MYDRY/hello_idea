@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_052754) do
+ActiveRecord::Schema.define(version: 2018_12_25_070254) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -78,12 +78,12 @@ ActiveRecord::Schema.define(version: 2018_12_20_052754) do
   end
 
   create_table "random_words_ideas", force: :cascade do |t|
-    t.integer "idea_id", null: false
+    t.integer "sea_id", null: false
     t.integer "word1_id", null: false
     t.integer "word2_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["idea_id"], name: "index_random_words_ideas_on_idea_id"
+    t.index ["sea_id"], name: "index_random_words_ideas_on_sea_id"
     t.index ["word1_id"], name: "index_random_words_ideas_on_word1_id"
     t.index ["word2_id"], name: "index_random_words_ideas_on_word2_id"
   end
@@ -200,7 +200,6 @@ ActiveRecord::Schema.define(version: 2018_12_20_052754) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "support", default: 0
     t.index ["genre_id"], name: "index_topics_on_genre_id"
     t.index ["user_id"], name: "index_topics_on_user_id"
   end
