@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'invests/create'
-  get 'invests/edit'
   root 'home#top'
   get '/detail' => 'home#detail'
   get '/tools' => 'home#tools'
@@ -19,6 +17,7 @@ Rails.application.routes.draw do
   delete 'notices/:user/delete', to: 'notices#destroy_has_read', as: :delete_notice_has_read
 
   resources :topics, shallow: true do
+    resources :invests, only: %i[create edit]
     resources :ideas do
       resources :likes, only: %i[create destroy]
     end
