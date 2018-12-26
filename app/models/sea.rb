@@ -3,5 +3,5 @@
 class Sea < ApplicationRecord
   belongs_to :user
 
-  has_many :random_words_idea, dependent: :destroy
+  has_many :random_words_ideas, dependent: :destroy
 end
