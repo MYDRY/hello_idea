@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'mandal_ideas/index'
+  get 'mandal_ideas/create'
   root 'home#top'
   get '/detail' => 'home#detail'
   get '/tools' => 'home#tools'

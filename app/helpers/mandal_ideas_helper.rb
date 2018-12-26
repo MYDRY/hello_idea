@@ -1,0 +1,2 @@
+module MandalIdeasHelper
+end
