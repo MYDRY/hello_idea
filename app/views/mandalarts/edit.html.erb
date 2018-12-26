@@ -15,5 +15,7 @@
         <%= f.text_area :body %>
         <%= f.submit %>
       <% end %>
+
+      <%= link_to "このマンダラートから創出されたアイデア一覧", mandal_ideas_path(mandal: @simple_mandal.id) %>
   </div>
 </div>
