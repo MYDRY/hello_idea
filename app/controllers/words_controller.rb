@@ -9,6 +9,8 @@ class WordsController < ApplicationController
     @word1 = random_words[0]
     @word2 = random_words[1]
     @sea = Sea.new
+    @ideas = RandomWordsIdea.where(word1_id: [@word1.id, @word2.id])
+                            .where(word2_id: [@word1.id, @word2.id])
   end
 
   def new
