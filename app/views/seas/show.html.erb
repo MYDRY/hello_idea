@@ -11,12 +11,17 @@
       <%= link_to @sea.user.name, user_path(id: @sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
     </div>
     <br>
+<<<<<<< c117aa26b9db44a928dcf162b74dede75202effc
     <div class="mandalart">
+=======
+
+>>>>>>> Add mandalart form on seas#show page
     <% if @mandal %>
       <%= form_for(@mandal.simple_mandal, url: mandalarts_path) do |f| %>
         <!-- elem_1 -->
         <!-- <div class="row"> -->
         <div class="block">
+<<<<<<< c117aa26b9db44a928dcf162b74dede75202effc
           <%= f.text_area :elem_1_1 , readonly: true %>
           <%= f.text_area :elem_1_2 , readonly: true %>
           <%= f.text_area :elem_1_3 , readonly: true %>
@@ -50,10 +55,46 @@
           <%= f.text_area :elem_3_7 , readonly: true %>
           <%= f.text_area :elem_3_8 , readonly: true %>
           <%= f.text_area :elem_3_9 , readonly: true %>
+=======
+          <%= f.text_area :elem_1_1 %>
+          <%= f.text_area :elem_1_2 %>
+          <%= f.text_area :elem_1_3 %>
+          <%= f.text_area :elem_1_4 %>
+          <div class="core"><%= f.text_area :elem_1_5 %></div>
+          <%= f.text_area :elem_1_6 %>
+          <%= f.text_area :elem_1_7 %>
+          <%= f.text_area :elem_1_8 %>
+          <%= f.text_area :elem_1_9 %>
+        </div>
+        <!-- elem_2 -->
+        <div class="block">
+          <%= f.text_area :elem_2_1 %>
+          <%= f.text_area :elem_2_2 %>
+          <%= f.text_area :elem_2_3 %>
+          <%= f.text_area :elem_2_4 %>
+          <div class="core"><%= f.text_area :elem_2_5 %></div>
+          <%= f.text_area :elem_2_6 %>
+          <%= f.text_area :elem_2_7 %>
+          <%= f.text_area :elem_2_8 %>
+          <%= f.text_area :elem_2_9 %>
+        </div>
+        <!-- elem_3 -->
+        <div class="block">
+          <%= f.text_area :elem_3_1 %>
+          <%= f.text_area :elem_3_2 %>
+          <%= f.text_area :elem_3_3 %>
+          <%= f.text_area :elem_3_4 %>
+          <div class="core"><%= f.text_area :elem_3_5 %></div>
+          <%= f.text_area :elem_3_6 %>
+          <%= f.text_area :elem_3_7 %>
+          <%= f.text_area :elem_3_8 %>
+          <%= f.text_area :elem_3_9 %>
+>>>>>>> Add mandalart form on seas#show page
         </div>
         <!-- </div> -->
         <!-- <div class="row"> -->
         <div class="block">
+<<<<<<< c117aa26b9db44a928dcf162b74dede75202effc
           <%= f.text_area :elem_4_1 , readonly: true %>
           <%= f.text_area :elem_4_2 , readonly: true %>
           <%= f.text_area :elem_4_3 , readonly: true %>
@@ -63,6 +104,17 @@
           <%= f.text_area :elem_4_7 , readonly: true %>
           <%= f.text_area :elem_4_8 , readonly: true %>
           <%= f.text_area :elem_4_9 , readonly: true %>
+=======
+          <%= f.text_area :elem_4_1 %>
+          <%= f.text_area :elem_4_2 %>
+          <%= f.text_area :elem_4_3 %>
+          <%= f.text_area :elem_4_4 %>
+          <div class="core"><%= f.text_area :elem_4_5 %></div>
+          <%= f.text_area :elem_4_6 %>
+          <%= f.text_area :elem_4_7 %>
+          <%= f.text_area :elem_4_8 %>
+          <%= f.text_area :elem_4_9 %>
+>>>>>>> Add mandalart form on seas#show page
         </div>
         <div class="block">
           <div class="core"><%= f.text_area :elem_5_1, onblur:"myFnc1(this);" %></div>
@@ -76,6 +128,7 @@
           <div class="core"><%= f.text_area :elem_5_9, onblur:"myFnc8(this);" %></div>
         </div>
         <div class="block">
+<<<<<<< c117aa26b9db44a928dcf162b74dede75202effc
           <%= f.text_area :elem_6_1 , readonly: true %>
           <%= f.text_area :elem_6_2 , readonly: true %>
           <%= f.text_area :elem_6_3 , readonly: true %>
@@ -85,10 +138,22 @@
           <%= f.text_area :elem_6_7 , readonly: true %>
           <%= f.text_area :elem_6_8 , readonly: true %>
           <%= f.text_area :elem_6_9 , readonly: true %>
+=======
+          <%= f.text_area :elem_6_1 %>
+          <%= f.text_area :elem_6_2 %>
+          <%= f.text_area :elem_6_3 %>
+          <%= f.text_area :elem_6_4 %>
+          <div class="core"><%= f.text_area :elem_6_5 %></div>
+          <%= f.text_area :elem_6_6 %>
+          <%= f.text_area :elem_6_7 %>
+          <%= f.text_area :elem_6_8 %>
+          <%= f.text_area :elem_6_9 %>
+>>>>>>> Add mandalart form on seas#show page
         </div>
         <!-- </div> -->
         <!-- <div class="row"> -->
         <div class="block">
+<<<<<<< c117aa26b9db44a928dcf162b74dede75202effc
           <%= f.text_area :elem_7_1 , readonly: true %>
           <%= f.text_area :elem_7_2 , readonly: true %>
           <%= f.text_area :elem_7_3 , readonly: true %>
@@ -126,6 +191,50 @@
       <% end %>
     <% end %>
   </div>
+=======
+          <%= f.text_area :elem_7_1 %>
+          <%= f.text_area :elem_7_2 %>
+          <%= f.text_area :elem_7_3 %>
+          <%= f.text_area :elem_7_4 %>
+          <div class="core"><%= f.text_area :elem_7_5 %></div>
+          <%= f.text_area :elem_7_6 %>
+          <%= f.text_area :elem_7_7 %>
+          <%= f.text_area :elem_7_8 %>
+          <%= f.text_area :elem_7_9 %>
+        </div>
+        <div class="block">
+          <%= f.text_area :elem_8_1 %>
+          <%= f.text_area :elem_8_2 %>
+          <%= f.text_area :elem_8_3 %>
+          <%= f.text_area :elem_8_4 %>
+          <div class="core"><%= f.text_area :elem_8_5 %></div>
+          <%= f.text_area :elem_8_6 %>
+          <%= f.text_area :elem_8_7 %>
+          <%= f.text_area :elem_8_8 %>
+          <%= f.text_area :elem_8_9 %>
+        </div>
+        <div class="block">
+          <%= f.text_area :elem_9_1 %>
+          <%= f.text_area :elem_9_2 %>
+          <%= f.text_area :elem_9_3 %>
+          <%= f.text_area :elem_9_4 %>
+          <div class="core"><%= f.text_area :elem_9_5 %></div>
+          <%= f.text_area :elem_9_6 %>
+          <%= f.text_area :elem_9_7 %>
+          <%= f.text_area :elem_9_8 %>
+          <%= f.text_area :elem_9_9 %>
+        </div>
+        <!-- </div> -->
+        <hr>
+        <div class="pop">
+          <%= button_tag type: 'submit', class: "save-btn" do %>
+            <i class="far fa-save fa-4x"></i>
+          <% end %>
+          save
+        </div>
+      <% end %>
+    <% end %>
+>>>>>>> Add mandalart form on seas#show page
     <br>
     <%= link_to "アイデアの海", seas_path %>
   </div>
