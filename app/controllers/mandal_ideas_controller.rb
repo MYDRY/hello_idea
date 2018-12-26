@@ -16,7 +16,7 @@ class MandalIdeasController < ApplicationController
     @mandal.simple_mandal_id = params[:sea][:mandal]
     @mandal.sea_id = @sea.id
     if @mandal.save
-      redirect_to mandal_ideas_path(mandal: @mandal.simple_mandal_id)
+      redirect_to edit_mandalart_path(@mandal.simple_mandal_id)
     else
       redirect_to mandalarts_path
     end

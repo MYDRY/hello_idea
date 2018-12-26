@@ -30,6 +30,7 @@ class MandalartsController < ApplicationController
     @simple_mandal = SimpleMandal.find(params[:id])
     @suggestions = params[:suggestions] unless params[:suggestions].nil?
     @sea = Sea.new
+    @ideas = MandalIdea.where(simple_mandal_id: @simple_mandal.id)
   end
 
   def update
