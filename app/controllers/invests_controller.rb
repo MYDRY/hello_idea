@@ -11,5 +11,12 @@ class InvestsController < ApplicationController
   end
 
   def update
+    invest = Invest.find(params[:id])
+    additional_amount = params[:invests_amount].to_i
+    invest.amount += additional_amount
+    invest.save
+    invest.topic.get_supported(additional_amount)
+    current_user.change_point(-additional_amount)
+    redirect_to invest.topic
   end
 end
