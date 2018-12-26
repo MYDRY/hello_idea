@@ -44,7 +44,18 @@
           <%= f.submit %>
         <% end %>
 
-        <%= link_to "この組み合わせからできたアイデアたち", random_words_ideas_path(word1: @word1, word2: @word2) %>
+        <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+          <a style="cursor:pointer; color: red;">▼ この組み合わせから創出されたアイデア一覧</a>
+        </div>
+
+        <div id="open" style="display:none;clear:both;">
+          <% @ideas.each do |idea| %>
+            <%= idea.sea.body %>
+            <%= idea.sea.user.name %>
+            <br>
+            <% end %>
+        </div>
+
         <%= link_to "もう一度", words_path %><br>
         <%= link_to "単語追加", new_word_path %>
       </div>
