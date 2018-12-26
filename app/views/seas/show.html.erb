@@ -6,6 +6,8 @@
 
     <% if @random_words %>
       <%= @random_words.word1.word %>　×　<%= @random_words.word2.word %>
+    <% elsif @mandal %>
+      <%= @mandal.id %>
     <% end %>
     <br>
     <%= link_to "アイデアの海", seas_path %>

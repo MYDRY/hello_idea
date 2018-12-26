@@ -9,6 +9,7 @@ class SeasController < ApplicationController
   def show
     @sea = Sea.find(params[:id])
     if (@random_words = RandomWordsIdea.left_joins(:sea).where(sea_id: @sea.id).first)
+    elsif (@mandal = MandalIdea.left_joins(:sea).where(sea_id: @sea.id).first)
     end
   end
 

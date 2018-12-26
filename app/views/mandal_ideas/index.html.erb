@@ -1,2 +1,12 @@
-<h1>MandalIdeas#index</h1>
-<p>Find me in app/views/mandal_ideas/index.html.erb</p>
+<div class="main">
+  <div class="container">
+    <%= @mandal.id %>
+    <br>
+    <% @ideas.each do |idea| %>
+      <%= idea.sea.body %>
+      <%= idea.sea.user.name %>
+      <br>
+    <% end %>
+    <%= link_to "マンダラート", mandalarts_path %>
+  </div>
+</div>

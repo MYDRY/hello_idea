@@ -29,6 +29,7 @@ class MandalartsController < ApplicationController
   def edit
     @simple_mandal = SimpleMandal.find(params[:id])
     @suggestions = params[:suggestions] unless params[:suggestions].nil?
+    @sea = Sea.new
   end
 
   def update
