@@ -1,11 +1,15 @@
 <div class="main">
   <div class="container">
+    <h1>アイデアの海</h1>
+    
     <% @seas.each do |sea| %>
+    <div class="ideas-pannel">
       <%= link_to sea.body, sea_path(sea) %>
+      <%= image_tag(get_image(sea.user), size: '50', class: 'img-thumbnail') %>
       <%= sea.user.name %>
-      <br>
+    </div>
     <% end %>
-    <br>
+    
     <%= form_for(@sea) do |f| %>
       <%= f.text_area :body %>
       <%= f.submit %>
