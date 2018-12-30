@@ -43,7 +43,7 @@
           <%= link_to "もう一度", words_path %>
           <%= link_to "単語追加", new_word_path %>
           <%= f.text_area :body %>
-          <%= f.submit %>
+          <%= f.submit(['アイデア投稿']) %>
         <% end %>
 
         <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
