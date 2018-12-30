@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="container">
+  <!--<div class="container">-->
     <div class="random-words">
       <h1>ランダムワード</h1>
       <!-- modal window explain random word -->
@@ -40,12 +40,14 @@
         <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
           <%= f.hidden_field :word1, value: @word1.id %>
           <%= f.hidden_field :word2, value: @word2.id %>
+          <%= link_to "もう一度", words_path %>
+          <%= link_to "単語追加", new_word_path %>
           <%= f.text_area :body %>
           <%= f.submit %>
         <% end %>
 
         <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-          <a style="cursor:pointer; color: red;">▼ この組み合わせから創出されたアイデア一覧</a>
+          <a style="cursor:pointer; color: red; font-size: 35px;">▼ この組み合わせから創出されたアイデア一覧</a>
         </div>
 
         <div id="open" style="display:none;clear:both;">
@@ -55,9 +57,6 @@
             <br>
             <% end %>
         </div>
-
-        <%= link_to "もう一度", words_path %><br>
-        <%= link_to "単語追加", new_word_path %>
       </div>
       <div class="words-index">
         <% @words.each do |word| %>
@@ -69,4 +68,3 @@
       </div>
     </div>
   </div>
-</div>
