@@ -2,6 +2,7 @@
 
 class IdeasController < ApplicationController
   include LikesHelper
+  include InvestsHelper
 
   before_action :authorize, only: %i[new create]
   before_action :ensure_correct_user, only: %i[edit update destroy]
@@ -27,6 +28,7 @@ class IdeasController < ApplicationController
       unless topic.user == @idea.user
         topic.user.change_point(20)
         @idea.user.change_point(10)
+        p view_context.calc_invest_rates(topic)
       end
       flash[:success] = 'アイデアを投稿しました'
       view_context.spawn_new_idea_notice(topic)
