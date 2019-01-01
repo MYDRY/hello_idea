@@ -31,7 +31,7 @@ class IdeasController < ApplicationController
         rates = view_context.calc_invest_rates(topic)
         rates.each do |rate|
           invested_user = User.find(rate[:user_id])
-          invested_user.change_point(topic.support * rate[:rate] / 10)
+          invested_user.change_point(topic.support * rate[:rate] / 10) unless invested_user.id == rate[:user_id]
         end
       end
       flash[:success] = 'アイデアを投稿しました'
