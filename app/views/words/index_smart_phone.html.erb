@@ -62,7 +62,9 @@
       <!--ここまで-->
 
       <div class="random-tool">
-        <%= @word1.word %>×<%= @word2.word %><br>
+        <%= @word1.word %><br>
+        ×<br>
+        <%= @word2.word %><br>
         <%= link_to "もう一度", words_path ,class: 'btn btn-success btn-lg'%><br>
         <%= link_to "単語追加", new_word_path ,class: 'btn btn-info btn-lg'%>
       </div>
