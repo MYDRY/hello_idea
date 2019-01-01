@@ -9,7 +9,7 @@ class Topic < ApplicationRecord
 
   has_many   :ideas, dependent: :destroy
   has_many :invests, dependent: :destroy
-  
+
   def get_supported(support_amount)
     self.support += support_amount
     save!
