@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InvestsController < ApplicationController
   def create
     invested_topic = Topic.find(params[:topic_id])
