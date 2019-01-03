@@ -24,7 +24,7 @@
   margin: 1em 1.5em 1em;
   color: #5d627b;
   background: white;
-  border-top: solid 5px #5d627b;
+  border: solid 3px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   .idea{
     position: absolute;
@@ -51,4 +51,7 @@
     bottom: 0.5em;
     text-decoration: none;
   }
+}
+.ideas-pannel:hover{
+  background-color: lightgray;
 }
