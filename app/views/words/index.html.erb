@@ -66,5 +66,13 @@
           <% end %>　　　
         <% end %>
       </div>
+      <div class="words-index2">
+        <% @words.each do |word| %>
+          <%= word.word %>
+          <% if current_user.admin? %>
+            <%= link_to "delete", word_path(word), method: :delete, data: {confirm: "You sure?"} %>
+          <% end %>　　　
+        <% end %>
+      </div>
     </div>
   </div>
