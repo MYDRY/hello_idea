@@ -53,7 +53,8 @@
         <div id="open" style="display:none;clear:both;">
           <% @ideas.each do |idea| %>
             <%= idea.sea.body %>
-            <%= idea.sea.user.name %>
+            <%= link_to image_tag(get_image(idea.sea.user), size: '38', class: 'img-thumbnail'), user_path(id: idea.sea.user) %>
+            <%= link_to idea.sea.user.name, user_path(id: idea.sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
             <br>
             <% end %>
         </div>
