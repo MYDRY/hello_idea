@@ -6,7 +6,7 @@
       <%= inform_validation_errror(@sea) %>
       <%= form_for(@sea) do |f| %>
         <%= f.text_area :body %>
-        <%= f.submit(['アイデア投稿']) %>
+        <%= f.submit 'アイデア投稿' %>
       <% end %>
     </div>
     <% @seas.each do |sea| %>
