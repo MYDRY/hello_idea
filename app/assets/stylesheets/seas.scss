@@ -1,3 +1,57 @@
-// Place all the styles related to the seas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.add-idea{
+  textarea{
+      display: inline-block;
+      float: left;
+      width: 80%;
+      height: 100px;
+      font-size: 30px;
+    }
+    input{
+      display: inline;
+      float: left;
+      width: 20%;
+      height: 100px;
+      font-size: 30px;
+    }
+}
+
+.ideas-pannel{
+  float: left;
+  position: relative;
+  width: 45%;
+  height: 120px;
+  padding: 0.5em 1em;
+  margin: 1em 1.5em 1em;
+  color: #5d627b;
+  background: white;
+  border: solid 3px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  .idea{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #006e6f;
+    text-decoration: none;
+    margin: 5px 10px 0;
+  }
+  
+  .img-thumbnail{
+    position: absolute;
+    bottom: 0.5em;
+  }
+  
+  .user-name{
+    position: absolute;
+    left: 3em;
+    bottom: 0.5em;
+    text-decoration: none;
+  }
+}
+.ideas-pannel:hover{
+  background-color: lightgray;
+}

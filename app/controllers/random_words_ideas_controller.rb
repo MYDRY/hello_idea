@@ -12,15 +12,22 @@ class RandomWordsIdeasController < ApplicationController
 
   def create
     @sea = Sea.new(sea_params)
+    @word1 = Word.find(params[:sea][:word1])
+    @word2 = Word.find(params[:sea][:word2])
     @sea.user_id = current_user.id
-    redirect_to words_path unless @sea.save
+    unless @sea.save
+      @ideas = RandomWordsIdea.where(word1_id: [@word1.id, @word2.id])
+                              .where(word2_id: [@word1.id, @word2.id])
+      render 'words/index'
+      return
+    end
 
     @random = RandomWordsIdea.new
-    @random.word1_id = params[:sea][:word1]
-    @random.word2_id = params[:sea][:word2]
+    @random.word1 = @word1
+    @random.word2 = @word2
     @random.sea_id = @sea.id
     if @random.save
-      redirect_to random_words_ideas_path(word1: @random.word1_id, word2: @random.word2_id)
+      redirect_to random_words_ideas_path(word1: @random.word1, word2: @random.word2)
     else
       redirect_to words_path
     end
