@@ -13,7 +13,10 @@ class RandomWordsIdeasController < ApplicationController
   def create
     @sea = Sea.new(sea_params)
     @sea.user_id = current_user.id
-    redirect_to words_path unless @sea.save
+    unless @sea.save
+      redirect_to words_path
+      return
+    end
 
     @random = RandomWordsIdea.new
     @random.word1_id = params[:sea][:word1]
