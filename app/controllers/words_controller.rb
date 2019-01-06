@@ -4,7 +4,6 @@ class WordsController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @words = Word.all
     random_words = Word.order('RANDOM()').limit(2)
     @word1 = random_words[0]
     @word2 = random_words[1]
@@ -15,6 +14,7 @@ class WordsController < ApplicationController
 
   def new
     @word = Word.new
+    @words = Word.all
   end
 
   def create
