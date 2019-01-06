@@ -10,14 +10,16 @@
         <%= f.submit %>
         <% end %>
       </div>
-      <div class="words-index">
-        <% @words.each do |word| %>
-          <%= word.word %>
-          <% if current_user.admin? %>
+      <% if current_user.admin? %>
+        <div class="words-index">
+          <% @words.each do |word| %>
+            <%= word.word %>
             <%= link_to "delete", word_path(word), method: :delete, data: {confirm: "You sure?"} %>
           <% end %>　　　
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+      <br>
+      <%= link_to 'ランダムワードに戻る', words_path %>
     </div>
   </div>
 </div>

@@ -20,9 +20,11 @@ class WordsController < ApplicationController
   def create
     @word = Word.new(word_params)
     if @word.save
+      flash[:success] = '単語追加しました'
       redirect_to words_path
     else
-      render 'new'
+      @words = Word.all
+      render :new
     end
   end
 

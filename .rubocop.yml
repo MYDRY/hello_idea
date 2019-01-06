@@ -144,7 +144,7 @@ Layout/DotPosition:
   EnforcedStyle: leading
 
 Metrics/AbcSize:
-  Max: 30
+  Max: 31
 
 Metrics/MethodLength:
   Max: 30
