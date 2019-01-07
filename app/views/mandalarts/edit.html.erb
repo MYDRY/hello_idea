@@ -11,7 +11,7 @@
     <h3>キーワード検索フォーム</h3>
 
     <%= form_tag({:controller => 'mandalarts', :action => 'suggest'}, :remote => true) do %>
-    <%= hidden_field_tag :keyword, '東京' %>
+    <%= text_field_tag :keyword %>
     <%= submit_tag('Suggest') %>
     <% end %>
     <div id="suggests">
