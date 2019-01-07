@@ -86,7 +86,6 @@ class MandalartsController < ApplicationController
       suggested_str = elem.elements['suggestion']['data']
       @suggestions << suggested_str
     end
-    puts @suggestions
   end
 
   private
