@@ -1,20 +1,17 @@
 <div class="main">
-  <div class="container">
-    <h1><%= link_to "マンダラート", mandalarts_path %></h1>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <%= render partial: 'description' %>
-    <div class="mandalart">
-      <%= form_for(@simple_mandal, url: mandalarts_path) do |f| %>
+  <div class="container-fluid">
+    <div class="mandalart-wrapper">
+      <h1><%= link_to "マンダラート", mandalarts_path %></h1>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+      <%= render partial: 'description' %>
+      <div class="mandalart">
+        <%= form_for(@simple_mandal, url: mandalarts_path) do |f| %>
         <%= render partial: 'mandal_form', locals: { f: f } %>
-      <% end %>
-    </div>
-    <h3>キーワード検索フォーム</h3>
-    <%= form_tag({:controller => 'mandalarts', :action => 'suggest'}, :remote => true) do %>
-    <%= text_field_tag :keyword %>
-    <%= submit_tag('Suggest') %>
-    <% end %>
-    <div id="suggests">
-      <%= render partial: 'suggest', locals: { suggestions: @suggestions } %>
+        <% end %>
+      </div>
+      <div id="suggests">
+        <%= render partial: 'suggest', locals: { suggestions: @suggestions } %>
+      </div>
     </div>
   </div>
 </div>

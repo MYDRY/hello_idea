@@ -1,11 +1,15 @@
 <div class="suggest">
+  <h3>キーワード検索フォーム</h3>
+  <%= form_tag({:controller => 'mandalarts', :action => 'suggest'}, :remote => true) do %>
+  <%= text_field_tag :keyword %>
+  <%= submit_tag('検索') %>
+  <% end %>
   <div class="result">
-    <h3>検索結果：</3>
-      <% unless suggestions.nil? %>
+    <% unless suggestions.nil? %>
       <% suggestions.each do |s| %>
-      <%= s %>
-      <%= '/' %>
+        <%= s %>
+        <br>
       <% end %>
-      <% end %>
+    <% end %>
   </div>
 </div>
