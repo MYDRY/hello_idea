@@ -1,26 +1,11 @@
 <div class="suggest">
-  <h3>キーワード検索フォーム</h3>
-  <input class="suggest-form" type="text" id="keyword_form" size="40" maxlength="20" placeholder="探したい関連情報のキーワードを入力してください">
-  <button value="検索" onClick="jump_to_suggest(<%= id%>)">
-    <i class="fas fa-search"></i> 検索
-  </button>
   <div class="result">
     <h3>検索結果：</3>
-    <% unless suggestions.nil? %>
+      <% unless suggestions.nil? %>
       <% suggestions.each do |s| %>
-        <%= s %>
-        <%= '/' %>
+      <%= s %>
+      <%= '/' %>
       <% end %>
-    <% end %>
+      <% end %>
   </div>
 </div>
-
-<script>
- function jump_to_suggest(id) {
-    keyword_str = document.getElementById("keyword_form").value;
-    if (keyword_str == "") {
-      return;
-    }
-    location.href = "/mandalarts_suggest?id="+id+"&keyword="+keyword_str;
- }
-</script>

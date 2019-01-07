@@ -25,6 +25,6 @@ Rails.application.routes.draw do
   post 'topics_support/:id', to: 'topics#support', as: :support_topic
 
   resources :words
+  post '/mandalarts/suggest' => 'mandalarts#suggest'
   resources :mandalarts
-  get 'mandalarts_suggest', to: 'mandalarts#suggest', as: :suggest_mandalart
 end
