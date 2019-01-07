@@ -1,8 +1,8 @@
 <div class="suggest">
   <h3>キーワード検索フォーム</h3>
-  <%= form_tag({:controller => 'mandalarts', :action => 'suggest'}, :remote => true) do %>
-  <%= text_field_tag :keyword %>
-  <%= submit_tag('検索') %>
+  <%= form_with url: mandalarts_suggest_path do |f| %>
+  <%= f.text_field :keyword %>
+  <%= f.submit('検索') %>
   <% end %>
   <div class="result">
     <% unless suggestions.nil? %>
