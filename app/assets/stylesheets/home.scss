@@ -40,15 +40,15 @@ html {
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: white;
   /*.message{
-  padding-top: 50px;
-  text-align: right;
-  color: red;
-  h1 {
-  font-size: 64px;
-}
-font-size: 32px;
-}
-*/
+    padding-top: 50px;
+    text-align: right;
+    color: red;
+    h1 {
+      font-size: 64px;
+    }
+    font-size: 32px;
+  }
+  */
 
   .top-image {
     padding-left: 10%;
@@ -117,7 +117,7 @@ font-size: 32px;
   }
 
   .top-form{
-    float: right;
+     float: right;
   }
 }
 
@@ -297,48 +297,20 @@ font-size: 32px;
     background-color: #ffa500;
     text-align: center;
     .tool-title{
-      color: snow;
-      font-weight: bold;
+     color: snow;
+     font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-      color: snow;
-      font-weight: bold;
-      //font-size: 20px;
+     color: snow;
+     font-weight: bold;
+     //font-size: 20px;
     }
     a{
-      text-decoration: none;
-      font-size: 25px;
-      font-weight: bold;
-      color: snow;
-    }
-  }
-  .hirameki-tool_smart{
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    align:center;
-    width: 700px;
-    height: 700px;
-    background-color: #ffa500;
-    text-align: center;
-    .tool-title{
-      color: snow;
-      font-size: 80px;
-      font-weight: bold;
-    }
-    .tool-message{
-      margin-top: 20px;
-      font-size: 35px;
-      color: snow;
-      font-weight: bold;
-      //font-size: 20px;
-    }
-    a{
-      text-decoration: none;
-      font-size: 50px;
-      font-weight: bold;
-      color: snow;
+     text-decoration: none;
+     font-size: 25px;
+     font-weight: bold;
+     color: snow;
     }
   }
   .umi-tool{
@@ -349,20 +321,20 @@ font-size: 32px;
     background-color: #ff66c7;
     text-align: center;
     .tool-title{
-      color: snow;
-      font-weight: bold;
+     color: snow;
+     font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-      color: snow;
-      font-weight: bold;
-      //font-size: 20px;
+     color: snow;
+     font-weight: bold;
+     //font-size: 20px;
     }
     a{
-      text-decoration: none;
-      font-size: 25px;
-      font-weight: bold;
-      color: snow;
+     text-decoration: none;
+     font-size: 25px;
+     font-weight: bold;
+     color: snow;
     }
   }
   .seiri-tool{
@@ -372,46 +344,20 @@ font-size: 32px;
     background-color: #66cdaa;
     text-align: center;
     .tool-title{
-      color: snow;
-      font-weight: bold;
+     color: snow;
+     font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-      color: snow;
-      font-weight: bold;
-      //font-size: 20px;
+     color: snow;
+     font-weight: bold;
+     //font-size: 20px;
     }
     a{
-      text-decoration: none;
-      font-size: 25px;
-      font-weight: bold;
-      color: snow;
-    }
-  }
-  .seiri-tool_smart{
-    margin: auto;
-    align:center;
-    width: 700px;
-    height: 700px;
-    background-color: #66cdaa;
-    text-align: center;
-    .tool-title{
-      color: snow;
-      font-size: 80px;
-      font-weight: bold;
-    }
-    .tool-message{
-      margin-top: 20px;
-      font-size: 35px;
-      color: snow;
-      font-weight: bold;
-      //font-size: 20px;
-    }
-    a{
-      text-decoration: none;
-      font-size: 50px;
-      font-weight: bold;
-      color: snow;
+     text-decoration: none;
+     font-size: 25px;
+     font-weight: bold;
+     color: snow;
     }
   }
 }
@@ -600,7 +546,7 @@ font-size: 32px;
 
   .hamburger_header{
     display: inline;
-    .header_brand{
+     .header_brand{
       padding-left: 20px;
       float: left;
       a{
@@ -696,12 +642,12 @@ font-size: 32px;
     //position: relative;
   }
 
-  /*チェックボックス等は非表示に*/
+/*チェックボックス等は非表示に*/
   .nav-unshown {
     display:none;
   }
 
-  /*アイコンのスペース*/
+/*アイコンのスペース*/
   #nav-open {
     display: inline-block;
     width: 125px;
@@ -711,7 +657,7 @@ font-size: 32px;
     padding-top: 36px;
   }
 
-  /*ハンバーガーアイコンをCSSだけで表現*/
+/*ハンバーガーアイコンをCSSだけで表現*/
   #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
     height: 5px;/*線の太さ*/
@@ -730,7 +676,7 @@ font-size: 32px;
     bottom: -31px;
   }
 
-  /*閉じる用の薄黒カバー*/
+/*閉じる用の薄黒カバー*/
   #nav-close {
     display: none;/*はじめは隠しておく*/
     position: fixed;
@@ -744,7 +690,7 @@ font-size: 32px;
     transition: .3s ease-in-out;
   }
 
-  /*中身*/
+/*中身*/
   #nav-content {
     overflow: auto;
     position: fixed;
@@ -758,7 +704,7 @@ font-size: 32px;
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
-    div{
+     div{
       list-style: none;
       text-align: right;
       a{
@@ -778,7 +724,7 @@ font-size: 32px;
     }
   }
 
-  /*チェックが入ったらもろもろ表示*/
+/*チェックが入ったらもろもろ表示*/
   #nav-input:checked ~ #nav-close {
     display: block;/*カバーを表示*/
     opacity: .5;
@@ -790,8 +736,8 @@ font-size: 32px;
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
 
-  /* 以下PCのhamburger */
-  #pc-nav-content {
+/* 以下PCのhamburger */
+    #pc-nav-content {
     overflow: auto;
     position: fixed;
     top: 0;
@@ -804,7 +750,7 @@ font-size: 32px;
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
-    div{
+     div{
       list-style: none;
       text-align: right;
       a{
@@ -858,10 +804,10 @@ font-size: 32px;
 /************* パーシャル ********************/
 
 .detail {
-  font-size: 28px;
-  word-wrap: break-word;
+	font-size: 28px;
+	word-wrap: break-word;
 }
 
 .list {
-  font-size: 16px;
+	font-size: 16px;
 }
