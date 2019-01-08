@@ -1,7 +1,7 @@
 <div class="main">
   <div class="container">
     <div class="random-words">
-      <h1 align="center">ランダムワード</h1>
+      <h1>ランダムワード</h1>
       <!-- modal window explain random word -->
       <!--<div>
         <input id="modal_open" type="radio" name="modal_switch" />
@@ -65,9 +65,7 @@
         <%= @word1.word %><br>
         ×<br>
         <%= @word2.word %><br><br>
-        <div class="random-button_smart">
-        <%= link_to "もう一度", words_path ,class: 'btn btn-success btn-lg'%><br>
-        </div>
+        <%= link_to "もう一度", words_path ,class: 'btn btn-success btn-lg'%><br><br>
         <%= link_to "単語追加", new_word_path ,class: 'btn btn-info btn-lg'%>
       </div>
     </div>
