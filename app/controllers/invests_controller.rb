@@ -9,7 +9,7 @@ class InvestsController < ApplicationController
     invest.save
     invested_topic.get_supported(invests_amount)
     current_user.change_point(-invests_amount)
-    view_context.spawn_new_invest_notice(invested_topic, current_user)
+    view_context.spawn_new_invest_notice(invested_topic, current_user, invests_amount)
     redirect_to invested_topic
   end
 
@@ -20,6 +20,7 @@ class InvestsController < ApplicationController
     invest.save
     invest.topic.get_supported(additional_amount)
     current_user.change_point(-additional_amount)
+    view_context.spawn_new_invest_notice(invest.topic, current_user, additional_amount)
     redirect_to invest.topic
   end
 end
