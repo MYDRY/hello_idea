@@ -62,7 +62,6 @@ class MandalartsController < ApplicationController
   end
 
   def suggest
-    @simple_mandal = params[:id]
     keyword = params[:keyword]
 
     conn = Faraday::Connection.new(url: 'https://www.google.com') do |builder|
@@ -87,8 +86,6 @@ class MandalartsController < ApplicationController
       suggested_str = elem.elements['suggestion']['data']
       @suggestions << suggested_str
     end
-
-    redirect_to edit_mandalart_path(id: @simple_mandal, suggestions: @suggestions)
   end
 
   private
