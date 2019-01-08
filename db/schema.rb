@@ -45,16 +45,6 @@ ActiveRecord::Schema.define(version: 2018_12_26_065826) do
     t.index ["user_id"], name: "index_ideas_on_user_id"
   end
 
-  create_table "invests", force: :cascade do |t|
-    t.integer "topic_id"
-    t.integer "user_id"
-    t.integer "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["topic_id"], name: "index_invests_on_topic_id"
-    t.index ["user_id"], name: "index_invests_on_user_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "idea_id"
     t.integer "user_id"
@@ -71,6 +61,16 @@ ActiveRecord::Schema.define(version: 2018_12_26_065826) do
     t.datetime "updated_at", null: false
     t.index ["sea_id"], name: "index_mandal_ideas_on_sea_id"
     t.index ["simple_mandal_id"], name: "index_mandal_ideas_on_simple_mandal_id"
+  end
+  
+  create_table "invests", force: :cascade do |t|
+    t.integer "topic_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_invests_on_topic_id"
+    t.index ["user_id"], name: "index_invests_on_user_id"
   end
 
   create_table "mandals", force: :cascade do |t|
@@ -220,7 +220,6 @@ ActiveRecord::Schema.define(version: 2018_12_26_065826) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "support", default: 0
     t.index ["genre_id"], name: "index_topics_on_genre_id"
     t.index ["user_id"], name: "index_topics_on_user_id"
   end
