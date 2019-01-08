@@ -9,5 +9,23 @@
       <% end %>
     </div>
       <%= render partial: 'suggest', locals: { suggestions: @suggestions, id: @simple_mandal.id } %>
+
+      <%= form_for(@sea, url: mandal_ideas_path) do |f| %>
+        <%= f.hidden_field :mandal, value: @simple_mandal.id %>
+        <%= f.text_area :body %>
+        <%= f.submit %>
+      <% end %>
+
+      <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+        <a style="cursor:pointer; color: red;">▼ このマンダラートから創出されたアイデア一覧</a>
+      </div>
+
+      <div id="open" style="display:none;clear:both;">
+        <% @ideas.each do |idea| %>
+          <%= idea.sea.body %>
+          <%= idea.sea.user.name %>
+          <br>
+        <% end %>
+      </div>
   </div>
 </div>

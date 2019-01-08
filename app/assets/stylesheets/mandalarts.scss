@@ -7,55 +7,55 @@
   height: 1000px;
   margin-left: 100px;
   //float: left;
-    .block{
-      width: 300px;
-      height: 300px;
+  .block{
+    width: 300px;
+    height: 300px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    float: left;
+    textarea{
+      display: block;
+      float: left;
+      width: 100px;
+      height: 100px;
       margin-top: 0px;
       margin-right: 0px;
       margin-left: 0px;
       margin-bottom: 0px;
-      float: left;
-      textarea{
-        display: block;
-        float: left;
-        width: 100px;
-        height: 100px;
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        margin-bottom: 0px;
-        border: 1px solid #999;
-        text-align: center;
-        word-wrap: break-word;
-        resize: none;
-      }
-      .core textarea{
-        display: block;
-        background-color: rgba(100,100,100,0.3);
-        width: 100px;
-        height: 100px;
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        margin-bottom: 0px;
-        text-align: center;
-        word-wrap: break-word;
-        resize: none;
-      }
-      .corecore textarea{
-        display: block;
-        background-color: #ffd700;
-        width: 100px;
-        height: 100px;
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        margin-bottom: 0px;
-        //border: 3px solid #999;
-        text-align: center;
-        word-wrap: break-word;
-        resize: none;
-      }
+      border: 1px solid #999;
+      text-align: center;
+      word-wrap: break-word;
+      resize: none;
+    }
+    .core textarea{
+      display: block;
+      background-color: rgba(100,100,100,0.3);
+      width: 100px;
+      height: 100px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+      word-wrap: break-word;
+      resize: none;
+    }
+    .corecore textarea{
+      display: block;
+      background-color: #ffd700;
+      width: 100px;
+      height: 100px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      //border: 3px solid #999;
+      text-align: center;
+      word-wrap: break-word;
+      resize: none;
+    }
   }
   .pop{
     position: absolute;
@@ -249,4 +249,3 @@ input[name="modal_switch"],
 .result{
   margin: 30px;
 }
-

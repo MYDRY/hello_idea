@@ -11,6 +11,122 @@
       <%= link_to @sea.user.name, user_path(id: @sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
     </div>
     <br>
-    <%= link_to "アイデアの海に戻る", seas_path %>
+    <div class="mandalart">
+      <% if @mandal %>
+        <%= form_for(@mandal.simple_mandal, url: mandalarts_path) do |f| %>
+        <!-- elem_1 -->
+        <!-- <div class="row"> -->
+        <div class="block">
+          <%= f.text_area :elem_1_1 , readonly: true %>
+          <%= f.text_area :elem_1_2 , readonly: true %>
+          <%= f.text_area :elem_1_3 , readonly: true %>
+          <%= f.text_area :elem_1_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_1_5 , readonly: true %></div>
+          <%= f.text_area :elem_1_6 , readonly: true %>
+          <%= f.text_area :elem_1_7 , readonly: true %>
+          <%= f.text_area :elem_1_8 , readonly: true %>
+          <%= f.text_area :elem_1_9 , readonly: true %>
+        </div>
+        <!-- elem_2 -->
+        <div class="block">
+          <%= f.text_area :elem_2_1 , readonly: true %>
+          <%= f.text_area :elem_2_2 , readonly: true %>
+          <%= f.text_area :elem_2_3 , readonly: true %>
+          <%= f.text_area :elem_2_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_2_5 , readonly: true %></div>
+          <%= f.text_area :elem_2_6 , readonly: true %>
+          <%= f.text_area :elem_2_7 , readonly: true %>
+          <%= f.text_area :elem_2_8 , readonly: true %>
+          <%= f.text_area :elem_2_9 , readonly: true %>
+        </div>
+        <!-- elem_3 -->
+        <div class="block">
+          <%= f.text_area :elem_3_1 , readonly: true %>
+          <%= f.text_area :elem_3_2 , readonly: true %>
+          <%= f.text_area :elem_3_3 , readonly: true %>
+          <%= f.text_area :elem_3_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_3_5 , readonly: true %></div>
+          <%= f.text_area :elem_3_6 , readonly: true %>
+          <%= f.text_area :elem_3_7 , readonly: true %>
+          <%= f.text_area :elem_3_8 , readonly: true %>
+          <%= f.text_area :elem_3_9 , readonly: true %>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+        <div class="block">
+          <%= f.text_area :elem_4_1 , readonly: true %>
+          <%= f.text_area :elem_4_2 , readonly: true %>
+          <%= f.text_area :elem_4_3 , readonly: true %>
+          <%= f.text_area :elem_4_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_4_5 , readonly: true %></div>
+          <%= f.text_area :elem_4_6 , readonly: true %>
+          <%= f.text_area :elem_4_7 , readonly: true %>
+          <%= f.text_area :elem_4_8 , readonly: true %>
+          <%= f.text_area :elem_4_9 , readonly: true %>
+        </div>
+        <div class="block">
+          <div class="core"><%= f.text_area :elem_5_1, onblur:"myFnc1(this);" %></div>
+          <div class="core"><%= f.text_area :elem_5_2, onblur:"myFnc2(this);" %></div>
+          <div class="core"><%= f.text_area :elem_5_3, onblur:"myFnc3(this);" %></div>
+          <div class="core"><%= f.text_area :elem_5_4, onblur:"myFnc4(this);" %></div>
+          <div class="corecore"><%= f.text_area :elem_5_5 %></div>
+          <div class="core"><%= f.text_area :elem_5_6, onblur:"myFnc5(this);" %></div>
+          <div class="core"><%= f.text_area :elem_5_7, onblur:"myFnc6(this);" %></div>
+          <div class="core"><%= f.text_area :elem_5_8, onblur:"myFnc7(this);" %></div>
+          <div class="core"><%= f.text_area :elem_5_9, onblur:"myFnc8(this);" %></div>
+        </div>
+        <div class="block">
+          <%= f.text_area :elem_6_1 , readonly: true %>
+          <%= f.text_area :elem_6_2 , readonly: true %>
+          <%= f.text_area :elem_6_3 , readonly: true %>
+          <%= f.text_area :elem_6_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_6_5 , readonly: true %></div>
+          <%= f.text_area :elem_6_6 , readonly: true %>
+          <%= f.text_area :elem_6_7 , readonly: true %>
+          <%= f.text_area :elem_6_8 , readonly: true %>
+          <%= f.text_area :elem_6_9 , readonly: true %>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+        <div class="block">
+          <%= f.text_area :elem_7_1 , readonly: true %>
+          <%= f.text_area :elem_7_2 , readonly: true %>
+          <%= f.text_area :elem_7_3 , readonly: true %>
+          <%= f.text_area :elem_7_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_7_5 , readonly: true %></div>
+          <%= f.text_area :elem_7_6 , readonly: true %>
+          <%= f.text_area :elem_7_7 , readonly: true %>
+          <%= f.text_area :elem_7_8 , readonly: true %>
+          <%= f.text_area :elem_7_9 , readonly: true %>
+        </div>
+        <div class="block">
+          <%= f.text_area :elem_8_1 , readonly: true %>
+          <%= f.text_area :elem_8_2 , readonly: true %>
+          <%= f.text_area :elem_8_3 , readonly: true %>
+          <%= f.text_area :elem_8_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_8_5 , readonly: true %></div>
+          <%= f.text_area :elem_8_6 , readonly: true %>
+          <%= f.text_area :elem_8_7 , readonly: true %>
+          <%= f.text_area :elem_8_8 , readonly: true %>
+          <%= f.text_area :elem_8_9 , readonly: true %>
+        </div>
+        <div class="block">
+          <%= f.text_area :elem_9_1 , readonly: true %>
+          <%= f.text_area :elem_9_2 , readonly: true %>
+          <%= f.text_area :elem_9_3 , readonly: true %>
+          <%= f.text_area :elem_9_4 , readonly: true %>
+          <div class="core"><%= f.text_area :elem_9_5 , readonly: true %></div>
+          <%= f.text_area :elem_9_6 , readonly: true %>
+          <%= f.text_area :elem_9_7 , readonly: true %>
+          <%= f.text_area :elem_9_8 , readonly: true %>
+          <%= f.text_area :elem_9_9 , readonly: true %>
+        </div>
+        <!-- </div> -->
+        <hr>
+        <% end %>
+      <% end %>
+    </div>
+    <br>
+    <%= link_to "アイデアの海", seas_path %>
   </div>
 </div>
