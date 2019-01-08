@@ -61,20 +61,14 @@
 </div>
       <!--ここまで-->
 
-      <div class="random-tool">
+      <div class="random-tool_smart">
         <%= @word1.word %><br>
         ×<br>
-        <%= @word2.word %><br>
+        <%= @word2.word %><br><br>
+        <div class="random-button_smart">
         <%= link_to "もう一度", words_path ,class: 'btn btn-success btn-lg'%><br>
+        </div>
         <%= link_to "単語追加", new_word_path ,class: 'btn btn-info btn-lg'%>
-      </div>
-      <div class="words-index">
-        <% @words.each do |word| %>
-          <%= word.word %>
-          <% if current_user.admin? %>
-            <%= link_to "delete", word_path(word), method: :delete, data: {confirm: "You sure?"} %>
-          <% end %>　　　
-        <% end %>
       </div>
     </div>
   </div>
