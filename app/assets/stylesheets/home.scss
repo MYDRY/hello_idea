@@ -50,27 +50,27 @@ font-size: 32px;
 }
 */
 
-.top-image {
-  padding-left: 10%;
-  float: left;
-  height: 100%;
-}
-.top-form{
-  height: 100%;
-  h1 {
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 0;
+  .top-image {
+    padding-left: 10%;
+    float: left;
+    height: 100%;
   }
-  p{
-    color: red;
-    margin-top: 0; margin-bottom: 25px;
+  .top-form{
+    height: 100%;
+    h1 {
+      font-size: 50px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    p{
+      color: red;
+      margin-top: 0; margin-bottom: 25px;
+    }
+    font-size: 32px;
   }
-  font-size: 32px;
-}
-.aroundbrank {
-  padding: 30px;
-}
+  .aroundbrank {
+    padding: 30px;
+  }
 }
 
 .container{
@@ -349,20 +349,20 @@ font-size: 32px;
     background-color: #ff66c7;
     text-align: center;
     .tool-title{
-     color: snow;
-     font-weight: bold;
+      color: snow;
+      font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-     color: snow;
-     font-weight: bold;
-     //font-size: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
     }
     a{
-     text-decoration: none;
-     font-size: 25px;
-     font-weight: bold;
-     color: snow;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      color: snow;
     }
   }
   .seiri-tool{
