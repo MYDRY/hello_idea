@@ -11,6 +11,7 @@
       <%= link_to @sea.user.name, user_path(id: @sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
     </div>
     <br>
+    <%= link_to "アイデアの海へ戻る", seas_path %>
     <div class="mandalart">
       <% if @mandal %>
         <%= form_for(@mandal.simple_mandal, url: mandalarts_path) do |f| %>
@@ -126,7 +127,5 @@
         <% end %>
       <% end %>
     </div>
-    <br>
-    <%= link_to "アイデアの海", seas_path %>
   </div>
 </div>
