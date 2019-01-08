@@ -40,37 +40,37 @@ html {
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: white;
   /*.message{
-    padding-top: 50px;
-    text-align: right;
-    color: red;
-    h1 {
-      font-size: 64px;
-    }
-    font-size: 32px;
-  }
-  */
+  padding-top: 50px;
+  text-align: right;
+  color: red;
+  h1 {
+  font-size: 64px;
+}
+font-size: 32px;
+}
+*/
 
-  .top-image {
-    padding-left: 10%;
-    float: left;
-    height: 100%;
+.top-image {
+  padding-left: 10%;
+  float: left;
+  height: 100%;
+}
+.top-form{
+  height: 100%;
+  h1 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
-  .top-form{
-    height: 100%;
-    h1 {
-      font-size: 50px;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    p{
-      color: red;
-      margin-top: 0; margin-bottom: 25px;
-    }
-    font-size: 32px;
+  p{
+    color: red;
+    margin-top: 0; margin-bottom: 25px;
   }
-  .aroundbrank {
-    padding: 30px;
-  }
+  font-size: 32px;
+}
+.aroundbrank {
+  padding: 30px;
+}
 }
 
 .container{
@@ -117,7 +117,7 @@ html {
   }
 
   .top-form{
-     float: right;
+    float: right;
   }
 }
 
@@ -296,20 +296,20 @@ html {
     background-color: #ffa500;
     text-align: center;
     .tool-title{
-     color: snow;
-     font-weight: bold;
+      color: snow;
+      font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-     color: snow;
-     font-weight: bold;
-     //font-size: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
     }
     a{
-     text-decoration: none;
-     font-size: 25px;
-     font-weight: bold;
-     color: snow;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      color: snow;
     }
   }
   .hirameki-tool_smart{
@@ -322,24 +322,25 @@ html {
     background-color: #ffa500;
     text-align: center;
     .tool-title{
-     color: snow;
-     font-size: 80px;
-     font-weight: bold;
+      color: snow;
+      font-size: 80px;
+      font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
       font-size: 35px;
-     color: snow;
-     font-weight: bold;
-     //font-size: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
     }
     a{
-     text-decoration: none;
-     font-size: 50px;
-     font-weight: bold;
-     color: snow;
+      text-decoration: none;
+      font-size: 50px;
+      font-weight: bold;
+      color: snow;
     }
   }
+  
   .seiri-tool{
     float: right;
     width: 500px;
@@ -347,20 +348,20 @@ html {
     background-color: #66cdaa;
     text-align: center;
     .tool-title{
-     color: snow;
-     font-weight: bold;
+      color: snow;
+      font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-     color: snow;
-     font-weight: bold;
-     //font-size: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
     }
     a{
-     text-decoration: none;
-     font-size: 25px;
-     font-weight: bold;
-     color: snow;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      color: snow;
     }
   }
   .seiri-tool_smart{
@@ -371,22 +372,22 @@ html {
     background-color: #66cdaa;
     text-align: center;
     .tool-title{
-     color: snow;
-     font-size: 80px;
-     font-weight: bold;
+      color: snow;
+      font-size: 80px;
+      font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
       font-size: 35px;
-     color: snow;
-     font-weight: bold;
-     //font-size: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
     }
     a{
-     text-decoration: none;
-     font-size: 50px;
-     font-weight: bold;
-     color: snow;
+      text-decoration: none;
+      font-size: 50px;
+      font-weight: bold;
+      color: snow;
     }
   }
 }
@@ -575,7 +576,7 @@ html {
 
   .hamburger_header{
     display: inline;
-     .header_brand{
+    .header_brand{
       padding-left: 20px;
       float: left;
       a{
@@ -671,12 +672,12 @@ html {
     //position: relative;
   }
 
-/*チェックボックス等は非表示に*/
+  /*チェックボックス等は非表示に*/
   .nav-unshown {
     display:none;
   }
 
-/*アイコンのスペース*/
+  /*アイコンのスペース*/
   #nav-open {
     display: inline-block;
     width: 125px;
@@ -686,7 +687,7 @@ html {
     padding-top: 36px;
   }
 
-/*ハンバーガーアイコンをCSSだけで表現*/
+  /*ハンバーガーアイコンをCSSだけで表現*/
   #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
     height: 5px;/*線の太さ*/
@@ -705,7 +706,7 @@ html {
     bottom: -31px;
   }
 
-/*閉じる用の薄黒カバー*/
+  /*閉じる用の薄黒カバー*/
   #nav-close {
     display: none;/*はじめは隠しておく*/
     position: fixed;
@@ -719,7 +720,7 @@ html {
     transition: .3s ease-in-out;
   }
 
-/*中身*/
+  /*中身*/
   #nav-content {
     overflow: auto;
     position: fixed;
@@ -733,7 +734,7 @@ html {
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
-     div{
+    div{
       list-style: none;
       text-align: right;
       a{
@@ -753,7 +754,7 @@ html {
     }
   }
 
-/*チェックが入ったらもろもろ表示*/
+  /*チェックが入ったらもろもろ表示*/
   #nav-input:checked ~ #nav-close {
     display: block;/*カバーを表示*/
     opacity: .5;
@@ -765,8 +766,8 @@ html {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
 
-/* 以下PCのhamburger */
-    #pc-nav-content {
+  /* 以下PCのhamburger */
+  #pc-nav-content {
     overflow: auto;
     position: fixed;
     top: 0;
@@ -779,7 +780,7 @@ html {
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
-     div{
+    div{
       list-style: none;
       text-align: right;
       a{
@@ -833,10 +834,10 @@ html {
 /************* パーシャル ********************/
 
 .detail {
-	font-size: 28px;
-	word-wrap: break-word;
+  font-size: 28px;
+  word-wrap: break-word;
 }
 
 .list {
-	font-size: 16px;
+  font-size: 16px;
 }
