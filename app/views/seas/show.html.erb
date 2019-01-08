@@ -1,11 +1,10 @@
 <div class="main">
   <div class="container">
-<!--    <div class="ideas-pannel"> -->
-    <div>
+    <div class="sea-ideas-pannel" style="font-size: 30px;">
       <% if @random_words %>
-      「<%= @random_words.word1.word %>　×　<%= @random_words.word2.word %>」
+        「<%= @random_words.word1.word %>　×　<%= @random_words.word2.word %>」
+         <br>
       <% end %>
-      <br>
       <%= @sea.body %>
       <br>
       <%= link_to image_tag(get_image(@sea.user), size: '38', class: 'img-thumbnail'), user_path(id: @sea.user) %>
