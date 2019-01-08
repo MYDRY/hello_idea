@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'mandal_ideas/index'
+  get 'mandal_ideas/create'
   root 'home#top'
   get '/detail' => 'home#detail'
   get '/tools' => 'home#tools'
@@ -27,4 +29,7 @@ Rails.application.routes.draw do
   resources :words
   post '/mandalarts/suggest' => 'mandalarts#suggest'
   resources :mandalarts
+  resources :random_words_ideas
+  resources :mandal_ideas
+  resources :seas
 end
