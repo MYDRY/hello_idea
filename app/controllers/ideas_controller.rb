@@ -38,7 +38,7 @@ class IdeasController < ApplicationController
           end
         end
       end
-      flash[:success] = 'アイデアを投稿しました'
+      flash[:success] = 'アイデアを投稿しました。10 ポイント獲得！！'
       view_context.spawn_new_idea_notice(topic)
     else
       flash[:danger] = 'アイデア投稿に失敗しました'

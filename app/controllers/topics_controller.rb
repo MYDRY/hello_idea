@@ -26,7 +26,7 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build(topic_params)
     if @topic.save
       @topic.user.change_point(10)
-      flash[:success] = 'トピックを投稿しました'
+      flash[:success] = 'トピックを投稿しました。10 ポイント獲得！！'
       redirect_to @topic
     else
       render :new
