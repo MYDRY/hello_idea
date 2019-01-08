@@ -19,15 +19,16 @@ Rails.application.routes.draw do
   delete 'notices/:user/delete', to: 'notices#destroy_has_read', as: :delete_notice_has_read
 
   resources :topics, shallow: true do
+    resources :invests, only: %i[create update]
     resources :ideas do
       resources :likes, only: %i[create destroy]
     end
   end
+  post 'topics_support/:id', to: 'topics#support', as: :support_topic
 
   resources :words
+  post '/mandalarts/suggest' => 'mandalarts#suggest'
   resources :mandalarts
-  get 'mandalarts_suggest', to: 'mandalarts#suggest', as: :suggest_mandalart
-
   resources :random_words_ideas
   resources :mandal_ideas
   resources :seas

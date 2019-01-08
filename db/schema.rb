@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 2018_12_26_065826) do
     t.index ["sea_id"], name: "index_mandal_ideas_on_sea_id"
     t.index ["simple_mandal_id"], name: "index_mandal_ideas_on_simple_mandal_id"
   end
+  
+  create_table "invests", force: :cascade do |t|
+    t.integer "topic_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_invests_on_topic_id"
+    t.index ["user_id"], name: "index_invests_on_user_id"
+  end
 
   create_table "mandals", force: :cascade do |t|
     t.string "core"
@@ -83,6 +93,7 @@ ActiveRecord::Schema.define(version: 2018_12_26_065826) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
     t.index ["user_id"], name: "index_notices_on_user_id"
   end
 

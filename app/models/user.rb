@@ -17,11 +17,13 @@ class User < ApplicationRecord
   has_many :core_mandals, dependent: :destroy
   has_many :simple_mandals, dependent: :destroy
   has_many :seas,  dependent: :destroy
+  has_many :invests, dependent: :destroy
 
   mount_uploader :image, ProfileImageUploader
 
   def change_point(amount)
     self.point += amount
+    self.point = 0 if self.point.negative?
     save!
   end
 end

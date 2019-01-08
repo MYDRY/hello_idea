@@ -10,6 +10,15 @@
             <li style="font-size: 20px;"><%= link_to topic.user.name, user_path(id: topic.user), style: 'color: #007B96; font-weight: 700;' %></li>
             <li class="well"><div class="word-break"><%= topic.title %></div></li>
           </ul>
+          <%= "support: #{topic.support}" %>
+          <% topics_invest = Invest.find_by(topic_id: @topic.id, user_id: current_user.id) %>
+          <% if @topic.user == current_user %>
+            <%= render partial: 'support_form', locals: { topic: @topic } %>
+          <% elsif topics_invest.nil? %>
+            <%= render partial: 'invests/create', locals: { topic: @topic }%>
+          <% else %>
+            <%= render partial: 'invests/edit', locals: { topic: @topic, invest: topics_invest } %>
+          <% end%>
         </div>
       </div>
 
