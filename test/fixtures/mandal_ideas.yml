@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sea: one
+  simple_mandal: one
+
+two:
+  sea: two
+  simple_mandal: two

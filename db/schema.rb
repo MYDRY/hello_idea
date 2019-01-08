@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_103455) do
+ActiveRecord::Schema.define(version: 2018_12_26_065826) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -54,6 +54,25 @@ ActiveRecord::Schema.define(version: 2018_12_18_103455) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "mandal_ideas", force: :cascade do |t|
+    t.integer "sea_id", null: false
+    t.integer "simple_mandal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sea_id"], name: "index_mandal_ideas_on_sea_id"
+    t.index ["simple_mandal_id"], name: "index_mandal_ideas_on_simple_mandal_id"
+  end
+  
+  create_table "invests", force: :cascade do |t|
+    t.integer "topic_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_invests_on_topic_id"
+    t.index ["user_id"], name: "index_invests_on_user_id"
+  end
+
   create_table "mandals", force: :cascade do |t|
     t.string "core"
     t.string "s1"
@@ -74,7 +93,27 @@ ActiveRecord::Schema.define(version: 2018_12_18_103455) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
     t.index ["user_id"], name: "index_notices_on_user_id"
+  end
+
+  create_table "random_words_ideas", force: :cascade do |t|
+    t.integer "sea_id", null: false
+    t.integer "word1_id", null: false
+    t.integer "word2_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sea_id"], name: "index_random_words_ideas_on_sea_id"
+    t.index ["word1_id"], name: "index_random_words_ideas_on_word1_id"
+    t.index ["word2_id"], name: "index_random_words_ideas_on_word2_id"
+  end
+
+  create_table "seas", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_seas_on_user_id"
   end
 
   create_table "simple_mandals", force: :cascade do |t|
@@ -181,7 +220,6 @@ ActiveRecord::Schema.define(version: 2018_12_18_103455) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "support", default: 0
     t.index ["genre_id"], name: "index_topics_on_genre_id"
     t.index ["user_id"], name: "index_topics_on_user_id"
   end

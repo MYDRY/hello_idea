@@ -1,10 +1,33 @@
 .random-words {
+  margin-left: 10%;
+  margin-right: 10%;
   .random-tool {
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
     font-size: 10vh;
     a {
       font-size: 5vh;
       text-decoration: none;
+    }
+    textarea{
+      display: inline-block;
+      float: left;
+      width: 70%;
+      height: 100px;
+      font-size: 30px;
+    }
+    input{
+      display: inline;
+      float: left;
+      width: 30%;
+      height: 100px;
+      font-size: 30px;
+    }
+    #open{
+      font-size: 30px;
     }
   }
   .random-tool_smart {
@@ -20,9 +43,25 @@
     }
   }
   .words-index {
+    //position: absolute;
+    //top: 200px;
+    //right: 0;
+    //width: 20%;
     background-color: lightgray;
-    font-size: 2vh;
+    //color: gray;
+    font-size: 3vh;
   }
+  /*
+  .words-index2 {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 20%;
+    //background-color: lightgray;
+    color: gray;
+    font-size: 1.5vh;
+  }
+  */
   .word-form {
   }
 }

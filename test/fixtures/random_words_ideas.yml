@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sea: one
+  word1: one
+  word2: one
+
+two:
+  sea: two
+  word1: two
+  word2: two
