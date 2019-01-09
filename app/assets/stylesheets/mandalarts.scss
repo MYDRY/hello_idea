@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .mandalart-wrapper {
-  margin: 0 100px;
+  //margin: 0 100px;
+  h1{
+    margin-left: 100px;
+  }
 }
 .mandalart{
   position: relative;
@@ -63,15 +66,38 @@
   .pop{
     width: 100px;
     height: 100px;
-    margin: -100px 0 0 auto;
+    margin: -150px 0 0 auto;
     font-weight: bold;
     .save-btn{
       background: none;
       border: none;
+      text-align: center;
+      p{
+        font-size: 20px;
+        font-weight: 600;
+      }
     }
   }
 }
-
+.register-ideas{
+  float: left;
+  width: 30%;
+  word-break: break-all;
+  padding-left: 30px;
+  text-align: center;
+  textarea{
+    display: inline-block;
+    width: 70%;
+    margin-left: 10px;
+  }
+  input{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+    height: 30px;
+    width: 50px;
+  }
+}
 #index{
   text-align: center;
   width: 100%;
@@ -134,6 +160,7 @@ input[name="modal_switch"],
   top: -85px;
   left: 300px;
   margin-right:100px;
+  margin-left: 50px;
   margin-top:10px;
   color:#006e6f;
   font-size:20px;
@@ -239,7 +266,8 @@ input[name="modal_switch"],
 #suggests {
   float: left;
   margin-left: 100px;
-  height: 300px;
+  margin-bottom: 50px;
+  height: auto;
 }
 
 .suggest{
