@@ -23,11 +23,9 @@
       <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
         <a style="cursor:pointer; color: red;">▼ このマンダラートから創出されたアイデア一覧</a>
       </div>
-      <div id="open" style="display:none;clear:both;">
+      <div id="open" style="display:none;clear:both; text-align: left;">
         <% @ideas.each do |idea| %>
           <%= idea.sea.body %>
-          <%= link_to image_tag(get_image(idea.sea.user), size: '38', class: 'img-thumbnail'), user_path(id: idea.sea.user) %>
-          <%= link_to idea.sea.user.name, user_path(id: idea.sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
           <br>
         <% end %>
       </div>
