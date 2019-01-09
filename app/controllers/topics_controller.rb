@@ -26,7 +26,7 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build(topic_params)
     if @topic.save
       @topic.user.change_point(10)
-      flash[:success] = 'トピックを投稿しました'
+      flash[:success] = 'ニーズを投稿しました。10 ポイント獲得！！'
       redirect_to @topic
     else
       render :new
@@ -40,7 +40,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
-      flash[:success] = 'トピックを編集しました'
+      flash[:success] = 'ニーズを編集しました'
       redirect_to @topic
     else
       render :edit
@@ -51,7 +51,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.destroy
     @topic.user.change_point(-10)
-    flash[:success] = 'トピックを削除しました'
+    flash[:success] = 'ニーズを削除しました'
     redirect_back fallback_location: topics_path
   end
 

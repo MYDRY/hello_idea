@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="container">
+  <!--<div class="container">-->
     <div class="random-words">
       <h1>ランダムワード</h1>
       <!-- modal window explain random word -->
@@ -11,7 +11,7 @@
         <input id="modal_close-button" type="radio" name="modal_switch" />
         <label for="modal_close-button"></label>
         <div class="modal_popUp">
-        <div class="modal_popUp-content"> 
+        <div class="modal_popUp-content">
         <!-- CONTENT -->
         <div class="contents">
           <div class="mandal-img"><%= image_tag('random1.png') %></div>
@@ -36,17 +36,31 @@
       <!-- end modal window -->
       <div class="random-tool">
         <%= @word1.word %>×<%= @word2.word %><br>
-        <%= link_to "もう一度", words_path %><br>
-        <%= link_to "単語追加", new_word_path %>
-      </div>
-      <div class="words-index">
-        <% @words.each do |word| %>
-          <%= word.word %>
-          <% if current_user.admin? %>
-            <%= link_to "delete", word_path(word), method: :delete, data: {confirm: "You sure?"} %>
-          <% end %>　　　
+        <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
+          <%= f.hidden_field :word1, value: @word1.id %>
+          <%= f.hidden_field :word2, value: @word2.id %>
+          <%= link_to "もう一度", words_path %>
+          <%= link_to "単語追加", new_word_path %>
+          <div style="font-size: small;">
+            <%= inform_validation_errror(@sea) %>
+          </div>
+          <%= f.text_area :body %>
+          <%= f.submit 'アイデア投稿' %>
         <% end %>
+
+        <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+          <a style="cursor:pointer; color: red; font-size: 30px;">▼ この組み合わせから創出されたアイデア一覧</a>
+        </div>
+
+        <div id="open" style="display:none;clear:both;">
+          <% @ideas.each do |idea| %>
+            <%= idea.sea.body %>
+            <%= link_to image_tag(get_image(idea.sea.user), size: '38', class: 'img-thumbnail'), user_path(id: idea.sea.user) %>
+            <%= link_to idea.sea.user.name, user_path(id: idea.sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
+            <br>
+            <% end %>
+        </div>
       </div>
+
     </div>
   </div>
-</div>

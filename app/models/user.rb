@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :notices, dependent: :destroy
   has_many :core_mandals, dependent: :destroy
   has_many :simple_mandals, dependent: :destroy
+  has_many :seas,  dependent: :destroy
+  has_many :invests, dependent: :destroy
 
   mount_uploader :image, ProfileImageUploader
 

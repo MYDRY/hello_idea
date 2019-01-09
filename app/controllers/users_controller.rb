@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     if @user&.authenticate(params[:user][:password])
       log_in @user
       @user.change_point(5)
-      flash[:success] = 'ログインしました'
+      flash[:success] = 'ログインしました。5 ポイント獲得！'
       redirect_to topics_path
     else
       flash[:danger] = 'ユーザー名またはパスワードが間違っています'

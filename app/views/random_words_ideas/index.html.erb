@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="container" style="font-size: 30px; word-break: break-all;">
+    「 <%= @word1.word %> ×　<%= @word2.word %> 」
+    <br>
+    <% @ideas.each do |idea| %>
+      <%= idea.sea.body %>
+    　<%= link_to image_tag(get_image(idea.sea.user), size: '38', class: 'img-thumbnail'), user_path(id: idea.sea.user) %>
+      <%= link_to idea.sea.user.name, user_path(id: idea.sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
+      <br>
+    <% end %>
+    <%= link_to "ランダムワードへ戻る", words_path %>
+  </div>
+</div>

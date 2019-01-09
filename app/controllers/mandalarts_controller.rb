@@ -22,6 +22,16 @@ class MandalartsController < ApplicationController
   def create
     @simple_mandal = current_user.simple_mandals.build(simple_mandal_params)
     @simple_mandal.save
+    (1..9).each do |left_num|
+      (1..9).each do |right_num|
+        cell = "elem_#{left_num}_#{right_num}"
+        next if simple_mandal_params[cell].nil?
+
+        word = Word.new
+        word.word = simple_mandal_params[cell]
+        word.save
+      end
+    end
     flash[:success] = 'マンダラートを保存しました'
     redirect_to edit_mandalart_path(id: @simple_mandal)
   end
@@ -29,10 +39,22 @@ class MandalartsController < ApplicationController
   def edit
     @simple_mandal = SimpleMandal.find(params[:id])
     @suggestions = params[:suggestions] unless params[:suggestions].nil?
+    @sea = Sea.new
+    @ideas = MandalIdea.where(simple_mandal_id: @simple_mandal.id)
   end
 
   def update
     @simple_mandal = SimpleMandal.find(params[:id])
+    (1..9).each do |left_num|
+      (1..9).each do |right_num|
+        cell = "elem_#{left_num}_#{right_num}"
+        next if simple_mandal_params[cell].nil?
+
+        word = Word.new
+        word.word = simple_mandal_params[cell]
+        word.save
+      end
+    end
     if @simple_mandal.update(simple_mandal_params)
       flash[:success] = 'マンダラートを更新しました'
       redirect_to edit_mandalart_path(id: @simple_mandal)
@@ -42,7 +64,6 @@ class MandalartsController < ApplicationController
   end
 
   def suggest
-    @simple_mandal = params[:id]
     keyword = params[:keyword]
 
     conn = Faraday::Connection.new(url: 'https://www.google.com') do |builder|
@@ -67,8 +88,6 @@ class MandalartsController < ApplicationController
       suggested_str = elem.elements['suggestion']['data']
       @suggestions << suggested_str
     end
-
-    redirect_to edit_mandalart_path(id: @simple_mandal, suggestions: @suggestions)
   end
 
   private

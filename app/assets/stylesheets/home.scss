@@ -40,15 +40,15 @@ html {
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: white;
   /*.message{
-    padding-top: 50px;
-    text-align: right;
-    color: red;
-    h1 {
-      font-size: 64px;
-    }
-    font-size: 32px;
-  }
-  */
+  padding-top: 50px;
+  text-align: right;
+  color: red;
+  h1 {
+  font-size: 64px;
+}
+font-size: 32px;
+}
+*/
 
   .top-image {
     padding-left: 10%;
@@ -117,7 +117,7 @@ html {
   }
 
   .top-form{
-     float: right;
+    float: right;
   }
 }
 
@@ -150,7 +150,7 @@ html {
   }
 
   .nav-item {
-    width: 15%;
+    width: 30%;
     font-size: 30px;
   }
   .nav-item-lg {
@@ -289,51 +289,129 @@ html {
   height: 100%;
   padding-top: 20px;
   .hirameki-tool{
-    margin-right: 10px;
+    margin-left: 4%;
+    margin-right: 1%;
     float: left;
-    width: 500px;
+    width: 30%;
     height: 500px;
     background-color: #ffa500;
     text-align: center;
     .tool-title{
-     color: snow;
-     font-weight: bold;
+      color: snow;
+      font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-     color: snow;
-     font-weight: bold;
-     //font-size: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
     }
     a{
-     text-decoration: none;
-     font-size: 25px;
-     font-weight: bold;
-     color: snow;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      color: snow;
+    }
+  }
+  .hirameki-tool_smart{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align:center;
+    width: 700px;
+    height: 700px;
+    background-color: #ffa500;
+    text-align: center;
+    .tool-title{
+      color: snow;
+      font-size: 80px;
+      font-weight: bold;
+    }
+    .tool-message{
+      margin-top: 20px;
+      font-size: 35px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
+    }
+    a{
+      text-decoration: none;
+      font-size: 50px;
+      font-weight: bold;
+      color: snow;
+    }
+  }
+  .umi-tool{
+    margin-right: 1%;
+    float: left;
+    width: 30%;
+    height: 500px;
+    background-color: #ff66c7;
+    text-align: center;
+    .tool-title{
+      color: snow;
+      font-weight: bold;
+    }
+    .tool-message{
+      margin-top: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
+    }
+    a{
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      color: snow;
     }
   }
   .seiri-tool{
-    margin-left: 10px;
-    float: right;
-    width: 500px;
+    float: left;
+    width: 30%;
     height: 500px;
     background-color: #66cdaa;
     text-align: center;
     .tool-title{
-     color: snow;
-     font-weight: bold;
+      color: snow;
+      font-weight: bold;
     }
     .tool-message{
       margin-top: 20px;
-     color: snow;
-     font-weight: bold;
-     //font-size: 20px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
     }
     a{
-     text-decoration: none;
-     font-size: 25px;
-     font-weight: bold;
-     color: snow;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      color: snow;
+    }
+  }
+  .seiri-tool_smart{
+    margin: auto;
+    align:center;
+    width: 700px;
+    height: 700px;
+    background-color: #66cdaa;
+    text-align: center;
+    .tool-title{
+      color: snow;
+      font-size: 80px;
+      font-weight: bold;
+    }
+    .tool-message{
+      margin-top: 20px;
+      font-size: 35px;
+      color: snow;
+      font-weight: bold;
+      //font-size: 20px;
+    }
+    a{
+      text-decoration: none;
+      font-size: 50px;
+      font-weight: bold;
+      color: snow;
     }
   }
 }
@@ -346,7 +424,7 @@ html {
   background-color: #006e6f;
   padding-top: 50px;
   text-align: center;
-  
+
   p.title{
     display: inline-block;
     margin-bottom: 50px;
@@ -359,7 +437,7 @@ html {
     -webkit-clip-path: polygon(0 5%, 100% 0, 88% 100%, 8% 96%);
     clip-path: polygon(0 5%, 100% 0, 88% 100%, 8% 96%);
   }
-  
+
   .menu{
     width: 100%;
     height: 700px;
@@ -392,7 +470,7 @@ html {
       }
     }
   }
-  
+
   .case1{
     width: 100%;
     height: 700px;
@@ -522,7 +600,7 @@ html {
 
   .hamburger_header{
     display: inline;
-     .header_brand{
+    .header_brand{
       padding-left: 20px;
       float: left;
       a{
@@ -618,12 +696,12 @@ html {
     //position: relative;
   }
 
-/*チェックボックス等は非表示に*/
+  /*チェックボックス等は非表示に*/
   .nav-unshown {
     display:none;
   }
 
-/*アイコンのスペース*/
+  /*アイコンのスペース*/
   #nav-open {
     display: inline-block;
     width: 125px;
@@ -633,7 +711,7 @@ html {
     padding-top: 36px;
   }
 
-/*ハンバーガーアイコンをCSSだけで表現*/
+  /*ハンバーガーアイコンをCSSだけで表現*/
   #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
     height: 5px;/*線の太さ*/
@@ -652,7 +730,7 @@ html {
     bottom: -31px;
   }
 
-/*閉じる用の薄黒カバー*/
+  /*閉じる用の薄黒カバー*/
   #nav-close {
     display: none;/*はじめは隠しておく*/
     position: fixed;
@@ -666,7 +744,7 @@ html {
     transition: .3s ease-in-out;
   }
 
-/*中身*/
+  /*中身*/
   #nav-content {
     overflow: auto;
     position: fixed;
@@ -680,7 +758,7 @@ html {
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
-     div{
+    div{
       list-style: none;
       text-align: right;
       a{
@@ -700,7 +778,7 @@ html {
     }
   }
 
-/*チェックが入ったらもろもろ表示*/
+  /*チェックが入ったらもろもろ表示*/
   #nav-input:checked ~ #nav-close {
     display: block;/*カバーを表示*/
     opacity: .5;
@@ -712,8 +790,8 @@ html {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
 
-/* 以下PCのhamburger */
-    #pc-nav-content {
+  /* 以下PCのhamburger */
+  #pc-nav-content {
     overflow: auto;
     position: fixed;
     top: 0;
@@ -726,7 +804,7 @@ html {
     transition: .2s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
-     div{
+    div{
       list-style: none;
       text-align: right;
       a{
@@ -780,10 +858,10 @@ html {
 /************* パーシャル ********************/
 
 .detail {
-	font-size: 28px;
-	word-wrap: break-word;
+  font-size: 28px;
+  word-wrap: break-word;
 }
 
 .list {
-	font-size: 16px;
+  font-size: 16px;
 }

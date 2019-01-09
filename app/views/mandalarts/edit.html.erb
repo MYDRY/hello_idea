@@ -1,13 +1,34 @@
 <div class="main">
-  <div class="container">
-    <h1><%= link_to "マンダラート", mandalarts_path %></h1>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <%= render partial: 'description' %>
-    <div class="mandalart">
-      <%= form_for(@simple_mandal, url: "/mandalarts/#{@simple_mandal.id}") do |f| %>
+  <div class="container-fluid">
+    <div class="mandalart-wrapper">
+      <h1><%= link_to "マンダラート", mandalarts_path %></h1>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+      <%= render partial: 'description' %>
+      <div class="mandalart">
+        <%= form_for(@simple_mandal, url: "/mandalarts/#{@simple_mandal.id}") do |f| %>
         <%= render partial: 'mandal_form', locals: { f: f } %>
-      <% end %>
+        <% end %>
+      </div>
+      <div id="suggests">
+        <%= render partial: 'suggest', locals: { suggestions: @suggestions } %>
+      </div>
     </div>
-      <%= render partial: 'suggest', locals: { suggestions: @suggestions, id: @simple_mandal.id } %>
+    <div class="register-ideas">
+      <h3>アイデア投稿フォーム</h3>
+      <%= form_for(@sea, url: mandal_ideas_path) do |f| %>
+        <%= f.hidden_field :mandal, value: @simple_mandal.id %>
+        <%= f.text_area :body %>
+        <%= f.submit '投稿' %>
+      <% end %>
+      <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+        <a style="cursor:pointer; color: red;">▼ このマンダラートから創出されたアイデア一覧</a>
+      </div>
+      <div id="open" style="display:none;clear:both; text-align: left;">
+        <% @ideas.each do |idea| %>
+          <%= idea.sea.body %>
+          <br>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

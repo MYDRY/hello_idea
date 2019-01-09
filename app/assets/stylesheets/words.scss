@@ -1,16 +1,71 @@
 .random-words {
+  margin-left: 10%;
+  margin-right: 10%;
   .random-tool {
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
     font-size: 10vh;
     a {
       font-size: 5vh;
       text-decoration: none;
     }
+    textarea{
+      display: inline-block;
+      float: left;
+      width: 70%;
+      height: 100px;
+      font-size: 30px;
+    }
+    input{
+      display: inline;
+      float: left;
+      width: 30%;
+      height: 100px;
+      font-size: 30px;
+    }
+    #open{
+      font-size: 30px;
+    }
+  }
+  .random-tool_smart {
+    text-align: center;
+    font-size: 5vh;
+    h1{
+      font-size: 60px;
+      text-align: center;
+    }
+    a {
+      font-size: 5vh;
+      text-decoration: none;
+    }
+    input[type="text"] {
+      width: 500px;
+      height: 100px;
+    }
   }
   .words-index {
+    //position: absolute;
+    //top: 200px;
+    //right: 0;
+    //width: 20%;
     background-color: lightgray;
-    font-size: 2vh;
+    //color: gray;
+    font-size: 3vh;
   }
+  /*
+  .words-index2 {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 20%;
+  //background-color: lightgray;
+  color: gray;
+  font-size: 1.5vh;
+}
+*/
   .word-form {
   }
 }
@@ -126,4 +181,133 @@ input[name="modal_switch"],
   .modal-contents{
     width: 50%;
   }
+}
+/*---------------------ここから-----------------------*/
+.popupModal1 > input { /* ラジオボックス非表示 */
+  display: none;
+}
+.popupModal1 > input:nth-child(1) + label {
+  cursor: pointer;
+}
+.modalPopup2 { /* 初期設定 ポップアップ非表示 */
+  display: none;
+}
+
+.popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2 {/* ラジオ１ チェックでポップアップ表示 */
+  display: block;
+  z-index: 998;
+  position: fixed;
+  width: 90%;
+  height: 80%;
+  border-radius: 20px;
+  left: 50%;
+  top: 50%;
+  margin-top: 30px;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background: #fff;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {/* PCのときはページの真ん中の600x600領域 */
+  .popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2{
+    width: 600px;
+    height: 600px;
+    padding: 30px;
+
+  }
+  .popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label {
+    left: 50% !important;
+    top: 50% !important;
+    margin-left: 270px !important;
+    margin-top: -310px !important;
+  }
+}
+
+.popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2 > div {/* */
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2 > div > iframe {
+  width: 100%;
+  height:100%;
+  border:none;
+  display:block;
+}
+
+.popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2 > div > img {/* ポップアップの中の要素 */
+  max-width: 100%;
+}
+.popupModal1 > input:nth-child(1) + label ~ label {
+  display: none;/* ラジオ１ 以外のラベルを初期は非表示 */
+
+}
+.popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.70);
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 997;
+  text-indent: -999999px;
+  overflow: hidden;
+}
+.popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label {
+  background: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
+  z-index: 999;
+  width: 44pt;
+  height: 44pt;
+  font-size: 40px;
+  border-radius: 50%;
+  line-height: 44pt;
+  text-align: center;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.popupModal1 > input:nth-child(1) + label + input:nth-child(3):checked + label + input:nth-child(5) + label + .modalPopup2,
+.popupModal1 > input:nth-child(1) + label + input:nth-child(3) + label + input:nth-child(5):checked + label + .modalPopup2 { /* ラジオ２と３ どっちかチェックでポップアップ非表示 */
+  display: none;
+}
+
+
+.modalPopup2 {
+  animation: fadeIn 1s ease 0s 1 normal;
+  -webkit-animation: fadeIn 1s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.popupModal1 .modalTitle {
+  padding-bottom: .5em;
+  margin: .5em 0;
+  border-bottom:
+  1px solid #ccc;
+  font-weight: bold;
+}
+.popupModal1 .modalMain {
+  color:#222;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.8em;
+}
+.modal_smart_img{
+  text-align: center;
 }
