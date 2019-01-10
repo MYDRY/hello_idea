@@ -365,6 +365,33 @@ font-size: 32px;
       color: snow;
     }
   }
+  .umi-tool_smart{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align:center;
+    width: 700px;
+    height: 700px;
+    background-color: #ff66c7;
+    text-align: center;
+    .tool-title{
+      color: snow;
+      font-size: 80px;
+      font-weight: bold;
+    }
+    .tool-message{
+      margin-top: 20px;
+      font-size: 35px;
+      color: snow;
+      font-weight: bold;
+    }
+    a{
+      text-decoration: none;
+      font-size: 50px;
+      font-weight: bold;
+      color: snow;
+    }
+  }
   .seiri-tool{
     float: left;
     width: 30%;
