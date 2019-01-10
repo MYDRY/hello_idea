@@ -32,7 +32,7 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
     @word.destroy
     flash[:success] = '単語を削除しました'
-    redirect_to words_path
+    redirect_to new_word_path
   end
 
   private
