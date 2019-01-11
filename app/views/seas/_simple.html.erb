@@ -1,0 +1,20 @@
+<div class="panel panel-success" style="margin: 10px 75px 0px; border-width: 3px;">
+  <div class="topic">
+    <div class="panel-heading" style="background-color: white">
+      <div class="box">
+        <ul>
+        <li class="b-item1"><%= link_to image_tag(get_image(sea.user), size: '50', class: 'img-thumbnail'), user_path(id: sea.user) %></li>
+        <li class="b-item2"><%= link_to sea.user.name, user_path(id: sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
+        </ul>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="b-item5" style="color: gray; width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 1vw;">
+        <span title="詳細ページへ"><%= link_to sea.body, sea_path(id: sea), style: 'width: 100%; text-align: left;' %></span>
+      </div>
+    </div>
+    <div class="panel-footer" style="text-align: right;">
+      投稿日時：<%= format_datetime(sea.created_at) %>
+    </div>
+  </div>
+</div>
