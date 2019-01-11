@@ -1,6 +1,9 @@
 # Hello Idea
 アイデア創出プラットフォーム
 
+![image](https://user-images.githubusercontent.com/20394831/51023281-e66ca380-15c9-11e9-992f-63f52ff1bba8.png)
+
+
 ## Hello Ideaとは
 **Hello Idea**は、  
 **アイデアを出したい**けど**アイデアが出ない人**向けの  
@@ -13,6 +16,8 @@ Hello Ideaは、アイデア特化型SNSとアイデア創出ツールから構�
 ### ◯アイデア特化型SNS
 アイデアに特化したコミュニティの場です。  
 本SNSに集まったニーズ・アイデアを種としたアイデア創出を支援します。
+![image](https://user-images.githubusercontent.com/20394831/51023766-0355a680-15cb-11e9-9b18-e2193a0a73b6.png)
+
 #### ニーズ＆アイデア
 - 新規投稿・編集・削除
 - ジャンル分け（ニーズのみ）
@@ -26,11 +31,14 @@ Webアプリならではのアイデアの出し方によるアイデア創出�
 #### マンダラート
 - 新規作成・編集
 - 関連語検索
+![image](https://user-images.githubusercontent.com/20394831/51023648-b671d000-15ca-11e9-9e9c-5e4ef73d72f3.png)
 
 #### ランダムワード
 - 単語の新規追加・削除
 - 単語追加（マンダラート新規作成・編集時）
 - 単語のランダム出力
+![image](https://user-images.githubusercontent.com/20394831/51023727-e7520500-15ca-11e9-9c8d-42139f50732f.png)
+
 
 #### ◯SNS・ツール共通
 - 通知
