@@ -16,11 +16,9 @@ class SeasController < ApplicationController
   def create
     @sea = current_user.seas.build(sea_params)
     if @sea.save
-      flash[:success] = 'アイデアを投稿しました'
-      redirect_to seas_path
+      render :success
     else
-      @seas = Sea.all
-      render :index
+      render :error
     end
   end
 

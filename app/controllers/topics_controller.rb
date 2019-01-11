@@ -11,6 +11,7 @@ class TopicsController < ApplicationController
     @other_topics = Genre.find_by(name: 'その他').topics.order(created_at: :desc)
     @point_ordered_topics = Topic.order({ support: :desc }, created_at: :desc)
     @seas = Sea.all.order(created_at: :desc)
+    @sea = Sea.new
   end
 
   def show
