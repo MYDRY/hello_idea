@@ -5,6 +5,7 @@
   <%= f.submit('検索') %>
   <% end %>
   <div class="result">
+    <p>▼検索結果<p>
     <% unless suggestions.nil? %>
       <% suggestions.each do |s| %>
         <%= s %>
