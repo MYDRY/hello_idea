@@ -574,13 +574,13 @@ font-size: 32px;
 .header{
   width: 100%;
   min-width: 500px;
-  height: 100px;
+  height: 70px;
   .header-brand a{
     float: left;
-    font-size: 60px;
+    font-size: 50px;
     color: white;
     text-decoration: none;
-    line-height: 100px;
+    line-height: 70px;
   }
   .header-list{
     float: right;
@@ -593,10 +593,10 @@ font-size: 32px;
         display: block;
         color: white;
         text-decoration: none;
-        line-height: 100px;
+        line-height: 70px;
         padding-left: 12px;
         padding-right: 12px;
-        height: 100px;
+        height: 70px;
       }
       a:hover{
         transition:all 0.5s;
