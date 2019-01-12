@@ -863,10 +863,11 @@ font-size: 32px;
 /************* フッター ********************/
 
 .footer {
-  text-align: right;
-  border-top: solid 2px #eaeaea;
+  //text-align: right;
+  margin: auto;
+  
   color: #777;
-  margin-left: 15px;
+  //margin-left: 15px;
   a{
     color: red;
     &:hover {

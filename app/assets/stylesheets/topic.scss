@@ -83,9 +83,21 @@
   }
 }
 
-.nav-item a {
-  color: #00BABD;
-  background-color: whitesmoke;
+.needs-index{
+  //margin:auto;
+  float: left;
+  width: 740px;
+}
+
+.nav-item{
+  margin: 0 2px 0px;
+  a{
+    background-color: whitesmoke;
+    color: #00BABD;
+    height: 40px;
+    font-size: 15px;
+    margin-bottom: 1px;
+  }
 }
 .nav-link.active{
   font-weight: bold;
