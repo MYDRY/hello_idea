@@ -227,3 +227,24 @@
     }
   }
 }
+
+/************** MEMO modal window **************/
+#idea-modal{
+  .btn.btn-primary.mt-5{
+    position: fixed;
+    left: 15%;
+    top: 80%;
+  }
+  .modal-content{
+    display: block;
+    width: 580px;
+    height: auto;
+    .modal-body{
+      .form-control{
+        height: auto;
+        width: 90%;
+        word-break: break-all;
+      }
+    }
+  }
+}
