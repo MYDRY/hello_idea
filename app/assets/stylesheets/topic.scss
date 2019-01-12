@@ -244,6 +244,45 @@
   }
 }
 
+/************** needs panel design ******************/
+.needs-panel{
+  width: 720px;
+  height: 130px;
+  .needs-content{
+    position: relative;
+    width: 100%;
+    margin: 2px 5px 2px;
+    .needs-title{
+      width: 95%;
+      height: 40px;
+      margin: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a{
+        position: absolute;
+        left: 2.5%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    .needs-body{
+      width: 95%;
+      height: 30px;
+      margin: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .needs-information{
+      width: 95%;
+      height: 30px;
+      margin: auto;
+    }
+  }
+}
+
 /************** MEMO modal window **************/
 #idea-modal{
   .btn.btn-primary.mt-5{
