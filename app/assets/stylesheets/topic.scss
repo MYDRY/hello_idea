@@ -85,6 +85,10 @@
 
 .nav-item a {
   color: #00BABD;
+  background-color: whitesmoke;
+}
+.nav-link.active{
+  font-weight: bold;
 }
 .form-size{
   margin: 25px auto;
