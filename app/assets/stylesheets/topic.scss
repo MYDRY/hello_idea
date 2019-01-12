@@ -246,7 +246,7 @@
 
 /************** needs panel design ******************/
 .needs-panel{
-  width: 720px;
+  width: 100%;
   height: 130px;
   .needs-content{
     position: relative;
@@ -266,6 +266,9 @@
         bottom: 0;
         right: 0;
       }
+      a:hover{
+        font-weight: 700;
+      }
     }
     .needs-body{
       width: 95%;
@@ -279,6 +282,11 @@
       width: 95%;
       height: 30px;
       margin: auto;
+      .user-information{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
     }
   }
 }
