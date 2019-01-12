@@ -9,11 +9,11 @@
       <%= link_to topic.body, topic_path(id: topic), style: 'width: 100%; text-align: left;' %>
     </div>
     <div class="needs-information">
-      <span class="fa fa-comment"><%= topic.ideas.count %><span>ideas</span></span>
-      <span class="fab fa-product-hunt"><%= "#{topic.support}" %><span>points</span></span>
+      <span class="fa fa-comment" style="color: darkorange;"><%= topic.ideas.count %><span>ideas</span></span>
+      <span class="fab fa-product-hunt" style="color: #98cc31; font-weight: bold;"><%= "#{topic.support}" %><span>points</span></span>
       <span class="user-information">
-        <%= link_to image_tag(get_image(topic.user), size: '20', class: 'rounded'), user_path(id: topic.user) %>
-        <%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
+        <%= link_to image_tag(get_image(topic.user), size: '25', class: 'rounded'), user_path(id: topic.user) %>
+        <%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 15px; color: #007B96; font-weight: 400;' %>
       </span>
     </div>
   </div>

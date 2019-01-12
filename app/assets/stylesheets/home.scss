@@ -631,7 +631,7 @@ font-size: 32px;
       padding-left: 20px;
       float: left;
       a{
-        line-height: 100px;
+        line-height: 70px;
         color: #fff;
         font-size: 60px;
         padding-left: 0;
@@ -642,13 +642,13 @@ font-size: 32px;
   }
   .hamburger_header_list{
     float: right;
-    height: 100px;
+    height: 70px;
     display: inline;
     padding-right: 20px;
     .header_brand{
       float: left;
       a{
-        line-height: 100px;
+        line-height: 70px;
         color: #fff;
         font-size: 60px;
         padding-left: 0;
@@ -663,14 +663,14 @@ font-size: 32px;
         display: block;
         color: white;
         text-decoration: none;
-        line-height: 100px;
+        line-height: 70px;
         padding-left: 12px;
         padding-right: 12px;
-        height: 100px;
+        height: 70px;
         float: left;
       }
       a:hover{
-        transition:all 0.5s;
+        transition: all 0.5s;
         background-color: #5f9ea0;
       }
     }

@@ -1,5 +1,4 @@
 .topic {
-
   a {
     color: black;
     &:hover {
@@ -246,8 +245,11 @@
 
 /************** needs panel design ******************/
 .needs-panel{
+  position: relative;
+  font-family: sans-serif;
   width: 100%;
-  height: 130px;
+  height: 140px;
+  border-bottom: solid 1px lightgray;
   .needs-content{
     position: relative;
     width: 100%;
@@ -265,49 +267,73 @@
         top: 0;
         bottom: 0;
         right: 0;
+        font-size: 17px;
+        font-weight: 600;
+        color: darkcyan;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
       }
       a:hover{
         font-weight: 700;
+        text-decoration: none;
+        color: #7acccc;
       }
     }
     .needs-body{
       width: 95%;
       height: 30px;
+      line-height: 30px;
       margin: auto;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      font-size: 17px;
+      font-weight: 600;
+      a{
+        color: darkcyan;
+      }
     }
     .needs-information{
       width: 95%;
-      height: 30px;
+      height: 40px;
       margin: auto;
+      line-height: 40px;
+      .fa.fa-comment{
+        padding-right: 20px;
+      }
       .user-information{
         position: absolute;
-        right: 0;
+        right: 2.5%;
         bottom: 0;
       }
     }
   }
 }
-
-/************** MEMO modal window **************/
-#idea-modal{
+.needs-right-space{
+  .btn.btn-danger{
+    hieght: 10px;
+    position: fixed;
+    left: 1000px;
+  }
   .btn.btn-primary.mt-5{
     position: fixed;
-    left: 15%;
-    top: 80%;
   }
-  .modal-content{
-    display: block;
-    width: 580px;
-    height: auto;
-    .modal-body{
-      .form-control{
-        height: auto;
-        width: 90%;
-        word-break: break-all;
+}
+
+#idea-modal{
+    .modal-content{
+      display: block;
+      width: 580px;
+      height: auto;
+      .modal-body{
+        .form-control{
+          height: auto;
+          width: 90%;
+          word-break: break-all;
+        }
       }
     }
   }
-}
