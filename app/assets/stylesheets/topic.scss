@@ -313,13 +313,81 @@
   }
 }
 .needs-right-space{
-  .btn.btn-danger{
-    hieght: 10px;
+  float: right;
+  width: 260px;
+  .btn.btn-primary.register{
     position: fixed;
-    left: 1000px;
+    top: 100px;
+    background: #12C74B;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    text-shadow: 0px -1px 0 #464C56;
+    i{
+      margin: 0 7px 0;
+      text-shadow: none;
+    }
+  }
+  .btn.btn-primary.register:hover{
+    background: rgb(15,171,65);
   }
   .btn.btn-primary.mt-5{
     position: fixed;
+    top: 300px;
+    background: orangered;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    text-shadow: 0px -1px 0 #464C56;
+    i{
+      margin: 0 7px 0;
+      text-shadow: none;
+    }
+  }
+  .btn.btn-primary.mt-5:hover{
+    background: #cc3600;
+  }
+  .explain-register{
+    position: fixed;
+    top: 150px;
+    width: 240px;
+    box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.4);
+    border-radius: 5px 5px 5px 5px;
+    padding: 15px;
+    .ex-title{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 0;
+    }
+    hr{
+      padding: 0;
+      margin: 5px 0px 5px;
+    }
+    .ex-body{
+      font-size: 12px;
+    }
+  }
+  .explain-memo{
+    position: fixed;
+    top: 400px;
+    width: 240px;
+    box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.4);
+    border-radius: 5px 5px 5px 5px;
+    padding: 15px;
+    .ex-title{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 0;
+    }
+    hr{
+      padding: 0;
+      margin: 5px 0px 5px;
+    }
+    .ex-body{
+      font-size: 12px;
+    }
   }
 }
 
