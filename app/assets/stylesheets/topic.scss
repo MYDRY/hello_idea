@@ -1,3 +1,68 @@
+#topic-show{
+  hr{
+    margin: 0;
+  }
+  .needs-owner{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    a{
+      text-decoration: noen;
+      color: black;
+      font-size: 12px;
+    }
+    .needs-information{
+      width: 850px;
+      .needs-title{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+      .needs-body{
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+      .invest-area{
+        width: 20%;
+      }
+      .user-information {
+        float: right;
+        img{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .contribute-box{
+      position: relative;
+      width: 850px;
+      margin: 0;
+      padding: 0;
+      .idea-register{
+        width: 100%;
+        label{
+          margin: 0;
+          font-size: 15px;
+        }
+        textarea{
+          width: 80%;
+          margin-bottom: 30px;
+        }
+        input{
+          position: absolute;
+          top: 60px;
+          right: 30px;
+        }
+      }
+    }
+  }
+}
+
+.panel.panel-defaul{
+  width: 750px;
+  margin: auto;
+}
 .topic {
   a {
     color: black;
@@ -47,36 +112,6 @@
         span{
           text-align:right;
         }
-      }
-    }
-  }
-
-  .panel-body{
-    .b-item4{
-      width: 80%;
-      padding-left: 1vw;
-
-      a{
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 100%;
-        height: 40px;
-        line-height: 20px;
-        margin-bottom: 0;
-      }
-    }
-    .b-item5{
-
-      a{
-        display:block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
       }
     }
   }

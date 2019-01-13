@@ -3,7 +3,7 @@
     <div class="panel-heading" style="background-color: white;">
       <%= link_to image_tag(get_image(idea.user), size: '150', class: 'img-thumbnail'), user_path(id: idea.user) %>
       <%= link_to idea.user.name, user_path(id: idea.user), style: 'color: #007B96; font-weight: 700;' %>
-      <div class="well"><p class="normal"><%= simple_format(idea.body) %></p></div>
+      <div><p class="normal"><%= simple_format(idea.body) %></p></div>
     </div>
     <div class="panel-body">
       いいね

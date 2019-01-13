@@ -1,16 +1,14 @@
-<div class="panel panel-default" style="margin: 10px 20px 10px; border-width: 2px; border-color: #00BABD;">
-  <div class="topic">
-    <div class="panel-heading" style="background-color: white">
-      <div class="dtable">
-        <div class="dtable_c">
-          <%= link_to image_tag(get_image(topic.user), size: '150', class: 'img-thumbnail'), user_path(id: topic.user) %>
-        </div>
-        <div class="dtable_c" style="padding-left: 50px;">
-          <ul>
-            <li style="font-size: 20px;"><%= link_to topic.user.name, user_path(id: topic.user), style: 'color: #007B96; font-weight: 700;' %></li>
-            <li class="well"><div class="word-break"><%= topic.title %></div></li>
-          </ul>
-          <%= "support: #{topic.support}" %>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<div id="topic-show">
+  <div class="needs-owner">
+    <div class="centering" style="width: 850px; margin: auto;">
+      <a href="/topics">ＳＮＳトップページに戻る</a>
+      <hr>
+      <div class="needs-information">
+        <div class="needs-title"><%= topic.title %></div>
+        <div class="needs-body"><%= topic.body %></div>
+        <span class="invest-area">
           <% topics_invest = Invest.find_by(topic_id: @topic.id, user_id: current_user.id) %>
           <% if @topic.user == current_user %>
             <%= render partial: 'support_form', locals: { topic: @topic } %>
@@ -19,17 +17,13 @@
           <% else %>
             <%= render partial: 'invests/edit', locals: { topic: @topic, invest: topics_invest } %>
           <% end%>
-        </div>
-      </div>
-
-    </div>
-    <div class="panel-body">
-      <div class="well"><%= simple_format(topic.body) %></div>
-      <!--<%= link_to "アイデア新規投稿", new_topic_idea_path(topic_id: @topic), class: 'btn btn-default', style: 'color: white; background-color: #00BABD' %>-->
-      <%= render partial: 'ideas/form_field', locals: { idea: @idea, next_path: topic_ideas_path(topic_id: @topic) } %>
-      <span class="fa fa-comment"><%= topic.ideas.count %></span>
-      <div style="float: right;">
-        <% if topic.user_id == current_user.id %>
+        </span>
+        <span class="fa fa-comment" style="color: darkorange; margin-right: 50px;"><%= topic.ideas.count %><span> ideas</span></span>
+        <span class="fab fa-product-hunt" style="color: #98cc31; font-weight: bold;"><%= "#{topic.support}" %><span> points</span></span>
+        <span class="user-information">
+          <%= link_to image_tag(get_image(topic.user), size: '35', class: 'rounded'), user_path(id: topic.user) %>
+          <%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 18px; color: #007B96; font-weight: 400;' %>
+          <% if topic.user_id == current_user.id %>
           <%= link_to edit_topic_path(id: topic.id) do %>
             <span class="fa fa-edit"></span>
           <% end %>
@@ -37,10 +31,18 @@
             <span class="fa fa-trash"></span>
           <% end %>
         <% end %>
+        </span>
       </div>
+      <hr>
+      <div class="contribute-box">
+        <div class="idea-register">
+          <%= render partial: 'ideas/form_field', locals: { idea: @idea, next_path: topic_ideas_path(topic_id: @topic) } %>
+        </div>
+      </div>
+      <hr>
     </div>
-    <div class="panel-footer">
-      <%= render partial: 'ideas/simple', collection: @topic.ideas, as: 'idea' %>
-    </div>
+  </div>
+  <div class="centering" style="width: 850px; margin: auto;">
+    <%= render partial: 'ideas/simple', collection: @topic.ideas, as: 'idea' %>
   </div>
 </div>
