@@ -2,7 +2,12 @@
 
 class SeasController < ApplicationController
   def index
-    @seas = Sea.all
+    @topics = Topic.order(created_at: :desc)
+    @ideal_topics = Genre.find_by(name: '理想').topics.order(created_at: :desc)
+    @trouble_topics = Genre.find_by(name: '問題').topics.order(created_at: :desc)
+    @other_topics = Genre.find_by(name: 'その他').topics.order(created_at: :desc)
+    @point_ordered_topics = Topic.order({ support: :desc }, created_at: :desc)
+    @seas = Sea.all.order(created_at: :desc)
     @sea = Sea.new
   end
 
@@ -20,7 +25,14 @@ class SeasController < ApplicationController
     else
       flash[:danger] = 'アイデア投稿に失敗しました'
     end
-    redirect_to topics_path
+    redirect_to seas_path
+  end
+
+  def destroy
+    @sea = Sea.find(params[:id])
+    @sea.destroy
+    flash[:success] = 'アイデアを削除しました'
+    redirect_to seas_path
   end
 
   private
