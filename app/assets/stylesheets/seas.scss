@@ -81,3 +81,58 @@
     color: lightgray;
   }
 }
+
+.seas-panel{
+  position: relative;
+  font-family: sans-serif;
+  width: 100%;
+  height: 90px;
+  //border-bottom: solid 1px lightgray;
+  .seas-content{
+    position: relative;
+    width: 100%;
+    margin: 2px 5px 2px;
+    .seas-title{
+      width: 95%;
+      height: 30px;
+      margin: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a{
+        position: absolute;
+        left: 2.5%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 17px;
+        font-weight: 600;
+        color: darkcyan;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+      }
+      a:hover{
+        font-weight: 700;
+        text-decoration: none;
+        color: #7acccc;
+      }
+    }
+    .seas-information{
+      width: 95%;
+      height: 30px;
+      margin: auto;
+      line-height: 30px;
+      .fa.fa-comment{
+        padding-right: 20px;
+      }
+      .user-information{
+        position: absolute;
+        right: 2.5%;
+        bottom: 0;
+      }
+    }
+  }
+}
