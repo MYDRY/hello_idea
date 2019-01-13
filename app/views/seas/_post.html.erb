@@ -1,16 +1,5 @@
-<div class="modal fade" id="post" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <%= form_with model: @sea do |f| %>
-      <div class="error-message"></div>
-      <div class="modal-body">
-        <%= f.text_field :body, class: "form-control", placeholder: "投稿内容を入力" %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-        <%= f.submit "投稿する", class: "btn btn-primary" %>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+
+<%= form_for @sea do |f| %>
+<%= f.text_area :body, class: "form-control", placeholder: "投稿内容を入力" %>
+<%= f.submit "投稿する", class: "btn btn-primary" %>
+<% end %>
