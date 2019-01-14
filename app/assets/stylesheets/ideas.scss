@@ -1,7 +1,10 @@
-.panel.panel-deafault{
-  width: 90%;
-  margin-left: -500px;
-  padding-left: 500px;;
+#idea-panel{
+  width: 100%;
+  .idea-body a{
+    color: black;
+    font-size: 1em;
+    font-family: sans-serif;
+  }
 }
 
 /* いいねボタン ==========================*/

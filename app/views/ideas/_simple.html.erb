@@ -1,22 +1,15 @@
-<div class="panel panel-default">
-  <div class="idea">
-    <div class="panel-heading" style="background-color: white;">
-      <div class="box">
-        <ul>
-          <li class="b-item1"><%= link_to image_tag(get_image(idea.user), size: '50', class: 'img-thumbnail'), user_path(id: idea.user) %></li>
-          <li class="b-item2">
-            <%= link_to idea.user.name, user_path(id: idea.user), style: 'font-size: 20px; color: #007B96; font-weight: 700;' %>
-            <span style="float: right; padding-top: 2%;">
-              <div id="likes_buttons_<%= idea.id %>">
-                <%= render "likes/like", idea: idea %>
-              </div>
-            </span>
-          </li>
-        </ul>
+<div id="idea-panel">
+  <div user-information>
+    <%= link_to image_tag(get_image(idea.user), size: '30', class: 'rounded'), user_path(id: idea.user) %>
+    <%= link_to idea.user.name, user_path(id: idea.user), style: 'font-size: 20px; color: #007B96; font-weight: 600;' %>
+    <span style="float: right; padding-top: 2%;">
+      <div id="likes_buttons_<%= idea.id %>">
+        <%= render "likes/like", idea: idea %>
       </div>
-    </div>
-    <div class="panel-body">
-        <div class="well"><p class="normal"><%= link_to simple_format(idea.body), idea_path(id: idea)%></p></div>
-    </div>
+    </span>
+  </div>
+  <div class="idea-body">
+    <%= link_to simple_format(idea.body), idea_path(id: idea)%>
   </div>
 </div>
+<hr>
