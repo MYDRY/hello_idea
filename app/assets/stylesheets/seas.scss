@@ -20,22 +20,20 @@
 }
 
 .btn.btn-primary.btn-s-md{
-    position: fixed;
-    top: 570px;
-    background: orangered;
-    color: #fff;
-    font-weight: bold;
-    font-size: 15px;
-    border: none;
-    text-shadow: 0px -1px 0 #464C56;
-    i{
-      margin: 0 7px 0;
-      text-shadow: none;
-    }
+  background: orangered;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  text-shadow: 0px -1px 0 #464C56;
+  i{
+    margin: 0 7px 0;
+    text-shadow: none;
   }
-  .btn.btn-primary.btn-s-md:hover{
-    background: #cc3600;
-  }
+}
+.btn.btn-primary.btn-s-md:hover{
+  background: #cc3600;
+}
 
 .ideas-pannel{
   float: left;
