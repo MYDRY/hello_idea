@@ -87,13 +87,12 @@
   font-family: sans-serif;
   width: 100%;
   height: 90px;
-  //border-bottom: solid 1px lightgray;
   .seas-content{
     position: relative;
     width: 100%;
     margin: 2px 5px 2px;
     .seas-title{
-      width: 95%;
+      width: 90%;
       height: 30px;
       margin: auto;
       overflow: hidden;
@@ -101,7 +100,7 @@
       text-overflow: ellipsis;
       a{
         position: absolute;
-        left: 2.5%;
+        left: 0;
         top: 0;
         bottom: 0;
         right: 0;
