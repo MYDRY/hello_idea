@@ -285,15 +285,15 @@ font-size: 32px;
 
 /************* ツール *******************/
 #tool{
-  width: 1100px;
+  width: 80%;
   height: 100%;
   margin: auto;
   padding-top: 20px;
   .hirameki-tool{
     margin-left: 0;
-    margin-right: 100px;
+    margin-right: 10%;
     float: left;
-    width: 500px;
+    width: 45%;
     height: 500px;
     background-color: #ffa500;
     text-align: center;
@@ -396,7 +396,7 @@ font-size: 32px;
   .seiri-tool{
     margin-left: 0;
     float: left;
-    width: 500px;
+    width: 45%;
     height: 500px;
     background-color: #66cdaa;
     text-align: center;
@@ -607,16 +607,6 @@ font-size: 32px;
     }
   }
 }
-
-@media(min-width:1200px){
-  .smap_header{
-    display:none;
-  }
-  .hamburger_header{
-    display: none;
-  }
-}
-
 /*width:1200px 以下*/
 @media(max-width:1200px){
   .pad{
@@ -625,10 +615,11 @@ font-size: 32px;
 
   .smap_header{
     height: 125px;
+    width: 100%;
   }
 
   .hamburger_header{
-    display: inline;
+    display: none;
     .header_brand{
       padding-left: 20px;
       float: left;
@@ -683,23 +674,13 @@ font-size: 32px;
     display: none;
   }
   .header-list div{
-    display: none;
+    //display: none;
   }
 
   .smap_header_list{
     float: right;
     height: 125px;
     display: inline;
-    .smap_header_brand{
-      float: left;
-      a{
-        line-height: 125px;
-        color: #fff;
-        font-size: 60px;
-        padding-left: 0;
-        text-decoration: none;
-      }
-    }
     div{
       list-style: none;
       float: left;
