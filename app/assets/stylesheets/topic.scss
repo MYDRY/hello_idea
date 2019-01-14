@@ -58,7 +58,64 @@
     }
   }
 }
-
+#smart-topic-show{
+  hr{
+    margin: 0;
+  }
+  .needs-owner{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    a{
+      color: black;
+      font-size: 12px;
+    }
+    .needs-information{
+      width: 850px;
+      .needs-title{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+      .needs-body{
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      .invest-area{
+        width: 40%;
+      }
+      .user-information {
+        float: right;
+        img{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .contribute-box{
+      width: 850px;
+      margin: 0;
+      padding: 0;
+      .idea-register{
+        width: 100%;
+        label{
+          margin: 0;
+          font-size: 30px;
+        }
+        textarea{
+          width: 100%;;
+          margin: 0;
+        }
+        input{
+          margin: 0;
+          margin-top: -20px;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
 .panel.panel-defaul{
   width: 750px;
   margin: auto;
