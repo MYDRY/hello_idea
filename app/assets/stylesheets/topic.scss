@@ -26,6 +26,12 @@
       }
       .invest-area{
         width: 20%;
+        select{
+          border-radius:3px;
+        }
+        button{
+          margin-bottom: 10px;
+        }
       }
       .user-information {
         float: right;
