@@ -5,7 +5,7 @@ class LikesController < ApplicationController
 
   def create
     @idea = Idea.find(params[:idea_id])
-    like = current_user.likes.build(likable_id: @idea.id)
+    like = @idea.likes.build(user_id: current_user.id)
     like.save
     unless current_user == @idea.user
       current_user.change_point(5)
