@@ -1,0 +1,9 @@
+<% if already_liked? sea %>
+  <%= link_to like_path(likeable_id: sea, likable_type: 'Sea'), method: :delete, remote: true do %>
+    <span class="fa fa-heart like-btn-unlike"><%= sea.likes.count %></span>
+  <% end %>
+<% else %>
+  <%= link_to likes_path(likeable_id: sea, likable_type: 'Sea'), method: :post, remote: true do %>
+    <span class="fa fa-heart like-btn"><%= sea.likes.count %></span>
+  <% end %>
+<% end %>
