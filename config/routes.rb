@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     end
   end
   post 'topics_support/:id', to: 'topics#support', as: :support_topic
-  resources :likes, only: %i[create destroy]
+
+  post   '/like', to: 'likes#create',  as: 'likes'
+  delete '/like', to: 'likes#destroy', as: 'like'
 
   resources :words
   post '/mandalarts/suggest' => 'mandalarts#suggest'
