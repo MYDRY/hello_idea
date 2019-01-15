@@ -7,6 +7,8 @@ require 'faraday'
 require 'faraday_middleware'
 
 class MandalartsController < ApplicationController
+  before_action :authorize, only: %i[index new create edit update]
+
   def index
     @simple_mandals = current_user.simple_mandals
   end

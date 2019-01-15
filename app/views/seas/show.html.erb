@@ -1,17 +1,13 @@
 <div class="main">
   <div class="container">
-    <div class="sea-ideas-pannel" style="font-size: 30px; word-break: break-all;">
+    <h1>アイデア詳細</h1>
+    <%= render partial: 'seas/detail', locals: { sea: @sea} %>
+    <div style="text-align: center; font-size: 7vh">
       <% if @random_words %>
-        「<%= @random_words.word1.word %>　×　<%= @random_words.word2.word %>」
-        <br>
+        <%= @random_words.word1.word %>　×　<%= @random_words.word2.word %>
       <% end %>
-      <%= @sea.body %>
-      <br>
-      <%= link_to image_tag(get_image(@sea.user), size: '38', class: 'img-thumbnail'), user_path(id: @sea.user) %>
-      <%= link_to @sea.user.name, user_path(id: @sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
     </div>
     <br>
-    <%= link_to "アイデアの海へ戻る", seas_path %>
     <span style="float: right; padding-top: 2%;">
       <div id="likes_buttons_<%= @sea.id %>">
         <%= render "likes/sea_like", sea: @sea %>

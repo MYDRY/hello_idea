@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RandomWordsIdeasController < ApplicationController
+  before_action :authorize, only: %i[index create]
+
   def index
     word1 = params[:word1]
     word2 = params[:word2]
@@ -15,7 +17,10 @@ class RandomWordsIdeasController < ApplicationController
     @word1 = Word.find(params[:sea][:word1])
     @word2 = Word.find(params[:sea][:word2])
     @sea.user_id = current_user.id
-    unless @sea.save
+    if @sea.save
+      current_user.change_point(10)
+      flash[:success] = 'アイデアを投稿しました。10 ポイント獲得！！'
+    else
       @ideas = RandomWordsIdea.where(word1_id: [@word1.id, @word2.id])
                               .where(word2_id: [@word1.id, @word2.id])
       render 'words/index'

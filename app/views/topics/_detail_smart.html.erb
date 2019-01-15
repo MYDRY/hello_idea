@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-<div id="topic-show">
+<div id="smart-topic-show">
   <div class="needs-owner">
     <div class="centering" style="width: 850px; margin: auto;">
       <a href="/topics">ＳＮＳトップページに戻る</a>
@@ -25,10 +25,10 @@
           <%= link_to topic.user.name, user_path(id: topic.user), style: 'font-size: 18px; color: #007B96; font-weight: 400;' %>
           <% if topic.user_id == current_user.id %>
           <%= link_to edit_topic_path(id: topic.id) do %>
-            <span class="fa fa-edit" style="font-size: 25px;"></span>
+            <span class="fa fa-edit"></span>
           <% end %>
           <%= link_to topic_path(id: topic.id), method: :delete do%>
-            <span class="fa fa-trash" style="font-size: 25px;"></span>
+            <span class="fa fa-trash"></span>
           <% end %>
         <% end %>
         </span>

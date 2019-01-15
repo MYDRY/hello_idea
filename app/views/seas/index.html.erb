@@ -1,26 +1,61 @@
-<div class="main">
-  <div class="container">
-    <h1>アイデアの海</h1>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-    <div class="add-idea">
-      <%= inform_validation_errror(@sea) %>
-      <%= form_for(@sea) do |f| %>
-        <%= f.text_area :body %>
-        <%= f.submit 'アイデア投稿' %>
-      <% end %>
+<div class="main">
+  <div class="cecntering" style="width: 1000px; margin: auto;">
+    <div class="needs-index">
+      <div class="p-3">
+        <ul class="nav nav-tabs">
+          <li class="nav-item"><a href="#tab1" class="nav-link" data-toggle="tab">新着</a></li>
+          <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">理想</a></li>
+          <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">問題</a></li>
+          <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">その他</a></li>
+          <li class="nav-item"><a href="#tab5" class="nav-link" data-toggle="tab">ポイント順</a></li>
+          <li class="nav-item"><a href="#tab6" class="nav-link active" data-toggle="tab">アイデア帳</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="tab1">
+            <%= render partial: 'topics/simple', collection: @topics, as: 'topic', layout: 'topics/list_frame' %>
+          </div>
+          <div class="tab-pane" id="tab2">
+            <%= render partial: 'topics/simple', collection: @ideal_topics, as: 'topic', layout: 'topics/list_frame' %>
+          </div>
+          <div class="tab-pane" id="tab3">
+            <%= render partial: 'topics/simple', collection: @trouble_topics, as: 'topic', layout: 'topics/list_frame' %>
+          </div>
+          <div class="tab-pane" id="tab4">
+            <%= render partial: 'topics/simple', collection: @other_topics, as: 'topic', layout: 'topics/list_frame' %>
+          </div>
+          <div class="tab-pane" id="tab5">
+            <%= render partial: 'topics/simple', collection: @point_ordered_topics, as: 'topic', layout: 'topics/list_frame' %>
+          </div>
+          <div class="tab-pane active" id="tab6">
+            <%= render partial: 'seas/simple', collection: @seas, as: 'sea', layout: 'topics/list_frame' %>
+          </div>
+        </div>
+      </div>
     </div>
-    <% @seas.each do |sea| %>
-      <div class="ideas-pannel">
-        <%= link_to sea.body, sea_path(sea), class:'idea' %>
-        <%= link_to sea.body, sea_path(sea), class:'idea-fake' %>
-        <%= link_to image_tag(get_image(sea.user), size: '38', class: 'img-thumbnail'), user_path(id: sea.user) %>
-        <%= link_to sea.user.name, user_path(id: sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
+    <div class="needs-right-space">
+      <a href="/topics/new" class="btn btn-primary register"><i class="far fa-edit"></i>ニーズ新規投稿</a>
+      <div class="explain-register">
+        <p class="ex-title">ニーズ新規投稿 について</p>
+        <hr>
+        <p class="ex-body">「<span>SNS</span>」では、<span>ニーズ</span>を解決するためアイデアを集めます。<br>「<span>ニーズ</span>」とは、<br>
+          「<span>アイデア</span>」とは、<br>「<span>投資</span>」とは、
+        </p>
+      </div>
+      <div class="explain-memo">
+          <p class="ex-title">アイデア帳 について</p>
+          <hr>
+        <p class="ex-body">「<span>アイデア帳</span>」には、</p>
+      </div>
+      <div class="sea-post">
+        <%= render partial: 'seas/post' %>
         <span style="float: right; padding-top: 2%;">
           <div id="likes_buttons_<%= sea.id %>">
             <%= render "likes/sea_like", sea: sea %>
           </div>
         </span>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
