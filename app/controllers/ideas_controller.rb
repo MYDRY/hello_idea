@@ -4,7 +4,7 @@ class IdeasController < ApplicationController
   include LikesHelper
   include InvestsHelper
 
-  before_action :authorize, only: %i[new create]
+  before_action :authorize, only: %i[show new create edit update]
   before_action :ensure_correct_user, only: %i[edit update destroy]
 
   def show
