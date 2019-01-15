@@ -31,11 +31,11 @@ class IdeasController < ApplicationController
         rates = view_context.calc_invest_rates(topic)
         rates.each do |rate|
           invest_user = User.find(rate[:user_id])
-          unless invest_user == @idea.user
-            additional_point = (topic.support * rate[:rate] / 10).to_i
-            invest_user.change_point(additional_point)
-            view_context.spawn_new_dividend_notice(topic, invest_user, additional_point)
-          end
+          next if invest_user == @idea.user
+
+          additional_point = (topic.support * rate[:rate] / 10).to_i
+          invest_user.change_point(additional_point)
+          view_context.spawn_new_dividend_notice(topic, invest_user, additional_point)
         end
       end
       flash[:success] = 'アイデアを投稿しました。10 ポイント獲得！！'

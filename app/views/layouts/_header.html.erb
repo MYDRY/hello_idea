@@ -1,4 +1,4 @@
-<div style="background-color: #006E6F;">
+<div style="background-color: #006E6F; position: fixed; width: 100%; z-index: 999;">
   <div class="pad">
     <div class="header">
       <div class="header-brand"><a href="/">Hello Idea</a></div>
@@ -17,46 +17,16 @@
           <div><%= link_to '新規登録', new_user_path %></div>-->
         <% end %>
       </div>
-
-<!--Hamburger Header-->
-      <div class="hamburger_header">
-        <% if logged_in? %>
-        <% else %>
-        <span class="header_brand"><a href="/">Hello Idea</a></span>
-        <% end %>
-        <div class="hamburger_header_list">
-	<% if logged_in? %>
-          <div><%= link_to 'SNS', topics_path %></div>
-         <!-- <div><a href="mandalarts/index">ツール</a></div>-->
-          <div><%= show_notice_link %></div>
-        <% else %>
-          <!--<div><%= link_to 'HelloIdeaとは', "/detail" %></div>
-          <div><%= link_to 'ログイン', login_path %></div>
-          <div><%= link_to '新規登録', new_user_path %></div>-->
-        <% end %>
-        </div>
-        <% if logged_in? %>
-        <div id="nav-drawer">
-          <input id="nav-input" type="checkbox" class="nav-unshown">
-          <label id="nav-open" for="nav-input"><span></span></label>
-          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-          <div id="pc-nav-content">
-            <div><%= link_to current_user.name, user_path(id: current_user) %></div>
-            <div><%= link_to 'HelloIdeaとは', "/detail" %></div>
-            <div><%= link_to 'アンケート', 'https://goo.gl/forms/QrNsbvBYoYa6WB7N2', style: "color: #ff9190;"%></div>
-            <div><%= link_to 'ログアウト', logout_path %></div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-
     </div>
   </div>
 </div>
 
+<div class="ne-space" style="height: 70px;"></div>
+
 <% flash.each do |type, msg| %>
-  <div class="alert alert-<%= type %>" style="margin: 0px 0px 10px; padding: 15px 100px 15px; ">
+  <div class="alert alert-<%= type %>" style="margin: 0px 0px 0px; padding: 15px 100px 15px; ">
     <a class="close" data-dismiss="alert">×</a>
     <%= msg %>
   </div>
 <% end %>
+

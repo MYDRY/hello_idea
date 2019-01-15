@@ -1,3 +1,7 @@
+.sea {
+  font-size: 3vh;
+}
+
 .add-idea{
   textarea{
       display: inline-block;
@@ -13,6 +17,22 @@
       height: 100px;
       font-size: 30px;
     }
+}
+
+.btn.btn-primary.btn-s-md{
+  background: orangered;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  text-shadow: 0px -1px 0 #464C56;
+  i{
+    margin: 0 7px 0;
+    text-shadow: none;
+  }
+}
+.btn.btn-primary.btn-s-md:hover{
+  background: #cc3600;
 }
 
 .ideas-pannel{
@@ -62,12 +82,12 @@
     margin: 5px 10px 0;
     z-index: 0;
   }
-  
+
   .img-thumbnail{
     position: absolute;
     bottom: 0.5em;
   }
-  
+
   .user-name{
     position: absolute;
     left: 3em;
@@ -80,4 +100,63 @@
   .idea-fake{
     color: lightgray;
   }
+}
+
+.seas-panel{
+  position: relative;
+  font-family: sans-serif;
+  width: 100%;
+  height: 90px;
+  .seas-content{
+    position: relative;
+    width: 100%;
+    margin: 2px 5px 2px;
+    .seas-title{
+      width: 90%;
+      height: 30px;
+      margin: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a{
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 17px;
+        font-weight: 600;
+        color: darkcyan;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+      }
+      a:hover{
+        font-weight: 700;
+        text-decoration: none;
+        color: #7acccc;
+      }
+    }
+    .seas-information{
+      width: 95%;
+      height: 30px;
+      margin: auto;
+      line-height: 30px;
+      .fa.fa-comment{
+        padding-right: 20px;
+      }
+      .user-information{
+        position: absolute;
+        right: 2.5%;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.sea-post {
+  position: fixed;
+  top: 500px;
 }
