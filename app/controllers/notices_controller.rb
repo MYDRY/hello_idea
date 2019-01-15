@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class NoticesController < ApplicationController
+  before_action :authorize, only: %i[index mark mark_all destroy destroy_has_read]
+
   def index
     @notices = current_user.notices.reverse_order
   end
