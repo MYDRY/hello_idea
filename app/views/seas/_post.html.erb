@@ -1,0 +1,6 @@
+<%= form_for @sea do |f| %>
+  <%= f.text_area :body, class: "form-control", placeholder: 'What\'s your Idea !?' %>
+  <%= button_tag :type => "submit", :class =>"btn btn-primary btn-s-md" do %>
+    <i class="fas fa-book"></i> アイデア帳にメモ
+  <% end %>
+<% end %>
