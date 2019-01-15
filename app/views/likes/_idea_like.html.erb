@@ -1,9 +1,9 @@
 <% if already_liked? idea %>
-  <%= link_to like_path(likable_id: idea, likable_type: 'Idea'), method: :delete, remote: true do %>
+  <%= link_to like_path(likable_id: idea.id, likable_type: 'Idea'), method: :delete, remote: true do %>
     <span class="fa fa-heart like-btn-unlike"><%= idea.likes.count %></span>
   <% end %>
 <% else %>
-  <%= link_to likes_path(likable_id: idea, likable_type: 'Idea'), method: :post, remote: true do %>
+  <%= link_to likes_path(likable_id: idea.id, likable_type: 'Idea'), method: :post, remote: true do %>
     <span class="fa fa-heart like-btn"><%= idea.likes.count %></span>
   <% end %>
 <% end %>
