@@ -16,7 +16,8 @@ class SeasController < ApplicationController
   def create
     @sea = current_user.seas.build(sea_params)
     if @sea.save
-      flash[:success] = 'アイデアを投稿しました'
+      @sea.user.change_point(10)
+      flash[:success] = 'アイデアを投稿しました。10 ポイント獲得！！'
       redirect_to seas_path
     else
       @seas = Sea.all

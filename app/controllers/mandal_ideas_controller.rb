@@ -10,8 +10,12 @@ class MandalIdeasController < ApplicationController
   def create
     @sea = Sea.new(sea_params)
     @sea.user_id = current_user.id
-    redirect_to words_path unless @sea.save
-
+    if @sea.save
+      current_user.change_point(10)
+      flash[:success] = 'アイデアを投稿しました。10 ポイント獲得！！'
+    else
+      redirect_to words_path
+    end
     @mandal = MandalIdea.new
     @mandal.simple_mandal_id = params[:sea][:mandal]
     @mandal.sea_id = @sea.id
