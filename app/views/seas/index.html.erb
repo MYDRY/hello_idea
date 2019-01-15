@@ -17,7 +17,7 @@
         <%= link_to sea.user.name, user_path(id: sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
         <span style="float: right; padding-top: 2%;">
           <div id="likes_buttons_<%= sea.id %>">
-            <%= render "likes/like", idea: sea %>
+            <%= render "likes/sea_like", sea: sea %>
           </div>
         </span>
       </div>
