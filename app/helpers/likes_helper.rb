@@ -2,7 +2,7 @@
 
 module LikesHelper
   def already_liked?(idea)
-    current_user.likes.exists?(idea_id: idea.id)
+    current_user.likes.exists?(likable_id: idea.id)
   end
 
   def spawn_like_notice(idea)

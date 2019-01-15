@@ -12,7 +12,7 @@ class IdeasController < ApplicationController
     if @idea.nil?
       redirect_to topics_path
     else
-      @likes_count = Like.where(idea_id: @idea.id).count
+      @likes_count = Like.where(likable_id: @idea.id).count
     end
   end
 
