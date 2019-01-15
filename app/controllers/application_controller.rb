@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless logged_in?
-      flash[:info] = 'ログインしなおしてください'
-      redirect_to login_path 
+      flash[:info] = 'ログインしてください'
+      redirect_to root_path
     end
   end
 end
