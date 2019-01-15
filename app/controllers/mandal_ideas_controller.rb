@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class MandalIdeasController < ApplicationController
+  before_action :authorize, only: %i[index create]
+
   def index
     mandal = params[:mandal]
     @ideas = MandalIdea.where(simple_mandal_id: mandal)

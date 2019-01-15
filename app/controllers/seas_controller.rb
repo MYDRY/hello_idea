@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SeasController < ApplicationController
+  before_action %i[index create]
+
   def index
     @seas = Sea.all
     @sea = Sea.new

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WordsController < ApplicationController
-  before_action :admin_user, only: :destroy
+  before_action :admin_user, only: %i[index new create destroy]
 
   def index
     random_words = Word.order('RANDOM()').limit(2)

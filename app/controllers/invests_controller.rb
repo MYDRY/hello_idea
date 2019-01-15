@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class InvestsController < ApplicationController
+  before_action :authorize, only: %i[create update]
+
   def create
     invested_topic = Topic.find(params[:topic_id])
     invests_amount = params[:invests_amount].to_i
