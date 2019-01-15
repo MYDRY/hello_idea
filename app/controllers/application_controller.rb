@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   include UsersHelper
 
   def authorize
-    redirect_to login_path unless logged_in?
+    unless logged_in?
+      flash[:info] = 'ログインしなおしてください'
+      redirect_to login_path 
+    end
   end
 end
