@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SeasController < ApplicationController
-  before_action %i[index create]
+  before_action :authorize, only:  %i[index create]
 
   def index
     @seas = Sea.all
