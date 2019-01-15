@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RandomWordsIdeasController < ApplicationController
+  before_action :authorize, only: %i[index create]
+
   def index
     word1 = params[:word1]
     word2 = params[:word2]

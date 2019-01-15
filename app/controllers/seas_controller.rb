@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SeasController < ApplicationController
+  before_action :authorize, only:  %i[index create]
+
   def index
     @topics = Topic.order(created_at: :desc)
     @ideal_topics = Genre.find_by(name: '理想').topics.order(created_at: :desc)
