@@ -8,7 +8,7 @@
     <div class="panel-body">
       いいね
       <div id="likes_buttons_<%= @idea.id %>">
-        <%= render "likes/like", idea: @idea %>
+        <%= render "likes/idea_like", idea: @idea %>
       </div>
       <div style="float: right; color: gray; font-size: 16px;">
         <%= format_datetime(idea.created_at) %>

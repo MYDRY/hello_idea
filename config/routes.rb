@@ -21,10 +21,12 @@ Rails.application.routes.draw do
   resources :topics, shallow: true do
     resources :invests, only: %i[create update]
     resources :ideas do
-      resources :likes, only: %i[create destroy]
     end
   end
   post 'topics_support/:id', to: 'topics#support', as: :support_topic
+
+  post   '/like', to: 'likes#create',  as: 'likes'
+  delete '/like', to: 'likes#destroy', as: 'like'
 
   resources :words
   post '/mandalarts/suggest' => 'mandalarts#suggest'
