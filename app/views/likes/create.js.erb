@@ -1,3 +1,4 @@
 $('#likes_buttons_<%= @liked_content.id %>').html("<%= j(render partial: 'likes/idea_like', locals: {idea: @liked_content}) %>");
+$('#likes_buttons_<%= @liked_content.id %>').html("<%= j(render partial: 'likes/sea_like', locals: {sea: @liked_content}) %>");
 $('#likes_users_<%= @liked_content.id %>').html("<%= j(render partial: 'likes/users', locals: {idea: @liked_content}) %>");
 $('#likes_user_show_<%= @liked_content.user.id %>').html("<%= j(render partial: 'likes/user_show', locals: {user: @liked_content.user}) %>");
