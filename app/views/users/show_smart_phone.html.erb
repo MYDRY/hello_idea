@@ -34,7 +34,7 @@
               <% end %>
             </div>
             <% else %>
-            <%= render partial: 'ideas/simple', collection: @user.ideas, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
+            <%= render partial: 'ideas/simple_smart', collection: @user.ideas, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
             <% end %>
           </p>
         </div>
