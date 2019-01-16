@@ -19,6 +19,11 @@
           <% end %>
         </div>
       <% end %>
+      <span style="float: right; padding-right: 10px;">
+        <div id="likes_seas_<%= @sea.id %>">
+          <%= render "likes/sea_like", sea: @sea %>
+        </div>
+      </span>
     </div>
   </div>
 </div>
