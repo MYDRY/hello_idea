@@ -28,12 +28,20 @@
 }
 
 .smart-phone-user-show{
+  width: 100%;
   h1{
     padding: 20px;
   }
   .nav-item {
-    width: 25%;
-    font-size: 30px;
+    width: 23%;
+  }
+  .nav-link {
+    height: 200%;
+    font-size: 27px;
+  }
+  .tab-content {
+    width: 100%;
+    padding-top: 50px;
   }
 }
 .mobile{

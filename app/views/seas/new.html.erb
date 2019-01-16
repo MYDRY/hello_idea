@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="smart-phone">
+<div class="sea-new-smart-phone">
+  <h1 align="center">アイデア帳へメモ</h1>
+  <%= form_for @sea do |f| %>
+    <%= f.text_area :body, class: "form-control", placeholder: 'What\'s your Idea !?' %>
+    <%= button_tag :type => "submit", :class =>"btn btn-primary btn-s-md" do %>
+      アイデア帳にメモ
+    <% end %>
+  <% end %>
+</div>
+</div>
+</div>

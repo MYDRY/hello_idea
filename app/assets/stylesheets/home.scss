@@ -158,11 +158,20 @@ font-size: 32px;
     font-size: 30px;
   }
   .nav-item-lg {
+    width: 50%;
     font-size: 30px;
     background-color: #00BABD;
   }
   .nav-item-lg a {
+    font-size: 50px;
     color: white;
+  }
+  .nav-link {
+    height: 230%;
+    font-size: 27px;
+  }
+  .tab-content {
+    padding-top: 20px;
   }
 }
 
@@ -852,7 +861,7 @@ font-size: 32px;
 .footer {
   //text-align: right;
   margin: auto;
-  
+
   color: #777;
   //margin-left: 15px;
   a{

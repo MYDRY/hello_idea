@@ -20,6 +20,10 @@ class SeasController < ApplicationController
     end
   end
 
+  def new
+    @sea = Sea.new
+  end
+
   def create
     @sea = current_user.seas.build(sea_params)
     if @sea.save

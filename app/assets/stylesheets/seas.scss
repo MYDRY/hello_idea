@@ -160,3 +160,30 @@
   position: fixed;
   top: 500px;
 }
+
+.sea-new-smart-phone {
+  textarea {
+    margin: auto;
+    width: 80%;
+    height: 800px;
+    font-size: 5vh;
+  }
+  .btn {
+    margin: 100px;
+    width: 80%;
+    height: 100px;
+  }
+  .btn.btn-primary.btn-s-md{
+    background: orangered;
+    color: #fff;
+    font-weight: bold;
+    font-size: 3vh;
+    border: none;
+    text-shadow: 0px -1px 0 #464C56;
+  }
+}
+
+.memo-button {
+  background: orangered;
+  color: #fff;
+}
