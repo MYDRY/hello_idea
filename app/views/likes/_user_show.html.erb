@@ -7,6 +7,6 @@
   </div>
 <% else %>
   <% user.likes.each do |like| %>
-    <%= render partial: 'ideas/simple', locals: { idea: like.likable, tab_name: 'like' }, layout: 'ideas/list_frame' %>
+    <%= render partial: 'ideas/simple_smart', locals: { idea: like.likable, tab_name: 'like' }, layout: 'ideas/list_frame' %>
   <% end %>
 <% end %>
