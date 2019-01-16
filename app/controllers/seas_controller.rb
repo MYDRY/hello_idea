@@ -25,7 +25,6 @@ class SeasController < ApplicationController
     if @sea.save
       @sea.user.change_point(10)
       flash[:success] = 'アイデアを投稿しました。10 ポイント獲得！！'
-      redirect_to seas_path
     else
       flash[:danger] = 'アイデア投稿に失敗しました'
     end
