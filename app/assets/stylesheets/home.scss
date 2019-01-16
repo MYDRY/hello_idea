@@ -164,6 +164,13 @@ font-size: 32px;
   .nav-item-lg a {
     color: white;
   }
+  .nav-link {
+    height: 230%;
+    font-size: 27px;
+  }
+  .tab-content {
+    padding-top: 20px;
+  }
 }
 
 .detail-message{
@@ -852,7 +859,7 @@ font-size: 32px;
 .footer {
   //text-align: right;
   margin: auto;
-  
+
   color: #777;
   //margin-left: 15px;
   a{
