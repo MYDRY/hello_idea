@@ -1,5 +1,132 @@
+#topic-show{
+  hr{
+    margin: 0;
+  }
+  .needs-owner{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    a{
+      text-decoration: noen;
+      color: black;
+      font-size: 12px;
+    }
+    .needs-information{
+      width: 850px;
+      .needs-title{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+      .needs-body{
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+      .invest-area{
+        width: 20%;
+        select{
+          border-radius:3px;
+        }
+        button{
+          margin-bottom: 10px;
+        }
+      }
+      .user-information {
+        float: right;
+        img{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .contribute-box{
+      position: relative;
+      width: 850px;
+      margin: 0;
+      padding: 0;
+      .idea-register{
+        width: 100%;
+        label{
+          margin: 0;
+          font-size: 15px;
+        }
+        textarea{
+          width: 80%;
+          margin-bottom: 30px;
+        }
+        input{
+          position: absolute;
+          top: 60px;
+          right: 30px;
+        }
+      }
+    }
+  }
+}
+#smart-topic-show{
+  hr{
+    margin: 0;
+  }
+  .needs-owner{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    a{
+      color: black;
+      font-size: 12px;
+    }
+    .needs-information{
+      width: 850px;
+      .needs-title{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+      .needs-body{
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      .invest-area{
+        width: 40%;
+      }
+      .user-information {
+        float: right;
+        img{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .contribute-box{
+      width: 850px;
+      margin: 0;
+      padding: 0;
+      .idea-register{
+        width: 100%;
+        label{
+          margin: 0;
+          font-size: 30px;
+        }
+        textarea{
+          width: 100%;;
+          margin: 0;
+        }
+        input{
+          margin: 0;
+          margin-top: -20px;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+.panel.panel-defaul{
+  width: 750px;
+  margin: auto;
+}
 .topic {
-
   a {
     color: black;
     &:hover {
@@ -51,40 +178,26 @@
       }
     }
   }
-
-  .panel-body{
-    .b-item4{
-      width: 80%;
-      padding-left: 1vw;
-
-      a{
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 100%;
-        height: 40px;
-        line-height: 20px;
-        margin-bottom: 0;
-      }
-    }
-    .b-item5{
-
-      a{
-        display:block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    }
-  }
 }
 
-.nav-item a {
-  color: #00BABD;
+.needs-index{
+  //margin:auto;
+  float: left;
+  width: 740px;
+}
+
+.nav-item{
+  margin: 0 2px 0px;
+  a{
+    background-color: whitesmoke;
+    color: #00BABD;
+    height: 40px;
+    font-size: 15px;
+    margin-bottom: 1px;
+  }
+}
+.nav-link.active{
+  font-weight: bold;
 }
 .form-size{
   margin: 25px auto;
@@ -227,3 +340,182 @@
     }
   }
 }
+
+/************** needs panel design ******************/
+.needs-panel{
+  position: relative;
+  font-family: sans-serif;
+  width: 100%;
+  height: 140px;
+  border-bottom: solid 1px lightgray;
+  .needs-content{
+    position: relative;
+    width: 100%;
+    margin: 2px 5px 2px;
+    .needs-title{
+      width: 95%;
+      height: 40px;
+      margin: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      a{
+        position: absolute;
+        left: 2.5%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 17px;
+        font-weight: 600;
+        color: darkcyan;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+      }
+      a:hover{
+        font-weight: 700;
+        text-decoration: none;
+        color: #7acccc;
+      }
+    }
+    .needs-body{
+      width: 95%;
+      height: 30px;
+      line-height: 30px;
+      margin: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 17px;
+      font-weight: 600;
+      a{
+        color: darkcyan;
+      }
+    }
+    .needs-information{
+      width: 95%;
+      height: 40px;
+      margin: auto;
+      line-height: 40px;
+      .fa.fa-comment{
+        padding-right: 20px;
+      }
+      .user-information{
+        position: absolute;
+        right: 2.5%;
+        bottom: 0;
+      }
+    }
+  }
+}
+.needs-right-space{
+  float: right;
+  width: 260px;
+  .btn.btn-primary.register{
+    position: fixed;
+    top: 80px;
+    background: #12C74B;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    text-shadow: 0px -1px 0 #464C56;
+    i{
+      margin: 0 7px 0;
+      text-shadow: none;
+    }
+  }
+  .btn.btn-primary.register:hover{
+    background: rgb(15,171,65);
+  }
+  .btn.btn-primary.mt-5{
+    position: fixed;
+    top: 300px;
+    background: orangered;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    text-shadow: 0px -1px 0 #464C56;
+    i{
+      margin: 0 7px 0;
+      text-shadow: none;
+    }
+  }
+  .btn.btn-primary.mt-5:hover{
+    background: #cc3600;
+  }
+  .explain-register{
+    position: fixed;
+    top: 120px;
+    width: 260px;
+    box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.4);
+    border-radius: 5px 5px 5px 5px;
+    padding: 15px 10px 0px 10px;
+    .ex-title{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 0;
+    }
+    hr{
+      padding: 0;
+      margin: 5px 0px 5px;
+    }
+    .ex-body{
+      width: 100%;
+      font-size: 12px;
+      word-break: break-all;
+      span{
+        color: red;
+      }
+    }
+  }
+  .explain-memo{
+    position: fixed;
+    top: 400px;
+    width: 260px;
+    box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.4);
+    border-radius: 5px 5px 5px 5px;
+    padding: 15px 10px 0px 10px;
+    .ex-title{
+      font-weight: bold;
+      font-size: 14px;
+      margin: 0;
+    }
+    hr{
+      padding: 0;
+      margin: 5px 0px 5px;
+    }
+    .ex-body{
+      font-size: 12px;
+      span{
+        color: red;
+      }
+    }
+  }
+  .sea-post{
+    position: fixed;
+    top: 560px;
+    textarea{
+      width: 260px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#idea-modal{
+    .modal-content{
+      display: block;
+      width: 580px;
+      height: auto;
+      .modal-body{
+        .form-control{
+          height: auto;
+          width: 90%;
+          word-break: break-all;
+        }
+      }
+    }
+  }

@@ -61,10 +61,14 @@ font-size: 32px;
       font-size: 50px;
       margin-top: 0;
       margin-bottom: 0;
+      font-weight: bold;
+      font-family: 'Century Gothic';
     }
     p{
-      color: red;
+      color: orangered;
+      font-weight: bold;
       margin-top: 0; margin-bottom: 25px;
+      font-family: 'Century Gothic';
     }
     font-size: 32px;
   }
@@ -154,11 +158,20 @@ font-size: 32px;
     font-size: 30px;
   }
   .nav-item-lg {
+    width: 50%;
     font-size: 30px;
     background-color: #00BABD;
   }
   .nav-item-lg a {
+    font-size: 50px;
     color: white;
+  }
+  .nav-link {
+    height: 230%;
+    font-size: 27px;
+  }
+  .tab-content {
+    padding-top: 20px;
   }
 }
 
@@ -285,14 +298,15 @@ font-size: 32px;
 
 /************* ツール *******************/
 #tool{
-  width: 100%;
+  width: 80%;
   height: 100%;
+  margin: auto;
   padding-top: 20px;
   .hirameki-tool{
-    margin-left: 4%;
-    margin-right: 1%;
+    margin-left: 0;
+    margin-right: 10%;
     float: left;
-    width: 30%;
+    width: 45%;
     height: 500px;
     background-color: #ffa500;
     text-align: center;
@@ -365,9 +379,37 @@ font-size: 32px;
       color: snow;
     }
   }
+  .umi-tool_smart{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align:center;
+    width: 700px;
+    height: 700px;
+    background-color: #ff66c7;
+    text-align: center;
+    .tool-title{
+      color: snow;
+      font-size: 80px;
+      font-weight: bold;
+    }
+    .tool-message{
+      margin-top: 20px;
+      font-size: 35px;
+      color: snow;
+      font-weight: bold;
+    }
+    a{
+      text-decoration: none;
+      font-size: 50px;
+      font-weight: bold;
+      color: snow;
+    }
+  }
   .seiri-tool{
+    margin-left: 0;
     float: left;
-    width: 30%;
+    width: 45%;
     height: 500px;
     background-color: #66cdaa;
     text-align: center;
@@ -547,13 +589,13 @@ font-size: 32px;
 .header{
   width: 100%;
   min-width: 500px;
-  height: 100px;
+  height: 70px;
   .header-brand a{
     float: left;
-    font-size: 60px;
+    font-size: 50px;
     color: white;
     text-decoration: none;
-    line-height: 100px;
+    line-height: 70px;
   }
   .header-list{
     float: right;
@@ -566,10 +608,10 @@ font-size: 32px;
         display: block;
         color: white;
         text-decoration: none;
-        line-height: 100px;
+        line-height: 70px;
         padding-left: 12px;
         padding-right: 12px;
-        height: 100px;
+        height: 70px;
       }
       a:hover{
         transition:all 0.5s;
@@ -578,16 +620,6 @@ font-size: 32px;
     }
   }
 }
-
-@media(min-width:1200px){
-  .smap_header{
-    display:none;
-  }
-  .hamburger_header{
-    display: none;
-  }
-}
-
 /*width:1200px 以下*/
 @media(max-width:1200px){
   .pad{
@@ -596,15 +628,16 @@ font-size: 32px;
 
   .smap_header{
     height: 125px;
+    width: 100%;
   }
 
   .hamburger_header{
-    display: inline;
+    display: none;
     .header_brand{
       padding-left: 20px;
       float: left;
       a{
-        line-height: 100px;
+        line-height: 70px;
         color: #fff;
         font-size: 60px;
         padding-left: 0;
@@ -615,13 +648,13 @@ font-size: 32px;
   }
   .hamburger_header_list{
     float: right;
-    height: 100px;
+    height: 70px;
     display: inline;
     padding-right: 20px;
     .header_brand{
       float: left;
       a{
-        line-height: 100px;
+        line-height: 70px;
         color: #fff;
         font-size: 60px;
         padding-left: 0;
@@ -636,14 +669,14 @@ font-size: 32px;
         display: block;
         color: white;
         text-decoration: none;
-        line-height: 100px;
+        line-height: 70px;
         padding-left: 12px;
         padding-right: 12px;
-        height: 100px;
+        height: 70px;
         float: left;
       }
       a:hover{
-        transition:all 0.5s;
+        transition: all 0.5s;
         background-color: #5f9ea0;
       }
     }
@@ -654,23 +687,13 @@ font-size: 32px;
     display: none;
   }
   .header-list div{
-    display: none;
+    //display: none;
   }
 
   .smap_header_list{
     float: right;
     height: 125px;
     display: inline;
-    .smap_header_brand{
-      float: left;
-      a{
-        line-height: 125px;
-        color: #fff;
-        font-size: 60px;
-        padding-left: 0;
-        text-decoration: none;
-      }
-    }
     div{
       list-style: none;
       float: left;
@@ -836,10 +859,11 @@ font-size: 32px;
 /************* フッター ********************/
 
 .footer {
-  text-align: right;
-  border-top: solid 2px #eaeaea;
+  //text-align: right;
+  margin: auto;
+
   color: #777;
-  margin-left: 15px;
+  //margin-left: 15px;
   a{
     color: red;
     &:hover {

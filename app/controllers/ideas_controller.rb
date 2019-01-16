@@ -4,7 +4,7 @@ class IdeasController < ApplicationController
   include LikesHelper
   include InvestsHelper
 
-  before_action :authorize, only: %i[new create]
+  before_action :authorize, only: %i[show new create edit update]
   before_action :ensure_correct_user, only: %i[edit update destroy]
 
   def show
@@ -12,7 +12,7 @@ class IdeasController < ApplicationController
     if @idea.nil?
       redirect_to topics_path
     else
-      @likes_count = Like.where(idea_id: @idea.id).count
+      @likes_count = Like.where(likable_id: @idea.id, likable_type: 'Idea').count
     end
   end
 
@@ -25,17 +25,17 @@ class IdeasController < ApplicationController
     @idea = topic.ideas.build(idea_params)
     @idea.user_id = current_user.id
     if @idea.save
+      topic.user.change_point(20)
+      @idea.user.change_point(10)
       unless topic.user == @idea.user
-        topic.user.change_point(20)
-        @idea.user.change_point(10)
         rates = view_context.calc_invest_rates(topic)
         rates.each do |rate|
           invest_user = User.find(rate[:user_id])
-          unless invest_user == @idea.user
-            additional_point = (topic.support * rate[:rate] / 10).to_i
-            invest_user.change_point(additional_point)
-            view_context.spawn_new_dividend_notice(topic, invest_user, additional_point)
-          end
+          next if invest_user == @idea.user
+
+          additional_point = (topic.support * rate[:rate] / 10).to_i
+          invest_user.change_point(additional_point)
+          view_context.spawn_new_dividend_notice(topic, invest_user, additional_point)
         end
       end
       flash[:success] = 'アイデアを投稿しました。10 ポイント獲得！！'

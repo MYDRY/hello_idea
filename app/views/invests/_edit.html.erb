@@ -3,5 +3,10 @@
 <%= form_tag(invest_path(id: invest), method: :patch) do %>
   <!-- <input type="number" name="support_amount" step="100" value="0" min="0" max="<%= maximum_support_amount %>"> -->
   <%= select_tag(:invests_amount, options_for_select(enable_amounts)) %>
-  <%= submit_tag '投資（編集）' %>
+  <%= button_tag :type => "submit", :class =>"btn btn-success btn-s-md" do %>
+  <i class="fab fa-product-hunt"></i> <span style="font-weight: bold;
+    font-size: 15px;
+    border: none;
+    text-shadow: 0px -1px 0 #464C56;">ポイントを投資</span>
+  <% end %>
 <% end %>

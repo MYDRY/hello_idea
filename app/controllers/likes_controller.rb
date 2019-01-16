@@ -4,25 +4,26 @@ class LikesController < ApplicationController
   before_action :authorize
 
   def create
-    @idea = Idea.find(params[:idea_id])
-    like = current_user.likes.build(idea_id: @idea.id)
+    @liked_content = params[:likable_type] == 'Idea' ? Idea.find(params[:likable_id]) : Sea.find(params[:likable_id])
+    like = @liked_content.likes.build(user_id: current_user.id)
     like.save
-    unless current_user == @idea.user
+    unless current_user == @liked_content.user
       current_user.change_point(5)
-      @idea.user.change_point(20)
+      @liked_content.user.change_point(20)
     end
-    view_context.spawn_like_notice(@idea)
-    @idea.reload
+    view_context.spawn_like_notice(@liked_content)
+    @liked_content.reload
   end
 
   def destroy
-    @idea = Idea.find(params[:id])
-    like = Like.find_by(idea_id: @idea.id, user_id: current_user.id)
+    likable_type = params[:likable_type]
+    @liked_content = params[:likable_type] == 'Idea' ? Idea.find(params[:likable_id]) : Sea.find(params[:likable_id])
+    like = Like.find_by(likable_id: @liked_content.id, user_id: current_user.id, likable_type: likable_type)
     like.destroy
-    unless current_user == @idea.user
+    unless current_user == @liked_content.user
       current_user.change_point(-5)
-      @idea.user.change_point(-20)
+      @liked_content.user.change_point(-20)
     end
-    @idea.reload
+    @liked_content.reload
   end
 end

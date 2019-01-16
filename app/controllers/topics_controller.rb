@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TopicsController < ApplicationController
-  before_action :authorize, only: %i[new create]
+  before_action :authorize, only: %i[index show new create edit update]
   before_action :ensure_correct_user, only: %i[edit update destroy support]
 
   def index
@@ -10,6 +10,8 @@ class TopicsController < ApplicationController
     @trouble_topics = Genre.find_by(name: '問題').topics.order(created_at: :desc)
     @other_topics = Genre.find_by(name: 'その他').topics.order(created_at: :desc)
     @point_ordered_topics = Topic.order({ support: :desc }, created_at: :desc)
+    @seas = Sea.all.order(created_at: :desc)
+    @sea = Sea.new
   end
 
   def show

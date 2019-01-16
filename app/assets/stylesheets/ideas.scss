@@ -1,3 +1,23 @@
+#idea-panel{
+  width: 100%;
+  .idea-body a{
+    color: black;
+    font-size: 1em;
+    font-family: sans-serif;
+    word-break: break-all;
+  }
+}
+
+#smart-idea-panel{
+  width: 100%;
+  .idea-body a{
+    color: black;
+    font-size: 2em;
+    font-family: sans-serif;
+    word-break: break-all;
+  }
+}
+
 /* いいねボタン ==========================*/
 .like-btn {
   color: #8899a6;

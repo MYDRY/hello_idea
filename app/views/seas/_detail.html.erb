@@ -1,0 +1,29 @@
+<div class="panel panel-warning", style="margin: 10px 75px 0px; border-width: 2px; border-color: #8899a6;">
+  <div class="sea">
+    <div class="panel-heading" style="background-color: white;">
+      <%= link_to image_tag(get_image(sea.user), size: '150', class: 'img-thumbnail'), user_path(id: sea.user) %>
+      <%= link_to sea.user.name, user_path(id: sea.user), style: 'color: #007B96; font-weight: 700;' %>
+      <div><p class="normal"><%= simple_format(sea.body) %></p></div>
+    </div>
+    <div class="panel-body">
+      <div style="float: right; color: gray; font-size: 16px;">
+        <%= format_datetime(sea.created_at) %>
+      </div>
+    </div>
+    <div class="panel-footer" style="color: gray;">
+      <%= link_to 'アイデア帳へ', seas_path, class: 'btn btn-primary' %>
+      <% if sea.user == current_user %>
+        <div style="float: right;">
+          <%= link_to sea_path(sea), method: :delete do %>
+            <span class="fa fa-trash"></span>
+          <% end %>
+        </div>
+      <% end %>
+      <span style="float: right; padding-right: 10px;">
+        <div id="likes_seas_<%= @sea.id %>">
+          <%= render "likes/sea_like", sea: @sea %>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
