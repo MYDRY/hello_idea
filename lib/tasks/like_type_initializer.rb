@@ -5,7 +5,7 @@
 
 # frozen_string_literal: true
 
-unless Like.find(1).likable_type.nil?
+unless Like.find(2).likable_type.nil?
   p 'Like type initializing has done.'
   exit
 end
