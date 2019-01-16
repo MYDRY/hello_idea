@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 <div class="user">
   <% image_size = 100 unless local_assigns[:image_size] %>
   <div class="panel-body">
@@ -11,7 +13,7 @@
             <li><%= link_to_unless_current user.name, user_path(id: user) %></li>
             <!--<li><%= user.email %></li>-->
           </div>
-          <%= user.point %> points <!--!!!!!!!!!!!!!!!!!!!  EDIT HERE !!!!!!!!!!!!!!!!!!!-->
+          <span class="fab fa-product-hunt" style="color: #98cc31; font-weight: bold; margin-left: 20px;"><%= user.point %><span>points</span></span>
           <% if user == current_user %>
            <li> <%= link_to edit_user_path(id: user) do %>
               <div style="float: right;"><span class="fa fa-edit fa-2x "></span> 編集</div>
