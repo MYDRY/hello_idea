@@ -35,7 +35,7 @@
       </div>
       <!-- end modal window -->
       <div class="random-tool">
-        <%= @word1.word %><span style="color: gray;">×</span><%= @word2.word %><br>
+        <span style="font-size: 50px;"><%= @word1.word %></span><span style="color: gray;">×</span><span style="font-size: 50px;"><%= @word2.word %></span><br>
         <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
           <%= f.hidden_field :word1, value: @word1.id %>
           <%= f.hidden_field :word2, value: @word2.id %>
