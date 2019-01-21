@@ -35,7 +35,7 @@
       </div>
       <!-- end modal window -->
       <div class="random-tool">
-        <%= @word1.word %>×<%= @word2.word %><br>
+        <%= @word1.word %><span style="color: gray;">×</span><%= @word2.word %><br>
         <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
           <%= f.hidden_field :word1, value: @word1.id %>
           <%= f.hidden_field :word2, value: @word2.id %>
@@ -44,10 +44,10 @@
           <div style="font-size: small;">
             <%= inform_validation_errror(@sea) %>
           </div>
-          <%= f.text_area :body %>
-          <%= f.submit 'アイデア投稿' %>
+          <div class="random-idea">
+            <%= f.text_area :body %>
+            <%= f.submit 'アイデア投稿' %>
         <% end %>
-
         <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
           <a style="cursor:pointer; color: red; font-size: 30px;">▼ この組み合わせから創出されたアイデア一覧</a>
         </div>
@@ -61,6 +61,6 @@
             <% end %>
         </div>
       </div>
-
+      </div>
     </div>
   </div>
