@@ -35,19 +35,24 @@
       </div>
       <!-- end modal window -->
       <div class="random-tool">
-        <%= @word1.word %>×<%= @word2.word %><br>
+        <div class="link" style="width: 100%;">
+          <%= link_to "もう一度", words_path %>
+          <%= link_to "単語追加", new_word_path %>
+        </div>
+        <div style="width: 45%; float: left;"><%= @word1.word %></div><span style="color: gray;">×</span><div style="width: 40%; float: right;"><%= @word2.word %></div>
+        <br>
+        <br>
         <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
           <%= f.hidden_field :word1, value: @word1.id %>
           <%= f.hidden_field :word2, value: @word2.id %>
-          <%= link_to "もう一度", words_path %>
-          <%= link_to "単語追加", new_word_path %>
           <div style="font-size: small;">
             <%= inform_validation_errror(@sea) %>
           </div>
-          <%= f.text_area :body %>
-          <%= f.submit 'アイデア投稿' %>
+          <div class="random-idea">
+            <%= f.text_area :body %>
+            <%= f.submit 'アイデア投稿' %>
+            <br>
         <% end %>
-
         <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
           <a style="cursor:pointer; color: red; font-size: 30px;">▼ この組み合わせから創出されたアイデア一覧</a>
         </div>
@@ -61,6 +66,6 @@
             <% end %>
         </div>
       </div>
-
     </div>
   </div>
+</div>
