@@ -50,31 +50,31 @@ font-size: 32px;
 }
 */
 
-  .top-image {
-    padding-left: 10%;
-    float: left;
-    height: 100%;
+.top-image {
+  padding-left: 10%;
+  float: left;
+  height: 100%;
+}
+.top-form{
+  height: 100%;
+  h1 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-family: 'Century Gothic';
   }
-  .top-form{
-    height: 100%;
-    h1 {
-      font-size: 50px;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-weight: bold;
-      font-family: 'Century Gothic';
-    }
-    p{
-      color: orangered;
-      font-weight: bold;
-      margin-top: 0; margin-bottom: 25px;
-      font-family: 'Century Gothic';
-    }
-    font-size: 32px;
+  p{
+    color: orangered;
+    font-weight: bold;
+    margin-top: 0; margin-bottom: 25px;
+    font-family: 'Century Gothic';
   }
-  .aroundbrank {
-    padding: 30px;
-  }
+  font-size: 32px;
+}
+.aroundbrank {
+  padding: 30px;
+}
 }
 
 .container{
@@ -175,18 +175,16 @@ font-size: 32px;
   }
 }
 
-  .question{
-    padding-top: 4vw;
-    padding-bottom: 4vw;
-    font-weight: bold;
-    text-align: center;
-    h2{
-      font-size: 3vw;
-      line-height: 5vw;
-      font-weight:bold;
-    }
+.question{
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  font-weight: bold;
+  text-align: center;
+  h2{
+    font-size: 3vw;
+    line-height: 5vw;
+    font-weight:bold;
   }
-
 }
 
 /************* ツール *******************/
