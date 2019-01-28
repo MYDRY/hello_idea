@@ -13,6 +13,7 @@ module LikesHelper
     notice_link = (liked_content.is_a?(Idea) ? 'Idea' : 'Sea') == 'Idea' ? idea_path(id: liked_content).to_s : sea_path(id: liked_content).to_s
     subscribe_user.notices.create(
       message: "#{current_user.name}さんがあなたのアイデア「#{liked_content_body_string}」に\nいいね！しました\n 20 ポイント獲得！！",
-      link:    notice_link)
+      link:    notice_link
+    )
   end
 end
