@@ -7,7 +7,5 @@ class HomeController < ApplicationController
     @user = User.new
   end
 
-  def detail; end
-
   def tools; end
 end
