@@ -6,7 +6,7 @@
     <% end %>
   </div>
 <% else %>
-  <% user.likes.each do |like| %>
+  <% user.likes.reverse_order.each do |like| %>
     <%= render partial: 'ideas/simple_smart', locals: { idea: like.likable, tab_name: 'like' }, layout: 'ideas/list_frame' %>
   <% end %>
 <% end %>
