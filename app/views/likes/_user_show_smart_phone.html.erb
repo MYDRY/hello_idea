@@ -7,6 +7,6 @@
   </div>
 <% else %>
   <% user.likes.reverse_order.each do |like| %>
-    <%= render partial: 'ideas/simple_smart', locals: { idea: like.likable, tab_name: 'like' }, layout: 'ideas/list_frame' %>
+    <%= render partial: 'ideas/simple_for_likes', locals: { idea: like.likable, likable_type: like.likable_type, tab_name: 'like' }, layout: 'ideas/list_frame' %>
   <% end %>
 <% end %>
