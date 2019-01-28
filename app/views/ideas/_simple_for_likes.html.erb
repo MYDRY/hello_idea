@@ -9,7 +9,11 @@
     </span>
   </div>
   <div class="idea-body">
-    <%= link_to simple_format(idea.body), idea_path(id: idea) %>
+    <% if likable_type == "Idea" %>
+      <%= link_to simple_format(idea.body), idea_path(id: idea) %>
+    <% else %>
+      <%= link_to simple_format(idea.body), sea_path(id: idea) %>
+    <% end %>
   </div>
 </div>
 <hr>
