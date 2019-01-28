@@ -20,7 +20,7 @@
               <% end %>
             </div>
             <% else %>
-            <%= render partial: 'topics/simple', collection: @user.topics, as: 'topic', layout: 'topics/list_frame' %>
+            <%= render partial: 'topics/simple', collection: @user.topics.reverse_order, as: 'topic', layout: 'topics/list_frame' %>
             <% end %>
           </p>
         </div>
@@ -34,7 +34,7 @@
               <% end %>
             </div>
             <% else %>
-            <%= render partial: 'ideas/simple_smart', collection: @user.ideas, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
+            <%= render partial: 'ideas/simple_smart', collection: @user.ideas.reverse_order, as: 'idea', locals: { tab_name: 'pub'}, layout: 'ideas/list_frame' %>
             <% end %>
           </p>
         </div>
