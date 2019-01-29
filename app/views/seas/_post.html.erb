@@ -1,6 +1,34 @@
 <%= form_for @sea do |f| %>
-  <%= f.text_area :body, class: "form-control", placeholder: 'What\'s your Idea !?' %>
+  <%= f.text_area :body, id: '1', maxlength: '140', class: "form-control", style: "height: 100px;", placeholder: 'What\'s your Idea !?' %>
+  <span class="count_textarea"></span>
   <%= button_tag :type => "submit", :class =>"btn btn-primary btn-s-md" do %>
     <i class="fas fa-book"></i> アイデア帳にメモ
   <% end %>
 <% end %>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  var textareaCountMax = 140;
+  $('#1').bind('keydown keyup keypress change',function(){
+    var thisValueLength = $(this).val().length;
+    var countDown = (textareaCountMax)-(thisValueLength);
+    if(countDown < 10){
+      $('.count_textarea').html(countDown);
+    } else {
+      $('.count_textarea').html("");
+    }
+
+    if(countDown < 0){
+      $('.count_textarea').css({color:'#ff0000',fontWeight:'bold'});
+      $('#1').css({background:'#ffcccc'});
+    } else {
+      $('.count_textarea').css({color:'#000000',fontWeight:'normal'});
+      $('#1').css({background:'#ffffff'});
+    }
+  });
+
+  $(window).load(function(){
+    $('.count_textarea').html(textareaCountMax);
+  });
+});
+</script>
