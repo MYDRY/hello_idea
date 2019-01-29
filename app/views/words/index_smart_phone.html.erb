@@ -38,9 +38,11 @@
         <%= link_to "単語追加", new_word_path, style: 'font-size: 3vh; color: green;' %><br>
         <%= link_to "もう一度", words_path %>
       </div>
-      <%= @word1.word %><br>
-      <span style="color: gray;">×</span><br>
-      <%= @word2.word %><br>
+      <div style="word-break: break-all;">
+        <%= @word1.word %><br>
+        <span style="color: gray;">×</span><br>
+        <%= @word2.word %><br>
+      </div>
       <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
       <%= f.hidden_field :word1, value: @word1.id %>
       <%= f.hidden_field :word2, value: @word2.id %>
