@@ -2,6 +2,11 @@
   <div class="container">
     <h1>アイデア詳細</h1>
     <%= render partial: 'seas/detail', locals: { sea: @sea} %>
+    <p>
+      <div id="likes_users_<%= @sea.id %>">
+        <%= render "likes/users", idea: @sea %>
+      </div>
+    </p>
     <div style="text-align: center; font-size: 7vh">
       <% if @random_words %>
         <%= @random_words.word1.word %>　×　<%= @random_words.word2.word %>
