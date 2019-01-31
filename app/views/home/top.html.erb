@@ -5,107 +5,107 @@
     <div class="container">
       <%#= link_to 'mandalarts', mandalarts_index_path %>
       <!--<div class="message">
-        <h1>アイデアに出会おう!</h1>
-        <p>Let's meet the idea!</p>
-      </div>-->
-      <div class="top-image">
-        <%= image_tag('top.png') %>
-      </div>
-        <div class="top-form">
-          <h1 align="center">アイデアに出会おう!</h1>
-          <p align="center">Let's meet the idea!</p>
-           <% if !logged_in? %>
-            <%= form_for(@user, url: login_path) do |f| %>
-          <!--
-          <%= f.label :email, 'メールアドレス'  %><br>
-          <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
-        -->
-            <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名', style:"font-size: 25px" %>
-            <%= f.password_field :password , class: 'form-control', placeholder: 'パスワード', style:"font-size: 25px" %><br>
-            <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %><br>
-            <% end %>
-            <h2 align="center">-----------または-----------</h2>
-            <h3 align="center" style="color: red;"><b><I>10秒で完了！</I></b><br>
-            <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
-          <%end%>
-        </div>
+      <h1>アイデアに出会おう!</h1>
+      <p>Let's meet the idea!</p>
+    </div>-->
+    <div class="top-image">
+      <%= image_tag('top.png') %>
     </div>
-    <!-- what is hello idea -->
-    <div id="user-story">
-      <p class="title">HelloIdeaでアイデアに出会う</p>
-      <div class="menu">
-        <div class="case">
-          <a href="#case1"><%= image_tag('photo-3.jpg') %></a>
-          <p>Case1<br>どんなアプリをつくろうかな？<br>(SNS編)</p>
-        </div>
-        <div class="case">
-          <a href="#case2"><%= image_tag('photo-4.jpg') %></a>
-          <p>Case2<br>どんなアプリをつくろうかな？<br>(ツール編)</p>
-        </div>
-        <div class="case">
-          <a href="#case3"><%= image_tag('photo-2.jpg') %></a>
-          <p>Case3<br>みんなの反応が気になる！<br>(SNS編)</p>
-        </div>
-      </div>
-
-      <a name="case1"></a>
-      <div class="case1">
-        <p>Case 1 : どんなアプリをつくろうかな？(SNS編)</p>
-        <div class="step1">
-          <%= image_tag('case1-1.png') %>
-          <p>１人ではなく、みんなで考えたいとき<br>ＳＮＳを使ってみよう！</p>
-        </div>
-        <div class="step2">
-          <i class="fas fa-angle-right fa-3x"></i>
-          <%= image_tag('case1-2.png') %>
-          <p>みんなが持っている「こんなの欲しい」「これを解決したい」という「ニーズ」や「アイデア」が集まっているよ。<br>あなたも投稿しよう！</p>
-        </div>
-        <div class="step3">
-          <i class="fas fa-angle-right fa-3x"></i>
-          <%= image_tag('case1-3.png') %>
-          <p>ＳＮＳに集まっているニーズ・アイデアをヒントに新たなアイデアに出会おう！</p>
-        </div>
-      </div>
-
-      <a name="case2"></a>
-      <div class="case1">
-        <p>Case 2 : どんなアプリをつくろうかな？(ツール編)</p>
-        <div class="step1">
-          <%= image_tag('case1-4.png') %>
-          <p>１人で考えたいとき、<br>ツール機能を使ってみよう！</p>
-        </div>
-        <div class="step2">
-          <i class="fas fa-angle-right fa-3x"></i>
-          <%= image_tag('case1-5.png') %>
-          <p>２種類あるツールから今自分にぴったりだと思うツールを選ぼう！</p>
-        </div>
-        <div class="step3">
-          <i class="fas fa-angle-right fa-3x"></i>
-          <%= image_tag('case1-6.png') %>
-          <p>ツールではアイデアの出し方がわかるよ。<br>新たなアイデアに出会おう！</p>
-        </div>
-      </div>
-
-      <a name="case3"></a>
-      <div class="case1">
-        <p>Case 3 : みんなの反応が気になる！(SNS編)</p>
-        <div class="step1">
-          <%= image_tag('case1-1.png') %>
-          <p>アイデアはあるけど、自信がないなぁ<br>そんなときは思い切ってみんなに聞いてみよう！</p>
-        </div>
-        <div class="step2">
-          <i class="fas fa-angle-right fa-3x"></i>
-          <%= image_tag('case1-3.png') %>
-          <p>ニーズを自分で作ってアイデアを投稿するもよし<br>ニーズを見つけてアイデアを投稿するのもよし！</p>
-        </div>
-        <div class="step3">
-          <i class="fas fa-angle-right fa-3x"></i>
-          <%= image_tag('case1-7.png') %>
-          <p>みんなから「いいね」がもらえるかも！</p>
-        </div>
-      </div>
-
+    <div class="top-form">
+      <h1 align="center">アイデアに出会おう!</h1>
+      <p align="center">Let's meet the idea!</p>
+      <% if !logged_in? %>
+      <%= form_for(@user, url: login_path) do |f| %>
+      <!--
+      <%= f.label :email, 'メールアドレス'  %><br>
+      <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
+    -->
+    <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名', style:"font-size: 25px" %>
+    <%= f.password_field :password , class: 'form-control', placeholder: 'パスワード', style:"font-size: 25px" %><br>
+    <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %><br>
+    <% end %>
+    <h2 align="center">-----------または-----------</h2>
+    <h3 align="center" style="color: red;"><b><I>10秒で完了！</I></b><br>
+      <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
+      <%end%>
     </div>
-    <!-- end what is hello idea -->
   </div>
+  <!-- what is hello idea -->
+  <div id="user-story">
+    <p class="title">HelloIdeaでアイデアに出会う</p>
+    <div class="menu">
+      <div class="case">
+        <a href="#case1"><%= image_tag('photo-3.jpg') %></a>
+        <p>Case1<br>どんなアプリをつくろうかな？<br>(SNS編)</p>
+      </div>
+      <div class="case">
+        <a href="#case2"><%= image_tag('photo-4.jpg') %></a>
+        <p>Case2<br>どんなアプリをつくろうかな？<br>(ツール編)</p>
+      </div>
+      <div class="case">
+        <a href="#case3"><%= image_tag('photo-2.jpg') %></a>
+        <p>Case3<br>みんなの反応が気になる！<br>(SNS編)</p>
+      </div>
+    </div>
+
+    <a name="case1"></a>
+    <div class="case1">
+      <p>Case 1 : どんなアプリをつくろうかな？(SNS編)</p>
+      <div class="step1">
+        <%= image_tag('case1-1.png') %>
+        <p>１人ではなく、みんなで考えたいとき<br>ＳＮＳを使ってみよう！</p>
+      </div>
+      <div class="step2">
+        <i class="fas fa-angle-right fa-3x"></i>
+        <%= image_tag('case1-2.png') %>
+        <p>みんなが持っている「こんなの欲しい」「これを解決したい」という「ニーズ」や「アイデア」が集まっているよ。<br>あなたも投稿しよう！</p>
+      </div>
+      <div class="step3">
+        <i class="fas fa-angle-right fa-3x"></i>
+        <%= image_tag('case1-3.png') %>
+        <p>ＳＮＳに集まっているニーズ・アイデアをヒントに新たなアイデアに出会おう！</p>
+      </div>
+    </div>
+
+    <a name="case2"></a>
+    <div class="case1">
+      <p>Case 2 : どんなアプリをつくろうかな？(ツール編)</p>
+      <div class="step1">
+        <%= image_tag('case1-4.png') %>
+        <p>１人で考えたいとき、<br>ツール機能を使ってみよう！</p>
+      </div>
+      <div class="step2">
+        <i class="fas fa-angle-right fa-3x"></i>
+        <%= image_tag('case1-5.png') %>
+        <p>２種類あるツールから今自分にぴったりだと思うツールを選ぼう！</p>
+      </div>
+      <div class="step3">
+        <i class="fas fa-angle-right fa-3x"></i>
+        <%= image_tag('case1-6.png') %>
+        <p>ツールではアイデアの出し方がわかるよ。<br>新たなアイデアに出会おう！</p>
+      </div>
+    </div>
+
+    <a name="case3"></a>
+    <div class="case1">
+      <p>Case 3 : みんなの反応が気になる！(SNS編)</p>
+      <div class="step1">
+        <%= image_tag('case1-1.png') %>
+        <p>アイデアはあるけど、自信がないなぁ<br>そんなときは思い切ってみんなに聞いてみよう！</p>
+      </div>
+      <div class="step2">
+        <i class="fas fa-angle-right fa-3x"></i>
+        <%= image_tag('case1-3.png') %>
+        <p>ニーズを自分で作ってアイデアを投稿するもよし<br>ニーズを見つけてアイデアを投稿するのもよし！</p>
+      </div>
+      <div class="step3">
+        <i class="fas fa-angle-right fa-3x"></i>
+        <%= image_tag('case1-7.png') %>
+        <p>みんなから「いいね」がもらえるかも！</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- end what is hello idea -->
+</div>
 </div>

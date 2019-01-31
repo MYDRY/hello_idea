@@ -2,23 +2,23 @@
   <%= inform_validation_errror(topic) %>
 </p>
 <div class="smart-phone">
-    <div class="smart_form-size">
-        <%= form_for(topic) do |f| %>
-        <%= f.label :genre_id, 'ジャンル' %><br>
-        <%= f.select :genre_id, options_for_select({'理想': 1, '問題': 2, 'その他': 3}), {}, class: 'form-control' %><br>
-        <%= f.label :title, 'タイトル' %><br>
-        <%= f.text_field :title, class: 'form-control', placeholder: 'タイトルを入力' %><br>
-        <%= f.label :body, '本文' %>
-        <span class="count_textarea"></span>
-        <%= f.text_area :body, id: '1', class: 'form-control', placeholder: '本文を入力' ,cols: "20",rows: "5" ,maxlength: "140" %><br>
-
-        <% if request.path_info == new_topic_path %>
-        <%= f.submit "投稿", class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
-        <% else %>
-        <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
-        <% end %>
-        <% end %>
-      </div>
+  <div class="smart_form-size">
+    <%= form_for(topic) do |f| %>
+    <%= f.label :genre_id, 'ジャンル' %><br>
+    <%= f.select :genre_id, options_for_select({'理想': 1, '問題': 2, 'その他': 3}), {}, class: 'form-control' %><br>
+    <%= f.label :title, 'タイトル' %><br>
+    <%= f.text_field :title, class: 'form-control', placeholder: 'タイトルを入力' %><br>
+    <%= f.label :body, '本文' %>
+    <span class="count_textarea"></span>
+    <%= f.text_area :body, id: '1', class: 'form-control', placeholder: '本文を入力' ,cols: "20",rows: "5" ,maxlength: "140" %><br>
+    
+    <% if request.path_info == new_topic_path %>
+    <%= f.submit "投稿", class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
+    <% else %>
+    <%= f.submit class: 'btn btn-primary', style: 'background-color: #00BABD;' %>
+    <% end %>
+    <% end %>
+  </div>
 </div>
 
 

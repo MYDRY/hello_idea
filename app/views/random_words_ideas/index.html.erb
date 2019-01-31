@@ -5,7 +5,7 @@
     </div>
     <br>
     <% @ideas.each do |idea| %>
-        <%= render partial: 'seas/simple', locals: { sea: idea.sea }, layout: 'ideas/list_frame' %>
+      <%= render partial: 'seas/simple', locals: { sea: idea.sea }, layout: 'ideas/list_frame' %>
     <% end %>
     <%= link_to "ランダムワードへ戻る", words_path %>
   </div>
