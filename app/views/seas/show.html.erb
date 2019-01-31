@@ -9,7 +9,7 @@
     </div>
     <br>
     <% if @mandal %>
-    <div class="mandalart" style="width: 100%; padding-left: 10%;">
+    <div class="mandalart" style="margin-left: 10%;">
         <%= form_for(@mandal.simple_mandal, url: mandalarts_path) do |f| %>
           <!-- elem_1 -->
           <!-- <div class="row"> -->
@@ -123,10 +123,9 @@
 
     </div>
     <% end %>
-    <div>
+    <div style="width: 100%; height: 1000px;"></div>
       <div id="likes_users_<%= @sea.id %>">
         <%= render "likes/users", idea: @sea %>
       </div>
     </div>
-  </div>
 </div>
