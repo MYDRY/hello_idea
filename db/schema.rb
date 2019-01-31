@@ -10,24 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_15_080550) do
-
-  create_table "comments", force: :cascade do |t|
-    t.text "body"
-    t.string "commentable_type"
-    t.integer "commentable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
-  end
-
-  create_table "core_mandals", force: :cascade do |t|
-    t.string "body"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_core_mandals_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2019_01_31_143344) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -72,20 +55,6 @@ ActiveRecord::Schema.define(version: 2019_01_15_080550) do
     t.datetime "updated_at", null: false
     t.index ["sea_id"], name: "index_mandal_ideas_on_sea_id"
     t.index ["simple_mandal_id"], name: "index_mandal_ideas_on_simple_mandal_id"
-  end
-
-  create_table "mandals", force: :cascade do |t|
-    t.string "core"
-    t.string "s1"
-    t.string "s2"
-    t.string "s3"
-    t.string "s4"
-    t.string "s5"
-    t.string "s6"
-    t.string "s7"
-    t.string "s8"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "notices", force: :cascade do |t|
@@ -203,15 +172,6 @@ ActiveRecord::Schema.define(version: 2019_01_15_080550) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_simple_mandals_on_user_id"
-  end
-
-  create_table "sub_mandals", force: :cascade do |t|
-    t.string "body"
-    t.string "mandal_type"
-    t.integer "mandal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["mandal_type", "mandal_id"], name: "index_sub_mandals_on_mandal_type_and_mandal_id"
   end
 
   create_table "topics", force: :cascade do |t|
