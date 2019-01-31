@@ -8,8 +8,8 @@
       <% end %>
     </div>
     <br>
+    <% if @mandal %>
     <div class="mandalart">
-      <% if @mandal %>
         <%= form_for(@mandal.simple_mandal, url: mandalarts_path) do |f| %>
           <!-- elem_1 -->
           <!-- <div class="row"> -->
@@ -119,9 +119,13 @@
             <%= f.text_area :elem_9_9 , readonly: true %>
           </div>
           <!-- </div> -->
-          <hr>
         <% end %>
-      <% end %>
+    </div>
+    <div style="width: 100%; height: 1000px;"></div>
+    <% end %>
+      <div id="likes_users_<%= @sea.id %>">
+        <%= render "likes/users", idea: @sea %>
+      </div>
     </div>
   </div>
 </div>
