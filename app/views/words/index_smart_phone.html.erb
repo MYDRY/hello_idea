@@ -1,74 +1,100 @@
 <div class="main">
-  <div class="container">
+  <div class="smart-phone">
     <div class="random-words">
       <div class="random-tool_smart"><h1>ランダムワード</h1></div>
-      <!-- modal window explain random word -->
-      <!--<div>
-        <input id="modal_open" type="radio" name="modal_switch" />
-        <label for="modal_open"><i class="fa fa-question-circle" style="font-size:48px;color:#627295"></i></label>
-        <input id="modal_close-overlay" type="radio" name="modal_switch" />
-        <label for="modal_close-overlay">窓の外を触ると閉じるんだよっ</label>
-        <input id="modal_close-button" type="radio" name="modal_switch" />
-        <label for="modal_close-button"></label>
-        <div class="modal_popUp">
-        <div class="modal_popUp-content">-->
-        <!-- CONTENT -->
-        <!--<div class="contents">
-          <div class="mandal-img">/div>
-          <div class="modal-contents">
-            <h2>ランダムワードはアナタの発想力を刺激します！</h2>
-            <h4>たくさんのユーザーが登録した単語からランダムに２単語を出力します。<br>関係性のないものが並んだ時に斬新なアイデアが思い浮かぶことがあります。<br>このランダムツールではその種を提供します</h4>
-          </div>
-        </div>
-          <hr>
-        <div class="contents">
-          <div class="mandal-img">
-        </div>
-          <div class="modal-contents">
-            <h2>使い方</h2>
-            <p>1.「単語追加」から新しい単語を登録し、全ユーザーで共有できます</p>
-            <p>2.「もう一度」を押すとランダムに２単語を再出力します</p>
-          </div>
-        </div>-->
-        <!-- CONTENT END-->
-        <!--</div>
-       </div>
-     </div>-->
-      <!-- end modal window -->
-      <!--ここから-->
       <div class="popupModal1">
- <input type="radio" name="modalPop" id="pop11" />
- <label for="pop11"><i class="fa fa-question-circle" style="font-size:48px;color:#627295"></i></label>
- <input type="radio" name="modalPop" id="pop12" />
- <label for="pop12">CLOSE</label>
- <input type="radio" name="modalPop" id="pop13" />
- <label for="pop13">×</label>
- <div class="modalPopup2">
-  <div class="modalPopup3">
-   <h2 class="modalTitle">ランダムワードはアナタの発想力を刺激します！</h2>
-   <div class="modalMain">
-     <div class="modal_smart_img"><%= image_tag('random1.png') %></div>
-     <h4>たくさんのユーザーが登録した単語からランダムに２単語を出力します。<br>
-       関係性のないものが並んだ時に斬新なアイデアが思い浮かぶことがあります。<br>
-       このランダムツールではその種を提供します
-     </h4>
-   <h2 class="modalTitle">使い方</h2>
-   <div class="modal_smart_img"><%= image_tag('rondom3') %></div>
-   <p>1.「単語追加」から新しい単語を登録し、全ユーザーで共有できます</p>
-   <p>2.「もう一度」を押すとランダムに２単語を再出力します</p>
-   </div>
-  </div>
- </div>
-</div>
-      <!--ここまで-->
-
-      <div class="random-tool_smart">
+        <input type="radio" name="modalPop" id="pop11" />
+        <label for="pop11"><i class="fa fa-question-circle" style="font-size:48px;color:#627295"></i></label>
+        <input type="radio" name="modalPop" id="pop12" />
+        <label for="pop12">CLOSE</label>
+        <input type="radio" name="modalPop" id="pop13" />
+        <label for="pop13">×</label>
+        <div class="modalPopup2">
+          <div class="modalPopup3">
+            <h2 class="modalTitle">ランダムワードはアナタの発想力を刺激します！</h2>
+            <div class="modalMain">
+              <div class="modal_smart_img"><%= image_tag('random1.png') %></div>
+              <h4>たくさんのユーザーが登録した単語からランダムに２単語を出力します。<br>
+                関係性のないものが並んだ時に斬新なアイデアが思い浮かぶことがあります。<br>
+                このランダムツールではその種を提供します
+              </h4>
+              <h2 class="modalTitle">使い方</h2>
+              <div class="modal_smart_img"><%= image_tag('rondom3') %></div>
+              <p>1.「単語追加」から新しい単語を登録し、全ユーザーで共有できます</p>
+              <p>2.「もう一度」を押すとランダムに２単語を再出力します</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="random-tool_smart">
+      <%= @word1.word %><br>
+      ×<br>
+      <%= @word2.word %><br><br>
+      <%= link_to "もう一度", words_path ,class: 'btn btn-success btn-lg'%><br><br>
+      <%= link_to "単語追加", new_word_path ,class: 'btn btn-info btn-lg'%>
+    </div> -->
+    <div class="random-tool_smart">
+      <div class="link" style="width: 100%;">
+        <%= link_to "単語追加", new_word_path, style: 'font-size: 3vh; color: green;' %><br>
+        <%= link_to "もう一度", words_path %>
+      </div>
+      <div style="word-break: break-all;">
         <%= @word1.word %><br>
-        ×<br>
-        <%= @word2.word %><br><br>
-        <%= link_to "もう一度", words_path ,class: 'btn btn-success btn-lg'%><br><br>
-        <%= link_to "単語追加", new_word_path ,class: 'btn btn-info btn-lg'%>
+        <span style="color: gray;">×</span><br>
+        <%= @word2.word %><br>
+      </div>
+      <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
+      <%= f.hidden_field :word1, value: @word1.id %>
+      <%= f.hidden_field :word2, value: @word2.id %>
+      <div style="font-size: small;">
+        <%= inform_validation_errror(@sea) %>
+      </div>
+      <div class="random-idea-smart">
+        <%= f.text_area :body, id: '1', maxlength: '140', class: 'form-control', placeholder: 'What\'s your Idea !?' %>
+        <%= f.submit '投稿', class: 'btn btn-primary', style: 'background-color: #00BABD;'  %>
+        <span class="count_textarea_left"></span>
+        <br>
+        <% end %>
+        <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+          <a style="cursor:pointer; color: red; font-size: 3vh;">▼アイデア一覧</a>
+        </div>
+
+        <div id="open" style="display:none;clear:both;">
+          <% @ideas.each do |idea| %>
+          <%= idea.sea.body %>
+          <%= link_to image_tag(get_image(idea.sea.user), size: '38', class: 'img-thumbnail'), user_path(id: idea.sea.user) %>
+          <%= link_to idea.sea.user.name, user_path(id: idea.sea.user), style: 'font-size: 20px; color: #007B96; font-weight: 500;', class:'user-name' %>
+          <br>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  var textareaCountMax = 140;
+  $('#1').bind('keydown keyup keypress change',function(){
+    var thisValueLength = $(this).val().length;
+    var countDown = (textareaCountMax)-(thisValueLength);
+    if(countDown < 10){
+      $('.count_textarea_left').html(countDown);
+    } else {
+      $('.count_textarea_left').html("");
+    }
+
+    if(countDown < 0){
+      $('.count_textarea_left').css({color:'#ff0000',fontWeight:'bold'});
+      $('#1').css({background:'#ffcccc'});
+    } else {
+      $('.count_textarea_left').css({color:'#000000',fontWeight:'normal'});
+      $('#1').css({background:'#ffffff'});
+    }
+  });
+
+  $(window).load(function(){
+    $('.count_textarea_left').html(textareaCountMax);
+  });
+});
+</script>

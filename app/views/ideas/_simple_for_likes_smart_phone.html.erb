@@ -1,0 +1,23 @@
+<div id="smart-idea-panel">
+  <div user-information>
+    <%= link_to image_tag(get_image(idea.user), size: '50', class: 'rounded'), user_path(id: idea.user) %>
+    <%= link_to idea.user.name, user_path(id: idea.user), style: 'font-size: 40px; color: #007B96; font-weight: 600;' %>
+    <span style="float: right; padding-top: 2%;">
+      <div id="likes_buttons_<%= idea.id %>" style="font-size: 45px;">
+        <% if likable_type == "Idea" %>
+          <%= render "likes/idea_like", idea: idea %>
+        <% else %>
+          <%= render "likes/sea_like", sea: idea %>
+        <% end %>
+      </div>
+    </span>
+  </div>
+  <div class="idea-body">
+    <% if likable_type == "Idea" %>
+      <%= link_to simple_format(idea.body), idea_path(id: idea) %>
+    <% else %>
+      <%= link_to simple_format(idea.body), sea_path(id: idea) %>
+    <% end %>
+  </div>
+</div>
+<hr>

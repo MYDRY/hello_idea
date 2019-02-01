@@ -16,14 +16,6 @@
       <%= link_to topic.user.name, user_path(id: topic.user) %>
       <span>
       投稿日時：<%= format_datetime(topic.created_at) %>
-      <% if topic.user_id == current_user.id %>
-        <%= link_to edit_topic_path(id: topic.id) do %>
-          <span class="fa fa-edit"></span>
-        <% end %>
-        <%= link_to topic_path(id: topic.id), method: :delete do%>
-          <span class="fa fa-trash"></span>
-        <% end %>
-       <% end %>
       </span>
     </div>
   </div>
