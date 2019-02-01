@@ -38,9 +38,11 @@
         <%= link_to "単語追加", new_word_path, style: 'font-size: 3vh; color: green;' %><br>
         <%= link_to "もう一度", words_path %>
       </div>
-      <%= @word1.word %><br>
-      <span style="color: gray;">×</span><br>
-      <%= @word2.word %><br>
+      <div style="word-break: break-all;">
+        <%= @word1.word %><br>
+        <span style="color: gray;">×</span><br>
+        <%= @word2.word %><br>
+      </div>
       <%= form_for(@sea, url: random_words_ideas_path) do |f| %>
       <%= f.hidden_field :word1, value: @word1.id %>
       <%= f.hidden_field :word2, value: @word2.id %>
@@ -48,8 +50,9 @@
         <%= inform_validation_errror(@sea) %>
       </div>
       <div class="random-idea-smart">
-        <%= f.text_area :body %>
-        <%= f.submit 'アイデア投稿' %>
+        <%= f.text_area :body, id: '1', maxlength: '140', class: 'form-control', placeholder: 'What\'s your Idea !?' %>
+        <%= f.submit '投稿', class: 'btn btn-primary', style: 'background-color: #00BABD;'  %>
+        <span class="count_textarea_left"></span>
         <br>
         <% end %>
         <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
@@ -68,3 +71,30 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  var textareaCountMax = 140;
+  $('#1').bind('keydown keyup keypress change',function(){
+    var thisValueLength = $(this).val().length;
+    var countDown = (textareaCountMax)-(thisValueLength);
+    if(countDown < 10){
+      $('.count_textarea_left').html(countDown);
+    } else {
+      $('.count_textarea_left').html("");
+    }
+
+    if(countDown < 0){
+      $('.count_textarea_left').css({color:'#ff0000',fontWeight:'bold'});
+      $('#1').css({background:'#ffcccc'});
+    } else {
+      $('.count_textarea_left').css({color:'#000000',fontWeight:'normal'});
+      $('#1').css({background:'#ffffff'});
+    }
+  });
+
+  $(window).load(function(){
+    $('.count_textarea_left').html(textareaCountMax);
+  });
+});
+</script>

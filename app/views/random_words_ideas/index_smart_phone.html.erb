@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="smart-phone" style="word-break: break-all;">
+    <div style="text-align: center; font-size: 3vh;">
+      <%= @word1.word %> ×　<%= @word2.word %>
+    </div>
+    <br>
+    <% @ideas.each do |idea| %>
+      <%= render partial: 'seas/simple_smart', locals: { sea: idea.sea }, layout: 'ideas/list_frame' %>
+    <% end %>
+    <%= link_to "ランダムワードへ戻る", words_path, style: "font-size: 2vh;" %>
+  </div>
+</div>
