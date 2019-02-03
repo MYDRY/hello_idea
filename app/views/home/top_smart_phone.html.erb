@@ -2,36 +2,29 @@
   <div class="main">
     <div class="aroundbrank">
       <h1 align="center" style="font-size: 64px;">Hello Idea</h1>
-      <!--<div class="message">
-      <h1>アイデアに出会おう!</h1>
-      <p>Let's meet the idea!</p>
-    </div>-->
-    <!--<div class="top-image">
-    <%= image_tag('top.png') %>-->
-    <!--　ここから------------------->
-    <div class="mobile">
-      <div align="center">
-        <div class="login_pad">
-          <% if !logged_in? %>
-          <%= form_for(@user, url: login_path) do |f| %>
-          <!--
-          <%= f.label :email, 'メールアドレス'  %><br>
-          <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
-        -->
-        <!--<%= f.label :name, 'ユーザー名'  %><br>-->
-        <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名を入力', style:"font-size: 40px" %>
-        <!--<%= f.label :password, 'パスワード' %>-->
-        <%= f.password_field :password , class: 'form-control', placeholder: 'パスワードを入力', style:"font-size: 40px" %><br>
-        <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %>
-        <% end %>
-      </div>
-      <h1 align="center">----------または----------</h1>
-      <h2 align="center" style="color: red;"><b><I>10秒で完了！</I></b><br>
-        <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
-        <% end %>
+      <%= image_tag('top.png') %>-->
+      <div class="mobile">
+        <div align="center">
+          <div class="login_pad">
+            <% if !logged_in? %>
+            <%= form_for(@user, url: login_path) do |f| %>
+            <!--
+            <%= f.label :email, 'メールアドレス'  %><br>
+            <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力' %><br>
+          -->
+          <!--<%= f.label :name, 'ユーザー名'  %><br>-->
+          <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名を入力', style:"font-size: 40px" %>
+          <!--<%= f.label :password, 'パスワード' %>-->
+          <%= f.password_field :password , class: 'form-control', placeholder: 'パスワードを入力', style:"font-size: 40px" %><br>
+          <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %>
+          <% end %>
+        </div>
+        <h1 align="center">----------または----------</h1>
+        <h2 align="center" style="color: red;"><b><I>10秒で完了！</I></b><br>
+          <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
+          <% end %>
+        </div>
       </div>
     </div>
-    <!--　ここまで--------------->
   </div>
-</div>
 </div>
