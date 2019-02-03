@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   resources :random_words_ideas
   resources :mandal_ideas
   resources :seas
+
+  get '*path' => 'application#render_404'
 end
