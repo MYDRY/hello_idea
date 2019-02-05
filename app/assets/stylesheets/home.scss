@@ -31,6 +31,7 @@ html {
 
 .top {
   height: 100%;
+  background-color: white;
   //  background-image: url('top.png');
   //  background-position: 30%;
   /* 画像をタイル状に繰り返し表示しない */
@@ -38,17 +39,6 @@ html {
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
   //  background-size: contain;
   /* 背景画像が読み込まれる前に表示される背景のカラー */
-  background-color: white;
-  /*.message{
-  padding-top: 50px;
-  text-align: right;
-  color: red;
-  h1 {
-  font-size: 64px;
-}
-font-size: 32px;
-}
-*/
 
 .top-image {
   padding-left: 10%;
@@ -75,6 +65,11 @@ font-size: 32px;
 .aroundbrank {
   padding: 30px;
 }
+  .top-btn{
+    width: 500px;
+    height: 80px;
+    font-size: 40px;
+  }
 }
 
 .container{
@@ -98,7 +93,6 @@ font-size: 32px;
   }
 
   .nav-item {
-    //width: 10%;
     font-size: 16px;
   }
   .nav-item-lg {
@@ -209,7 +203,6 @@ font-size: 32px;
       margin-top: 20px;
       color: snow;
       font-weight: bold;
-      //font-size: 20px;
     }
     a{
       text-decoration: none;
@@ -237,7 +230,6 @@ font-size: 32px;
       font-size: 35px;
       color: snow;
       font-weight: bold;
-      //font-size: 20px;
     }
     a{
       text-decoration: none;
@@ -261,7 +253,6 @@ font-size: 32px;
       margin-top: 20px;
       color: snow;
       font-weight: bold;
-      //font-size: 20px;
     }
     a{
       text-decoration: none;
@@ -312,7 +303,6 @@ font-size: 32px;
       margin-top: 20px;
       color: snow;
       font-weight: bold;
-      //font-size: 20px;
     }
     a{
       text-decoration: none;
@@ -338,7 +328,6 @@ font-size: 32px;
       font-size: 35px;
       color: snow;
       font-weight: bold;
-      //font-size: 20px;
     }
     a{
       text-decoration: none;
@@ -388,8 +377,6 @@ font-size: 32px;
         height: 100%;
         width: 70%;
         object-fit: cover;
-        //-webkit-clip-path: polygon(10% 0, 45% 0, 45% 100%, 10% 100%);
-        //clip-path: polygon(10% 0, 45% 0, 45% 100%, 10% 100%);
         filter: blur(3px);
       }
       p{
@@ -455,7 +442,6 @@ font-size: 32px;
       width: 30%;
       height: 600px;
       text-align: center;
-      //border-right: solid 2px snow;
       position: relative;
       i{
         color: #fff;
@@ -578,7 +564,6 @@ font-size: 32px;
     display: none;
   }
   .header-list div{
-    //display: none;
   }
 
   .smap_header_list{
@@ -607,7 +592,6 @@ font-size: 32px;
 
 
   #nav-drawer {
-    //position: relative;
   }
 
   /*チェックボックス等は非表示に*/
@@ -750,11 +734,9 @@ font-size: 32px;
 /************* フッター ********************/
 
 .footer {
-  //text-align: right;
   margin: auto;
 
   color: #777;
-  //margin-left: 15px;
   a{
     color: red;
     &:hover {

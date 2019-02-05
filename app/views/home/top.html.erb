@@ -4,10 +4,6 @@
   <div class="main">
     <div class="container">
       <%#= link_to 'mandalarts', mandalarts_index_path %>
-      <!--<div class="message">
-      <h1>アイデアに出会おう!</h1>
-      <p>Let's meet the idea!</p>
-    </div>-->
     <div class="top-image">
       <%= image_tag('top.png') %>
     </div>
@@ -22,11 +18,11 @@
     -->
     <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名', style:"font-size: 25px" %>
     <%= f.password_field :password , class: 'form-control', placeholder: 'パスワード', style:"font-size: 25px" %><br>
-    <%= f.submit 'ログイン', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;" %><br>
+    <%= f.submit 'ログイン', class: 'btn btn-default btn-lg top-btn', style: "background-color: #00BABD; color: white;" %><br>
     <% end %>
     <h2 align="center">-----------または-----------</h2>
     <h3 align="center" style="color: red;"><b><I>10秒で完了！</I></b><br>
-      <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg', style: " color: white; width: 500px; height: 80px; font-size: 40px;" %>
+      <%= link_to 'アカウント作成', new_user_path, class: 'btn btn-warning btn-lg top-btn', style: " color: white;" %>
       <%end%>
     </div>
   </div>
@@ -104,7 +100,6 @@
         <p>みんなから「いいね」がもらえるかも！</p>
       </div>
     </div>
-
   </div>
   <!-- end what is hello idea -->
 </div>
