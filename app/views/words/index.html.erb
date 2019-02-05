@@ -5,7 +5,7 @@
     <!-- modal window explain random word -->
     <div>
       <input id="modal_open" type="radio" name="modal_switch" />
-      <label for="modal_open"><i class="fa fa-question-circle" style="font-size:48px;color:#627295"></i></label>
+      <label for="modal_open"><i class="fa fa-question-circle" style="font-size:48px; color:#627295;"></i></label>
       <input id="modal_close-overlay" type="radio" name="modal_switch" />
       <label for="modal_close-overlay">窓の外を触ると閉じるんだよっ</label>
       <input id="modal_close-button" type="radio" name="modal_switch" />
@@ -57,7 +57,6 @@
         <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
           <a style="cursor:pointer; color: red; font-size: 30px;">▼ この組み合わせから創出されたアイデア一覧</a>
         </div>
-
         <div id="open" style="display:none;clear:both;">
           <% @ideas.each do |idea| %>
           <%= idea.sea.body %>

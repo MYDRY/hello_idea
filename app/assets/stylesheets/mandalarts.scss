@@ -56,7 +56,6 @@
       margin-right: 0px;
       margin-left: 0px;
       margin-bottom: 0px;
-      //border: 3px solid #999;
       text-align: center;
       word-wrap: break-word;
       resize: none;
@@ -115,10 +114,10 @@
     text-decoration: none;
     color: #fff;
   }
-  .square_btn a:active {/*ボタンを押したとき*/
+  .square_btn a:active {
     text-decoration: none;
-    transform: translateY(4px);/*下に動く*/
-    border-bottom: none;/*線を消す*/
+    transform: translateY(4px);
+    border-bottom: none;
   }
   .dates{
     width: 100%;
@@ -249,7 +248,6 @@ input[name="modal_switch"],
   flex-direction: row;
   width: 100%;
   margin-top: 30px;
-  //float: left;
   .mandal-img{
     width: 50%;
     width: 150%;

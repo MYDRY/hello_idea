@@ -58,7 +58,6 @@
         <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
           <a style="cursor:pointer; color: red; font-size: 3vh;">▼アイデア一覧</a>
         </div>
-
         <div id="open" style="display:none;clear:both;">
           <% @ideas.each do |idea| %>
           <%= idea.sea.body %>
