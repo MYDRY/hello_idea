@@ -1,8 +1,8 @@
 <div class="suggest">
-  <h3>キーワード検索フォーム</h3>
+  <h2>キーワード検索フォーム</h2>
   <%= form_with url: mandalarts_suggest_path do |f| %>
-  <%= f.text_field :keyword,style:"font-size: 40px" %>
-  <%= f.submit('検索', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; font-size: 40px;") %>
+  <%= f.text_field :keyword, style:"font-size: 40px" %>
+  <%= f.submit '検索', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; font-size: 40px;" %>
   <% end %>
   <div class="result" style="font-size: 30px;">
     <p>▼検索結果<p>
