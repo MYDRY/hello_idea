@@ -1,0 +1,47 @@
+<div class="register-ideas-smart">
+  <h2>アイデア投稿フォーム</h2>
+  <%= form_for(@sea, url: mandal_ideas_path) do |f| %>
+    <%= f.hidden_field :mandal, value: @simple_mandal.id %>
+    <%= f.text_area :body, id: '1', maxlength: '140', class: 'form-control', placeholder: 'What\'s your Idea !?', style: "font-size: 40px;" %>
+    <%= f.submit '投稿', class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; font-size: 40px; margin-bottom: 60px;" %>
+    <span class="count_textarea_left"></span>
+  <% end %>
+  <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer; color: red;">▼ このマンダラートから創出されたアイデア一覧</a>
+  </div>
+  <div id="open" style="display:none;clear:both; text-align: left;">
+    <% @ideas.each do |idea| %>
+    <%= idea.sea.body %>
+    <br>
+    <% end %>
+  </div>
+  <div style="width: 100%; height: 300px;"/>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  var textareaCountMax = 140;
+  $('#1').bind('keydown keyup keypress change',function(){
+    var thisValueLength = $(this).val().length;
+    var countDown = (textareaCountMax)-(thisValueLength);
+    if(countDown < 10){
+      $('.count_textarea_left').html(countDown);
+    } else {
+      $('.count_textarea_left').html("");
+    }
+
+    if(countDown < 0){
+      $('.count_textarea_left').css({color:'#ff0000',fontWeight:'bold'});
+      $('#1').css({background:'#ffcccc'});
+    } else {
+      $('.count_textarea_left').css({color:'#000000',fontWeight:'normal'});
+      $('#1').css({background:'#ffffff'});
+    }
+  });
+
+  $(window).load(function(){
+    $('.count_textarea_left').html(textareaCountMax);
+  });
+});
+</script>
