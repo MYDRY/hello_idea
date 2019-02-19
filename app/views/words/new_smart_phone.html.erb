@@ -6,10 +6,39 @@
         <%= inform_validation_errror(@word) %>
         <%= form_for @word do |f| %>
         <%= f.label 'Word' %><br>
-        <%= f.text_field :word , placeholder: '単語を入力',style:"font-size: 40px"%><br><br>
+        <span class="count_textarea"></span>
+        <%= f.text_field :word, id: '1', maxlength: '15', class: 'form-control', placeholder: '15文字以内', style:"font-size: 40px"%><br><br>
         <%= f.submit class: 'btn btn-default btn-lg', style: "background-color: #00BABD; color: white; width: 500px; height: 80px; font-size: 40px;"%>
         <% end %>
       </div>
     </div>
+  </div>
 </div>
-</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  var textareaCountMax = 15;
+  $('#1').bind('keydown keyup keypress change',function(){
+    var thisValueLength = $(this).val().length;
+    var countDown = (textareaCountMax)-(thisValueLength);
+    if(countDown < 10){
+      $('.count_textarea').html(countDown);
+    } else {
+      $('.count_textarea').html("");
+    }
+
+    if(countDown < 0){
+      $('.count_textarea').css({color:'#ff0000',fontWeight:'bold'});
+      $('#1').css({background:'#ffcccc'});
+    } else {
+      $('.count_textarea').css({color:'#000000',fontWeight:'normal'});
+      $('#1').css({background:'#ffffff'});
+    }
+  });
+
+  $(window).load(function(){
+    $('.count_textarea').html(textareaCountMax);
+  });
+});
+</script>

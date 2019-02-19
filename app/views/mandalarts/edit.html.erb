@@ -13,22 +13,6 @@
         <%= render partial: 'suggest', locals: { suggestions: @suggestions } %>
       </div>
     </div>
-    <div class="register-ideas">
-      <h3>アイデア投稿フォーム</h3>
-      <%= form_for(@sea, url: mandal_ideas_path) do |f| %>
-        <%= f.hidden_field :mandal, value: @simple_mandal.id %>
-        <%= f.text_area :body %>
-        <%= f.submit '投稿' %>
-      <% end %>
-      <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-        <a style="cursor:pointer; color: red;">▼ このマンダラートから創出されたアイデア一覧</a>
-      </div>
-      <div id="open" style="display:none;clear:both; text-align: left;">
-        <% @ideas.each do |idea| %>
-          <%= idea.sea.body %>
-          <br>
-        <% end %>
-      </div>
-    </div>
+    <%= render partial: 'sea_post' %>
   </div>
 </div>
