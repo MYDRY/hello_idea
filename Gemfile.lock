@@ -289,7 +289,7 @@ DEPENDENCIES
   anime_js_rails
   bcrypt
   bootsnap (>= 1.1.0)
-  bootstrap-sass (>= 3.3.7)
+  bootstrap-sass
   byebug
   capybara (>= 2.15, < 4.0)
   carrierwave

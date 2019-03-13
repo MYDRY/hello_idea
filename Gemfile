@@ -42,7 +42,7 @@ gem 'rails-i18n'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # For bootstrap
-gem 'bootstrap-sass', '>= 3.3.7'
+gem 'bootstrap-sass'
 
 # For Image Upload
 gem 'carrierwave'
