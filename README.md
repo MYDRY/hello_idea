@@ -3,6 +3,8 @@
 
 ![image](https://user-images.githubusercontent.com/20394831/51023281-e66ca380-15c9-11e9-992f-63f52ff1bba8.png)
 
+[スライド](https://docs.google.com/presentation/d/e/2PACX-1vReSc3yjsNJrzg661gYmGEJ7TAly3NJQD9n2TemRVuHKBtOCUdO_YJiHpex86N3CGhT6rEU8JtgFRD7/pub?start=false&loop=false&delayms=3000)
+
 ## Hello Ideaとは  
 **アイデアを出したい**けど**アイデアが出ない人**向けの  
 **アイデア創出プラットフォーム**です。  
